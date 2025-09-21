@@ -24,13 +24,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Yeonju Lee"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Ph.D. student in ISyE at Georgia Tech"
+  location         : "Atlanta"
+  employer         : #"Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "ylee845@gatech.edu" 
 
   # Academic websites
   academia         : # URL
