@@ -1,7 +1,7 @@
 ---
 title: "Discovery of Fault-Introducing Tool Groups with Numerical
 Association Rule Mining in a Printed Circuit Board Manufacturing Line"
-collection: publications
+collection: Journal Papers
 category: manuscripts
 #permalink: /publication/2009-10-01-paper-title-number-1
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
