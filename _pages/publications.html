@@ -1,36 +1,93 @@
 ---
 layout: archive
-title: "Publications"
+title: "Papers"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+<style>
+  .paper-list{counter-reset: item}
+  .paper{margin: 1.25rem 0}
+  .paper h3{
+    font-weight:600; margin:0; line-height:1.35
+  }
+  .paper h3 .num{
+    counter-increment:item;
+    margin-right:.5rem
+  }
+  .paper h3 .num::before{content: counter(item) ". "}
+  .paper .meta{color:#666; margin:.25rem 0 .5rem 0}
+  .paper ul{margin:.4rem 0 .2rem 1.1rem}
+</style>
+
+<div class="paper-list">
+  {% assign pubs = site.publications | sort: "date" | reverse %}
+  {% for post in pubs %}
+    <div class="paper">
+      <h3>
+        <span class="num"></span>
+        <span class="title">
+          {{ post.title | escape }}
+          {% if post.pdf or post.link or post.arxiv %}
+            [
+            {% if post.pdf %}<a href="{{ post.pdf | relative_url }}">pdf</a>{% endif %}
+            {% if post.arxiv %}{% if post.pdf %} | {% endif %}<a href="{{ post.arxiv }}">arXiv</a>{% endif %}
+            {% if post.link %}{% if post.pdf or post.arxiv %} | {% endif %}<a href="{{ post.link }}">link</a>{% endif %}
+            ]
+          {% endif %}
+        </span>
+      </h3>
+
+      <div class="meta">
+        {% if post.authors %}{{ post.authors }}.{% endif %}
+        {% if post.venue %} {{ post.venue }}.{% endif %}
+        {% if post.status %} ({{ post.status }}){% endif %}
+      </div>
+
+      {% if post.abstract %}
+        <ul>
+          <li>{{ post.abstract }}</li>
+        </ul>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+    </div>
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+</div>
+
+#---
+#layout: archive
+#title: "Publications"
+#permalink: /publications/
+#author_profile: true
+#---
+
+#{% if site.author.googlescholar %}
+#  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+#{% endif %}
+
+#{% include base_path %}
+
+#<!-- New style rendering if publication categories are defined -->
+#{% if site.publication_category %}
+#  {% for category in site.publication_category  %}
+#    {% assign title_shown = false %}
+#    {% for post in site.publications reversed %}
+#      {% if post.category != category[0] %}
+#        {% continue %}
+#      {% endif %}
+#      {% unless title_shown %}
+#        <h2>{{ category[1].title }}</h2><hr />
+#        {% assign title_shown = true %}
+#      {% endunless %}
+#      {% include archive-single.html %}
+#    {% endfor %}
+#  {% endfor %}
+#{% else %}
+#  {% for post in site.publications reversed %}
+#    {% include archive-single.html %}
+#  {% endfor %}
+#{% endif %}
 
 
 
