@@ -3,7 +3,7 @@ title: "Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Denta
 collection: publications
 #category: conferences
 #permalink: /publication/2024-02-17-paper-title-number-4
-#excerpt: 'This paper is about fixing template issue #693.'
+excerpt: "🏆 Best Paper Finalist at IISE DAIS 2024"
 #date: 2024-02-17
 venue: 'IEEE Transactions on Automation Science and Engineering, 22, 11205 - 11218, 2025'
 #paperurl: 'http://academicpages.github.io/files/paper3.pdf'
