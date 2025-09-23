@@ -41,16 +41,21 @@ author_profile: true
       </h3>
 
       <div class="meta">
-        {% if post.authors %}{{ post.authors }}.{% endif %}
-        {% if post.venue %} {{ post.venue }}.{% endif %}
-        {% if post.status %} ({{ post.status }}){% endif %}
-      </div>
+      {% if post.authors %}{{ post.authors }}.{% endif %}
+      {% if post.venue %} {{ post.venue }}.{% endif %}
+      {% if post.status %} ({{ post.status }}){% endif %}
+    </div>
+    
+    {% if post.excerpt %}
+      <div class="excerpt"><em>{{ post.excerpt }}</em></div>
+    {% endif %}
+    
+    {% if post.abstract %}
+      <ul>
+        <li>{{ post.abstract }}</li>
+      </ul>
+    {% endif %}
 
-      {% if post.abstract %}
-        <ul>
-          <li>{{ post.abstract }}</li>
-        </ul>
-      {% endif %}
     </div>
   {% endfor %}
 </div>
