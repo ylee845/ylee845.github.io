@@ -14,4 +14,4 @@ My research focuses on knowledge-informed machine learning (ML)—approaches tha
 - Precision agriculture
 - Manufacturing and quality control.
 
-The best way to reach me is via email at ylee845@gatech.edu. I warmly welcome collaborations and discussions related to research.
+The best way to reach me is via email at ylee845@gatech.edu.
