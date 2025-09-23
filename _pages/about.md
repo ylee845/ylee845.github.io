@@ -12,6 +12,7 @@ My research interest focuses on knowledge-informed machine learning (ML) methods
 - Healthcare (dental CBCT imaging)  
 - Precision agriculture
 - Manufacturing & Quality Control
+
 that struggles with challenges such as data-scarcity, high-dimensionality, multi-modal data.
 I have been working on focus on problems such as dental image analysis, forecasting, and anomaly detection, root cause analysis and control.
 
