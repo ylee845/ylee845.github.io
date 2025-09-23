@@ -11,65 +11,44 @@ author_profile: true
   .paper-list{counter-reset:item}
   .paper{margin:1.25rem 0}
   .paper h3{font-weight:600;margin:0;line-height:1.35}
-  .paper-list { counter-reset: item }   <!-- 맨 처음 한 번만 -->
-  .paper h3 .num { counter-increment:item; }
-  .paper h3 .num::before { content: counter(item) ". "; }
+  .paper h3 .num::before{
+    counter-increment: papernum;
+    content: counter(papernum) ". ";
+    margin-right:.5rem;
+  }
   .paper .meta{color:#666;margin:.25rem 0 .5rem 0}
   .paper ul{margin:.4rem 0 .2rem 1.1rem}
   .excerpt{font-size:.9em;color:#444;margin:.2rem 0 .5rem 0;font-style:italic}
 </style>
 
-<h2>In Preparation</h2>
-<div class="paper-list">
+<div class="pubs">
+
+  <h2>In Preparation</h2>
   {% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
   {% for post in inprep %}
     <div class="paper">
-        <h3><span class="num"></span><span class="title">{{ post.title }}</span></h3>
+      <h3><span class="num"></span><span class="title">{{ post.title | escape }}</span></h3>
       <div class="meta">
-        {% if post.authors %}{{ post.authors }}{% endif %}
-        {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}
-        {% if post.status %}, {{ post.status }}{% endif %}
+        {% assign meta = "" | split:"|" %}
+        {% if post.authors %}{% assign meta = meta | push: post.authors %}{% endif %}
+        {{ meta | join:", " }}
       </div>
     </div>
   {% endfor %}
-</div>
 
-<h2>Published & Under Review</h2>
-<div class="paper-list">
-  {% assign pubs = site.publications
-      | where_exp: "p", "p.status != 'in preparation'"
-      | sort: "date" | reverse %}
+  <h2>Published & Under Review</h2>
+  {% assign pubs = site.publications | where_exp:"p","p.status != 'in preparation'" | sort:"date" | reverse %}
   {% for post in pubs %}
     <div class="paper">
-      <h3>
-        <span class="num"></span><span class="title">{{ post.title }}</span>
-          {{ post.title | escape }}
-          {% if post.pdf or post.link or post.arxiv %}
-            [
-            {% if post.pdf %}<a href="{{ post.pdf | relative_url }}">pdf</a>{% endif %}
-            {% if post.arxiv %}{% if post.pdf %} | {% endif %}<a href="{{ post.arxiv }}">arXiv</a>{% endif %}
-            {% if post.link %}{% if post.pdf or post.arxiv %} | {% endif %}<a href="{{ post.link }}">link</a>{% endif %}
-            ]
-          {% endif %}
-        </span>
-      </h3>
-
+      <h3><span class="num"></span><span class="title">{{ post.title | escape }}</span></h3>
       <div class="meta">
-        {% if post.authors %}{{ post.authors }}{% endif %}
-        {% if post.venue %} <em>{{ post.venue }}</em>{% endif %}
-        {% if post.issue %} {{ post.issue }}{% endif %}
-        {% if post.status %} ({{ post.status }}){% endif %}
+        {% assign meta = "" | split:"|" %}
+        {% if post.authors %}{% assign meta = meta | push: post.authors %}{% endif %}
+        {% if post.venue %}{% capture v %}<em>{{ post.venue }}</em>{% endcapture %}{% assign meta = meta | push: v %}{% endif %}
+        {% if post.status and post.status != 'in preparation' %}{% assign meta = meta | push: post.status %}{% endif %}
+        {{ meta | join:", " }}
       </div>
-
-      {% if post.excerpt %}
-        <div class="excerpt"><em>{{ post.excerpt }}</em></div>
-      {% endif %}
-
-      {% if post.abstract %}
-        <ul>
-          <li>{{ post.abstract }}</li>
-        </ul>
-      {% endif %}
     </div>
   {% endfor %}
+
 </div>
