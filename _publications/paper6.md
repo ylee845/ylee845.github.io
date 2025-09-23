@@ -6,7 +6,7 @@ collection: publications
 #excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 #date: 2010-10-01
 venue: 'Submitted to Bioengineering & Translational Medicine'
-authors: 'R.Q. Chen, Y. Lee, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li, '
+authors: 'R.Q. Chen, Y. Lee, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li'
 #status: "publication"
 #slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
 #paperurl: 'http://academicpages.github.io/files/paper2.pdf'
