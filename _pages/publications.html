@@ -18,6 +18,24 @@ author_profile: true
   .excerpt{font-size:.9em;color:#444;margin:.2rem 0 .5rem 0;font-style:italic}
 </style>
 
+<h2>In Preparation</h2>
+<div class="paper-list">
+  {% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
+  {% for post in inprep %}
+    <div class="paper">
+      <h3>
+        <span class="num"></span>
+        <span class="title">{{ post.title | escape }}</span>
+      </h3>
+      <div class="meta">
+        {% if post.authors %}{{ post.authors }}{% endif %}
+        {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}
+        {% if post.status %}, {{ post.status }}{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
 <div class="paper-list">
   {% assign pubs = site.publications | sort: "date" | reverse %}
   {% for post in pubs %}
