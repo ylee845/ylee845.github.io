@@ -15,3 +15,4 @@ My research centers on knowledge-informed machine learning (ML)—approaches tha
 - Manufacturing and quality control
 
 I am particularly interested in problems involving dental image analysis, forecasting, anomaly detection, root cause analysis, and control.
+The best way to reach me is via email at ylee845@gatech.edu. I warmly welcome collaborations and discussions related to research.
