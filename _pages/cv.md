@@ -15,62 +15,31 @@ Education
 * M.S. in Industrial Engineering, Yonsei University, 2022
 * B.S. in Information and Industrial Engineering, Yonsei University, 2021
 
-Research Project
-======
-* Fall 2022 - : Graduate Research Assistant
-  * Georgia Institute of Technology
-  * Supervisor: Dr. Jing Li
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
 Teaching
 ======
   {% include base_path %}
 
-<h2>Teaching</h2>
-<div class="teach-list">
-  {% assign teachs = site.teaching | sort: "date" | reverse %}
-  {% for t in teachs %}
-    <div class="teach">
-      <div class="left">
-        <div><span class="role">{{ t.role }}</span> at {{ t.institution }}</div>
-        <div class="course">
-          {{ t.course }}{% if t.code %} ({{ t.code }}){% endif %}
+  <h2>Teaching</h2>
+  <div class="teach-list">
+    {% assign teachs = site.teaching | sort: "date" | reverse %}
+    {% for t in teachs %}
+      <div class="teach">
+        <div class="left">
+          <div><span class="role">{{ t.role }}</span> at {{ t.institution }}</div>
+          <div class="course">
+            {{ t.course }}{% if t.code %} ({{ t.code }}){% endif %}
+          </div>
+          {% if t.note %}<div class="note">{{ t.note }}</div>{% endif %}
         </div>
-        {% if t.note %}<div class="note">{{ t.note }}</div>{% endif %}
+        <div class="term">{{ t.term }}</div>
       </div>
-      <div class="term">{{ t.term }}</div>
-    </div>
-  {% endfor %}
+    {% endfor %}
 </div>
   
 Service and leadership
