@@ -1,3 +1,23 @@
+---
+layout: archive
+title: "Journal Papers"
+permalink: /publications/
+author_profile: true
+---
+
+{% include base_path %}
+
+<style>
+  .paper-list{counter-reset:item}
+  .paper{margin:1.25rem 0}
+  .paper h3{font-weight:600;margin:0;line-height:1.35}
+  .paper h3 .num{counter-increment:item;margin-right:.5rem}
+  .paper h3 .num::before{content:counter(item) ". "}
+  .paper .meta{color:#666;margin:.25rem 0 .5rem 0}
+  .paper ul{margin:.4rem 0 .2rem 1.1rem}
+  .excerpt{font-size:.9em;color:#444;margin:.2rem 0 .5rem 0;font-style:italic}
+</style>
+
 <div class="paper-list">
   {% assign pubs = site.publications | sort: "date" | reverse %}
   {% for post in pubs %}
