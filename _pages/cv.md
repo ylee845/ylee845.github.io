@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 [📄 Download PDF](/files/Yeonju_Lee_CV.pdf)
+
 Education
 ======
 * Ph.D in Machine Learning, Georgia Institute of Technology, 2027 (expected)
