@@ -7,6 +7,29 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+  .teach-list{margin:0;padding:0}
+  .teach{display:flex;justify-content:space-between;gap:1rem;margin:.75rem 0}
+  .teach .left{max-width:78%}
+  .teach .role{font-weight:700}
+  .teach .course{margin:.15rem 0}
+  .teach .note{color:#444}
+  .teach .term{text-wrap:nowrap}
+</style>
+
+<div class="teach-list">
+  {% assign items = site.teaching | sort: "date" | reverse %}
+  {% for t in items %}
+    <div class="teach">
+      <div class="left">
+        <div><span class="role">{{ t.role }}</span> at {{ t.institution }}</div>
+        <div class="course">
+          {{ t.course }}{% if t.code %} ({{ t.code }}){% endif %}
+        </div>
+        {% if t.note %}<div class="note">{{ t.note }}</div>{% endif %}
+      </div>
+      <div class="term">{{ t.term }}</div>
+    </div>
+  {% endfor %}
+</div>
+
