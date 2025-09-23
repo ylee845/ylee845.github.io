@@ -4,7 +4,7 @@ Association Rule Mining in a Printed Circuit Board Manufacturing Line"
 collection: Journal Papers
 category: manuscripts
 #permalink: /publication/2009-10-01-paper-title-number-1
-#excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+#excerpt:  "🏆 Best Undergraduate Project Finalist at KIIE 2019"
 #date: 2024
 venue: 'International Journal of Production Research, 62(9), 3305-3319, 2024'
 #slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
