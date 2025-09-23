@@ -21,14 +21,6 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Teaching
-======
-  {% include base_path %}
-
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
 Service and leadership
 ======
 * Member in Institute of Industrial and Systems Engineers (IISE)
