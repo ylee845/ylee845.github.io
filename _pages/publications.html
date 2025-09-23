@@ -10,17 +10,20 @@ author_profile: true
 {% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
 {% assign offset = inprep.size %}
 <style>
-  .paper-list{counter-reset:item}
-  .paper{margin:1.25rem 0}
-  .paper h3{font-weight:600;margin:0;line-height:1.35}
+  /* CSS 카운터 전부 끄기 */
+  .paper-list{ counter-reset: none; } /* 있으면 무효화 */
   .paper h3 .num::before{
-    counter-increment: papernum;
-    content: counter(papernum) ". ";
-    margin-right:.5rem;
+    content: none !important;
+    counter-increment: none !important;
   }
-  .paper .meta{color:#666;margin:.25rem 0 .5rem 0}
-  .paper ul{margin:.4rem 0 .2rem 1.1rem}
-  .excerpt{font-size:.9em;color:#444;margin:.2rem 0 .5rem 0;font-style:italic}
+
+  .paper{ margin:1.25rem 0 }
+  .paper h3{ font-weight:600; margin:0; line-height:1.35 }
+  /* 숫자 간격만 스타일 */
+  .paper .num{ display:inline-block; min-width:2ch; margin-right:.5rem }
+  .paper .meta{ color:#666; margin:.25rem 0 .5rem 0 }
+  .paper ul{ margin:.4rem 0 .2rem 1.1rem }
+  .excerpt{ font-size:.9em; color:#444; margin:.2rem 0 .5rem 0; font-style:italic }
 </style>
 
 <div class="pubs">
