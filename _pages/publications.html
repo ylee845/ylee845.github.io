@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 {% include base_path %}
-
+{% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
+{% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
+{% assign offset = inprep.size %}
 <style>
   .paper-list{counter-reset:item}
   .paper{margin:1.25rem 0}
@@ -24,31 +26,36 @@ author_profile: true
 <div class="pubs">
 
   <h2>In Preparation</h2>
-  {% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
+<div>
   {% for post in inprep %}
     <div class="paper">
-      <h3><span class="num"></span><span class="title">{{ post.title | escape }}</span></h3>
+      <h3>
+        <span class="num">{{ forloop.index }}.</span>
+        <span class="title">{{ post.title | escape }}</span>
+      </h3>
       <div class="meta">
-        {% assign meta = "" | split:"|" %}
-        {% if post.authors %}{% assign meta = meta | push: post.authors %}{% endif %}
-        {{ meta | join:", " }}
+        {% if post.authors %}{{ post.authors }}{% endif %}
       </div>
     </div>
   {% endfor %}
+</div>
 
-  <h2>Published & Under Review</h2>
-  {% assign pubs = site.publications | where_exp:"p","p.status != 'in preparation'" | sort:"date" | reverse %}
+<h2>Published & Under Review</h2>
+<div>
   {% for post in pubs %}
     <div class="paper">
-      <h3><span class="num"></span><span class="title">{{ post.title | escape }}</span></h3>
+      <h3>
+        <span class="num">{{ forloop.index | plus: offset }}.</span>
+        <span class="title">{{ post.title | escape }}</span>
+      </h3>
       <div class="meta">
-        {% assign meta = "" | split:"|" %}
-        {% if post.authors %}{% assign meta = meta | push: post.authors %}{% endif %}
-        {% if post.venue %}{% capture v %}<em>{{ post.venue }}</em>{% endcapture %}{% assign meta = meta | push: v %}{% endif %}
-        {% if post.status and post.status != 'in preparation' %}{% assign meta = meta | push: post.status %}{% endif %}
-        {{ meta | join:", " }}
+        {% assign parts = "" | split:"|" %}
+        {% if post.authors %}{% assign parts = parts | push: post.authors %}{% endif %}
+        {% if post.venue %}{% capture v %}<em>{{ post.venue }}</em>{% endcapture %}{% assign parts = parts | push: v %}{% endif %}
+        {% if post.status and post.status != 'in preparation' %}{% assign parts = parts | push: post.status %}{% endif %}
+        {{ parts | join: ", " }}
       </div>
     </div>
   {% endfor %}
-
 </div>
+
