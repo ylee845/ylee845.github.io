@@ -25,22 +25,9 @@ Teaching
 ======
   {% include base_path %}
 
-  <h2>Teaching</h2>
-  <div class="teach-list">
-    {% assign teachs = site.teaching | sort: "date" | reverse %}
-    {% for t in teachs %}
-      <div class="teach">
-        <div class="left">
-          <div><span class="role">{{ t.role }}</span> at {{ t.institution }}</div>
-          <div class="course">
-            {{ t.course }}{% if t.code %} ({{ t.code }}){% endif %}
-          </div>
-          {% if t.note %}<div class="note">{{ t.note }}</div>{% endif %}
-        </div>
-        <div class="term">{{ t.term }}</div>
-      </div>
-    {% endfor %}
-</div>
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
   
 Service and leadership
 ======
