@@ -16,6 +16,14 @@ Education
 * M.S. in Industrial Engineering, Yonsei University, 2022
 * B.S. in Information and Industrial Engineering, Yonsei University, 2021
 
+HONORS & AWARDS
+======
+* George Fellowship,  H. Milton Stewart School of Industrial & Systems Engineering, 2025
+* Finalist for Best Track Paper Award, IISE DAIS, 2024
+* Stewart Fellowship, H. Milton Stewart School of Industrial & Systems Engineering, 2022, 2025
+* Accelerated Degree Program Scholarship, Yonsei University, 2021
+* Finalist for Undergraduate Project Competition, KIIE, 2019
+  
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
