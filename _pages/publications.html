@@ -11,8 +11,9 @@ author_profile: true
   .paper-list{counter-reset:item}
   .paper{margin:1.25rem 0}
   .paper h3{font-weight:600;margin:0;line-height:1.35}
-  .paper h3 .num{counter-increment:item;margin-right:.5rem}
-  .paper h3 .num::before{content:counter(item) ". "}
+  .paper-list { counter-reset: item }   <!-- 맨 처음 한 번만 -->
+  .paper h3 .num { counter-increment:item; }
+  .paper h3 .num::before { content: counter(item) ". "; }
   .paper .meta{color:#666;margin:.25rem 0 .5rem 0}
   .paper ul{margin:.4rem 0 .2rem 1.1rem}
   .excerpt{font-size:.9em;color:#444;margin:.2rem 0 .5rem 0;font-style:italic}
@@ -36,6 +37,7 @@ author_profile: true
   {% endfor %}
 </div>
 
+<h2>Published & Under Review</h2>
 <div class="paper-list">
   {% assign pubs = site.publications
       | where_exp: "p", "p.status != 'in preparation'"
