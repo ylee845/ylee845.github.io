@@ -37,8 +37,11 @@ author_profile: true
         <span class="title">{{ post.title | escape }}</span>
       </h3>
       <div class="meta">
-        {% if post.authors %}{{ post.authors }}{% endif %}
+        {{ post.authors }}
       </div>
+      {% if post.excerpt %}
+        <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
+      {% endif %}
     </div>
   {% endfor %}
 </div>
@@ -51,27 +54,31 @@ author_profile: true
         <span class="num">{{ forloop.index | plus: offset }}.</span>
         <span class="title">{{ post.title | escape }}</span>
       </h3>
-      <div class="meta">
-        {% assign parts = "" | split:"|" %}
-        {% if post.authors %}
-          {% assign parts = parts | push: post.authors %}
-        {% endif %}
-        {% if post.venue %}
-          {% capture v %}<em>{{ post.venue }}</em>{% endcapture %}
-          {% assign parts = parts | push: v %}
-        {% endif %}
 
-        {%- comment -%} 여기에 호수/권/페이지/연도 출력 {%- endcomment -%}
-        {% assign issue_info = "" %}
-        {% if post.volume %}{% assign issue_info = issue_info | append: post.volume %}{% endif %}
-        {% if post.issue %}{% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}{% endif %}
-        {% if post.pages %}{% assign issue_info = issue_info | append: ", " | append: post.pages %}{% endif %}
-        {% if post.year %}{% assign issue_info = issue_info | append: ", " | append: post.year %}{% endif %}
-        {% if issue_info != "" %}{% assign parts = parts | push: issue_info %}{% endif %}
+      <div class="meta">
+        {%- assign parts = "" | split:"|" -%}
+        {%- if post.authors -%}
+          {%- assign parts = parts | push: post.authors -%}
+        {%- endif -%}
+        {%- if post.venue -%}
+          {%- assign parts = parts | push: post.venue -%}
+        {%- endif -%}
+
+        {%- assign issue_info = "" -%}
+        {%- if post.volume -%}{% assign issue_info = issue_info | append: post.volume %}{% endif -%}
+        {%- if post.issue  -%}{% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}{% endif -%}
+        {%- if post.pages  -%}{% assign issue_info = issue_info | append: ", " | append: post.pages %}{% endif -%}
+        {%- if post.year   -%}{% assign issue_info = issue_info | append: ", " | append: post.year %}{% endif -%}
+        {%- if issue_info != "" -%}
+          {%- assign parts = parts | push: issue_info -%}
+        {%- endif -%}
 
         {{ parts | join: ", " }}
       </div>
+
+      {% if post.excerpt %}
+        <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
+      {% endif %}
     </div>
   {% endfor %}
 </div>
-
