@@ -37,7 +37,9 @@ author_profile: true
 </div>
 
 <div class="paper-list">
-  {% assign pubs = site.publications | sort: "date" | reverse %}
+  {% assign pubs = site.publications
+      | where_exp: "p", "p.status != 'in preparation'"
+      | sort: "date" | reverse %}
   {% for post in pubs %}
     <div class="paper">
       <h3>
