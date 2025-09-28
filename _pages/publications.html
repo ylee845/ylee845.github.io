@@ -16,9 +16,40 @@ author_profile: true
     content: none !important;
     counter-increment: none !important;
   }
- /* Publications section 폰트 & 스타일 */
+ /* ===== Publications pretty layout (Arial 기반) ===== */
+.pubs{ max-width: 75ch; }                        /* 라인 길이 줄여 가독성 ↑ */
+.paper{ margin:1.1rem 0 1.6rem; padding-bottom:.9rem; border-bottom:1px solid #eee; }
+.paper:last-child{ border-bottom:0 }
 
-/* 섹션 제목 (In Preparation, Published & Under Review) */
+.paper h3{ margin:0; line-height:1.35; font-weight:600; color:#333; }
+.paper h3 .num{
+  display:inline-block; width:2.2ch; margin-right:.6rem;
+  color:#9aa0a6; text-align:right; font-variant-numeric: tabular-nums; /* 숫자 자리맞춤 */
+}
+.paper h3 .title{ font-size:clamp(1rem,1.55vw,1.28rem); }
+
+.paper .meta{
+  margin:.35rem 0 0; color:#6b6b6b; 
+  font-size:clamp(.92rem,1.2vw,1rem); line-height:1.45;
+}
+
+/* 문장 줄바꿈 품질 개선 */
+.paper .title, .paper .meta{ hyphens:auto; word-break:keep-all }
+
+/* 호버 시 제목만 살짝 강조 (RoyalBlue 톤) */
+.paper:hover .title{ color:#4169E1 }
+
+/* 섹션 제목 톤 다운 */
+.pubs h2{ margin:1.2rem 0 .4rem; font-weight:700; color:#4a4a4a }
+
+/* 모바일에서 여백/사이즈 최적화 */
+@media (max-width:640px){
+  .paper{ margin:.9rem 0 1.2rem; padding-bottom:.7rem }
+  .paper h3 .num{ width:2ch; margin-right:.45rem }
+  .paper h3 .title{ font-size:clamp(1rem,4vw,1.18rem) }
+  .paper .meta{ font-size:.95rem }
+}
+
 /* Publications section 폰트 & 스타일 */
 
 /* 섹션 제목 (In Preparation, Published & Under Review) */
