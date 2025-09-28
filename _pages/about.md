@@ -8,13 +8,13 @@ redirect_from:
 ---
 I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at Georgia Tech, fortunate to be advised by Prof. Jing Li.  
 
-My research focuses on **knowledge-informed machine learning** under <span style="color:#3a5f8a; font-weight:600">real-world data challenges</span> such as <span style="color:#444;">weak supervision</span>, <span style="color:#444;">scarcity</span>, and <span style="color:#444;">variability</span>. In particular, I work on:  
+My research focuses on **knowledge-informed machine learning**—developing methods that incorporate domain expertise to make models more data-efficient, robust, and interpretable. I explore how knowledge can be embedded at different stages of the learning pipeline:  
 
-- <span style="color:#3a5f8a;"><b>Weakly supervised learning</b></span> – leveraging incomplete or uncertain supervision.  
-- <span style="color:#3a5f8a;"><b>Data-efficient learning</b></span> – achieving strong performance with limited data.  
-- <span style="color:#3a5f8a;"><b>Multi-modal integration</b></span> – combining diverse sources of information for robust and interpretable models.  
+- **Representation level** – encoding qualitative knowledge into quantitative representations.  
+- **Architecture level** – embedding knowledge into network design or loss function constraints.  
+- **Inference level** – guiding model reasoning with explicit rules during prediction.  
 
-These methods are broadly applicable, with particular relevance to **precision agriculture** and **medical imaging**, where addressing such challenges can directly advance practical and socially impactful AI solutions.  
+These strategies are particularly relevant under **real-world data challenges** such as weak supervision, scarcity, and variability. My work applies these ideas to domains like **healthcare**, **precision agriculture**, and **manufacturing**, where integrating knowledge into machine learning can provide practical and socially impactful solutions.  
 
 Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️—activities that keep me balanced and often refresh my perspective.  
 
