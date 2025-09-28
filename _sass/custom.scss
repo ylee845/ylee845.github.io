@@ -74,156 +74,61 @@ hr{
 }
 
 /* ===== Sidebar / Author card ===== */
-.sidebar{ border-right:1px solid var(--line); }
-.author__avatar{
-  padding:.6rem;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow);
-}
-.author__avatar img{
-  display:block; width:100%; height:auto; border-radius:var(--radius-lg);
-}
-.author__content h3.author__name{
-  margin:.5rem 0 .25rem;
-  font-weight:800; color:#2b2b2b; line-height:1.2;
-}
-.author__bio{ color:var(--muted); line-height:1.5; font-size:.95rem; }
-/* Social / links */
-.author__urls{
-  margin-top:.7rem; background:var(--card); border:1px solid var(--line);
-  border-radius:var(--radius); padding:.5rem .7rem; box-shadow:var(--shadow);
-}
-.author__urls li{ margin:.35rem 0; }
-.author__urls a{ display:flex; align-items:center; gap:.4rem; color:#444; font-weight:600; }
-.author__urls a:hover{ color:var(--brand); text-decoration:none; }
+/* === 2-1. 사이드바 열 자체 제거 + 본문 확장 === */
+.sidebar, .page__sidebar, .sidebar.sticky { display:none !important; }
 
-/* ===== Cards / Content blocks ===== */
-.card{
-  background:var(--card); border:1px solid var(--line);
-  border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:1rem;
-}
-
-/* ===== Typography polish ===== */
-h1,h2,h3{ color:#1f1f1f; line-height:1.25; font-weight:800; }
-h1{ font-size:1.9rem }
-h2{ font-size:1.45rem }
-h3{ font-size:1.15rem }
-p{ line-height:1.65; color:#2e2e2e; font-weight:300; }  /* 본문도 라이트 */
-
-/* ===== Buttons (optional utility) ===== */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:.5rem .9rem;
-  border-radius:10px;
-  border:1px solid var(--line);
-  background:var(--card);
-  font-weight:700;
-  transition:background .15s ease, transform .08s ease, color .15s ease;
-}
-.btn:hover{ background:#f6f7fb; color:var(--brand); transform:translateY(-1px) }
-.btn.primary{ background:var(--brand); color:#fff; border-color:transparent; }
-.btn.primary:hover{ filter:brightness(1.05) }
-
-/* ===== Lists in posts ===== */
-.post ul{ margin:.5rem 0 .5rem 1.25rem }
-.post li{ margin:.25rem 0 }
-
-/* ===== Footer (soft tone) ===== */
-.site-footer{ border-top:1px solid var(--line); color:#777; }
-
-/* =========================================================
-   About page (about.md) — photo + text inline / tighter width
-   Requires: front matter -> classes: about-inline
-   ========================================================= */
-.about-inline .sidebar{ display:none !important; }   /* 왼쪽 프로필 제거 */
-.about-inline .page__content{
-  max-width: 950px;        /* 양옆 여백 살짝 줄임 (기존 1100px) */
+.page__content,
+.layout--single .page__content,
+.layout--archive .page__content{
+  float:none !important;
+  width:100% !important;
+  margin-left:0 !important;
+  max-width: 1320px;     /* 필요시 1200~1400 사이에서 조절 */
   margin: 0 auto;
-  padding: 0 .5rem;        /* 좌우 패딩도 축소 */
-  width: 100% !important;
-  float: none !important;
+  padding: 0 1rem;       /* 좌우 여백(좁히려면 .75rem) */
 }
 
-/* 사진 + 소개 나란히 */
-/* About 페이지 본문 폭/여백 최적화 */
-.about-inline .page__content {
-  max-width: 1250px;   /* 기본보다 넓게 */
-  margin: 0 auto;
-  padding: 0 1rem;     /* 좌우 패딩 줄이기 (0.5~1rem) */
-}
+/* === 2-2. 상단바: 기본은 전부 펼쳐 보이기, 부족하면 토글 노출 === */
+/* 항목 패딩을 살짝 줄여 더 많이 들어가게 */
+.greedy-nav a,
+.masthead__menu-item a{ padding:.35rem .55rem; border-radius:10px; }
 
-/* 사진 크기 */
-.intro__img{
-  width:280px;         /* 사진은 조금 작게 */
-  max-width:28vw;
-  height:auto;
-  border-radius:16px;
-  border:1px solid #e9e9ee;
-  box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
-  flex-shrink:0;
-}
+/* 햄버거 토글 기본 숨김 */
+.greedy-nav .greedy-nav__toggle{ display:none !important; }
 
-.intro__body{
-  flex:1;
-  font-size:1.02rem;
-  line-height:1.7;
-  font-weight:300;
-}
-.intro__title{ margin:0 0 .5rem; font-size:2.1rem; line-height:1.2; font-weight:800; }
-.intro__body a{ color:var(--brand); text-decoration:none; }
-.intro__body a:hover{ text-decoration:underline; }
-
-/* 모바일 스택 */
-@media (max-width: 900px){
-  .about-inline .page__content{ max-width: 100%; padding: 0 1rem; }
-  .intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
-  .intro__img{ width:100%; max-width:640px; }
-}
-
-/* 햄버거 버튼(메뉴 토글) 스타일 초기화 */
-.greedy-nav .greedy-nav__toggle{
-  background: transparent !important;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: .35rem .5rem;
-  line-height: 1;
-  color: #5b5b5b;
-}
-.greedy-nav .greedy-nav__toggle:hover{
-  background:#f6f7fb;
-  color: var(--brand);
-}
-
-/* 햄버거 내부 줄 색을 현재 글자색으로 */
-.greedy-nav .greedy-nav__toggle .navicon{
-  background: currentColor;
-  box-shadow: 0 7px 0 currentColor, 0 -7px 0 currentColor;
-}
-
-/* 검색/톱니 아이콘(테마/검색 토글) 같은 버튼류 공통 */
-.search__toggle,
-.masthead .toggle{
-  background: transparent !important;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: .35rem .45rem;
-  color: #5b5b5b;
-}
-.search__toggle:hover,
-.masthead .toggle:hover{
-  background:#f6f7fb;
-  color: var(--brand);
-}
-
-/* 데스크톱에서는 햄버거 토글 숨김 (공간 넉넉할 때 필요 없음) */
+/* hidden-links(남는 항목) 있을 때만 토글 보이게 (CSS :has 사용) */
 @media (min-width: 900px){
-  .greedy-nav .greedy-nav__toggle{ display:none !important; }
+  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle{
+    display:inline-flex !important;
+    background:transparent; border:1px solid var(--line); border-radius:10px;
+    padding:.35rem .5rem; color:#5b5b5b;
+  }
+  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle:hover{
+    background:#f6f7fb; color:var(--brand);
+  }
 }
 
-/* 헤더 패딩/정렬 소폭 다듬기 */
-.greedy-nav{ padding:.45rem 0; }
-.greedy-nav .visible-links a{
-  padding:.45rem .6rem; border-radius:10px;
+/* 상단바 여백/줄바꿈 개선: 폭 부족하면 2줄로 감기 */
+.greedy-nav{ padding:.45rem 0; gap:.25rem; flex-wrap:wrap; }
+.greedy-nav .visible-links{ display:flex; flex-wrap:wrap; gap:.25rem; }
+
+/* === 2-3. About 전용(원하면 다른 페이지에도 재사용 가능) === */
+.about-inline .page__content{
+  max-width: 1320px;   /* About에선 조금 더 넓게 쓰고 싶으면 유지 */
+  padding: 0 .75rem;
+}
+
+/* 사진+텍스트 나란히 */
+.intro{ display:flex; align-items:flex-start; gap:2rem; margin:1.25rem 0 2rem; }
+.intro__img{
+  width: 240px;         /* 부담 적은 크기 (220~280 사이 조절) */
+  height:auto; border-radius:14px; border:1px solid var(--line);
+  box-shadow:0 6px 22px rgba(30,30,30,.06); flex-shrink:0;
+}
+.intro__body{ flex:1; font-size:1.02rem; line-height:1.7; font-weight:300; }
+.intro__title{ margin:0 0 .4rem; font-size:2.1rem; line-height:1.2; font-weight:800; }
+.intro__body a{ color:var(--brand); text-decoration:underline; } /* 링크 기본 밑줄 */
+@media (max-width: 900px){
+  .intro{ flex-direction:column; gap:1rem; }
+  .intro__img{ width:100%; max-width:420px; }
 }
