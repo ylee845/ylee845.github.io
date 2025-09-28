@@ -8,7 +8,7 @@ redirect_from:
 ---
 <style>
 .aboutme {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.65;
   color: #333;
 }
