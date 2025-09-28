@@ -24,29 +24,33 @@ redirect_from:
   color:#333; font-weight:300; line-height:1.65;
 }
 
-/* 사이드바 강제 비활성 (테마 보호) */
-.sidebar,.page__sidebar{display:none!important}
-.page__content{float:none!important;width:100%!important}
-
-/* 기사형: 이미지가 본문을 감싸도록 */
+/* 2) 이미지가 글 속에 '짧게' 떠 있게 */
 .intro__img{
-  width: 240px;           /* 필요시 220~280으로 조정 */
-  height:auto;
-  border-radius:12px;
-  border:1px solid var(--line);
-  box-shadow:0 6px 22px rgba(30,30,30,.06);
-  margin: .2rem 1.5rem 1rem 0;  /* 오른쪽/아래 여백으로 글과 간격 */
-  float:left;             /* 핵심: 글이 이미지를 감쌈 */
-  display:block;
+  float: left;                 /* 핵심: 오른쪽→아래로 글이 흘러감 */
+  width: 240px;                /* 필요시 220~280 조절 */
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 22px rgba(30,30,30,.06);
+  margin: .2rem 1.5rem 1rem 0; /* 오른쪽/아래 여백 */
+  display: block;
 }
 
-/* 제목/리드 간격 */
-.intro__title{font-size:2rem;margin:0 0 .4rem;font-weight:700;color:#111}
-.intro__lead{margin:0 0 1rem;color:#2f2f2f;font-size:1.02rem}
+/* 3) float 정리: 이미지 높이 끝난 뒤 다음 섹션 겹침 방지 */
+.intro::after{
+  content: "";
+  display: block;
+  clear: both;
+}
 
-/* float 정리 (다음 섹션이 이미지에 걸리지 않도록) */
-.intro::after{content:"";display:block;clear:both}
-
+/* 4) 모바일에서는 안전하게 단일 열로 */
+@media (max-width: 880px){
+  .intro__img{
+    float:none;
+    margin: 0 auto 1rem;
+    width: min(75%, 360px);
+  }
+}
 /* 리스트 */
 .aboutme ul{padding-left:1.25rem;margin-top:.75rem}
 .aboutme li{margin:.6rem 0}
