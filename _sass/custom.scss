@@ -1,76 +1,166 @@
-/* ===== Global type (사이트 전체 Arial 통일) ===== */
-body{ font-family: Arial, Helvetica, sans-serif; }
+/* ===== Base / Global ===== */
+:root{
+  --bg:#ffffff;
+  --text:#222;
+  --muted:#666;
+  --line:#e9e9ee;
+  --brand:#3b5bdb;         /* Royal-ish blue */
+  --brand-weak:#eef2ff;
+  --card:#ffffff;
+  --radius-lg:16px;
+  --radius:12px;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 6px 18px -12px rgba(0,0,0,.12);
+}
+
+html{ scroll-behavior:smooth }
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Links */
+a{ color:inherit; text-decoration:none }
+a:hover{ color:var(--brand) }
+
+/* Subtle separators */
+hr{
+  border:0; height:1px;
+  background:linear-gradient(to right, transparent, var(--line), transparent);
+  margin:1.25rem 0;
+}
 
 /* ===== Masthead / Top Nav ===== */
 .masthead{
-  border-bottom: 1px solid #eee;
-  background: #fff;
-  position: sticky; top: 0; z-index: 50;  /* 스크롤 고정 */
-  backdrop-filter: saturate(180%) blur(4px);
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(160%) blur(6px);
+  border-bottom:1px solid var(--line);
 }
+
 .site-title{
-  font-weight: 700;
-  letter-spacing: .2px;
+  font-weight:700;
+  letter-spacing:.2px;
 }
+
 .masthead__menu{
-  gap: .5rem;
+  display:flex; gap:.5rem; align-items:center;
 }
+
 .masthead__menu-item a{
-  font-weight: 600;
-  padding: .4rem .6rem;
-  border-radius: 8px;
-  transition: color .15s ease, background-color .15s ease;
+  display:inline-block;
+  font-weight:600;
+  padding:.45rem .7rem;
+  border-radius:10px;
+  transition:transform .08s ease, background-color .15s ease, color .15s ease;
 }
 .masthead__menu-item a:hover{
-  background: #f6f7fb;
-  color: #4169E1;             /* Royal Blue 강조 */
-  text-decoration: none;
+  background:#f6f7fb;
+  color:var(--brand);
+  transform:translateY(-1px);
 }
-/* 현재 페이지 표시 */
 .masthead__menu-item--active a{
-  color:#4169E1;
-  background: #eef2ff;
+  color:var(--brand);
+  background:var(--brand-weak);
+}
+
+/* ===== Layout helpers ===== */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 1rem;
 }
 
 /* ===== Sidebar / Author card ===== */
 .sidebar{
-  border-right: 1px solid #f0f0f0;
+  border-right:1px solid var(--line);
 }
+
 .author__avatar{
-  padding: .6rem;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.03);
+  padding:.6rem;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
 }
 .author__avatar img{
-  border-radius: 16px;      /* 네모=0, 둥근네모=16 */
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:var(--radius-lg);
 }
 
-/* 이름/한줄소개 타이포 */
 .author__content h3.author__name{
-  font-weight: 700; color:#333;
+  margin:.5rem 0 .25rem;
+  font-weight:800;
+  color:#2b2b2b;
+  line-height:1.2;
 }
 .author__bio{
-  color:#666; line-height:1.45;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:.95rem;
 }
 
-/* 아이콘 리스트 정돈 */
+/* Social / links */
 .author__urls{
-  margin-top:.6rem;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:.4rem .6rem;
+  margin-top:.7rem;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:.5rem .7rem;
+  box-shadow:var(--shadow);
 }
-.author__urls li{
-  margin:.25rem 0;
-}
+.author__urls li{ margin:.35rem 0; }
 .author__urls a{
-  color:#444; font-weight:500;
+  display:flex; align-items:center; gap:.4rem;
+  color:#444; font-weight:600;
 }
-.author__urls a:hover{ color:#4169E1; }
+.author__urls a:hover{
+  color:var(--brand);
+  text-decoration:none;
+}
 
-/* 작은 구분선 톤 다운 */
-hr { border-color:#eee; }
+/* ===== Cards / Content blocks ===== */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:1rem;
+}
 
+/* ===== Typography polish ===== */
+h1,h2,h3{ color:#1f1f1f; line-height:1.25 }
+h1{ font-size:1.9rem }
+h2{ font-size:1.45rem }
+h3{ font-size:1.15rem }
+p{ line-height:1.65; color:#2e2e2e }
+
+/* ===== Buttons (optional utility) ===== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.5rem .9rem;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--card);
+  font-weight:700;
+  transition:background .15s ease, transform .08s ease, color .15s ease;
+}
+.btn:hover{ background:#f6f7fb; color:var(--brand); transform:translateY(-1px) }
+.btn.primary{
+  background:var(--brand); color:#fff; border-color:transparent;
+}
+.btn.primary:hover{ filter:brightness(1.05) }
+
+/* ===== Lists in posts ===== */
+.post ul{ margin:.5rem 0 .5rem 1.25rem }
+.post li{ margin:.25rem 0 }
+
+/* ===== Footer (soft tone) ===== */
+.site-footer{
+  border-top:1px solid var(--line);
+  color:#777;
+}
