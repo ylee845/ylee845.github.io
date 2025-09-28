@@ -101,7 +101,7 @@ a:hover { text-decoration: underline; }
       </ul>
 
       <p>
-        These strategies are particularly relevant under <em>real-world data challenges</em> such as <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>.
+        These strategies are particularly relevant under <em>real-world data challenges</em> such as <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>. My work applies these ideas to domains like <strong style="color:#4169E1;">healthcare</strong>, <strong style="color:#4169E1;">precision agriculture</strong>, and <strong style="color:#4169E1;">manufacturing</strong>.
       </p>
 
       <p>
