@@ -6,12 +6,16 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello! Thank you for visiting my page.
-I am Yeonju Lee, a fourth-year Ph.D. student in Machine Learning at the H. Milton Stewart School of Industrial and Systems Engineering, Georgia Tech, advised by Dr. Jing Li.
+I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at Georgia Tech, fortunate to be advised by Prof. Jing Li.  
 
-My research focuses on knowledge-informed machine learning (ML)—approaches that integrate domain knowledge into data-driven models. This paradigm addresses challenges such as data scarcity, high dimensionality, and multi-modal integration, with applications across:
-- Healthcare 
-- Precision agriculture
-- Manufacturing and quality control.
+My research focuses on **knowledge-informed machine learning** under <span style="color:#3a5f8a; font-weight:600">real-world data challenges</span> such as <span style="color:#444;">weak supervision</span>, <span style="color:#444;">scarcity</span>, and <span style="color:#444;">variability</span>. In particular, I work on:  
 
-The best way to reach me is via email at ylee845@gatech.edu.
+- <span style="color:#3a5f8a;"><b>Weakly supervised learning</b></span> – leveraging incomplete or uncertain supervision.  
+- <span style="color:#3a5f8a;"><b>Data-efficient learning</b></span> – achieving strong performance with limited data.  
+- <span style="color:#3a5f8a;"><b>Multi-modal integration</b></span> – combining diverse sources of information for robust and interpretable models.  
+
+These methods are broadly applicable, with particular relevance to **precision agriculture** and **medical imaging**, where addressing such challenges can directly advance practical and socially impactful AI solutions.  
+
+Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️—activities that keep me balanced and often refresh my perspective.  
+
+If you would like to get in touch, please reach out via email: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.  
