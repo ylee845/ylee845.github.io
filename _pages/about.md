@@ -82,5 +82,11 @@ redirect_from:
     <strong style="color:#4169E1;">precision agriculture</strong>, and 
     <strong style="color:#4169E1;">quality analytics in manufacturing</strong>.
   </p>
+
+  <p>
+  Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️.  
+
+  If you would like to get in touch, please reach out via email: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
+  </p>
 </div>
  
