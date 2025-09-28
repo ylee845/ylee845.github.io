@@ -13,23 +13,33 @@ redirect_from:
   padding: 0 .5rem;
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+.about-inline .page__content { max-width: 950px; padding: 0 .5rem; }
+
 /* 사진+소개 나란히 */
-.intro{ display:flex; align-items:center; gap:2rem; margin:1rem 0 2rem; }
+.intro{
+  display:flex;
+  align-items:flex-start;   /* ← 여기! center -> flex-start */
+  gap:2rem;
+  margin:1rem 0 2rem;
+}
 .intro__img{
-width:420px; max-width:45vw; height:auto;
-border-radius:16px; border:1px solid #e9e9ee;
-box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
+  width:420px; max-width:45vw; height:auto;
+  border-radius:16px; border:1px solid #e9e9ee;
+  box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
+  flex-shrink:0;            /* ← 텍스트에 밀리지 않게 고정 */
 }
+
+/* 모바일 */
 @media (max-width:900px){
-.intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
-.intro__img{ width:100%; max-width:640px; }
+  .intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
+  .intro__img{ width:100%; max-width:640px; }
 }
-.aboutme {
-  font-family: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;
-  max-width: 75ch;
-  line-height: 1.65;
-  color: #444;
-  font-size: 1rem;
+
+/* 본문 타이포 */
+.aboutme{
+  font-family:'Inter','Roboto',Arial,Helvetica,sans-serif;
+  max-width:75ch; line-height:1.65; color:#444; font-size:1rem;
 }
 
 .aboutme p {
