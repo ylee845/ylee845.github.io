@@ -1,0 +1,33 @@
+/* ===== Global type (사이트 전체 Arial 통일) ===== */
+body{ font-family: Arial, Helvetica, sans-serif; }
+
+/* ===== Masthead / Top Nav ===== */
+.masthead{
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: sticky; top: 0; z-index: 50;  /* 스크롤 고정 */
+  backdrop-filter: saturate(180%) blur(4px);
+}
+.site-title{
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.masthead__menu{
+  gap: .5rem;
+}
+.masthead__menu-item a{
+  font-weight: 600;
+  padding: .4rem .6rem;
+  border-radius: 8px;
+  transition: color .15s ease, background-color .15s ease;
+}
+.masthead__menu-item a:hover{
+  background: #f6f7fb;
+  color: #4169E1;             /* Royal Blue 강조 */
+  text-decoration: none;
+}
+/* 현재 페이지 표시 */
+.masthead__menu-item--active a{
+  color:#4169E1;
+  background: #eef2ff;
+}
