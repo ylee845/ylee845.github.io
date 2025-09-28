@@ -42,7 +42,8 @@ redirect_from:
   border-radius: 14px;
   border: 1px solid var(--line);
   box-shadow: 0 6px 22px rgba(30,30,30,0.06);
-  flex-shrink: 0;
+  margin: 0 1.5rem 1rem 0;   /* 오른쪽과 아래쪽에 여백 */
+  float: left;               /* 글을 이미지 오른쪽과 아래로 흐르게 */
 }
   
 .intro__body {
