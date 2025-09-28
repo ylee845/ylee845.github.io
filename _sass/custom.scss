@@ -1,4 +1,8 @@
 /* ===== Base / Global ===== */
+
+/* Google Fonts: Inter (light->bold) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
 :root{
   --bg:#ffffff;
   --text:#222;
@@ -14,7 +18,8 @@
 
 html{ scroll-behavior:smooth }
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  font-weight:300;               /* 기본을 가볍게 */
   color:var(--text);
   background:var(--bg);
   -webkit-font-smoothing:antialiased;
@@ -39,16 +44,11 @@ hr{
   backdrop-filter:saturate(160%) blur(6px);
   border-bottom:1px solid var(--line);
 }
-
 .site-title{
-  font-weight:700;
+  font-weight:800;
   letter-spacing:.2px;
 }
-
-.masthead__menu{
-  display:flex; gap:.5rem; align-items:center;
-}
-
+.masthead__menu{ display:flex; gap:.5rem; align-items:center; }
 .masthead__menu-item a{
   display:inline-block;
   font-weight:600;
@@ -74,10 +74,7 @@ hr{
 }
 
 /* ===== Sidebar / Author card ===== */
-.sidebar{
-  border-right:1px solid var(--line);
-}
-
+.sidebar{ border-right:1px solid var(--line); }
 .author__avatar{
   padding:.6rem;
   background:var(--card);
@@ -86,58 +83,34 @@ hr{
   box-shadow:var(--shadow);
 }
 .author__avatar img{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:var(--radius-lg);
+  display:block; width:100%; height:auto; border-radius:var(--radius-lg);
 }
-
 .author__content h3.author__name{
   margin:.5rem 0 .25rem;
-  font-weight:800;
-  color:#2b2b2b;
-  line-height:1.2;
+  font-weight:800; color:#2b2b2b; line-height:1.2;
 }
-.author__bio{
-  color:var(--muted);
-  line-height:1.5;
-  font-size:.95rem;
-}
-
+.author__bio{ color:var(--muted); line-height:1.5; font-size:.95rem; }
 /* Social / links */
 .author__urls{
-  margin-top:.7rem;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:.5rem .7rem;
-  box-shadow:var(--shadow);
+  margin-top:.7rem; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:.5rem .7rem; box-shadow:var(--shadow);
 }
 .author__urls li{ margin:.35rem 0; }
-.author__urls a{
-  display:flex; align-items:center; gap:.4rem;
-  color:#444; font-weight:600;
-}
-.author__urls a:hover{
-  color:var(--brand);
-  text-decoration:none;
-}
+.author__urls a{ display:flex; align-items:center; gap:.4rem; color:#444; font-weight:600; }
+.author__urls a:hover{ color:var(--brand); text-decoration:none; }
 
 /* ===== Cards / Content blocks ===== */
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow);
-  padding:1rem;
+  background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:1rem;
 }
 
 /* ===== Typography polish ===== */
-h1,h2,h3{ color:#1f1f1f; line-height:1.25 }
+h1,h2,h3{ color:#1f1f1f; line-height:1.25; font-weight:800; }
 h1{ font-size:1.9rem }
 h2{ font-size:1.45rem }
 h3{ font-size:1.15rem }
-p{ line-height:1.65; color:#2e2e2e }
+p{ line-height:1.65; color:#2e2e2e; font-weight:300; }  /* 본문도 라이트 */
 
 /* ===== Buttons (optional utility) ===== */
 .btn{
@@ -150,9 +123,7 @@ p{ line-height:1.65; color:#2e2e2e }
   transition:background .15s ease, transform .08s ease, color .15s ease;
 }
 .btn:hover{ background:#f6f7fb; color:var(--brand); transform:translateY(-1px) }
-.btn.primary{
-  background:var(--brand); color:#fff; border-color:transparent;
-}
+.btn.primary{ background:var(--brand); color:#fff; border-color:transparent; }
 .btn.primary:hover{ filter:brightness(1.05) }
 
 /* ===== Lists in posts ===== */
@@ -160,7 +131,50 @@ p{ line-height:1.65; color:#2e2e2e }
 .post li{ margin:.25rem 0 }
 
 /* ===== Footer (soft tone) ===== */
-.site-footer{
-  border-top:1px solid var(--line);
-  color:#777;
+.site-footer{ border-top:1px solid var(--line); color:#777; }
+
+/* =========================================================
+   About page (about.md) — photo + text inline / tighter width
+   Requires: front matter -> classes: about-inline
+   ========================================================= */
+.about-inline .sidebar{ display:none !important; }   /* 왼쪽 프로필 제거 */
+.about-inline .page__content{
+  max-width: 950px;        /* 양옆 여백 살짝 줄임 (기존 1100px) */
+  margin: 0 auto;
+  padding: 0 .5rem;        /* 좌우 패딩도 축소 */
+  width: 100% !important;
+  float: none !important;
+}
+
+/* 사진 + 소개 나란히 */
+.intro{
+  display:flex;
+  align-items:flex-start;  /* 상단 기준 정렬 */
+  gap:2rem;
+  margin:1rem 0 2rem;
+}
+.intro__img{
+  width:360px;             /* 필요시 320~420 사이로 조정 */
+  max-width:42vw;
+  height:auto;
+  border-radius:16px;
+  border:1px solid var(--line);
+  box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
+  flex-shrink:0;           /* 텍스트에 밀리지 않도록 고정 */
+}
+.intro__body{
+  flex:1;
+  font-size:1.02rem;
+  line-height:1.7;
+  font-weight:300;
+}
+.intro__title{ margin:0 0 .5rem; font-size:2.1rem; line-height:1.2; font-weight:800; }
+.intro__body a{ color:var(--brand); text-decoration:none; }
+.intro__body a:hover{ text-decoration:underline; }
+
+/* 모바일 스택 */
+@media (max-width: 900px){
+  .about-inline .page__content{ max-width: 100%; padding: 0 1rem; }
+  .intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
+  .intro__img{ width:100%; max-width:640px; }
 }
