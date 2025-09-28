@@ -9,64 +9,59 @@ author_profile: true
 
 <style>
 /* Teaching section 스타일 */
-.teach-list {
+.teach.teach-list {
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, sans-serif; /* 폰트 통일 */
 }
 
 .teach {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee; /* publication이랑 통일감 */
 }
 
 /* 왼쪽 영역 */
 .teach .left {
-  max-width: 78%;
+  max-width: 100%;
 }
 
-/* 역할(Guest Lecturer, Tutor 등)만 크게/짙게 */
+/* 역할 (Guest Lecturer, Tutor 등): 강조 */
 .teach .role {
   font-weight: 600;
   font-size: clamp(1rem, 1.5vw, 1.15rem);
   color: #222;
 }
 
-/* 기관명은 같은 줄에 자연스럽게 */
+/* 기관명은 같은 줄에서 자연스럽게 */
 .teach .institution {
   font-weight: 400;
   color: #333;
 }
 
-/* 과목명/코드: 본문보다 조금 작게 */
+/* 과목명/코드: 본문보다 살짝 작고 중간 톤 */
 .teach .course {
   margin: .15rem 0;
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   color: #555;
 }
 
-/* 노트 (평가, 설명 등): 더 작고 회색 */
+/* 노트 (평가, 설명 등): 더 작고 옅은 회색 */
 .teach .note {
   font-size: clamp(0.85rem, 1.1vw, 0.95rem);
   color: #666;
 }
 
-/* Term (연도/학기): 오른쪽 정렬, 회색 */
-/*.teach .term {/*
-/*  font-size: clamp(0.85rem, 1vw, 0.95rem);/*
-/*  color: #666;/*
-/*  text-wrap: nowrap;/*
-/*}/*
+/* Term (연도/학기): publication의 status 스타일처럼 태그 느낌 */
 .teach .term {
+  display: inline-block;
+  margin-top: .4rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #4169E1;
+  color: #4169E1; /* Royal Blue */
   text-transform: uppercase;
-  margin-top: .2rem;
+  letter-spacing: .03em;
 }
-
 
 </style>
 
