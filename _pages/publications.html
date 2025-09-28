@@ -5,179 +5,63 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% include base_path %}
-{% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
-{% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
-{% assign offset = inprep.size %}
 <style>
-  /* CSS 카운터 전부 끄기 */
-  .paper-list{ counter-reset: none; } /* 있으면 무효화 */
-  .paper h3 .num::before{
-    content: none !important;
-    counter-increment: none !important;
-  }
-  /* Publication 리스트 번호 스타일 */
-  .paper-list {
-    counter-reset: pub-counter;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .paper-list li {
-    counter-increment: pub-counter;
-    margin: 1.2rem 0;
-    padding-left: 2.5rem;
-    position: relative;
-    font-size: 1rem;
-  }
-  .paper-list li::before {
-    content: counter(pub-counter) ".";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #4169E1; /* Royal Blue */
-  }
-  .paper-list .meta {
-    margin-top: .3rem;
-    font-size: .92rem;
-    color: #666;
-  }
-
- /* ===== Publications pretty layout (Arial 기반) ===== */
-.pubs{ max-width: 75ch; }                        /* 라인 길이 줄여 가독성 ↑ */
-.paper{ margin:1.1rem 0 1.6rem; padding-bottom:.9rem; border-bottom:1px solid #eee; }
-.paper:last-child{ border-bottom:0 }
-
-.paper h3{ margin:0; line-height:1.35; font-weight:600; color:#333; }
-.paper h3 .num{
-  display:inline-block; width:2.2ch; margin-right:.6rem;
-  color:#9aa0a6; text-align:right; font-variant-numeric: tabular-nums; /* 숫자 자리맞춤 */
-}
-.paper h3 .title{ font-size:clamp(1rem,1.55vw,1.28rem); }
-
-.paper .meta{
-  margin:.35rem 0 0; color:#6b6b6b; 
-  font-size:clamp(.92rem,1.2vw,1rem); line-height:1.45;
+.pubs-list {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Teaching과 통일 */
 }
 
-/* 문장 줄바꿈 품질 개선 */
-.paper .title, .paper .meta{ hyphens:auto; word-break:keep-all }
-
-/* 호버 시 제목만 살짝 강조 (RoyalBlue 톤) */
-.paper:hover .title{ color:#4169E1 }
-
-/* 섹션 제목 톤 다운 */
-.pubs h2{ margin:1.2rem 0 .4rem; font-weight:700; color:#4a4a4a }
-
-/* 모바일에서 여백/사이즈 최적화 */
-@media (max-width:640px){
-  .paper{ margin:.9rem 0 1.2rem; padding-bottom:.7rem }
-  .paper h3 .num{ width:2ch; margin-right:.45rem }
-  .paper h3 .title{ font-size:clamp(1rem,4vw,1.18rem) }
-  .paper .meta{ font-size:.95rem }
+.pub {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #eee; /* 얇은 구분선 */
+  padding-bottom: .75rem;
 }
 
-/* Publications section 폰트 & 스타일 */
-
-/* 섹션 제목 (In Preparation, Published & Under Review) */
-.pubs h2 {
-  font-family: Arial, sans-serif;
-  font-weight: 550;
-  font-size: clamp(1.4rem, 2vw, 1.9rem);
-  margin: 1.2rem 0 0.6rem;
-  color: #555;   /* 진한 검정 대신 차분한 회색 */
+.pub .left {
+  max-width: 80%;
 }
 
-/* 논문 제목 */
-.paper h3 .title {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 500;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.45;
-  color: #333;   /* 섹션 제목보다는 살짝 진하게 */
+.pub .title {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: #222;
+  margin-bottom: .25rem;
 }
 
-/* 저자 / venue / 권호 정보 */
-.paper .meta {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  color: #555;   /* 더 옅은 회색 */
+.pub .authors {
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: #555;
 }
 
-/* 초록(excerpt) */
-.paper .excerpt {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 400;
-  font-size: clamp(0.88rem, 1.1vw, 0.95rem);
-  color: #4169E1;  /* Royal Blue */
-  font-style: italic;
+.pub .status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4169E1;
+  text-transform: uppercase;
+  margin-top: .2rem;
 }
-
-  .paper{ margin:1.25rem 0 }
-  .paper h3{ font-weight:600; margin:0; line-height:1.35 }
-  /* 숫자 간격만 스타일 */
-  .paper .num{ display:inline-block; min-width:2ch; margin-right:.5rem }
-  .paper .meta{ color:#666; margin:.25rem 0 .5rem 0 }
-  .paper ul{ margin:.4rem 0 .2rem 1.1rem }
-  .excerpt{ font-size:.9em; color:#444; margin:.2rem 0 .5rem 0; font-style:italic }
 </style>
 
-<div class="pubs">
+<div class="pubs-list">
 
-  <h2>In Preparation</h2>
-<div>
-  {% for post in inprep %}
-    <div class="paper">
-      <h3>
-        <span class="num">{{ forloop.index }}.</span>
-        <span class="title">{{ post.title | escape }}</span>
-      </h3>
-      <div class="meta">
-        {{ post.authors }}
-      </div>
-      {% if post.excerpt %}
-        <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
-      {% endif %}
+  <div class="pub">
+    <div class="left">
+      <div class="title">The Role of Root Zone Soil Moisture in Predicting Irrigated Sugar Beet Yields: Insights from Research Plots and On-Farm Fields</div>
+      <div class="authors">Y. Lee, P. N. Su, Y. Shi, W. Liang, Y. Chen, X. Qiao, J. Li</div>
     </div>
-  {% endfor %}
-</div>
+    <div class="status">IN PREPARATION</div>
+  </div>
 
-<h2>Published & Under Review</h2>
-<div>
-  {% for post in pubs %}
-    <div class="paper">
-      <h3>
-        <span class="num">{{ forloop.index | plus: offset }}.</span>
-        <span class="title">{{ post.title | escape }}</span>
-      </h3>
-
-      <div class="meta">
-        {%- assign parts = "" | split:"|" -%}
-        {%- if post.authors -%}
-          {%- assign parts = parts | push: post.authors -%}
-        {%- endif -%}
-        {%- if post.venue -%}
-          {%- assign parts = parts | push: post.venue -%}
-        {%- endif -%}
-
-        {%- assign issue_info = "" -%}
-        {%- if post.volume -%}{% assign issue_info = issue_info | append: post.volume %}{% endif -%}
-        {%- if post.issue  -%}{% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}{% endif -%}
-        {%- if post.pages  -%}{% assign issue_info = issue_info | append: ", " | append: post.pages %}{% endif -%}
-        {%- if post.year   -%}{% assign issue_info = issue_info | append: ", " | append: post.year %}{% endif -%}
-        {%- if issue_info != "" -%}
-          {%- assign parts = parts | push: issue_info -%}
-        {%- endif -%}
-
-        {{ parts | join: ", " }}
-      </div>
-
-      {% if post.excerpt %}
-        <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
-      {% endif %}
+  <div class="pub">
+    <div class="left">
+      <div class="title">BrainNormalizer: Reconstructing Healthy Brain Images from Tumor MRIs using Masked ControlNet with Edge Conditioning</div>
+      <div class="authors">M.G. Kwak, Y. Lee, H. Wang, J. Li</div>
     </div>
-  {% endfor %}
+    <div class="status">IN PREPARATION</div>
+  </div>
+
 </div>
