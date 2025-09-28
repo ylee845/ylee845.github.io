@@ -40,4 +40,9 @@
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
+/* 사이트 전체 폰트 Roboto로 통일 */
+body, h1, h2, h3, h4, h5, h6, p, li, a, span, div {
+  font-family: "Roboto", Arial, sans-serif !important;
+}
+
 ;
