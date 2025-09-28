@@ -85,7 +85,9 @@ redirect_from:
 
   <p>
   Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️.  
+  </p>
 
+  <p>
   If you would like to get in touch, please reach out via email: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
   </p>
 </div>
