@@ -8,7 +8,7 @@ redirect_from:
 ---
 {% include base_path %}
 <p style="margin-top:0.8rem;">
-  <a href="/files/Yeonju_Lee_CV.pdf" style="text-decoration:none; font-weight:600; color:#4169E1;">
+  <a href="/files/Yeonju_Lee_CV.pdf" style="text-decoration:underline; font-weight:600; color:#4169E1;">
     📄 Download full CV (PDF)
   </a>
 </p>
