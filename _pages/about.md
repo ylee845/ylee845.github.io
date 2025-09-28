@@ -10,7 +10,7 @@ redirect_from:
 .aboutme {
   font-family: Arial, sans-serif;
   line-height: 1.65;
-  color: #333;
+  color: #444;
 }
 .aboutme h2, .aboutme h3 {
   font-weight: 600;
