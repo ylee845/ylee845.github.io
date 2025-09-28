@@ -4,13 +4,6 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
----
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
----
-
 {% include base_path %}
 {% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
 {% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
