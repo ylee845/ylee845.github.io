@@ -16,6 +16,35 @@ author_profile: true
     content: none !important;
     counter-increment: none !important;
   }
+  /* Publication 리스트 번호 스타일 */
+  .paper-list {
+    counter-reset: pub-counter;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .paper-list li {
+    counter-increment: pub-counter;
+    margin: 1.2rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1rem;
+  }
+  .paper-list li::before {
+    content: counter(pub-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #4169E1; /* Royal Blue */
+  }
+  .paper-list .meta {
+    margin-top: .3rem;
+    font-size: .92rem;
+    color: #666;
+  }
+
  /* ===== Publications pretty layout (Arial 기반) ===== */
 .pubs{ max-width: 75ch; }                        /* 라인 길이 줄여 가독성 ↑ */
 .paper{ margin:1.1rem 0 1.6rem; padding-bottom:.9rem; border-bottom:1px solid #eee; }
