@@ -76,7 +76,7 @@ redirect_from:
 
   <p>
     These strategies are particularly relevant under <em>real-world data challenges</em> such as 
-    <strong>weak supervision</strong>, <strong>scarcity</strong>, <strong>heterogeneity</strong>, and 
+    <strong>scarcity</strong>, <strong>heterogeneity</strong>, and 
     <strong>high dimensionality</strong>. My work applies these ideas to domains like 
     <strong style="color:#4169E1;">healthcare</strong>, 
     <strong style="color:#4169E1;">precision agriculture</strong>, and 
