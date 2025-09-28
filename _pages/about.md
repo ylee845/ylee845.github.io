@@ -12,7 +12,7 @@ redirect_from:
   max-width: 950px;
   padding: 0 .5rem;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 /* 사진+소개 나란히 */
 .intro{ display:flex; align-items:center; gap:2rem; margin:1rem 0 2rem; }
 .intro__img{
@@ -24,7 +24,6 @@ box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
 .intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
 .intro__img{ width:100%; max-width:640px; }
 }
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 .aboutme {
   font-family: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;
   max-width: 75ch;
