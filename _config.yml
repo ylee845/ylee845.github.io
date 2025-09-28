@@ -19,7 +19,7 @@ author:
   name             : "Yeonju Lee"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. student in ISyE at Georgia Tech"
-  location         : "Atlanta"
+  location         : "Atlanta, GA"
   employer         : #"Red Brick University"
   uri              : # URL
   email            : "ylee845@gatech.edu" 
@@ -30,7 +30,7 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0002-2588-2041"
+  orcid            : #"https://orcid.org/0000-0002-2588-2041"
   semantic         : # URL
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
