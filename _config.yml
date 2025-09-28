@@ -10,15 +10,6 @@ url                      : "https://ylee845.github.io" # The base hostname & pro
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
-defaults:
-  - scope:
-      path: ""       # 모든 페이지
-      type: pages
-    values:
-      layout: single
-      sidebar: false
-      author_profile: false
-
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
@@ -253,14 +244,16 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      sidebar: false
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      sidebar: false
       share: true
       comments: true
   # _publications
@@ -269,7 +262,8 @@ defaults:
       type: publications
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      sidebar: false
       share: true
       comments: true
   # _portfolio
@@ -289,7 +283,6 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-
 
 # Sass/SCSS
 sass:
