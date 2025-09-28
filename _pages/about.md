@@ -11,7 +11,7 @@ redirect_from:
   font-family: Arial, Helvetica, sans-serif;
   max-width: 75ch;
   line-height: 1.65;
-  color: #333;
+  color: #444;
   font-size: 1rem;
 }
 
