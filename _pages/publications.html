@@ -4,64 +4,117 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+{% include base_path %}
+{% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
+{% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
+{% assign offset = inprep.size %}
 
 <style>
-.pubs-list {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif; /* Teaching과 통일 */
-}
+/* ===== Typography & layout (Teaching 스타일과 통일) ===== */
+.pubs{ font-family: Arial, Helvetica, sans-serif; max-width: 75ch; }
+.pubs h2{ font-weight:600; color:#555; font-size:clamp(1.35rem,2vw,1.9rem); margin:1.2rem 0 .6rem }
 
-.pub {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 1rem 0;
-  border-bottom: 1px solid #eee; /* 얇은 구분선 */
-  padding-bottom: .75rem;
-}
+/* 한 항목 */
+.paper{ display:flex; justify-content:space-between; gap:1rem;
+        padding:.9rem 0 1rem; border-bottom:1px solid #eee; }
+.paper:last-child{ border-bottom:0 }
 
-.pub .left {
-  max-width: 80%;
-}
+/* 왼쪽: 번호 + 제목 + 메타 */
+.left{ max-width:82% }
+.paper h3{ margin:0; line-height:1.35; font-weight:600; color:#333 }
+.paper h3 .num{ display:inline-block; width:2.2ch; margin-right:.6rem;
+                color:#9aa0a6; text-align:right; font-variant-numeric:tabular-nums }
+.paper h3 .title{ font-size:clamp(1rem,1.55vw,1.25rem) }
+.meta{ margin:.35rem 0 0; color:#6b6b6b; font-size:clamp(.92rem,1.2vw,1rem); line-height:1.45 }
 
-.pub .title {
-  font-weight: 600;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  color: #222;
-  margin-bottom: .25rem;
-}
+/* 초록 */
+.excerpt{ margin:.35rem 0 0; font-size:clamp(.88rem,1.1vw,.95rem); color:#4169E1; font-style:italic }
 
-.pub .authors {
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
-  color: #555;
-}
+/* 오른쪽: 상태/연도 */
+.right{ min-width:10ch; text-align:right; }
+.tag{ display:inline-block; font-size:.8rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }
+.tag.blue{ color:#4169E1 }
+.year{ display:block; color:#777; font-size:.95rem; margin-top:.2rem }
 
-.pub .status {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4169E1;
-  text-transform: uppercase;
-  margin-top: .2rem;
+@media (max-width:700px){
+  .paper{ flex-direction:column; gap:.4rem }
+  .right{ text-align:left }
 }
 </style>
 
-<div class="pubs-list">
+<div class="pubs">
 
-  <div class="pub">
-    <div class="left">
-      <div class="title">The Role of Root Zone Soil Moisture in Predicting Irrigated Sugar Beet Yields: Insights from Research Plots and On-Farm Fields</div>
-      <div class="authors">Y. Lee, P. N. Su, Y. Shi, W. Liang, Y. Chen, X. Qiao, J. Li</div>
-    </div>
-    <div class="status">IN PREPARATION</div>
+  <h2>In Preparation</h2>
+  <div>
+    {% for post in inprep %}
+      <div class="paper">
+        <div class="left">
+          <h3>
+            <span class="num">{{ forloop.index }}.</span>
+            <span class="title">{{ post.title | escape }}</span>
+          </h3>
+          <div class="meta">
+            {{ post.authors }}
+          </div>
+          {% if post.excerpt %}
+            <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
+          {% endif %}
+        </div>
+        <div class="right">
+          <span class="tag blue">In Preparation</span>
+          {% if post.year %}<span class="year">{{ post.year }}</span>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
   </div>
 
-  <div class="pub">
-    <div class="left">
-      <div class="title">BrainNormalizer: Reconstructing Healthy Brain Images from Tumor MRIs using Masked ControlNet with Edge Conditioning</div>
-      <div class="authors">M.G. Kwak, Y. Lee, H. Wang, J. Li</div>
-    </div>
-    <div class="status">IN PREPARATION</div>
+  <h2>Published & Under Review</h2>
+  <div>
+    {% for post in pubs %}
+      <div class="paper">
+        <div class="left">
+          <h3>
+            <span class="num">{{ forloop.index | plus: offset }}.</span>
+            <span class="title">{{ post.title | escape }}</span>
+          </h3>
+
+          <div class="meta">
+            {%- assign parts = "" | split:"|" -%}
+            {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
+            {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
+
+            {%- assign issue_info = "" -%}
+            {%- if post.volume -%}{% assign issue_info = issue_info | append: post.volume %}{% endif -%}
+            {%- if post.issue  -%}{% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}{% endif -%}
+            {%- if post.pages  -%}{% assign issue_info = issue_info | append: ", " | append: post.pages %}{% endif -%}
+            {%- if post.year   -%}{% assign issue_info = issue_info | append: ", " | append: post.year %}{% endif -%}
+            {%- if issue_info != "" -%}{%- assign parts = parts | push: issue_info -%}{%- endif -%}
+
+            {{ parts | join: ", " }}
+          </div>
+
+          {% if post.excerpt %}
+            <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
+          {% endif %}
+        </div>
+
+        <div class="right">
+          {% if post.status %}
+            <span class="tag blue">{{ post.status }}</span>
+          {% endif %}
+          {% if post.year %}
+            <span class="year">{{ post.year }}</span>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
   </div>
 
 </div>
