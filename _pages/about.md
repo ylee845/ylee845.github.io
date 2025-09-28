@@ -36,22 +36,15 @@ redirect_from:
   margin: 1.5rem 0 2.25rem;
 }
   
-.intro__img-wrap {
-  background: #fff;
+.intro__img {
+  width: 240px;
+  height: auto;
+  border-radius: 14px;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-  padding: 0.75rem;        /* 사진을 감싸는 여백 */
+  box-shadow: 0 6px 22px rgba(30,30,30,0.06);
   flex-shrink: 0;
 }
-
-.intro__img {
-  width: 220px;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
+  
 .intro__body {
   flex: 1;
   font-size: 1.02rem;
@@ -79,9 +72,7 @@ a:hover { text-decoration: underline; }
 </style>
 
 <div class="intro">
-  <div class="intro__img-wrap">
     <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
-  </div>
   <div class="intro__body">
     <h1 class="intro__title">Yeonju Lee</h1>
     <div class="intro__lead">
