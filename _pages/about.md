@@ -73,7 +73,7 @@ box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
 
 <div class="intro">
   <!-- ⬇️ 사진 경로만 바꿔주세요 -->
-  <img class="intro__img" src="/image/prof_headshot7.jpg" alt="Yeonju Lee">
+  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee">
 
   <!-- 기존 소개 블록 그대로 -->
   <div class="aboutme">
