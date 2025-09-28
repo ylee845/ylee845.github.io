@@ -181,3 +181,49 @@ p{ line-height:1.65; color:#2e2e2e; font-weight:300; }  /* 본문도 라이트 *
   .intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
   .intro__img{ width:100%; max-width:640px; }
 }
+
+/* 햄버거 버튼(메뉴 토글) 스타일 초기화 */
+.greedy-nav .greedy-nav__toggle{
+  background: transparent !important;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .35rem .5rem;
+  line-height: 1;
+  color: #5b5b5b;
+}
+.greedy-nav .greedy-nav__toggle:hover{
+  background:#f6f7fb;
+  color: var(--brand);
+}
+
+/* 햄버거 내부 줄 색을 현재 글자색으로 */
+.greedy-nav .greedy-nav__toggle .navicon{
+  background: currentColor;
+  box-shadow: 0 7px 0 currentColor, 0 -7px 0 currentColor;
+}
+
+/* 검색/톱니 아이콘(테마/검색 토글) 같은 버튼류 공통 */
+.search__toggle,
+.masthead .toggle{
+  background: transparent !important;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .35rem .45rem;
+  color: #5b5b5b;
+}
+.search__toggle:hover,
+.masthead .toggle:hover{
+  background:#f6f7fb;
+  color: var(--brand);
+}
+
+/* 데스크톱에서는 햄버거 토글 숨김 (공간 넉넉할 때 필요 없음) */
+@media (min-width: 900px){
+  .greedy-nav .greedy-nav__toggle{ display:none !important; }
+}
+
+/* 헤더 패딩/정렬 소폭 다듬기 */
+.greedy-nav{ padding:.45rem 0; }
+.greedy-nav .visible-links a{
+  padding:.45rem .6rem; border-radius:10px;
+}
