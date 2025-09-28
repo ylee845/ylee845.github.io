@@ -1,7 +1,8 @@
 ---
 permalink: /
-title: "About me"
-author_profile: true
+layout: single
+author_profile: false
+classes: about-inline
 redirect_from: 
   - /about/
   - /about.html
