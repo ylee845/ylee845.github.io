@@ -17,9 +17,10 @@ redirect_from:
 }
 
 .about-inline .page__content {
-  max-width:1500px;
+  max-width:none !important;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  width: 100% !important;
+  padding: 0 .75rem !important; /* 양옆 살짝만 여백 */
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color: #333;
   font-weight: 300;
@@ -29,10 +30,8 @@ redirect_from:
 .sidebar, .page__sidebar { display:none !important; }
 .page__content { float:none !important; width:100% !important; }
 
-.intro {
-  display:flex;
-  align-items:flex-start;
-  gap: 2.25rem;
+.intro{
+  display: block !important;    /* flex 끄기 */
   margin: 1.5rem 0 2.25rem;
 }
 
