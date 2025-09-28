@@ -8,7 +8,10 @@ redirect_from:
   - /about.html
 ---
 <style>
-.about-inline .page__content{ max-width:1100px; margin:0 auto; padding:0 1rem; }
+.about-inline .page__content {
+  max-width: 950px;
+  padding: 0 .5rem;
+}
 
 /* 사진+소개 나란히 */
 .intro{ display:flex; align-items:center; gap:2rem; margin:1rem 0 2rem; }
@@ -22,7 +25,7 @@ box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
 .intro__img{ width:100%; max-width:640px; }
 }
 .aboutme {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;
   max-width: 75ch;
   line-height: 1.65;
   color: #444;
