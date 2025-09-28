@@ -8,6 +8,19 @@ redirect_from:
   - /about.html
 ---
 <style>
+.about-inline .page__content{ max-width:1100px; margin:0 auto; padding:0 1rem; }
+
+/* 사진+소개 나란히 */
+.intro{ display:flex; align-items:center; gap:2rem; margin:1rem 0 2rem; }
+.intro__img{
+width:420px; max-width:45vw; height:auto;
+border-radius:16px; border:1px solid #e9e9ee;
+box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
+}
+@media (max-width:900px){
+.intro{ flex-direction:column; align-items:flex-start; gap:1.25rem; }
+.intro__img{ width:100%; max-width:640px; }
+}
 .aboutme {
   font-family: Arial, Helvetica, sans-serif;
   max-width: 75ch;
@@ -58,8 +71,13 @@ redirect_from:
 }
 </style>
 
-<div class="aboutme">
-  <p>
+<div class="intro">
+  <!-- ⬇️ 사진 경로만 바꿔주세요 -->
+  <img class="intro__img" src="/image/prof_headshot7.jpg" alt="Yeonju Lee">
+
+  <!-- 기존 소개 블록 그대로 -->
+  <div class="aboutme">
+    <p>
     I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at 
     <strong>Georgia Tech</strong>, fortunate to be advised by <strong style="color:#4169E1;">Prof. Jing Li</strong>.
   </p>
