@@ -6,16 +6,6 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-
-{% include base_path %}
-
----
-layout: archive
-title: "Curriculum Vitae"
-permalink: /cv/
-author_profile: true
----
-
 {% include base_path %}
 
 <div style="margin:1rem 0; padding:0.5rem 0;">
