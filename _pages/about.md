@@ -16,67 +16,70 @@ redirect_from:
   --line:#e9e9ee;
 }
 
-.about-inline .page__content{
-  max-width: 1400px;      /* 글을 더 넓게 펼치기 */
+.about-inline .page__content {
+  max-width:1500px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
-  color:#333; font-weight:300; line-height:1.65;
+  padding: 0 1.25rem;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #333;
+  font-weight: 300;
+  line-height: 1.65;
 }
 
-/* 2) 이미지가 글 속에 '짧게' 떠 있게 */
-.intro__img{
-  float: left;                 /* 핵심: 오른쪽→아래로 글이 흘러감 */
-  width: 240px;                /* 필요시 220~280 조절 */
+.sidebar, .page__sidebar { display:none !important; }
+.page__content { float:none !important; width:100% !important; }
+
+.intro {
+  display:flex;
+  align-items:flex-start;
+  gap: 2.25rem;
+  margin: 1.5rem 0 2.25rem;
+}
+
+.intro__img {
+  width: 240px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid var(--line);
-  box-shadow: 0 6px 22px rgba(30,30,30,.06);
-  margin: .2rem 1.5rem 1rem 0; /* 오른쪽/아래 여백 */
-  display: block;
+  box-shadow: 0 6px 22px rgba(30,30,30,0.06);
+  flex-shrink: 0;
 }
 
-/* 3) float 정리: 이미지 높이 끝난 뒤 다음 섹션 겹침 방지 */
-.intro::after{
-  content: "";
-  display: block;
-  clear: both;
+.intro__body {
+  flex: 1;
+  font-size: 1.02rem;
+  color: #2f2f2f;
 }
-
-/* 4) 모바일에서는 안전하게 단일 열로 */
-@media (max-width: 880px){
-  .intro__img{
-    float:none;
-    margin: 0 auto 1rem;
-    width: min(75%, 360px);
-  }
+.intro__title {
+  font-size: 2.0rem;
+  margin: 0 0 .4rem;
+  font-weight: 700;
+  color: #111;
 }
-/* 리스트 */
-.aboutme ul{padding-left:1.25rem;margin-top:.75rem}
-.aboutme li{margin:.6rem 0}
+.intro__lead { margin: 0 0 1rem; }
 
-/* 링크 */
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
+.aboutme ul { padding-left: 1.25rem; margin-top: .75rem; }
+.aboutme li { margin: .6rem 0; }
 
-/* 모바일: 이미지 위, 본문 아래(가독성) */
-@media (max-width: 880px){
-  .intro__img{
-    float:none;
-    margin:0 auto 1rem;
-    width: min(70%, 360px);   /* 화면에 맞게 자동 축소 */
-  }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+@media (max-width: 880px) {
+  .intro { flex-direction: column; gap:1rem; }
+  .intro__img { width: 100%; max-width: 420px; align-self: center; }
+  .about-inline .page__content { padding: 0 1rem; }
 }
 </style>
 
 <div class="intro">
   <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
+  <div class="intro__body">
+    <h1 class="intro__title">Yeonju Lee</h1>
+    <div class="intro__lead">
+      I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
+      <strong>Georgia Tech</strong>, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
+    </div>
 
-  <h1 class="intro__title">Yeonju Lee</h1>
-  <div class="intro__lead">
-    I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
-    <strong>Georgia Tech</strong>, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
-  </div>
     <div class="aboutme">
       <p>
         My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>.
