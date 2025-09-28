@@ -147,21 +147,24 @@ p{ line-height:1.65; color:#2e2e2e; font-weight:300; }  /* 본문도 라이트 *
 }
 
 /* 사진 + 소개 나란히 */
-.intro{
-  display:flex;
-  align-items:flex-start;  /* 상단 기준 정렬 */
-  gap:2rem;
-  margin:1rem 0 2rem;
+/* About 페이지 본문 폭/여백 최적화 */
+.about-inline .page__content {
+  max-width: 1250px;   /* 기본보다 넓게 */
+  margin: 0 auto;
+  padding: 0 1rem;     /* 좌우 패딩 줄이기 (0.5~1rem) */
 }
+
+/* 사진 크기 */
 .intro__img{
-  width:360px;             /* 필요시 320~420 사이로 조정 */
-  max-width:42vw;
+  width:280px;         /* 사진은 조금 작게 */
+  max-width:28vw;
   height:auto;
   border-radius:16px;
-  border:1px solid var(--line);
+  border:1px solid #e9e9ee;
   box-shadow:0 1px 2px rgba(0,0,0,.05), 0 10px 28px -18px rgba(0,0,0,.25);
-  flex-shrink:0;           /* 텍스트에 밀리지 않도록 고정 */
+  flex-shrink:0;
 }
+
 .intro__body{
   flex:1;
   font-size:1.02rem;
