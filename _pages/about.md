@@ -20,7 +20,6 @@ redirect_from:
   font-weight: 600;
 }
 </style>
-<div class="aboutme">
 
 I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at **Georgia Tech**, fortunate to be advised by <span style="color:#4169E1; font-weight:600">Prof. Jing Li</span>.  
 
