@@ -17,9 +17,9 @@ redirect_from:
 }
 
 .about-inline .page__content {
-  max-width:1200px;
+  max-width: 1400px;   /* 1200px → 1400px (더 넓게 펼쳐짐) */
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color: #333;
   font-weight: 300;
@@ -35,14 +35,21 @@ redirect_from:
   gap: 2.25rem;
   margin: 1.5rem 0 2.25rem;
 }
+  
+.intro__img-wrap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  padding: 0.75rem;        /* 사진을 감싸는 여백 */
+  flex-shrink: 0;
+}
 
 .intro__img {
-  width: 240px;
+  width: 220px;
   height: auto;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 22px rgba(30,30,30,0.06);
-  flex-shrink: 0;
+  border-radius: 12px;
+  display: block;
 }
 
 .intro__body {
@@ -72,7 +79,9 @@ a:hover { text-decoration: underline; }
 </style>
 
 <div class="intro">
-  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
+  <div class="intro__img-wrap">
+    <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
+  </div>
   <div class="intro__body">
     <h1 class="intro__title">Yeonju Lee</h1>
     <div class="intro__lead">
