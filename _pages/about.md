@@ -65,7 +65,7 @@ redirect_from:
 
   <p>
     My research focuses on <strong style="color:#4169E1;">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
-    I explore how knowledge can be embedded at different stages of the learning pipeline:
+    I develop methods to systematically integrate domain knowledge at different stages of the learning pipeline, tailored to the challenges posed by real-world data:
   </p>
 
   <ul>
@@ -80,11 +80,11 @@ redirect_from:
     <strong>high dimensionality</strong>. My work applies these ideas to domains like 
     <strong style="color:#4169E1;">healthcare</strong>, 
     <strong style="color:#4169E1;">precision agriculture</strong>, and 
-    <strong style="color:#4169E1;">quality analytics in manufacturing</strong>.
+    <strong style="color:#4169E1;">manufacturing</strong>.
   </p>
 
   <p>
-  Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️.  
+  Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️—activities that keep me balanced and often refresh my perspective.  
   </p>
 
   <p>
