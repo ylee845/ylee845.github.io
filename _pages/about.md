@@ -69,6 +69,9 @@ redirect_from:
 .aboutme ul { padding-left: 1.2rem; margin-top: .5rem; }
 .aboutme li { margin: .45rem 0; }
 
+.about-sections{ margin-top: 0.75rem; line-height:1.5; }
+.about-sections p{ margin:.6rem 0; }
+
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
