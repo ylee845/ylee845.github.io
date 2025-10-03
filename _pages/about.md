@@ -32,62 +32,75 @@ redirect_from:
 .page__content { float:none !important; width:100% !important; }
 
 /* ✅ 사진 왼쪽 / 텍스트 오른쪽: grid 레이아웃 */
+/* ===== Layout: photo + intro copy side-by-side, then full-width sections ===== */
+
+/* container width */
+.about-inline .page__content{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color:#333; font-weight:300; line-height:1.65;
+}
+
+/* intro grid */
 .intro{
   display: grid !important;
-  grid-template-columns: 260px 1fr;  /* 사진폭, 본문 */
-  gap: 1.25rem 1.75rem;              /* row/column gap */
+  grid-template-columns: 260px minmax(0,1fr); /* photo | text */
+  column-gap: 1.75rem;
+  row-gap: 0.9rem;
   align-items: start;
   margin: 1.2rem 0 1.8rem;
 }
 
-.intro__img {
-  float: left;                        /* 글이 오른쪽→아래로 흘러가게 */
-  width: 240px;
-  height: auto;
+/* photo */
+.intro__img{
+  grid-column: 1;
+  width: 260px; height:auto;
   border-radius: 14px;
   border: 1px solid var(--line);
-  box-shadow: 0 6px 22px rgba(30,30,30,0.06);
-  margin: 0 1.5rem 1rem 0;            /* 오른쪽/아래 여백 */
-  display: block;
+  box-shadow: 0 6px 22px rgba(30,30,30,.06);
 }
 
-.intro__body {
-  flex: 1;
-  font-size: 1.02rem;
-  color: #2f2f2f;
-  line-height: 1.5;                  /* 본문은 조금 더 여유 */
+/* let children of .intro__body become grid items of .intro */
+.intro__body{ display: contents; }
+
+/* items that should sit to the RIGHT of the photo */
+.intro__title,
+.intro__lead,
+.aboutme{
+  grid-column: 2;
 }
 
-.intro__title {
-  font-size: 2.0rem;
-  margin: 0 0 .35rem;
-  font-weight: 700;
-  color: #111;
-}
-.intro__lead { margin: 0 0 .7rem; }
-
-.intro::after {
-  content: "";
-  display: block;
-  clear: both;                        /* float 정리 */
+/* items that should span FULL WIDTH below the photo */
+.about-sections{
+  grid-column: 1 / -1;     /* <-- full width */
+  margin-top: .25rem;
 }
 
+/* typography */
+.intro__title{ font-size:2rem; margin:0 0 .4rem; font-weight:700; color:#111 }
+.intro__lead{ margin:0 0 1rem; font-size:1.02rem; color:#2f2f2f }
+.aboutme ul{ padding-left:1.25rem; margin-top:.75rem }
+.aboutme li{ margin:.6rem 0 }
 
-a { color: var(--brand); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* 모바일에서는 세로 배치로 전환 */
-@media (max-width: 880px) {
-  .intro {
+/* mobile: single column */
+@media (max-width: 880px){
+  .intro{
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
-  .intro__img {
-    max-width: 420px;
-    justify-self: center;
+  .intro__img{
+    grid-column: 1; justify-self: center;
+    width: min(75%, 360px);
   }
-  .about-inline .page__content { padding: 0 1rem !important; }
+  .intro__title,
+  .intro__lead,
+  .aboutme,
+  .about-sections{
+    grid-column: 1;
+  }
 }
+
 </style>
 
 <div class="intro">
@@ -104,7 +117,7 @@ a:hover { text-decoration: underline; }
         My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>.
       </p>
 
-      <section class="about-sections">
+  <section class="about-sections">
   <h3>Why</h3>
   <p>
     Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>,
