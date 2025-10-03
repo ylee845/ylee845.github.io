@@ -21,7 +21,7 @@ redirect_from:
   max-width: 1200px !important;      /* 필요시 1100~1320 조절 */
   margin: 0 auto;
   width: 100% !important;            /* ← 180% 제거 */
-  padding: 0 .75rem !important;
+  #padding: 0 .75rem !important;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color: #333;
   font-weight: 300;
@@ -41,13 +41,14 @@ redirect_from:
 }
 
 .intro__img {
-  width: 100%;
-  max-width: 260px;
+  float: left;                        /* 글이 오른쪽→아래로 흘러가게 */
+  width: 240px;
   height: auto;
   border-radius: 14px;
   border: 1px solid var(--line);
   box-shadow: 0 6px 22px rgba(30,30,30,0.06);
-  justify-self: start;               /* 사진은 좌측 정렬 */
+  margin: 0 1.5rem 1rem 0;            /* 오른쪽/아래 여백 */
+  display: block;
 }
 
 .intro__body {
@@ -57,7 +58,6 @@ redirect_from:
   line-height: 1.5;                  /* 본문은 조금 더 여유 */
 }
 
-.intro__body p{ margin: .55rem 0; }  /* 문단 간격 타이트 */
 .intro__title {
   font-size: 2.0rem;
   margin: 0 0 .35rem;
@@ -66,11 +66,12 @@ redirect_from:
 }
 .intro__lead { margin: 0 0 .7rem; }
 
-.aboutme ul { padding-left: 1.2rem; margin-top: .5rem; }
-.aboutme li { margin: .45rem 0; }
+.intro::after {
+  content: "";
+  display: block;
+  clear: both;                        /* float 정리 */
+}
 
-.about-sections{ margin-top: 0.75rem; line-height:1.5; }
-.about-sections p{ margin:.6rem 0; }
 
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
