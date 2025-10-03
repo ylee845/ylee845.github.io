@@ -101,11 +101,19 @@ redirect_from:
 
     <div class="about-sections">
       <h3>Why</h3>
-      <p> … </p>
+      <p> Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize. </p>
       <h3>Where</h3>
-      <ul> … </ul>
+      <ul> 
+      <li><strong>Input level</strong> – infuse knowledge into what the model sees.</li> 
+      <li><strong>Architecture level</strong> – embed knowledge into network design or loss function.</li> 
+      <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
+      </ul>
       <h3>How</h3>
-      <ul> … </ul>
+      <ul> 
+      <li><strong>Representations</strong> – encoding qualitative knowledge into quantitative representations.</li> 
+      <li><strong>Constraints</strong> – enforcing biologically or physically valid conditions.</li>
+      <li><strong>Rules</strong> – applying domain heuristics to refine inference.</li>
+      </ul>
     </div>
   </div>
 </div>
