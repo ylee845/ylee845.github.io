@@ -54,14 +54,13 @@ redirect_from:
   box-shadow:0 6px 22px rgba(30,30,30,.06);
 }
 
-.intro__body{ display: contents; }          /* 자식들을 그리드 아이템으로 */
+.intro__body{ display: contents; }
 
 .intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area: lead;  margin:0 0 1rem;  font-size:1.02rem; color:#2f2f2f; }
+.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:1.02rem; color:#2f2f2f; }
 .aboutme      { grid-area: about; }
 .about-sections{ grid-area: full; margin-top:.2rem; }
 
-/* 모바일 */
 @media (max-width:880px){
   .intro{
     grid-template-columns:1fr;
@@ -74,11 +73,11 @@ redirect_from:
   }
   .intro__img{ width:min(75%,360px); justify-self:center; }
 }
-
 </style>
 
 <div class="intro">
   <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
+
   <div class="intro__body">
     <h1 class="intro__title">Yeonju Lee</h1>
     <div class="intro__lead">
@@ -90,35 +89,15 @@ redirect_from:
       <p>
         My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>.
       </p>
+    </div>
 
-  <section class="about-sections">
-  <h3>Why</h3>
-  <p>
-    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>,
-    and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize…
-  </p>
-
-  <h3>Where</h3>
-  <ul>
-    <li><strong>Representation level</strong> – encoding qualitative knowledge into quantitative representations.</li>
-    <li><strong>Architecture level</strong> – embedding knowledge into network design or loss function.</li>
-    <li><strong>Inference level</strong> – guiding model reasoning with explicit rules during inference.</li>
-  </ul>
-
-  <h3>How</h3>
-  <ul>
-    <li><strong>Representations</strong> – transforming expert concepts into measurable features.</li>
-    <li><strong>Constraints</strong> – enforcing biologically or physically valid conditions.</li>
-    <li><strong>Rules</strong> – applying domain heuristics to refine inference.</li>
-  </ul>
-
-  <p>
-    My work applies these ideas to domains like <strong style="color:#4169E1;">healthcare</strong>,
-    <strong style="color:#4169E1;">precision agriculture</strong>, and <strong style="color:#4169E1;">manufacturing</strong>.
-  </p>
-
-  <p>
-    Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️.
-    If you'd like to connect: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
-  </p>
-</section>
+    <div class="about-sections">
+      <h3>Why</h3>
+      <p> … </p>
+      <h3>Where</h3>
+      <ul> … </ul>
+      <h3>How</h3>
+      <ul> … </ul>
+    </div>
+  </div>
+</div>
