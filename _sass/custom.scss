@@ -132,3 +132,60 @@ hr{
   .intro{ flex-direction:column; gap:1rem; }
   .intro__img{ width:100%; max-width:420px; }
 }
+/* == [ADD-ON] 1) 상단바 풀폭 (본문 컨테이너 폭은 그대로) == */
+.masthead .container{
+  max-width: 100% !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 데스크탑에선 여백 유지, 모바일에선 슬림 */
+@media (max-width: 768px){
+  .masthead{ padding-top:.25rem; padding-bottom:.25rem; }
+  .masthead__menu-item a{ padding:.3rem .5rem; }
+}
+
+/* == [ADD-ON] 2) 다크모드가 전체 페이지에 적용되도록 변수 오버라이드 == */
+html[data-theme="dark"]{
+  --bg:#0b0f14;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --line:#1f2937;
+  --brand:#93c5fd;
+  --brand-weak:#0f172a;
+  --card:#121923;
+}
+
+/* 전역 요소가 변수 색을 따르도록 (상단바만 바뀌는 문제 방지) */
+html, body{ background:var(--bg) !important; color:var(--text) !important; }
+a{ color:inherit; }
+a:hover{ color:var(--brand); }
+
+.masthead{
+  background:rgba( var(--card), 1 ) !important; /* 사파리 호환 위해 rgba값 유지 */
+  border-bottom:1px solid var(--line) !important;
+  color:var(--text) !important;
+}
+.page__content, .layout--single .page__content, .layout--archive .page__content,
+.site-footer, .post, .card, .paper{
+  background:var(--bg) !important;
+  color:var(--text) !important;
+  border-color:var(--line) !important;
+}
+
+/* 상단바 링크/호버 색상도 변수 기반으로 */
+.masthead__menu-item a{ color:var(--text) !important; }
+.masthead__menu-item a:hover{
+  background:var(--brand-weak) !important;
+  color:var(--brand) !important;
+}
+
+/* == [선택] 숨은 메뉴 토글이 있을 때만 버튼 보이게 (기존 규칙과 충돌 없음) == */
+@media (min-width: 900px){
+  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle{
+    display:inline-flex !important;
+    background:transparent; border:1px solid var(--line); border-radius:10px;
+    padding:.35rem .5rem; color:var(--muted);
+  }
+}
+
