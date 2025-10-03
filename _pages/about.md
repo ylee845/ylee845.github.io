@@ -61,6 +61,14 @@ redirect_from:
 .aboutme      { grid-area: about; }
 .about-sections{ grid-area: full; margin-top:.2rem; }
 
+.page__content,
+.page__inner-wrap,
+.wrapper,
+.container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 @media (max-width:880px){
   .intro{
     grid-template-columns:1fr;
