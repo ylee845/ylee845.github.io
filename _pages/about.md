@@ -19,7 +19,7 @@ redirect_from:
 .about-inline .page__content {
   max-width:none !important;
   margin: 0 auto;
-  width: 100% !important;
+  width: 180% !important;
   #padding: 0 .75rem !important; /* 양옆 살짝만 여백 */
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color: #333;
