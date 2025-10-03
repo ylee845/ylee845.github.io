@@ -32,7 +32,7 @@ redirect_from:
 
 .intro{
   display: block !important;    /* flex 끄기 */
-  margin: 1.5rem 0 2.25rem;
+  #margin: 1.5rem 0 2.25rem;
 }
 
 .intro__img {
