@@ -20,11 +20,11 @@ redirect_from:
   max-width:none !important;
   margin: 0 auto;
   width: 100% !important;
-  padding: 0 .75rem !important; /* 양옆 살짝만 여백 */
+  #padding: 0 .75rem !important; /* 양옆 살짝만 여백 */
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color: #333;
   font-weight: 300;
-  line-height: 1.65;
+  line-height: 1.15;
 }
 
 .sidebar, .page__sidebar { display:none !important; }
