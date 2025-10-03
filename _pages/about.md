@@ -31,74 +31,48 @@ redirect_from:
 .sidebar, .page__sidebar { display:none !important; }
 .page__content { float:none !important; width:100% !important; }
 
-/* ✅ 사진 왼쪽 / 텍스트 오른쪽: grid 레이아웃 */
-/* ===== Layout: photo + intro copy side-by-side, then full-width sections ===== */
-
-/* container width */
-.about-inline .page__content{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  color:#333; font-weight:300; line-height:1.65;
-}
-
-/* intro grid */
+/* --- Intro: photo | text(right-top-aligned) -> full-width sections --- */
 .intro{
-  display: grid !important;
-  grid-template-columns: 260px minmax(0,1fr); /* photo | text */
+  display:grid !important;
+  grid-template-columns: 260px minmax(0,1fr);
+  grid-template-areas:
+    "photo title"
+    "photo lead"
+    "photo about"
+    "full  full";
   column-gap: 1.75rem;
-  row-gap: 0.9rem;
-  align-items: start;
+  row-gap: .75rem;
+  align-items:start;
   margin: 1.2rem 0 1.8rem;
 }
 
-/* photo */
 .intro__img{
-  grid-column: 1;
-  width: 260px; height:auto;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 22px rgba(30,30,30,.06);
+  grid-area: photo;
+  width:260px; height:auto;
+  border-radius:14px;
+  border:1px solid var(--line);
+  box-shadow:0 6px 22px rgba(30,30,30,.06);
 }
 
-/* let children of .intro__body become grid items of .intro */
-.intro__body{ display: contents; }
+.intro__body{ display: contents; }          /* 자식들을 그리드 아이템으로 */
 
-/* items that should sit to the RIGHT of the photo */
-.intro__title,
-.intro__lead,
-.aboutme{
-  grid-column: 2;
-}
+.intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
+.intro__lead { grid-area: lead;  margin:0 0 1rem;  font-size:1.02rem; color:#2f2f2f; }
+.aboutme      { grid-area: about; }
+.about-sections{ grid-area: full; margin-top:.2rem; }
 
-/* items that should span FULL WIDTH below the photo */
-.about-sections{
-  grid-column: 1 / -1;     /* <-- full width */
-  margin-top: .25rem;
-}
-
-/* typography */
-.intro__title{ font-size:2rem; margin:0 0 .4rem; font-weight:700; color:#111 }
-.intro__lead{ margin:0 0 1rem; font-size:1.02rem; color:#2f2f2f }
-.aboutme ul{ padding-left:1.25rem; margin-top:.75rem }
-.aboutme li{ margin:.6rem 0 }
-
-/* mobile: single column */
-@media (max-width: 880px){
+/* 모바일 */
+@media (max-width:880px){
   .intro{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "photo"
+      "title"
+      "lead"
+      "about"
+      "full";
   }
-  .intro__img{
-    grid-column: 1; justify-self: center;
-    width: min(75%, 360px);
-  }
-  .intro__title,
-  .intro__lead,
-  .aboutme,
-  .about-sections{
-    grid-column: 1;
-  }
+  .intro__img{ width:min(75%,360px); justify-self:center; }
 }
 
 </style>
