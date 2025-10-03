@@ -100,32 +100,34 @@ a:hover { text-decoration: underline; }
         My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>.
       </p>
 
-      <h3>Why</h3>
-      <p>
-        Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize. Incorporating domain knowledge helps overcome these challenges, yielding models that are not only accurate but also aligned with expert reasoning.
-      </p>
+      <section class="about-sections">
+  <h3>Why</h3>
+  <p>
+    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>,
+    and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize…
+  </p>
 
-      <h3>Where</h3>
-      <ul>
-        <li><strong>Representation level</strong> – encoding qualitative knowledge into quantitative representations.</li>
-        <li><strong>Architecture level</strong> – embedding knowledge into network design or loss function.</li>
-        <li><strong>Inference level</strong> – guiding model reasoning with explicit rules during inference.</li>
-      </ul>
+  <h3>Where</h3>
+  <ul>
+    <li><strong>Representation level</strong> – encoding qualitative knowledge into quantitative representations.</li>
+    <li><strong>Architecture level</strong> – embedding knowledge into network design or loss function.</li>
+    <li><strong>Inference level</strong> – guiding model reasoning with explicit rules during inference.</li>
+  </ul>
 
-      <h3>How</h3>
-      <ul>
-        <li><strong>Representations</strong> – transforming expert concepts into measurable features.</li>
-        <li><strong>Constraints</strong> – enforcing biologically or physically valid conditions.</li>
-        <li><strong>Rules</strong> – applying domain heuristics to refine inference.</li>
-      </ul>
+  <h3>How</h3>
+  <ul>
+    <li><strong>Representations</strong> – transforming expert concepts into measurable features.</li>
+    <li><strong>Constraints</strong> – enforcing biologically or physically valid conditions.</li>
+    <li><strong>Rules</strong> – applying domain heuristics to refine inference.</li>
+  </ul>
 
-      <p>
-        My work applies these ideas to domains like <strong style="color:#4169E1;">healthcare</strong>, <strong style="color:#4169E1;">precision agriculture</strong>, and <strong style="color:#4169E1;">manufacturing</strong>.
-      </p>
+  <p>
+    My work applies these ideas to domains like <strong style="color:#4169E1;">healthcare</strong>,
+    <strong style="color:#4169E1;">precision agriculture</strong>, and <strong style="color:#4169E1;">manufacturing</strong>.
+  </p>
 
-      <p>
-        Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️. If you'd like to connect: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
-      </p>
-    </div>
-  </div>
-</div>
+  <p>
+    Outside research, I enjoy playing racquetball 🎾, knitting 🧶, and running 🏃‍♀️.
+    If you'd like to connect: <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
+  </p>
+</section>
