@@ -2,7 +2,10 @@
 layout: archive
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
+sidebar: false      # ← 사이드바 완전 비활성
+toc: false
+classes: wide       # ← 본문을 넓게(가로폭 회수)
 ---
 {% include base_path %}
 {% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
