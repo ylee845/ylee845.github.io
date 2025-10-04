@@ -153,7 +153,9 @@ html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
 /* 3) 히어로(사진+소개) 균형: 좌 300px : 우 1fr */
 .intro{ display:grid !important; grid-template-columns: 300px 1fr; gap:2rem; align-items:center; }
 .intro__img{ max-width:300px; border-radius:18px; box-shadow:0 10px 32px -18px rgba(0,0,0,.35); }
-.intro__title{ font-size:clamp(2rem, 3vw + 1rem, 2.6rem); letter-spacing:.2px; }
+.intro__title{
+  font-size: clamp(2rem, calc(1rem + 3vw), 2.6rem);
+}
 .intro__body{ line-height:1.55; }
 .intro__body p{ margin:.6rem 0; }
 
