@@ -79,7 +79,7 @@ redirect_from:
       "about"
       "full";
   }
-  .intro__img{ width:min(75%,360px); justify-self:center; }
+  .intro__img{ width:90%; justify-self:center; }
 }
 </style>
 
@@ -89,13 +89,14 @@ redirect_from:
   <div class="intro__body">
     <h1 class="intro__title">Yeonju Lee</h1>
     <div class="intro__lead">
+      Hello! Thank you for stopping by.
       I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
       <strong>Georgia Tech</strong>, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
     </div>
 
     <div class="aboutme">
       <p>
-        My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>.
+        My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. If you would like to connect, feel free to email via ylee845@gatech.edu.
       </p>
     </div>
 
