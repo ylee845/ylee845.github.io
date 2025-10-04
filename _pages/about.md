@@ -81,6 +81,26 @@ redirect_from:
   }
   .intro__img{ width:90%; justify-self:center; }
 }
+
+.about-sections h3 {
+  margin-top: 0.8rem;   /* 위쪽 간격 줄이기 */
+  margin-bottom: 0.3rem; /* 아래쪽 간격 줄이기 */
+}
+
+.about-sections p {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.about-sections ul {
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem; /* 리스트와 다음 섹션 간격 살짝만 */
+}
+
+.about-sections li {
+  margin-bottom: 0.2rem; /* 리스트 내부 항목 간 간격 */
+}
+  
 </style>
 
 <div class="intro">
