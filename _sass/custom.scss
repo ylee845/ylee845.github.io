@@ -46,7 +46,17 @@ hr{
 
 /* ===== Sidebar / Author card ===== */
 /* === 2-1. 사이드바 열 자체 제거 + 본문 확장 === */
-.sidebar, .page__sidebar, .sidebar.sticky { display:none !important; }
+.page__sidebar, .sidebar, .sidebar__right {
+  display: none !important;
+  position: static !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
 
 .page__content,
 .layout--single .page__content,
@@ -73,37 +83,3 @@ hr{
   .intro{ flex-direction:column; gap:1rem; }
   .intro__img{ width:100%; max-width:420px; }
 }
-
-/* 전역 요소가 변수 색을 따르도록 (상단바만 바뀌는 문제 방지) */
-html, body{ background:var(--bg) !important; color:var(--text) !important; }
-a{ color:inherit; }
-a:hover{ color:var(--brand); }
-
-.masthead{
-  background:rgba( var(--card), 1 ) !important; /* 사파리 호환 위해 rgba값 유지 */
-  border-bottom:1px solid var(--line) !important;
-  color:var(--text) !important;
-}
-.page__content, .layout--single .page__content, .layout--archive .page__content,
-.site-footer, .post, .card, .paper{
-  background:var(--bg) !important;
-  color:var(--text) !important;
-  border-color:var(--line) !important;
-}
-
-/* 상단바 링크/호버 색상도 변수 기반으로 */
-.masthead__menu-item a{ color:var(--text) !important; }
-.masthead__menu-item a:hover{
-  background:var(--brand-weak) !important;
-  color:var(--brand) !important;
-}
-
-/* == [선택] 숨은 메뉴 토글이 있을 때만 버튼 보이게 (기존 규칙과 충돌 없음) == */
-@media (min-width: 900px){
-  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle{
-    display:inline-flex !important;
-    background:transparent; border:1px solid var(--line); border-radius:10px;
-    padding:.35rem .5rem; color:var(--muted);
-  }
-}
-
