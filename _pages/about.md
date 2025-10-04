@@ -57,7 +57,7 @@ redirect_from:
 .intro__body{ display: contents; }
 
 .intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:1.02rem; color:#2f2f2f; }
+.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:0.95rem; color:#2f2f2f; }
 .aboutme      { grid-area: about; }
 .about-sections{ grid-area: full; margin-top:.2rem; }
 
