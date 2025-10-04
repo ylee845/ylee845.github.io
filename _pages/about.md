@@ -2,7 +2,10 @@
 permalink: /
 layout: single
 author_profile: false
-classes: about-inline
+#classes: about-inline
+sidebar: false      # ← 사이드바 완전 비활성
+toc: false
+classes: wide       # ← 본문을 넓게(가로폭 회수)
 redirect_from: 
   - /about/
   - /about.html
