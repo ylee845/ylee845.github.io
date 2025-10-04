@@ -21,7 +21,7 @@ redirect_from:
 
 /* 페이지 폭 정상화 (가로 스크롤/튐 방지) */
 .about-inline .page__content {
-  max-width: 100% !important;      /* 필요시 1100~1320 조절 */
+  max-width: none; !important;      /* 필요시 1100~1320 조절 */
   margin: 0 auto;
   width: 100% !important;            /* ← 180% 제거 */
   #padding: 0 .75rem !important;
@@ -77,7 +77,7 @@ redirect_from:
 .wrapper,
 .container {
   max-width: none !important;   /* 넓게 */
-  width: 95% !important;
+  width: 100% !important;
   margin: 0 auto !important;
 }
 
