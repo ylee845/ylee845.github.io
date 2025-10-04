@@ -130,6 +130,67 @@ body, .masthead, .masthead__menu-item a, .site-title {
   margin-right: 1.2rem;
 }
 
+/* 1) 네비게이션: 정렬/간격/호버 애니메이션 */
+.masthead .inner-wrap{ display:flex; align-items:center; gap:1.5rem; }
+.greedy-nav .visible-links{ gap:.5rem; }
+.greedy-nav a{
+  position:relative;
+  padding:.46rem .72rem;
+  font-weight:650;                    /* 메뉴 더 또렷하게 */
+  letter-spacing:.2px;
+}
+.greedy-nav a::after{                 /* 밑줄 애니메이션 */
+  content:""; position:absolute; left:.6rem; right:.6rem; bottom:.2rem;
+  height:2px; background:var(--brand); transform:scaleX(0); transform-origin:left;
+  transition:transform .18s ease;
+}
+.greedy-nav a:hover::after{ transform:scaleX(1); }
+
+/* 2) 고정 헤더의 미세 그림자(스크롤 시만 진하게 보이도록) */
+.masthead{ transition: box-shadow .2s ease, background-color .2s ease; }
+html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
+
+/* 3) 히어로(사진+소개) 균형: 좌 300px : 우 1fr */
+.intro{ display:grid !important; grid-template-columns: 300px 1fr; gap:2rem; align-items:center; }
+.intro__img{ max-width:300px; border-radius:18px; box-shadow:0 10px 32px -18px rgba(0,0,0,.35); }
+.intro__title{ font-size:clamp(2rem, 3vw + 1rem, 2.6rem); letter-spacing:.2px; }
+.intro__body{ line-height:1.55; }
+.intro__body p{ margin:.6rem 0; }
+
+/* 4) 본문 타이포 리듬 & 굵기 대비 */
+.page__content strong{ font-weight:700; }
+.page__content em{ font-style:italic; opacity:.92; }
+
+/* 5) 섹션 헤더 스타일 (Why/Where/How) */
+.about-sections h3{
+  margin:1.4rem 0 .5rem; font-weight:750; letter-spacing:.15px;
+}
+.about-sections hr{
+  height:1px; border:0;
+  background:linear-gradient(90deg, transparent, var(--line), transparent);
+  margin:.7rem 0 1rem;
+}
+
+/* 6) 링크 가독성 + 밑줄 밀도 낮추기 */
+.page__content a{
+  color:var(--brand); text-decoration:underline;
+  text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.page__content a:hover{ opacity:.9; }
+
+/* 7) 연락처 버튼화(선택) */
+.btn-ghost{
+  display:inline-block; padding:.5rem .8rem; border:1px solid var(--line);
+  border-radius:12px; text-decoration:none; transition:background .15s ease, transform .08s;
+}
+.btn-ghost:hover{ background:var(--brand-weak); transform:translateY(-1px); }
+
+/* 반응형 */
+@media (max-width: 920px){
+  .intro{ grid-template-columns: 1fr; gap:1.2rem; }
+  .intro__img{ justify-self:center; }
+}
+
 /* Mobile: 약간 간격 줄이기 */
 @media (max-width: 768px){
   .masthead { padding: .25rem 0; }
