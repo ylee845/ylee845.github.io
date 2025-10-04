@@ -61,12 +61,30 @@ redirect_from:
 .aboutme      { grid-area: about; }
 .about-sections{ grid-area: full; margin-top:.2rem; }
 
+#.page__content,
+#.page__inner-wrap,
+#.wrapper,
+#.container {
+#  max-width: 100% !important;
+#  width: 100% !important;
+#}
+
 .page__content,
 .page__inner-wrap,
 .wrapper,
 .container {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 1600px !important;   /* 넓게 */
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+.about-inline .page__content {
+  padding: 0 1rem !important;     /* 좌우 여백 줄이기 */
+}
+
+.intro {
+  grid-template-columns: 280px 1fr; /* 오른쪽 확장 */
+  column-gap: 1.25rem;              /* 여백 줄이기 */
 }
 
 @media (max-width:880px){
