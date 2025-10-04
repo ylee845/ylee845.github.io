@@ -83,3 +83,55 @@ hr{
   .intro{ flex-direction:column; gap:1rem; }
   .intro__img{ width:100%; max-width:420px; }
 }
+/* =========================
+   MASTHEAD: 고정 + 폰트 + 메뉴 강조
+   ========================= */
+
+/* 1) 스크롤 내려도 항상 상단 고정 */
+.masthead {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: var(--card) !important;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);   /* 살짝 그림자 */
+}
+
+/* 페이지 내용이 상단바에 가리지 않게 offset 추가 */
+body {
+  padding-top: 60px;   /* 상단바 높이에 맞게 조정 (기본 55~65px) */
+}
+
+/* 2) 폰트를 Inter로 통일 */
+body, .masthead, .masthead__menu-item a, .site-title {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0.2px;
+}
+
+/* 3) 메뉴 항목 강조 (더 두껍고 깔끔하게) */
+.masthead__menu-item a {
+  font-weight: 600 !important;     /* 원래 500~550 정도 → 약간 굵게 */
+  font-size: 1.02rem;
+  color: var(--text) !important;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.masthead__menu-item a:hover {
+  color: var(--brand) !important;
+  background: var(--brand-weak);
+}
+
+/* Site title도 약간 강조 */
+.site-title {
+  font-weight: 800 !important;
+  font-size: 1.1rem;
+  margin-right: 1.2rem;
+}
+
+/* Mobile: 약간 간격 줄이기 */
+@media (max-width: 768px){
+  .masthead { padding: .25rem 0; }
+  body { padding-top: 52px; }
+}
