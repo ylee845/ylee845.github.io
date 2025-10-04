@@ -109,14 +109,14 @@ redirect_from:
   <div class="intro__body">
     <h1 class="intro__title">Yeonju Lee</h1>
     <div class="intro__lead">
-      Hello! Thank you for stopping by.
+      Hello! Thank you for stopping by. <br>
       I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
       <strong>Georgia Tech</strong>, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
     </div>
 
     <div class="aboutme">
       <p>
-        My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning</strong>—developing methods that incorporate domain expertise to make models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. If you would like to connect, feel free to email via ylee845@gatech.edu.
+        My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning (ML) </strong>—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. If you’d like to connect, feel free to reach out at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
       </p>
     </div>
 
