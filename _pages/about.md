@@ -57,9 +57,9 @@ redirect_from:
 .intro__body{ display: contents; }
 
 .intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:0.95rem; color:#2f2f2f; }
-.aboutme      { grid-area: about; }
-.about-sections{ grid-area: full; margin-top:.2rem; }
+.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:1rem; color:#2f2f2f; }
+.aboutme      { grid-area: about; font-size:1rem;}
+.about-sections{ grid-area: full; margin-top:.2rem; font-size:1rem;}
 
 #.page__content,
 #.page__inner-wrap,
@@ -73,7 +73,7 @@ redirect_from:
 .page__inner-wrap,
 .wrapper,
 .container {
-  max-width: 1600px !important;   /* 넓게 */
+  max-width: none !important;   /* 넓게 */
   width: 95% !important;
   margin: 0 auto !important;
 }
