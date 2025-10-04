@@ -37,35 +37,6 @@ hr{
   margin:1.25rem 0;
 }
 
-/* ===== Masthead / Top Nav ===== */
-.masthead{
-  position:sticky; top:0; z-index:50;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:saturate(160%) blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.site-title{
-  font-weight:800;
-  letter-spacing:.2px;
-}
-.masthead__menu{ display:flex; gap:.5rem; align-items:center; }
-.masthead__menu-item a{
-  display:inline-block;
-  font-weight:600;
-  padding:.45rem .7rem;
-  border-radius:10px;
-  transition:transform .08s ease, background-color .15s ease, color .15s ease;
-}
-.masthead__menu-item a:hover{
-  background:#f6f7fb;
-  color:var(--brand);
-  transform:translateY(-1px);
-}
-.masthead__menu-item--active a{
-  color:var(--brand);
-  background:var(--brand-weak);
-}
-
 /* ===== Layout helpers ===== */
 .container{
   max-width:1100px;
@@ -83,39 +54,9 @@ hr{
   float:none !important;
   width:100% !important;
   margin-left:0 !important;
-  max-width: 90%;     /* 필요시 1200~1400 사이에서 조절 */
+  max-width: 100%;     /* 필요시 1200~1400 사이에서 조절 */
   margin: 0 auto;
   padding: 0 1rem;       /* 좌우 여백(좁히려면 .75rem) */
-}
-
-/* === 2-2. 상단바: 기본은 전부 펼쳐 보이기, 부족하면 토글 노출 === */
-/* 항목 패딩을 살짝 줄여 더 많이 들어가게 */
-.greedy-nav a,
-.masthead__menu-item a{ padding:.35rem .55rem; border-radius:10px; }
-
-/* 햄버거 토글 기본 숨김 */
-.greedy-nav .greedy-nav__toggle{ display:none !important; }
-
-/* hidden-links(남는 항목) 있을 때만 토글 보이게 (CSS :has 사용) */
-@media (min-width: 900px){
-  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle{
-    display:inline-flex !important;
-    background:transparent; border:1px solid var(--line); border-radius:10px;
-    padding:.35rem .5rem; color:#5b5b5b;
-  }
-  .greedy-nav:has(.hidden-links li) .greedy-nav__toggle:hover{
-    background:#f6f7fb; color:var(--brand);
-  }
-}
-
-/* 상단바 여백/줄바꿈 개선: 폭 부족하면 2줄로 감기 */
-.greedy-nav{ padding:.45rem 0; gap:.25rem; flex-wrap:wrap; }
-.greedy-nav .visible-links{ display:flex; flex-wrap:wrap; gap:.25rem; }
-
-/* === 2-3. About 전용(원하면 다른 페이지에도 재사용 가능) === */
-.about-inline .page__content{
-  max-width: 1320px;   /* About에선 조금 더 넓게 쓰고 싶으면 유지 */
-  padding: 0 .75rem;
 }
 
 /* 사진+텍스트 나란히 */
@@ -131,29 +72,6 @@ hr{
 @media (max-width: 900px){
   .intro{ flex-direction:column; gap:1rem; }
   .intro__img{ width:100%; max-width:420px; }
-}
-/* == [ADD-ON] 1) 상단바 풀폭 (본문 컨테이너 폭은 그대로) == */
-.masthead .container{
-  max-width: 100% !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* 데스크탑에선 여백 유지, 모바일에선 슬림 */
-@media (max-width: 768px){
-  .masthead{ padding-top:.25rem; padding-bottom:.25rem; }
-  .masthead__menu-item a{ padding:.3rem .5rem; }
-}
-
-/* == [ADD-ON] 2) 다크모드가 전체 페이지에 적용되도록 변수 오버라이드 == */
-html[data-theme="dark"]{
-  --bg:#0b0f14;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --line:#1f2937;
-  --brand:#93c5fd;
-  --brand-weak:#0f172a;
-  --card:#121923;
 }
 
 /* 전역 요소가 변수 색을 따르도록 (상단바만 바뀌는 문제 방지) */
