@@ -83,11 +83,13 @@ redirect_from:
 .about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
 /* 반응형: 1열 스택 */
+
 @media (max-width:880px){
   .intro{
     grid-template-columns:1fr;
     grid-template-areas:
       "photo" "title" "lead" "about" "full";
+    text-align: unset;
   }
   .intro__img{ width:90%; justify-self:center; }
 }
