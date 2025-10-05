@@ -82,6 +82,13 @@ redirect_from:
 .aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
 .about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
+.intro__title,
+.intro__lead,
+.aboutme,
+.about-sections {
+  text-align: unset;     /* 기본 정렬로 되돌림 (보통 왼쪽) */
+}
+
 /* 반응형: 1열 스택 */
 
 @media (max-width:880px){
@@ -89,9 +96,15 @@ redirect_from:
     grid-template-columns:1fr;
     grid-template-areas:
       "photo" "title" "lead" "about" "full";
-    text-align: unset;
+    text-align: unset !important;
   }
   .intro__img{ width:90%; justify-self:center; }
+  .intro__title,
+  .intro__lead,
+  .aboutme,
+  .about-sections {
+    text-align: unset !important;
+  }
 }
 .about-sections h3 {
   margin-top: 0.8rem;   /* 위쪽 간격 줄이기 */
