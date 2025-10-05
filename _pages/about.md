@@ -37,7 +37,8 @@ redirect_from:
 /* --- Intro: photo | text(right-top-aligned) -> full-width sections --- */
 .intro{
   display:grid !important;
-  grid-template-columns: 260px minmax(0,1fr);
+  #grid-template-columns: 260px minmax(0,1fr);
+  grid-template-columns: 100%;
   grid-template-areas:
     "photo title"
     "photo lead"
