@@ -130,9 +130,8 @@ redirect_from:
   </p>
 </div>
 
-<hr style="border:none; border-top:1px solid #e5e5e5; margin:2.2rem 0 1.5rem; width:85%;">
-
 <div class="about-sections" style="max-width:75ch; margin:auto; line-height:1.65; font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; color:#333;">
+  <hr style="border:none; border-top:1px solid #e5e5e5; margin:2.2rem 0 1.5rem; width:85%;">
   <h3 style="font-size:1.4rem; font-weight:650; color:#222; margin-bottom:1rem;">
     Knowledge-Informed ML: Why, Where, and How
   </h3>
