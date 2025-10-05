@@ -244,3 +244,30 @@ html[data-theme="dark"] .masthead { background: var(--bg) !important; }
 /* 코드/프리 포맷 영역 */
 pre, code { background: transparent; color: var(--text) !important; border-color: var(--line) !important; }
 
+/* === 복원: 강조색과 링크색 되살리기 === */
+
+/* 링크 */
+a, a:visited {
+  color: #4169E1 !important;        /* Royal Blue */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 강조 텍스트 (논문 제목 등) */
+strong, b {
+  color: #111 !important;           /* 본문보다 약간 진하게 */
+}
+
+/* 메타 정보(연도, 저자 등)는 살짝 연하게 */
+.meta, .post-meta, .page__meta, .archive__item-excerpt {
+  color: #444 !important;
+}
+
+/* 인용, 설명글, 이탤릭 텍스트 */
+em, i {
+  color: #333 !important;
+  font-style: italic;
+}
+
