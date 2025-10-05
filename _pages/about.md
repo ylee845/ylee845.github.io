@@ -123,50 +123,31 @@ redirect_from:
       Georgia Institute of Technology, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
     </div>
 
-<h2>Published & Under Review</h2>
-<div>
-  {% for post in pubs %}
-    <div class="paper">
-      <div class="left">
-        <h3>
-          <span class="num">{{ forloop.index | plus: offset }}.</span>
-          <span class="title">{{ post.title | escape }}</span>
-        </h3>
+<div class="aboutme">
+  <p>
+    My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning (ML)</strong>—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
+    If you’d like to connect, feel free to reach out at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
+  </p>
+</div>
 
-        <div class="meta">
-          {%- assign parts = "" | split:"|" -%}
-          {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
-          {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
+<h2 style="margin-top:1.2rem;">Knowledge-Informed ML: Why, Where, and How</h2>
+<div class="about-sections">
+  <h3>Why</h3>
+  <p>
+    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize.
+  </p>
 
-          {%- assign issue_parts = "" | split:"|" -%}
-          {%- if post.volume and post.issue -%}
-            {%- assign vol_issue = post.volume | append: " (" | append: post.issue | append: ")" -%}
-            {%- assign issue_parts = issue_parts | push: vol_issue -%}
-          {%- elsif post.volume -%}
-            {%- assign issue_parts = issue_parts | push: post.volume -%}
-          {%- elsif post.issue -%}
-            {%- assign issue_parts = issue_parts | push: "(" | append: post.issue | append: ")" -%}
-          {%- endif -%}
-          {%- if post.pages -%}{%- assign issue_parts = issue_parts | push: post.pages -%}{%- endif -%}
-          {%- if post.year  -%}{%- assign issue_parts = issue_parts | push: post.year  -%}{%- endif -%}
+  <h3>Where</h3>
+  <ul> 
+    <li><strong>Input level</strong> – deliberately refine model inputs using domain knowledge.</li> 
+    <li><strong>Architecture level</strong> – embed knowledge into network design or loss function.</li> 
+    <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
+  </ul>
 
-          {%- capture issue_joined -%}{{ issue_parts | join: ", " }}{%- endcapture -%}
-          {%- unless issue_joined == "" -%}{%- assign parts = parts | push: issue_joined -%}{%- endunless -%}
-
-          {{ parts | join: ", " }}
-        </div>
-
-        {% if post.excerpt %}
-          <div class="excerpt">
-            {{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
-          </div>
-        {% endif %}
-      </div>  <!-- 👈 여기서 .left 닫기 꼭 필요 -->
-
-      <div class="right">
-        {% if post.status %}<span class="tag blue">{{ post.status }}</span>{% endif %}
-        {% if post.year   %}<span class="year">{{ post.year }}</span>{% endif %}
-      </div>
-    </div>
-  {% endfor %}
+  <h3>How</h3>
+  <ul> 
+    <li><strong>Representations</strong> – encode qualitative knowledge into quantitative representations.</li> 
+    <li><strong>Constraints</strong> – enforce biologically or physically valid conditions.</li>
+    <li><strong>Rules</strong> – formalize domain knowledge as rule-based guidance.</li>
+  </ul>
 </div>
