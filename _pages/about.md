@@ -158,5 +158,5 @@ redirect_from:
     <li><span style="font-weight:520;">Constraints</span> – enforce biologically or physically valid conditions.</li>
     <li><span style="font-weight:520;">Rules</span> – formalize domain knowledge as rule-based guidance.</li>
   </ul>
-Knowledge-Informed ML has demonstrated effectiveness across multiple domains, including <strong>healthcare</strong>, <strong>precision agriculture</strong>, and <strong>manufacturing</strong> (see my Publications!).
+Knowledge-Informed ML has demonstrated effectiveness across multiple domains, including <strong>healthcare</strong>, <strong>precision agriculture</strong>, and <strong>manufacturing</strong>. Kindly refer to my Publications for further details.
 </div>
