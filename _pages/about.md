@@ -33,80 +33,61 @@ redirect_from:
 
 .sidebar, .page__sidebar {display:none !important;}
 .page__content {float:none !important; width:100% !important;}
-:root{ --sidebar-w: 280px; } /* 실제 사이드바 폭으로 맞추세요 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
+:root{
+  --brand:#3b5bdb;
+  --line:#e9e9ee;
+  --sidebar-w: 280px;
 }
-/* --- Intro: photo | text(right-top-aligned) -> full-width sections --- */
+
+/* 사이드바 끄고 본문을 100%로 */
+.sidebar, .page__sidebar { display:none !important; }
+.page__content { float:none !important; width:100% !important; }
+
+/* 페이지 기본 타이포 */
+.page__content {
+  max-width: none !important;
+  margin: 0 auto;
+  width: 100% !important;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color:#333; font-weight:300; line-height:1.45;
+}
+
+/* Intro: 사진 | 텍스트 2열 */
 .intro{
   display:grid !important;
-  #grid-template-columns: 260px minmax(0,1fr);
-  grid-template-columns: 100%;
-  max-width: 100%;  
+  grid-template-columns: 280px 1fr;           /* ← 2열 */
   grid-template-areas:
     "photo title"
     "photo lead"
     "photo about"
     "full  full";
-  #column-gap: 1.75rem;
-  #row-gap: .75rem;
+  column-gap: 1.25rem;
+  row-gap: .6rem;
+  margin: 1.2rem 0 1.8rem;
   align-items:start;
-  #margin: 1.2rem 0 1.8rem;
 }
 
 .intro__img{
   grid-area: photo;
-  #width:260px; height:auto;
   width: 100%;
-  #border-radius:14px;
   border-radius: 0;
-  object-fit: cover; 
-  #border:1px solid var(--line);
-  #box-shadow:0 6px 22px rgba(30,30,30,.06);
+  object-fit: cover;
 }
 
 .intro__body{ display: contents; }
+.intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
+.intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
+.aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
+.about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
-.intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:1rem; color:#2f2f2f; }
-.aboutme      { grid-area: about; font-size:1rem; margin-top: 0.1rem;}
-.about-sections{ grid-area: full; margin-top:.15rem; font-size:1rem;}
-
-#.page__content,
-#.page__inner-wrap,
-#.wrapper,
-#.container {
-#  max-width: 100% !important;
-#  width: 100% !important;
-#}
-
-.page__content,
-.page__inner-wrap,
-.wrapper,
-.container {
-  max-width: none !important;   /* 넓게 */
-  width: 100% !important;
-  margin: 0 auto !important;
-}
-
-.about-inline .page__content {
-  #padding: 0 1rem !important;     /* 좌우 여백 줄이기 */
-}
-
-.intro {
-  #grid-template-columns: 280px 1fr; /* 오른쪽 확장 */
-  grid-template-columns: 100%;
-  column-gap: 1.25rem;              /* 여백 줄이기 */
-}
-
+/* 반응형: 1열 스택 */
 @media (max-width:880px){
   .intro{
     grid-template-columns:1fr;
     grid-template-areas:
-      "photo"
-      "title"
-      "lead"
-      "about"
-      "full";
+      "photo" "title" "lead" "about" "full";
   }
   .intro__img{ width:90%; justify-self:center; }
 }
