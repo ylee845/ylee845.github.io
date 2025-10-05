@@ -131,23 +131,26 @@ redirect_from:
 </div>
 
 <h2 style="margin-top:1.2rem;">Knowledge-Informed ML: Why, Where, and How</h2>
-<div class="about-sections">
-  <h3>Why</h3>
-  <p>
-    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize.
-  </p>
-
-  <h3>Where</h3>
-  <ul> 
-    <li><strong>Input level</strong> – deliberately refine model inputs using domain knowledge.</li> 
-    <li><strong>Architecture level</strong> – embed knowledge into network design or loss function.</li> 
-    <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
-  </ul>
-
-  <h3>How</h3>
-  <ul> 
-    <li><strong>Representations</strong> – encode qualitative knowledge into quantitative representations.</li> 
-    <li><strong>Constraints</strong> – enforce biologically or physically valid conditions.</li>
-    <li><strong>Rules</strong> – formalize domain knowledge as rule-based guidance.</li>
-  </ul>
-</div>
+<div class="intro__framework">
+  <h2 class="about-heading">Knowledge-Informed ML: Why, Where, and How</h2>
+    <div class="about-sections">
+      <h3>Why</h3>
+      <p>
+        Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize.
+      </p>
+    
+      <h3>Where</h3>
+      <ul> 
+        <li><strong>Input level</strong> – deliberately refine model inputs using domain knowledge.</li> 
+        <li><strong>Architecture level</strong> – embed knowledge into network design or loss function.</li> 
+        <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
+      </ul>
+    
+      <h3>How</h3>
+      <ul> 
+        <li><strong>Representations</strong> – encode qualitative knowledge into quantitative representations.</li> 
+        <li><strong>Constraints</strong> – enforce biologically or physically valid conditions.</li>
+        <li><strong>Rules</strong> – formalize domain knowledge as rule-based guidance.</li>
+      </ul>
+    </div>
+  </div>
