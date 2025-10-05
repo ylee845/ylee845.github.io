@@ -33,7 +33,9 @@ redirect_from:
 
 .sidebar, .page__sidebar {display:none !important;}
 .page__content {float:none !important; width:100% !important;}
+:root{ --sidebar-w: 280px; } /* 실제 사이드바 폭으로 맞추세요 */
 
+}
 /* --- Intro: photo | text(right-top-aligned) -> full-width sections --- */
 .intro{
   display:grid !important;
@@ -108,7 +110,6 @@ redirect_from:
   }
   .intro__img{ width:90%; justify-self:center; }
 }
-
 .about-sections h3 {
   margin-top: 0.8rem;   /* 위쪽 간격 줄이기 */
   margin-bottom: 0.3rem; /* 아래쪽 간격 줄이기 */
