@@ -71,71 +71,52 @@ classes: wide       # ← 본문을 넓게(가로폭 회수)
     {% endfor %}
   </div>
 
-  <h2>Published & Under Review</h2>
-  <div>
-    {% for post in pubs %}
-      <div class="paper">
-        <div class="left">
-          <h3>
-            <span class="num">{{ forloop.index | plus: offset }}.</span>
-            <span class="title">{{ post.title | escape }}</span>
-          </h3>
+<h2>Published & Under Review</h2>
+<div>
+  {% for post in pubs %}
+    <div class="paper">
+      <div class="left">
+        <h3>
+          <span class="num">{{ forloop.index | plus: offset }}.</span>
+          <span class="title">{{ post.title | escape }}</span>
+        </h3>
 
-          <div class="meta">
+        <div class="meta">
           {%- assign parts = "" | split:"|" -%}
-        
-          {%- if post.authors -%}
-            {%- assign parts = parts | push: post.authors -%}
+          {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
+          {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
+
+          {%- assign issue_parts = "" | split:"|" -%}
+          {%- if post.volume and post.issue -%}
+            {%- assign vol_issue = post.volume | append: " (" | append: post.issue | append: ")" -%}
+            {%- assign issue_parts = issue_parts | push: vol_issue -%}
+          {%- elsif post.volume -%}
+            {%- assign issue_parts = issue_parts | push: post.volume -%}
+          {%- elsif post.issue -%}
+            {%- assign issue_parts = issue_parts | push: "(" | append: post.issue | append: ")" -%}
           {%- endif -%}
-        
-          {%- if post.venue -%}
-            {%- assign parts = parts | push: post.venue -%}
-          {%- endif -%}
-        
-          {%- assign issue_info = "" -%}
-          {%- if post.volume -%}
-            {% assign issue_info = issue_info | append: post.volume %}
-          {%- endif -%}
-        
-          {%- if post.issue -%}
-            {% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}
-          {%- endif -%}
-        
-          {%- if post.pages -%}
-            {% assign issue_info = issue_info | append: ", " | append: post.pages %}
-          {%- endif -%}
-        
-          {%- if post.year -%}
-            {% assign issue_info = issue_info | append: ", " | append: post.year %}
-          {%- endif -%}
-        
-          {%- if issue_info != "" -%}
-            {%- assign parts = parts | push: issue_info -%}
-          {%- endif -%}
-        
+          {%- if post.pages -%}{%- assign issue_parts = issue_parts | push: post.pages -%}{%- endif -%}
+          {%- if post.year  -%}{%- assign issue_parts = issue_parts | push: post.year  -%}{%- endif -%}
+
+          {%- capture issue_joined -%}{{ issue_parts | join: ", " }}{%- endcapture -%}
+          {%- unless issue_joined == "" -%}{%- assign parts = parts | push: issue_joined -%}{%- endunless -%}
+
           {{ parts | join: ", " }}
         </div>
-        
+
         {% if post.excerpt %}
           <div class="excerpt">
-            {{ post.excerpt | markdownify 
-               | replace: '<p>', '' 
-               | replace: '</p>', '' 
-               | strip }}
+            {{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
           </div>
         {% endif %}
-        
+      </div>  <!-- 👈 여기서 .left 닫기 꼭 필요 -->
 
-        <div class="right">
-          {% if post.status %}
-            <span class="tag blue">{{ post.status }}</span>
-          {% endif %}
-          {% if post.year %}
-            <span class="year">{{ post.year }}</span>
-          {% endif %}
-        </div>
+      <div class="right">
+        {% if post.status %}<span class="tag blue">{{ post.status }}</span>{% endif %}
+        {% if post.year   %}<span class="year">{{ post.year }}</span>{% endif %}
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
+</div>
 
 </div>
