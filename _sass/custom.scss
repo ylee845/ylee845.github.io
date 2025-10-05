@@ -168,3 +168,53 @@ html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
   .masthead { padding: .25rem 0; }
   body { padding-top: 52px; }
 }
+
+/* ===========================
+   LIGHT & DARK THEME COLORS
+   =========================== */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --link: #1a73e8;
+  --line: #e6e6e6;
+  --header-bg: rgba(255,255,255,.85);
+}
+
+/* 다크모드 팔레트 */
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --text: #e9e9ee;
+  --muted: #b3b6c2;
+  --link: #8ab4ff;
+  --line: #2a2d36;
+  --header-bg: rgba(22,24,29,.85);
+}
+
+/* 전체 적용 */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+a { color: var(--link) !important; }
+
+hr, .archive hr { border-color: var(--line) !important; }
+
+.masthead {
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.site-title, h1, h2, h3, h4, h5, h6 {
+  color: var(--text) !important;
+}
+
+.page__content, .intro__lead, .meta, .aboutme {
+  color: var(--text) !important;
+}
+
+.small, .muted, .post-meta, .page__meta {
+  color: var(--muted) !important;
+}
+
