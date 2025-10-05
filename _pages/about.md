@@ -125,7 +125,7 @@ redirect_from:
 
 <div class="aboutme">
   <p>
-    My research focuses on <strong style="color:var(--brand)">knowledge-informed machine learning (ML)</strong>—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
+    My research focuses on <style="color:var(--brand); font-weight: 520">knowledge-informed machine learning (ML)—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
     If you’d like to connect, feel free to reach out at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
   </p>
 </div>
@@ -158,5 +158,5 @@ redirect_from:
     <li><span style="font-weight:520;">Constraints</span> – enforce biologically or physically valid conditions.</li>
     <li><span style="font-weight:520;">Rules</span> – formalize domain knowledge as rule-based guidance.</li>
   </ul>
-Knowledge-Informed ML has demonstrated effectiveness across multiple domains, including <strong>healthcare</strong>, <strong>precision agriculture</strong>, and <strong>manufacturing</strong>. Kindly refer to my Publications for further details.
+Knowledge-Informed ML has demonstrated effectiveness across multiple domains, including <span style="font-weight:520;">healthcare</span>, <span style="font-weight:520;">precision agriculture</span>, and <span style="font-weight:520;">manufacturing</span>. Kindly refer to my Publications for further details.
 </div>
