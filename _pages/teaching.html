@@ -8,60 +8,50 @@ author_profile: true
 {% include base_path %}
 
 <style>
-/* Teaching section 스타일 */
-.teach.teach-list {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif; /* 폰트 통일 */
+/* ===== 핵심 리셋: 본문 폭·가로 중앙 정렬 ===== */
+.sidebar, .page__sidebar { display: none !important; }
+.page__content,
+.page__inner-wrap,
+.wrapper,
+.container {
+  max-width: 980px !important;   /* 본문 폭(원하면 900~1100으로 조절) */
+  width: 100% !important;
+  margin: 0 auto !important;     /* 가로 중앙 정렬 */
+  padding: 0 1.25rem !important; /* 좌우 여백 (원하면 0.75rem로 줄이기) */
+  box-sizing: border-box !important;
+  float: none !important;
 }
 
-.teach {
-  margin: 1rem auto;              /* auto로 중앙 정렬 */
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;  /* publication이랑 통일감 */
-  max-width: 800px;               /* 글자 폭 정도로 제한 (조절 가능) */
+/* ===== Teaching 섹션: 선/항목 폭 맞추기 ===== */
+.teach, .teach-list {
+  max-width: 900px;
+  margin: 0 auto 1.25rem;    /* 중앙 정렬 + 아래 여백 */
+  padding: 0 0 !important;   /* 내부 좌우 패딩 제거(필요시 조절) */
+  border-bottom: 1px solid #eee;
 }
 
-/* 왼쪽 영역 */
-.teach .left {
-  max-width: 100%;
+/* 제목/섹션 좌우 들여쓰기 제거(깨진 위치 보정) */
+.page__content h1,
+.page__content h2,
+.page__content h3 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-/* 역할 (Guest Lecturer, Tutor 등): 강조 */
-.teach .role {
-  font-weight: 600;
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  color: #222;
-}
-
-/* 기관명은 같은 줄에서 자연스럽게 */
-.teach .institution {
-  font-weight: 400;
-  color: #333;
-}
-
-/* 과목명/코드: 본문보다 살짝 작고 중간 톤 */
-.teach .course {
-  margin: .15rem 0;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  color: #555;
-}
-
-/* 노트 (평가, 설명 등): 더 작고 옅은 회색 */
-.teach .note {
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-  color: #666;
-}
-
-/* Term (연도/학기): publication의 status 스타일처럼 태그 느낌 */
+/* Teaching 내부 텍스트 폭 조절 (읽기 좋게) */
+.teach .role,
+.teach .course,
+.teach .note,
 .teach .term {
-  display: inline-block;
-  margin-top: .4rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4169E1; /* Royal Blue */
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  max-width: 820px;
+}
+
+/* Intro(홈) 같이 이미지-텍스트 레이아웃이 필요한 섹션은 별도 유지 */
+.intro { grid-template-columns: 280px 1fr !important; column-gap: 1.25rem; }
+
+/* 반응형 */
+@media (max-width: 880px) {
+  .page__content, .teach { padding: 0 0.8rem !important; max-width: 100% !important; }
 }
 
 </style>
