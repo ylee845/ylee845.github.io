@@ -66,37 +66,7 @@ hr{
   margin-left:0 !important;
   max-width: 100%;     /* 필요시 1200~1400 사이에서 조절 */
   margin: 0 auto;
-  padding: 0 1rem;       /* 좌우 여백(좁히려면 .75rem) */
-}
-
-/* 사진+텍스트 나란히 */
-.intro{ display:flex; align-items:flex-start; gap:2rem; margin:1.25rem 0 2rem; }
-.intro__img{
-  width: 240px;         /* 부담 적은 크기 (220~280 사이 조절) */
-  height:auto; border-radius:14px; border:1px solid var(--line);
-  box-shadow:0 6px 22px rgba(30,30,30,.06); flex-shrink:0;
-}
-.intro__body{ flex:1; font-size:1.02rem; line-height:1.7; font-weight:300; }
-.intro__title{ margin:0 0 .4rem; font-size:2.1rem; line-height:1.2; font-weight:800; }
-.intro__body a{ color:var(--brand); text-decoration:underline; } /* 링크 기본 밑줄 */
-@media (max-width: 900px){
-  .intro{ flex-direction:column; gap:1rem; }
-  .intro__img{ width:100%; max-width:420px; }
-}
-/* =========================
-   MASTHEAD: 고정 + 폰트 + 메뉴 강조
-   ========================= */
-
-/* 1) 스크롤 내려도 항상 상단 고정 */
-.masthead {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background: var(--card) !important;
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);   /* 살짝 그림자 */
+  padding: 0 0.75rem;       /* 좌우 여백(좁히려면 .75rem) */
 }
 
 /* 페이지 내용이 상단바에 가리지 않게 offset 추가 */
