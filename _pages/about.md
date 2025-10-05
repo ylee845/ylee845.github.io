@@ -31,8 +31,8 @@ redirect_from:
   line-height: 1.45;                 /* 줄간격 적당히 타이트 */
 }
 
-.sidebar, .page__sidebar { display:none !important; }
-.page__content { float:none !important; width:100% !important; }
+.sidebar, .page__sidebar {display:none !important;}
+.page__content {float:none !important; width:100% !important;}
 
 /* --- Intro: photo | text(right-top-aligned) -> full-width sections --- */
 .intro{
@@ -51,10 +51,13 @@ redirect_from:
 
 .intro__img{
   grid-area: photo;
-  width:260px; height:auto;
-  border-radius:14px;
-  border:1px solid var(--line);
-  box-shadow:0 6px 22px rgba(30,30,30,.06);
+  #width:260px; height:auto;
+  width: 100%;
+  #border-radius:14px;
+  border-radius: 0;
+  object-fit: cover; 
+  #border:1px solid var(--line);
+  #box-shadow:0 6px 22px rgba(30,30,30,.06);
 }
 
 .intro__body{ display: contents; }
