@@ -101,7 +101,8 @@ body, .masthead, .masthead__menu-item a, .site-title {
 }
 
 /* 1) 네비게이션: 정렬/간격/호버 애니메이션 */
-.masthead .inner-wrap{ display:flex; align-items:center; gap:1.5rem; }
+/*.masthead .inner-wrap{ display:flex; align-items:center; gap:1.5rem; }/*
+
 .greedy-nav .visible-links{ gap:.5rem; }
 .greedy-nav a{
   position:relative;
@@ -117,8 +118,32 @@ body, .masthead, .masthead__menu-item a, .site-title {
 .greedy-nav a:hover::after{ transform:scaleX(1); }
 
 /* 2) 고정 헤더의 미세 그림자(스크롤 시만 진하게 보이도록) */
-.masthead{ transition: box-shadow .2s ease, background-color .2s ease; }
-html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
+.masthead{
+  position: sticky;   /* or fixed; 로 완전 고정도 가능 */
+  top: 0;
+  left: 0; right: 0;
+  z-index: 1000;
+  height: var(--masthead-h);
+  background: #fff;                 /* 라이트 고정. 다크 쓰면 원하는 색으로 */
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);   /* 얇은 구분선 느낌. 싫으면 none */
+  margin: 0 !important;
+}
+
+/* “네모 박스” 없애기: 내부 래퍼의 최대폭/배경/라운드 제거 */
+.masthead__inner-wrap,
+.masthead .wrap{
+  max-width: none !important;    /* 중앙 박스 폭 제한 해제 */
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 20px !important;    /* 좌우 여백만 살짝 */
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+/*.masthead{ transition: box-shadow .2s ease, background-color .2s ease; }
+html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }/*
 
 /* 3) 히어로(사진+소개) 균형: 좌 300px : 우 1fr */
 .intro{ display:grid !important; grid-template-columns: 300px 1fr; gap:2rem; align-items:center; }
