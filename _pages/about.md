@@ -130,24 +130,36 @@ redirect_from:
   </p>
 </div>
 
-
-<div class="about-sections">
-  <h3>Why</h3>
-  <p>
-    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize.
+<div class="about-sections" style="max-width:75ch; margin:auto; line-height:1.6;">
+  <h3 style="font-size:1.4rem; font-weight:700; color:#222;">
+    Knowledge-Informed ML: Why, Where, and How
+  </h3>
+  <h3 style="font-size:1.1rem; font-weight:600; margin-top:1rem; color:#333;">
+    Why
+  </h3>
+  <p style="color:#444;">
+    Real-world data often suffers from <strong>scarcity</strong>, 
+    <strong>heterogeneity</strong>, and <strong>high dimensionality</strong>,
+    making it difficult for purely data-driven models to generalize well.
   </p>
-
-  <h3>Where</h3>
-  <ul> 
+  <h3 style="font-size:1.1rem; font-weight:600; margin-top:1rem; color:#333;">
+    Where
+  </h3>
+  <p style="color:#444;">
+    <ul> 
     <li><strong>Input level</strong> – deliberately refine model inputs using domain knowledge.</li> 
     <li><strong>Architecture level</strong> – embed knowledge into network design or loss function.</li> 
     <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
   </ul>
-
-  <h3>How</h3>
-  <ul> 
+  </p>
+  <h3 style="font-size:1.1rem; font-weight:600; margin-top:1rem; color:#333;">
+    How
+  </h3>
+  <p style="color:#444;">
+    <ul> 
     <li><strong>Representations</strong> – encode qualitative knowledge into quantitative representations.</li> 
     <li><strong>Constraints</strong> – enforce biologically or physically valid conditions.</li>
     <li><strong>Rules</strong> – formalize domain knowledge as rule-based guidance.</li>
   </ul>
+  </p>
 </div>
