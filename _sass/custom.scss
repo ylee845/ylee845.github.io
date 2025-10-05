@@ -218,3 +218,30 @@ hr, .archive hr { border-color: var(--line) !important; }
   color: var(--muted) !important;
 }
 
+/* ==== 다크/라이트 공통: 텍스트 색 강제 동기화 ==== */
+/* 본문 계열 전역 통일 */
+:where(.page__content, .intro__lead, .aboutme, .meta, .post-meta, .page__meta,
+       .archive__item-excerpt, .notice, .note, .feature__item, .page__title) {
+  color: var(--text) !important;
+}
+
+/* 자주 쓰는 고정색 잔재를 변수로 강제 매핑 */
+:where(h1,h2,h3,h4,h5,h6,p,li,span,small,div,a,strong,em,code,pre) {
+  /* 텍스트색 */
+  color: var(--text) !important;
+}
+
+/* 링크/구분선 기본 */
+a { color: var(--link) !important; }
+hr, .archive hr, .divider { border-color: var(--line) !important; }
+
+/* 상단바 배경이 본문과 톤이 다르면 동일하게(원하면 유지) */
+.masthead { background: var(--header-bg) !important; border-bottom:1px solid var(--line) !important; }
+
+/* 다크에서 상단바와 본문 배경을 '완전 동일'하게 하고 싶으면 이 라인 사용 */
+html[data-theme="dark"] .masthead { background: var(--bg) !important; }
+
+/* 코드/프리 포맷 영역 */
+pre, code { background: transparent; color: var(--text) !important; border-color: var(--line) !important; }
+
+
