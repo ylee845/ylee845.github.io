@@ -12,7 +12,11 @@ redirect_from:
     📄 Download full CV (PDF)
   </a>
 </p>
-<div style="margin:1rem 0; padding:0.5rem 0;">
-  <iframe src="/files/Yeonju_Lee_CV.pdf" width="100%" height="750px" style="border:1px solid #ddd; border-radius:8px;">
-  </iframe>
+<div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+  <iframe
+    src="/files/Yeonju_Lee_CV.pdf"
+    width="80%"
+    height="800px"
+    style="border:none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+  ></iframe>
 </div>
