@@ -6,7 +6,7 @@ collection: publications
 #excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
 #date: 2015-10-01
 year: 2025
-venue: 'Under review in Environmental Science & Technology.'
+venue: 'Major Revision in Environmental Science & Technology'
 #slidesurl: 'http://academicpages.github.io/files/slides3.pdf'
 #paperurl: 'http://academicpages.github.io/files/paper3.pdf'
 authors: 'A. Cohen, Y. Sun, H. Muriki, X. Zihao, Y. Lee, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen'
