@@ -82,19 +82,27 @@ classes: wide       # ← 본문을 넓게(가로폭 회수)
           </h3>
 
           <div class="meta">
-            {%- assign parts = "" | split:"|" -%}
-            {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
-            {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
-
-            {%- assign issue_info = "" -%}
-            {%- if post.volume -%}{% assign issue_info = issue_info | append: post.volume %}{% endif -%}
-            {%- if post.issue  -%}{% assign issue_info = issue_info | append: "(" | append: post.issue | append: ")" %}{% endif -%}
-            {%- if post.pages  -%}{% assign issue_info = issue_info | append: ", " | append: post.pages %}{% endif -%}
-            {%- if post.year   -%}{% assign issue_info = issue_info | append: ", " | append: post.year %}{% endif -%}
-            {%- if issue_info != "" -%}{%- assign parts = parts | push: issue_info -%}{%- endif -%}
-
-            {{ parts | join: ", " }}
-          </div>
+          {%- assign parts = "" | split:"|" -%}
+          {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
+          {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
+        
+          {%- assign issue_parts = "" | split:"|" -%}
+          {%- if post.volume and post.issue -%}
+            {%- assign vol_issue = post.volume | append: " (" | append: post.issue | append: ")" -%}
+            {%- assign issue_parts = issue_parts | push: vol_issue -%}
+          {%- elsif post.volume -%}
+            {%- assign issue_parts = issue_parts | push: post.volume -%}
+          {%- elsif post.issue -%}
+            {%- assign issue_parts = issue_parts | push: "(" | append: post.issue | append: ")" -%}
+          {%- endif -%}
+          {%- if post.pages -%}{%- assign issue_parts = issue_parts | push: post.pages -%}{%- endif -%}
+          {%- if post.year  -%}{%- assign issue_parts = issue_parts | push: post.year  -%}{%- endif -%}
+        
+          {%- capture issue_joined -%}{{ issue_parts | join: ", " }}{%- endcapture -%}
+          {%- unless issue_joined == "" -%}{%- assign parts = parts | push: issue_joined -%}{%- endunless -%}
+        
+          {{ parts | join: ", " }}
+        </div>
 
           {% if post.excerpt %}
             <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
