@@ -80,7 +80,8 @@ redirect_from:
 .intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
 .intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
 .aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
-.about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
+.about-heading{ grid-area:full; margin-top:.15rem; font-size:1rem; }
+  .about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
 /* 반응형: 1열 스택 */
 @media (max-width:880px){
@@ -130,7 +131,6 @@ redirect_from:
   </p>
 </div>
 
-<h2 style="margin-top:1.2rem;">Knowledge-Informed ML: Why, Where, and How</h2>
 <div class="intro__framework">
   <h2 class="about-heading">Knowledge-Informed ML: Why, Where, and How</h2>
     <div class="about-sections">
