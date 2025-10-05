@@ -125,7 +125,7 @@ redirect_from:
 
 <div class="aboutme">
   <p>
-    My research focuses on <style="color:var(--brand); font-weight: 520">knowledge-informed machine learning (ML)—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
+    My research focuses on <span style="color:var(--brand); font-weight: 520">knowledge-informed machine learning (ML)</span>—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
     If you’d like to connect, feel free to reach out at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
   </p>
 </div>
