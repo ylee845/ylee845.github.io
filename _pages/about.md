@@ -39,15 +39,16 @@ redirect_from:
   display:grid !important;
   #grid-template-columns: 260px minmax(0,1fr);
   grid-template-columns: 100%;
+  max-width: 100%;  
   grid-template-areas:
     "photo title"
     "photo lead"
     "photo about"
     "full  full";
-  column-gap: 1.75rem;
-  row-gap: .75rem;
+  #column-gap: 1.75rem;
+  #row-gap: .75rem;
   align-items:start;
-  margin: 1.2rem 0 1.8rem;
+  #margin: 1.2rem 0 1.8rem;
 }
 
 .intro__img{
@@ -86,11 +87,12 @@ redirect_from:
 }
 
 .about-inline .page__content {
-  padding: 0 1rem !important;     /* 좌우 여백 줄이기 */
+  #padding: 0 1rem !important;     /* 좌우 여백 줄이기 */
 }
 
 .intro {
-  grid-template-columns: 280px 1fr; /* 오른쪽 확장 */
+  #grid-template-columns: 280px 1fr; /* 오른쪽 확장 */
+  grid-template-columns: 100%;
   column-gap: 1.25rem;              /* 여백 줄이기 */
 }
 
@@ -114,7 +116,7 @@ redirect_from:
 
 .about-sections p {
   margin-top: 0;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .about-sections ul {
