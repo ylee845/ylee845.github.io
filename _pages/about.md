@@ -61,8 +61,8 @@ redirect_from:
 
 .intro__title{ grid-area: title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
 .intro__lead { grid-area: lead;  margin:0 0 1rem; font-size:1rem; color:#2f2f2f; }
-.aboutme      { grid-area: about; font-size:1rem;}
-.about-sections{ grid-area: full; margin-top:.2rem; font-size:1rem;}
+.aboutme      { grid-area: about; font-size:1rem; margin-top: 0.3rem;}
+.about-sections{ grid-area: full; margin-top:.3rem; font-size:1rem;}
 
 #.page__content,
 #.page__inner-wrap,
