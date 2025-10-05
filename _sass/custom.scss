@@ -169,7 +169,6 @@ html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
   body { padding-top: 52px; }
 }
 
-/* 다크모드 팔레트 */
 /* ===========================
    LIGHT & DARK THEME COLORS
    =========================== */
@@ -177,7 +176,7 @@ html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }
   --bg: #ffffff;
   --text: #111111;
   --muted: #555555;
-  --link: #1a73e8;
+  --link: #4169E1;       /* 💙 Royal Blue — 네가 원래 쓰던 색 */
   --line: #e6e6e6;
   --header-bg: rgba(255,255,255,.85);
 }
@@ -192,13 +191,19 @@ html[data-theme="dark"] {
   --header-bg: rgba(22,24,29,.85);
 }
 
-/* 전체 적용 */
+/* === 전체 적용 === */
 body {
   background: var(--bg) !important;
   color: var(--text) !important;
 }
 
-a { color: var(--link) !important; }
+a {
+  color: var(--link) !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 hr, .archive hr { border-color: var(--line) !important; }
 
@@ -218,56 +223,31 @@ hr, .archive hr { border-color: var(--line) !important; }
 .small, .muted, .post-meta, .page__meta {
   color: var(--muted) !important;
 }
-/* ==== 다크/라이트 공통: 텍스트 색 강제 동기화 ==== */
-/* 본문 계열 전역 통일 */
-:where(.page__content, .intro__lead, .aboutme, .meta, .post-meta, .page__meta,
-       .archive__item-excerpt, .notice, .note, .feature__item, .page__title) {
+
+/* === 라이트 모드에서 Royal Blue 강제 복원 === */
+html:not([data-theme="dark"]) a,
+html:not([data-theme="dark"]) a:visited {
+  color: #4169E1 !important;
+}
+html:not([data-theme="dark"]) strong,
+html:not([data-theme="dark"]) b {
+  color: #111 !important;
+}
+
+/* === 다크 모드에서 자연스러운 색 유지 === */
+html[data-theme="dark"] a,
+html[data-theme="dark"] a:visited {
+  color: #8ab4ff !important;
+}
+html[data-theme="dark"] strong,
+html[data-theme="dark"] b {
+  color: #fff !important;
+}
+
+/* 코드 영역 */
+pre, code {
+  background: transparent;
   color: var(--text) !important;
-}
-
-/* 자주 쓰는 고정색 잔재를 변수로 강제 매핑 */
-:where(h1,h2,h3,h4,h5,h6,p,li,span,small,div,a,strong,em,code,pre) {
-  /* 텍스트색 */
-  color: var(--text) !important;
-}
-
-/* 링크/구분선 기본 */
-a { color: var(--link) !important; }
-hr, .archive hr, .divider { border-color: var(--line) !important; }
-
-/* 상단바 배경이 본문과 톤이 다르면 동일하게(원하면 유지) */
-.masthead { background: var(--header-bg) !important; border-bottom:1px solid var(--line) !important; }
-
-/* 다크에서 상단바와 본문 배경을 '완전 동일'하게 하고 싶으면 이 라인 사용 */
-html[data-theme="dark"] .masthead { background: var(--bg) !important; }
-
-/* 코드/프리 포맷 영역 */
-pre, code { background: transparent; color: var(--text) !important; border-color: var(--line) !important; }
-
-/* === 복원: 강조색과 링크색 되살리기 === */
-
-/* 링크 */
-a, a:visited {
-  color: #4169E1 !important;        /* Royal Blue */
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* 강조 텍스트 (논문 제목 등) */
-strong, b {
-  color: #111 !important;           /* 본문보다 약간 진하게 */
-}
-
-/* 메타 정보(연도, 저자 등)는 살짝 연하게 */
-.meta, .post-meta, .page__meta, .archive__item-excerpt {
-  color: #444 !important;
-}
-
-/* 인용, 설명글, 이탤릭 텍스트 */
-em, i {
-  color: #333 !important;
-  font-style: italic;
+  border-color: var(--line) !important;
 }
 
