@@ -82,7 +82,7 @@ body, .masthead, .masthead__menu-item a, .site-title {
 
 /* 3) 메뉴 항목 강조 (더 두껍고 깔끔하게) */
 .masthead__menu-item a {
-  font-weight: 600 !important;     /* 원래 500~550 정도 → 약간 굵게 */
+  font-weight: 550 !important;     /* 원래 500~550 정도 → 약간 굵게 */
   font-size: 1.02rem;
   color: var(--text) !important;
   transition: color 0.15s ease, background-color 0.15s ease;
