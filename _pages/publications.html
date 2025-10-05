@@ -104,10 +104,11 @@ classes: wide       # ← 본문을 넓게(가로폭 회수)
           {{ parts | join: ", " }}
         </div>
 
-          {% if post.excerpt %}
-            <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
-          {% endif %}
-        </div>
+          {% capture ex %}
+          {{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
+        {% endcapture %}
+        {% assign is_finalist = ex contains 'Finalist' or ex contains 'finalist' %}
+        <div class="excerpt{% if is_finalist %} excerpt--finalist{% endif %}">{{ ex }}</div>
 
         <div class="right">
           {% if post.status %}
