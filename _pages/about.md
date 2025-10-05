@@ -136,7 +136,7 @@ redirect_from:
     <div class="intro__lead">
       Hello! Thank you for stopping by. <br>
       I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
-      <strong>Georgia Tech</strong>, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
+      Georgia Institute of Technology, advised by <a href="https://sites.gatech.edu/jing-li/">Prof. Jing Li</a>.
     </div>
 
     <div class="aboutme">
