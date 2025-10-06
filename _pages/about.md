@@ -156,7 +156,7 @@ h4 {
       Hello! I’m a Ph.D. student in the 
       <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
       <strong>Georgia Institute of Technology</strong>, advised by 
-      <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Prof. Jing Li</a>.
+      <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Dr. Jing Li</a>.
     </p>
 
     <p>
