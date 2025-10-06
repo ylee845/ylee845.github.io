@@ -139,7 +139,11 @@ redirect_from:
 </style>
 
 <div class="intro">
-  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
+  <div class="profile-container">
+    <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
+    <p class="email"><a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a></p>
+  </div>
+
   <div class="intro__body">
     <h2 class="intro__title">Yeonju Lee</h2>
     <p>
@@ -148,13 +152,14 @@ redirect_from:
       <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Prof. Jing Li</a>.
     </p>
     <p>
-      My research focuses on <span class=color: #4169E1; font-weight: 700; letter-spacing: 0.2px;>knowledge-informed machine learning (ML)</span>—developing models that 
+      My research focuses on 
+      <span class="highlight-blue">knowledge-informed machine learning (ML)</span>—developing models that 
       <em>integrate domain knowledge</em> to become more 
       <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>.
     </p>
-    <p><a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a></p>
   </div>
 </div>
+
 
 <hr>
 
