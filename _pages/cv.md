@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 {% include base_path %}
-<div align="center">
+<div>
   <p style="margin:.75rem 0 0">
     <a href="/files/Yeonju_Lee_CV.pdf" target="_blank" rel="noopener">
       📄 Download full CV (PDF)
