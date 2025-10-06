@@ -111,25 +111,26 @@ redirect_from:
   margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
 }
 
-.about-sections h4 {
-  font-size: 1.1rem !important;   /* 기본보다 약간 크게 (1.1 → 1.25rem) */
-  font-weight: 600 !important;     /* 중간보다 살짝 굵게 */
-  letter-spacing: 0.2px;
-  margin-top: 1.2rem;              /* 위 여백 */
-  margin-bottom: 0.4rem;           /* 아래 여백 */
-  color: #888888;
+h4 {
+  color: #444444;        /* 진회색 */
+  font-weight: 600;      /* 볼드 강조 */
+  font-size: 1.1rem;    /* 약간 크게 */
+  letter-spacing: 0.15px;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
   line-height: 1.3;
 }
-
 
 .about-sections p {
   margin-top: 0;
   margin-bottom: 0.3rem;
+  font-size: 1rem; 
 }
 
 .about-sections ul {
   margin-top: 0.3rem;
   margin-bottom: 0.8rem; /* 리스트와 다음 섹션 간격 살짝만 */
+  font-size: 1rem; 
 }
 
 .about-sections li {
