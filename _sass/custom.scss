@@ -118,8 +118,21 @@ html[data-theme="dark"] * {
   border-color: inherit !important;
 }
 
-/* 테마 전환 버튼 숨기기 (상단 gear 아이콘 등) */
-.theme-toggle, [data-theme-toggle], .color-scheme-toggle {
+.theme-toggle,
+.color-scheme-toggle,
+[data-theme-toggle],
+button[aria-label*="theme"],
+button[title*="theme"],
+button[aria-label*="Theme"],
+button[title*="Theme"],
+.masthead__menu-item [title*="theme"],
+.masthead__menu-item [aria-label*="theme"] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
