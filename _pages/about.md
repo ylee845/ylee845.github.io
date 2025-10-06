@@ -89,6 +89,13 @@ redirect_from:
 .aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
 .about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
+hr, 
+.section-divider {
+  margin: 0.5rem 0;      /* 위아래 여백 조정 (기본은 1em~2em 정도임) */
+  border: none;
+  border-top: 1px solid #e0e0e0; /* 은은한 회색선 유지 */
+}
+
 .intro__title,
 .intro__lead,
 .aboutme,
