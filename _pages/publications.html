@@ -13,47 +13,35 @@ classes: wide       # ← 본문을 넓게(가로폭 회수)
 {% assign offset = inprep.size %}
 
 <style>
-/* Publications 전체 영역 여백 조정 */
-.paper {
-  margin: 0.8rem 0 1.2rem 0;
-}
+/* ===== Typography & layout (Teaching 스타일과 통일) ===== */
+.pubs{ ffont-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; max-width: 75ch; }
+.pubs h2{ font-weight:550; color:#555; font-size:clamp(1.25rem,2vw,1.9rem); margin:1.2rem 0 .6rem }
 
-/* 논문 제목 (가장 중요) */
-.paper h3 {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 600;              /* 너무 두껍지 않게 */
-  font-size: 1.05rem;            /* 살짝 줄임 (기존 1.2rem → 1.05rem) */
-  line-height: 1.35;             /* 단단한 줄 간격 */
-  color: #222;                   /* 진회색, 완전 블랙보다 부드럽게 */
-  margin-bottom: 0.25rem;
-}
+/* 한 항목 */
+.paper{ display:flex; justify-content:space-between; gap:1rem;
+        padding:.9rem 0 1rem; border-bottom:1px solid #eee; }
+.paper:last-child{ border-bottom:0 }
 
-/* 저자 목록 */
-.paper .meta {
-  font-size: 0.92rem;
-  color: #666;                   /* 저자 텍스트 흐리게 */
-  letter-spacing: 0.1px;
-}
+/* 왼쪽: 번호 + 제목 + 메타 */
+.left{ max-width:82% }
+.paper h3{ margin:0; line-height:1.35; font-weight:600; color:#333 }
+.paper h3 .num{ display:inline-block; width:2.2ch; margin-right:.6rem;
+                color:#9aa0a6; text-align:right; font-variant-numeric:tabular-nums }
+.paper h3 .title{ font-size:clamp(1rem,1.55vw,1.25rem) }
+.meta{ margin:.35rem 0 0; color:#6b6b6b; font-size:clamp(.92rem,1.2vw,1rem); line-height:1.45 }
 
-/* 상태 표시 (IN PREPARATION 등) */
-.paper h3 em {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.82rem;
-  color: #4169E1;                /* 로열블루 */
-  text-transform: uppercase;
-  margin-left: 0.3rem;
-}
+/* 초록 */
+.excerpt{ margin:.35rem 0 0; font-size:clamp(.88rem,1.1vw,.95rem); color:#4169E1; font-style:italic }
 
-/* 상단 섹션 헤더 (In Preparation, Published 등) */
-h2 {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.3px;
-  color: #333;
-  margin-top: 2.2rem;
-  margin-bottom: 0.8rem;
+/* 오른쪽: 상태/연도 */
+.right{ min-width:10ch; text-align:right; }
+.tag{ display:inline-block; font-size:.8rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }
+.tag.blue{ color:#4169E1 }
+.year{ display:block; color:#777; font-size:.95rem; margin-top:.2rem }
+
+@media (max-width:700px){
+  .paper{ flex-direction:column; gap:.4rem }
+  .right{ text-align:left }
 }
 </style>
 
