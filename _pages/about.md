@@ -65,7 +65,7 @@ redirect_from:
     "full  full";
   column-gap: 1.25rem;
   row-gap: .6rem;
-  margin: 1.2rem 0 1.8rem;
+  margin: 1.2rem 0 0.5rem;
   align-items:start;
 }
 
@@ -121,7 +121,7 @@ redirect_from:
 }
 
 h4 {
-  color: #6495ED;        /* 진회색 */
+  color: #777;        /* 진회색 */
   font-weight: 550;      /* 볼드 강조 */
   font-size: 1.05rem;    /* 약간 크게 */
   letter-spacing: 0.15px;
