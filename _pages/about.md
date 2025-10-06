@@ -128,18 +128,6 @@ redirect_from:
 </style>
 
 <div class="intro">
-  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Portrait">
-
-  <div class="intro__body">
-    <h1 class="intro__title">Yeonju Lee</h1>
-    <div class="intro__lead">
-      Hello! Thank you for stopping by. <br>
-      I am a Ph.D. student in the H. Milton Stewart School of Industrial & Systems Engineering at
-      Georgia Institute of Technology, advised by <a href="https://sites.gatech.edu/jing-li/">Dr. Jing Li</a>.
-    </div>
-
-<div class="aboutme">
-<div class="intro">
   <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
   <div class="intro__body">
     <h2 class="intro__title">Yeonju Lee</h2>
