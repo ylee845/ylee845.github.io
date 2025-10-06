@@ -78,7 +78,7 @@ redirect_from:
 
 .intro__body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.05rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
+  font-size: 1rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
   line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
   letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
   color: var(--text);
@@ -116,7 +116,7 @@ redirect_from:
 .about-sections h3 {
   margin-top: 0.4rem;   /* 위쪽 간격 줄이기 */
   margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
 }
 
@@ -132,7 +132,7 @@ h4 {
 
 .about-sections p {
   margin-top: 0;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0;
   line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
   letter-spacing: -0.1px;
   font-size: 1rem; 
