@@ -139,39 +139,54 @@ redirect_from:
     </div>
 
 <div class="aboutme">
+<div class="intro">
+  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
+  <div class="intro__body">
+    <h2 class="intro__title">Yeonju Lee</h2>
+    <p>
+      Hello! I’m a Ph.D. student in the <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
+      <strong>Georgia Institute of Technology</strong>, advised by 
+      <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Prof. Jing Li</a>.
+    </p>
+    <p>
+      My research centers on <a href="#">knowledge-informed machine learning (ML)</a>—developing models that 
+      <em>integrate domain knowledge</em> to become more 
+      <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>.
+    </p>
+    <p>If you’d like to connect, reach me at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.</p>
+  </div>
+</div>
+
+<hr>
+
+<section class="about-sections">
+  <h3>Knowledge-Informed ML: <span class="accent">Why, Where, and How</span></h3>
+  <hr class="section-divider">
+
+  <h4>Why Knowledge-Informed ML?</h4>
   <p>
-    My research focuses on <span style="color:var(--brand); font-weight: 520">knowledge-informed machine learning (ML)</span>—developing methods that incorporate domain expertise to make ML models more <em>data-efficient</em>, <em>robust</em>, and <em>interpretable</em>. 
-    If you’d like to connect, feel free to reach out at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
-  </p>
-</div>
-
-<div class="about-sections" style="max-width:75ch; margin:auto; line-height:1.65; font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; color:#333;">
-  <hr style="border:none; border-top:1px solid #e5e5e5; margin-top: 0.8rem; margin-bottom: 1.5rem; width:92%;">
-  <h3 style="font-size:1.4rem; font-weight:650; color:#222; margin-bottom:1rem;">
-    Knowledge-Informed ML: Why, Where, and How
-  </h3>
-
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.2rem;">Why Knowledge-Informed ML?</h4>
-  <p style="margin-top:.4rem;">
-    Real-world data often suffers from 
-    <span style="font-weight:520;">scarcity</span>, 
-    <span style="font-weight:520;">heterogeneity</span>, and 
-    <span style="font-weight:520;">high dimensionality</span>, 
-    making it difficult for purely data-driven models to generalize well.
+    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, 
+    and <strong>high dimensionality</strong>, making it challenging for purely data-driven models to generalize.
   </p>
 
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">Where to Inform?</h4>
-  <ul style="margin-top:.3rem; margin-left:0.5rem;">
-    <li><span style="font-weight:520;">Input level</span> – deliberately refine model inputs using domain knowledge.</li>
-    <li><span style="font-weight:520;">Architecture level</span> – embed knowledge into network design or loss function.</li>
-    <li><span style="font-weight:520;">Inference level</span> – guide model reasoning during inference.</li>
+  <h4>Where to Inform?</h4>
+  <ul class="styled-list">
+    <li><strong>Input level</strong> – refine model inputs using domain expertise.</li>
+    <li><strong>Architecture level</strong> – embed knowledge into the network design or loss function.</li>
+    <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
   </ul>
 
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">How to Inform?</h4>
-  <ul style="margin-top:.3rem; margin-left:0.5rem;">
-    <li><span style="font-weight:520;">Representations</span> – encode qualitative knowledge into quantitative representations.</li>
-    <li><span style="font-weight:520;">Constraints</span> – enforce biologically or physically valid conditions.</li>
-    <li><span style="font-weight:520;">Rules</span> – formalize domain knowledge as rule-based guidance.</li>
+  <h4>How to Inform?</h4>
+  <ul class="styled-list">
+    <li><strong>Representations</strong> – encode qualitative knowledge into quantitative features.</li>
+    <li><strong>Constraints</strong> – enforce biologically or physically consistent conditions.</li>
+    <li><strong>Rules</strong> – formalize expert knowledge as rule-based guidance.</li>
   </ul>
-Knowledge-Informed ML has demonstrated effectiveness across multiple domains, including <span style="font-weight:520;">healthcare</span>, <span style="font-weight:520;">precision agriculture</span>, and <span style="font-weight:520;">manufacturing</span>. Kindly refer to my Publications for further details.
-</div>
+
+  <p>
+    Knowledge-Informed ML has demonstrated effectiveness across domains including 
+    <strong>healthcare</strong>, <strong>precision agriculture</strong>, and <strong>manufacturing</strong>.  
+    For more details, refer to the <a href="/publications">Publications</a> section.
+  </p>
+</section>
+
