@@ -78,8 +78,8 @@ redirect_from:
 
 .intro__body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.98rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
-  line-height: 1.45;           /* 줄 간격 약간 촘촘하게 */
+  font-size: 1.05rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
+  line-height: 1.75;           /* 줄 간격 약간 촘촘하게 */
   letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
   color: var(--text);
   max-width: 600px;
