@@ -151,7 +151,7 @@ redirect_from:
     Knowledge-Informed ML: Why, Where, and How
   </h3>
 
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.2rem;">Why</h4>
+  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.2rem;">Why Knowledge-Informed ML?</h4>
   <p style="margin-top:.4rem;">
     Real-world data often suffers from 
     <span style="font-weight:520;">scarcity</span>, 
@@ -160,14 +160,14 @@ redirect_from:
     making it difficult for purely data-driven models to generalize well.
   </p>
 
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">Where</h4>
+  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">Where to Inform?</h4>
   <ul style="margin-top:.3rem; margin-left:0.5rem;">
     <li><span style="font-weight:520;">Input level</span> – deliberately refine model inputs using domain knowledge.</li>
     <li><span style="font-weight:520;">Architecture level</span> – embed knowledge into network design or loss function.</li>
     <li><span style="font-weight:520;">Inference level</span> – guide model reasoning during inference.</li>
   </ul>
 
-  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">How</h4>
+  <h4 style="font-size:1.05rem; font-weight:550; margin-top:1.4rem;">How to Inform?</h4>
   <ul style="margin-top:.3rem; margin-left:0.5rem;">
     <li><span style="font-weight:520;">Representations</span> – encode qualitative knowledge into quantitative representations.</li>
     <li><span style="font-weight:520;">Constraints</span> – enforce biologically or physically valid conditions.</li>
