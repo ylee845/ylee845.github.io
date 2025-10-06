@@ -112,12 +112,12 @@ redirect_from:
 }
 
 .about-sections h4 {
-  font-size: 1.25rem !important;   /* 기본보다 약간 크게 (1.1 → 1.25rem) */
-  font-weight: 650 !important;     /* 중간보다 살짝 굵게 */
+  font-size: 1.1rem !important;   /* 기본보다 약간 크게 (1.1 → 1.25rem) */
+  font-weight: 600 !important;     /* 중간보다 살짝 굵게 */
   letter-spacing: 0.2px;
   margin-top: 1.2rem;              /* 위 여백 */
   margin-bottom: 0.4rem;           /* 아래 여백 */
-  color: var(--text);
+  color: #888888;
   line-height: 1.3;
 }
 
@@ -148,7 +148,7 @@ redirect_from:
       <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Prof. Jing Li</a>.
     </p>
     <p>
-      My research focuses on <a href="#">knowledge-informed machine learning (ML)</a>—developing models that 
+      My research focuses on <span class=color: #4169E1; font-weight: 700; letter-spacing: 0.2px;>knowledge-informed machine learning (ML)</span>—developing models that 
       <em>integrate domain knowledge</em> to become more 
       <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>.
     </p>
