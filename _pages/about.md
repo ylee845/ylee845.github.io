@@ -140,30 +140,33 @@ h4 {
 </style>
 
 <div class="intro">
-  <div class="profile-container">
-    <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
-    <p class="email"><a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a></p>
-  </div>
+  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
 
   <div class="intro__body">
     <h2 class="intro__title">Yeonju Lee</h2>
+
     <p>
-      Hello! I’m a Ph.D. student in the <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
+      Hello! I’m a Ph.D. student in the 
+      <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
       <strong>Georgia Institute of Technology</strong>, advised by 
       <a href="https://isye.gatech.edu/people/jing-li" target="_blank">Prof. Jing Li</a>.
     </p>
+
     <p>
       My research focuses on 
-      <span class="highlight-blue">knowledge-informed machine learning (ML)</span>—developing models that 
+      <span style="color:#4169E1; font-weight:700; letter-spacing:0.2px;">
+        knowledge-informed machine learning (ML)
+      </span>
+      —developing models that 
       <em>integrate domain knowledge</em> to become more 
-      <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>.
+      <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>. 
+      Please feel free to contact at 
+      <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
     </p>
   </div>
 </div>
 
-
 <hr>
-
 <section class="about-sections">
   <h3>Knowledge-Informed ML: <span class="accent">Why, Where, and How</span></h3>
   <hr class="section-divider">
