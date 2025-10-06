@@ -110,169 +110,72 @@ body, .masthead, .masthead__menu-item a, .site-title {
   font-weight:650;                    /* 메뉴 더 또렷하게 */
   letter-spacing:.2px;
 }
-.greedy-nav a::after{                 /* 밑줄 애니메이션 */
+/* === NAV: default dark text, hover Royal Blue; add right-side icons === */
+
+/* Layout for nav + right icons */
+.greedy-nav{ display:flex; align-items:center; }
+.greedy-nav .visible-links{ display:flex; gap:.5rem; }
+
+/* Right icon cluster */
+.nav-right{ margin-left:auto; display:flex; gap:.4rem; align-items:center; }
+.nav-icon{
+  display:inline-flex; width:22px; height:22px; line-height:0;
+  color:#2b2b2b; opacity:.96; transition: color .15s ease, opacity .15s ease;
+}
+.nav-icon svg{ width:100%; height:100%; fill:currentColor; }
+.nav-icon:hover{ color:#4169E1 !important; opacity:1; }
+
+/* Top nav link colors (light) */
+.masthead .site-title,
+.masthead .greedy-nav a,
+.masthead .masthead__menu-item a{
+  color:#2b2b2b !important; text-decoration:none !important;
+  background:transparent !important;
+}
+
+/* Hover = Royal Blue; no blue background */
+.masthead .greedy-nav a:hover,
+.masthead .masthead__menu-item a:hover{
+  color:#4169E1 !important; background:transparent !important;
+}
+
+/* Keep underline anim if you want */
+.greedy-nav a::after{
   content:""; position:absolute; left:.6rem; right:.6rem; bottom:.2rem;
-  height:2px; background:var(--brand); transform:scaleX(0); transform-origin:left;
+  height:2px; background:#4169E1; transform:scaleX(0); transform-origin:left;
   transition:transform .18s ease;
 }
 .greedy-nav a:hover::after{ transform:scaleX(1); }
 
-/* 2) 고정 헤더의 미세 그림자(스크롤 시만 진하게 보이도록) */
+/* Dark mode equivalents */
+html[data-theme="dark"] .masthead .site-title,
+html[data-theme="dark"] .masthead .greedy-nav a,
+html[data-theme="dark"] .masthead .masthead__menu-item a,
+html[data-theme="dark"] .masthead .nav-icon{
+  color:#e9e9ee !important;
+}
+html[data-theme="dark"] .masthead .greedy-nav a:hover,
+html[data-theme="dark"] .masthead .masthead__menu-item a:hover,
+html[data-theme="dark"] .masthead .nav-icon:hover{
+  color:#8ab4ff !important;
+}
+
+/* (Optional) neutralize any previous hover background */
+.masthead__menu-item a:hover{ background:transparent !important; }
+
+/* Ensure header stays slim and sticky */
 .masthead{
-  position: sticky;   /* or fixed; 로 완전 고정도 가능 */
-  top: 0;
-  left: 0; right: 0;
-  z-index: 1000;
-  height: var(--masthead-h);
-  background: #fff;                 /* 라이트 고정. 다크 쓰면 원하는 색으로 */
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,.06);   /* 얇은 구분선 느낌. 싫으면 none */
-  margin: 0 !important;
+  position:sticky; top:0; left:0; right:0; z-index:1000;
+  background:var(--header-bg) !important;
+  border-bottom:1px solid var(--line) !important;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
 }
-
-/* “네모 박스” 없애기: 내부 래퍼의 최대폭/배경/라운드 제거 */
-.masthead__inner-wrap,
-.masthead .wrap{
-  max-width: none !important;    /* 중앙 박스 폭 제한 해제 */
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 20px !important;    /* 좌우 여백만 살짝 */
-  background: transparent !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+.masthead__inner-wrap, .masthead .wrap{
+  max-width:none !important; width:100% !important; padding:0 20px !important;
 }
-/*.masthead{ transition: box-shadow .2s ease, background-color .2s ease; }
-html.scrolled .masthead{ box-shadow:0 6px 16px -14px rgba(0,0,0,.35); }/*
-
-/* 3) 히어로(사진+소개) 균형: 좌 300px : 우 1fr */
-.intro{ display:grid !important; grid-template-columns: 300px 1fr; gap:2rem; align-items:center; }
-.intro__img{ max-width:300px; border-radius:18px; box-shadow:0 10px 32px -18px rgba(0,0,0,.35); }
-.intro__title{
-  font-size: clamp(2rem, calc(1rem + 3vw), 2.6rem);
-}
-.intro__body{ line-height:1.55; }
-.intro__body p{ margin:.6rem 0; }
-
-/* 4) 본문 타이포 리듬 & 굵기 대비 */
-.page__content strong{ font-weight:700; }
-.page__content em{ font-style:italic; opacity:.92; }
-
-/* 5) 섹션 헤더 스타일 (Why/Where/How) */
-.about-sections h3{
-  margin:1.4rem 0 .5rem; font-weight:750; letter-spacing:.15px;
-}
-.about-sections hr{
-  height:1px; border:0;
-  background:linear-gradient(90deg, transparent, var(--line), transparent);
-  margin:.7rem 0 1rem;
-}
-
-/* 6) 링크 가독성 + 밑줄 밀도 낮추기 */
-.page__content a{
-  color:var(--brand); text-decoration:underline;
-  text-underline-offset:2px; text-decoration-thickness:1.5px;
-}
-.page__content a:hover{ opacity:.9; }
-
-/* 7) 연락처 버튼화(선택) */
-.btn-ghost{
-  display:inline-block; padding:.5rem .8rem; border:1px solid var(--line);
-  border-radius:12px; text-decoration:none; transition:background .15s ease, transform .08s;
-}
-.btn-ghost:hover{ background:var(--brand-weak); transform:translateY(-1px); }
-
-/* 반응형 */
-@media (max-width: 920px){
-  .intro{ grid-template-columns: 1fr; gap:1.2rem; }
-  .intro__img{ justify-self:center; }
-}
-
-/* Mobile: 약간 간격 줄이기 */
-@media (max-width: 768px){
-  .masthead { padding: .25rem 0; }
-  body { padding-top: 52px; }
-}
-
-/* ===========================
-   LIGHT & DARK THEME COLORS
-   =========================== */
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #555555;
-  --link: #4169E1;       /* 💙 Royal Blue — 네가 원래 쓰던 색 */
-  --line: #e6e6e6;
-  --header-bg: rgba(255,255,255,.85);
-}
-
-/* 다크모드 팔레트 */
-html[data-theme="dark"] {
-  --bg: #0f1115;
-  --text: #e9e9ee;
-  --muted: #b3b6c2;
-  --link: #8ab4ff;
-  --line: #2a2d36;
-  --header-bg: rgba(22,24,29,.85);
-}
-
-/* === 전체 적용 === */
-body {
-  background: var(--bg) !important;
+/* 다크모드에서 목록(li) 안 글씨 색이 어둡게 남는 문제 수정 */
+html[data-theme="dark"] li,
+html[data-theme="dark"] ul li span,
+html[data-theme="dark"] ol li span {
   color: var(--text) !important;
 }
-
-a {
-  color: var(--link) !important;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-hr, .archive hr { border-color: var(--line) !important; }
-
-.masthead {
-  background: var(--header-bg) !important;
-  border-bottom: 1px solid var(--line) !important;
-}
-
-.site-title, h1, h2, h3, h4, h5, h6 {
-  color: var(--text) !important;
-}
-
-.page__content, .intro__lead, .meta, .aboutme {
-  color: var(--text) !important;
-}
-
-.small, .muted, .post-meta, .page__meta {
-  color: var(--muted) !important;
-}
-
-/* === 라이트 모드에서 Royal Blue 강제 복원 === */
-html:not([data-theme="dark"]) a,
-html:not([data-theme="dark"]) a:visited {
-  color: #4169E1 !important;
-}
-html:not([data-theme="dark"]) strong,
-html:not([data-theme="dark"]) b {
-  color: #111 !important;
-}
-
-/* === 다크 모드에서 자연스러운 색 유지 === */
-html[data-theme="dark"] a,
-html[data-theme="dark"] a:visited {
-  color: #8ab4ff !important;
-}
-html[data-theme="dark"] strong,
-html[data-theme="dark"] b {
-  color: #fff !important;
-}
-
-/* 코드 영역 */
-pre, code {
-  background: transparent;
-  color: var(--text) !important;
-  border-color: var(--line) !important;
-}
-
