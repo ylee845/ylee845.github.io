@@ -76,7 +76,14 @@ redirect_from:
   object-fit: cover;
 }
 
-.intro__body{ display: contents; }
+.intro__body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.98rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
+  line-height: 1.45;           /* 줄 간격 약간 촘촘하게 */
+  letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
+  color: var(--text);
+  max-width: 600px;
+}
 .intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
 .intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
 .aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
