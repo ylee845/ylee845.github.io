@@ -16,7 +16,7 @@ redirect_from:
   </p>
 
   <!-- 데스크탑용 CV 뷰어 -->
-  <div style="text-align:center;">
+  <div>
     <iframe
       src="/files/Yeonju_Lee_CV.pdf#zoom=page-width&view=FitH"
       style="
@@ -32,7 +32,7 @@ redirect_from:
 </div>
 
 <!-- 모바일 전용 -->
-<div style="text-align:center;">
+<div>
   <iframe
     src="/files/Yeonju_Lee_CV.pdf#zoom=page-fit"
     style="
@@ -40,18 +40,10 @@ redirect_from:
       border:none;
       width: 95%;
       height: 600px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     "
     id="cv-mobile"
   ></iframe>
 </div>
 
-<script>
-  // 모바일 화면이면 자동으로 작은 iframe만 보여줌
-  if (window.innerWidth < 880) {
-    document.querySelector('iframe[style*="width: 80%"]').style.display = 'none';
-    document.querySelector('#cv-mobile').style.display = 'block';
-  }
-</script>
 
 
