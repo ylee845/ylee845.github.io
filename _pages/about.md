@@ -107,8 +107,8 @@ redirect_from:
   }
 }
 .about-sections h3 {
-  margin-top: 0.8rem;   /* 위쪽 간격 줄이기 */
-  margin-bottom: 0.3rem; /* 아래쪽 간격 줄이기 */
+  margin-top: 0.6rem;   /* 위쪽 간격 줄이기 */
+  margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
 }
 
 .about-sections p {
@@ -141,7 +141,7 @@ redirect_from:
       <em>integrate domain knowledge</em> to become more 
       <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>.
     </p>
-    <p>If you’d like to connect, reach me at <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.</p>
+    <p><a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a></p>
   </div>
 </div>
 
