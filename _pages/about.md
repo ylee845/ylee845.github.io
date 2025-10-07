@@ -189,23 +189,18 @@ h4 {
   </p>
 
   <h4>Where to Inform?</h4>
-  <ul class="styled-list">
-    <li><strong>Input level</strong> – refine model inputs using domain expertise.</li>
-    <li><strong>Architecture level</strong> – embed knowledge into the network design or loss function.</li>
-    <li><strong>Inference level</strong> – guide model reasoning during inference.</li>
-  </ul>
+  <p>
+  input, architecture, and inference levels — where domain knowledge can shape learning and reasoning.
+  </p>
 
   <h4>How to Inform?</h4>
-  <ul class="styled-list">
-    <li><strong>Representations</strong> – encode qualitative knowledge into quantitative representations.</li>
-    <li><strong>Constraints</strong> – enforce biologically or physically consistent conditions.</li>
-    <li><strong>Rules</strong> – formalize expert knowledge as rule-based guidance.</li>
-  </ul>
-
   <p>
-    Knowledge-Informed ML has demonstrated effectiveness across domains including 
-    <strong>healthcare</strong>, <strong>precision agriculture</strong>, and <strong>manufacturing</strong>.  
-    For more details, refer to the <a href="/publications">Publications</a> section.
+  through representations, constraints, and rules — translating expert understanding into model structure and logic.
   </p>
+
+    <p>
+I advance Knowledge-Informed ML across domains such as <strong>healthcare</strong> (dental lesion detection and medical image translation), <strong>precision agriculture</strong> (yield forecasting, anomaly detection, and change point detection), and <strong>manufacturing</strong> (root cause analysis). These studies demonstrate how domain knowledge improves model reliability and generalization in real-world data. For details, see the <a href="/publications">Publications</a> section.
+</p>
+
 </section>
 
