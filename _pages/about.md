@@ -198,7 +198,7 @@ h4 {
   through representations, constraints, and rules — translating expert understanding into model structure and logic.
   </p>
 
-    <p>
+    <p style="margin-top: 1.2rem;">
 I advance Knowledge-Informed ML across domains such as <strong>healthcare</strong> (dental lesion detection and medical image translation), <strong>precision agriculture</strong> (yield forecasting, anomaly detection, and change point detection), and <strong>manufacturing</strong> (root cause analysis). These studies demonstrate how domain knowledge improves model reliability and generalization in real-world data. For details, see the <a href="/publications">Publications</a> section.
 </p>
 
