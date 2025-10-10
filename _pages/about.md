@@ -165,16 +165,16 @@ h4 {
 
     <p>
       My research focuses on 
-      <span style="color:#4169E1; font-weight:700; letter-spacing:0.2px;">
-        knowledge-informed machine learning (ML)
-      </span>
-      —developing models that integrate domain knowledge to become more 
-      data-efficient, robust, and interpretable. 
-      Please feel free to contact at 
-      <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a> regarding potential collaborations or opportunities. 
-      My detailed curriculum vitae can be found in this 
-      <a href="/files/Yeonju_Lee_CV.pdf" style="color:#4169E1; font-weight:600;">CV</a>.
-
+    <span style="color:#3A5F91; font-weight:700; letter-spacing:0.2px;">
+      knowledge-informed machine learning (ML)
+    </span>,
+    developing models that integrate domain knowledge to build more 
+    data-efficient, robust, and interpretable systems. 
+    Please feel free to contact me at 
+    <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a> 
+    regarding potential collaborations or academic opportunities. 
+    <br>
+    <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (last updated Oct 2025)
     </p>
   </div>
 </div>
