@@ -216,6 +216,6 @@ translating expert understanding into model priors and learning objectives.
 </ul>
 
   <p>
-    For more details, see the <a href="/publications">Publications</a> section.
+    For more details, please refer to the <a href="/publications">Publications</a> section.
   </p>
 </section>
