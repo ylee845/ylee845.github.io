@@ -168,11 +168,13 @@ h4 {
       <span style="color:#4169E1; font-weight:700; letter-spacing:0.2px;">
         knowledge-informed machine learning (ML)
       </span>
-      —developing models that 
-      <em>integrate domain knowledge</em> to become more 
-      <strong>data-efficient</strong>, <strong>robust</strong>, and <strong>interpretable</strong>. 
+      —developing models that integrate domain knowledge to become more 
+      data-efficient, robust, and interpretable. 
       Please feel free to contact at 
-      <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>.
+      <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a> regarding potential collaborations or opportunities. 
+      My detailed curriculum vitae can be found in this 
+      <a href="/files/Yeonju_Lee_CV.pdf" style="color:#4169E1; font-weight:600;">CV</a>.
+
     </p>
   </div>
 </div>
@@ -180,33 +182,35 @@ h4 {
 <hr>
 <section class="about-sections">
   <h3>Knowledge-Informed ML: <span class="accent">Why, Where, and How</span></h3>
-  <hr class="section-divider">
+  <hr class="section-divider" style="margin-top:0.8rem; margin-bottom:0.8rem;">
 
-  <h4>Why Knowledge-Informed ML?</h4>
+<h4>Why Knowledge-Informed ML?</h4>
+<p>
+Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, 
+and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize. 
+Knowledge-informed ML integrates domain understanding to enhance robustness and interpretability.
+</p>
+
+<h4>Where to Inform?</h4>
+<p>
+At the <strong>input</strong>, <strong>architecture</strong>, and <strong>inference</strong> levels — 
+where domain knowledge can guide representation, structure, and decision-making.
+</p>
+
+<h4>How to Inform?</h4>
+<p>
+Through <strong>representations</strong>, <strong>constraints</strong>, and <strong>rules</strong> — 
+translating expert understanding into model priors and learning objectives.
+</p>
+
+<h4>Applications</h4>
+<ul>
+  <li><strong>Healthcare</strong> – dental lesion detection and medical image translation</li>
+  <li><strong>Precision Agriculture</strong> – yield forecasting, anomaly detection, and change-point detection</li>
+  <li><strong>Manufacturing</strong> – root cause analysis and process optimization</li>
+</ul>
+
   <p>
-    Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, 
-    and <strong>high dimensionality</strong>, making it challenging for purely data-driven models to generalize.
-  </p>
-
-  <h4>Where to Inform?</h4>
-  <p>
-  input, architecture, and inference levels — where domain knowledge can shape learning and reasoning.
-  </p>
-
-  <h4>How to Inform?</h4>
-  <p>
-  through representations, constraints, and rules — translating expert understanding into model structure and logic.
-  </p>
-
-  <h4>Applications</h4>
-  <ul>
-    <li><strong>Healthcare</strong> – dental lesion detection and medical image translation</li>
-    <li><strong>Precision agriculture</strong> – yield forecasting, anomaly detection, and change point detection</li>
-    <li><strong>Manufacturing</strong> – root cause analysis</li>
-  </ul>
-
-  <p>
-    These studies demonstrate how domain knowledge improves model reliability and generalization in real-world data.
-    For details, see the <a href="/publications">Publications</a> section.
+    For more details, see the <a href="/publications">Publications</a> section.
   </p>
 </section>
