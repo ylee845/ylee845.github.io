@@ -159,13 +159,13 @@ h4 {
     <p>
       Hello! I’m a Ph.D. student in the 
       <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
-      <strong>Georgia Institute of Technology</strong>, advised by 
+      <strong>Georgia Tech</strong>, advised by 
       <a href="https://isye.gatech.edu/users/jing-li" target="_blank">Dr. Jing Li</a>.
     </p>
 
     <p>
       My research focuses on 
-    <span style="color:#3A5F91; font-weight:700; letter-spacing:0.2px;">
+    <span style="color:#4169E1; font-weight:650; letter-spacing:0.2px;">
       knowledge-informed machine learning (ML)
     </span>,
     developing models that integrate domain knowledge to build more 
@@ -174,6 +174,18 @@ h4 {
     <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
     <br>
     <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (last updated Oct 2025)
+    <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" 
+     target="_blank" 
+     style="color:#3A5F91; text-decoration:none;">
+     Google Scholar
+  </a> 
+  &nbsp; | &nbsp;
+
+  <a href="https://www.linkedin.com/in/ylee845/" 
+     target="_blank" 
+     style="color:#3A5F91; text-decoration:none;">
+     LinkedIn
+  </a>
     </p>
   </div>
 </div>
