@@ -121,7 +121,7 @@ redirect_from:
 }
 
 h4 {
-  color: #4169E1;        /* 진회색 555 */
+  color: #3A5F91;        /* 진회색 555 */
   /*font-weight: 500; */     /* 볼드 강조 500 */
   font-size: 1rem;    /* 약간 크게 */
   letter-spacing: 0.15px;
