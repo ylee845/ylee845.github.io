@@ -165,7 +165,7 @@ h4 {
 
     <p>
       My research focuses on 
-    <span style="color:#4169E1; font-weight:650; letter-spacing:0.2px;">
+    <span style="color:#4169E1; font-weight:600; letter-spacing:0.2px;">
       knowledge-informed machine learning (ML)
     </span>,
     developing models that integrate domain knowledge to build more 
@@ -174,18 +174,12 @@ h4 {
     <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
     <br>
     <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (last updated Oct 2025)
+     &nbsp; | &nbsp;
     <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" 
      target="_blank" 
-     style="color:#3A5F91; text-decoration:none;">
+     style="color:#3A5F91;">
      Google Scholar
-  </a> 
-  &nbsp; | &nbsp;
-
-  <a href="https://www.linkedin.com/in/ylee845/" 
-     target="_blank" 
-     style="color:#3A5F91; text-decoration:none;">
-     LinkedIn
-  </a>
+    </a> 
     </p>
   </div>
 </div>
