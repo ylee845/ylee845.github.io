@@ -61,18 +61,31 @@ permalink: /misc/
 }
 
 /* 모바일: 세로 배치 */
+/* 모바일 보완 */
 @media (max-width: 768px) {
+  .personal-section {
+    max-width: 100% !important;   /* 760px 고정 상한 해제 */
+    padding: 0 12px;               /* 좌우 여백만 살짝 */
+    box-sizing: border-box;
+  }
   .personal-gallery {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
   }
   .personal-gallery img {
-    width: 90%;
-    max-width: 420px;
+    width: 100% !important;        /* 퍼센트/픽셀 혼용 이슈 방지 */
+    max-width: 360px;              /* 너무 커 보이지 않게 상한만 */
   }
   .personal-section p {
     text-align: left;
   }
+}
+
+/* 태블릿 단계(옵션): 살짝 여유 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .personal-section { max-width: 92%; }
+  .personal-gallery img { width: 44%; }
 }
 </style>
 
