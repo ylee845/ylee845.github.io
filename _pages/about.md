@@ -182,7 +182,7 @@ h4 {
     </span>,
     developing models that integrate domain knowledge to build more 
     data-efficient, robust, and interpretable systems. 
-    You can reach out to me contact me at 
+    Please feel free to contact me at 
     <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
     <br>
     <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (last updated Oct 2025)
