@@ -126,6 +126,12 @@ redirect_from:
   .intro__lead,
   .aboutme,
   .about-sections{ font-weight: 500; }
+
+  .intro__title,
+  .intro__lead,
+  .aboutme,
+  .about-sections {
+    text-align: left !important;
 }
 
 /* =========================
