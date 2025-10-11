@@ -81,7 +81,6 @@ permalink: /misc/
 
   <!-- 이미지 3장 -->
   <div class="personal-gallery">
-    <img src="/images/personal_stonemountain.jpg" alt="Playing racquetball">
     <img src="/images/personal_hiking.jpg" alt="Hiking around Atlanta">
     <img src="/images/personal_knitting.jpg" alt="Knitting at home">
   </div>
