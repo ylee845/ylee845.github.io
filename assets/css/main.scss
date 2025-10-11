@@ -42,3 +42,27 @@
     "vendor/font-awesome/brands",
     "custom"
 ;
+/* 항상 라이트모드로 표시되게 강제 */
+html {
+  color-scheme: light !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 시스템이 다크모드일 때도 강제로 라이트모드 유지 */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color-scheme: light !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* 만약 CSS 변수 기반 테마를 쓴다면 여기서 강제로 재정의 */
+  :root {
+    --bg: #ffffff !important;
+    --text: #111111 !important;
+    --link: #3A5F91 !important;
+    --line: #e6e6e6 !important;
+  }
+}
+
