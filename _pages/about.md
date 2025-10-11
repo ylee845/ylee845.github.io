@@ -98,21 +98,33 @@ redirect_from:
 
 /* 반응형: 1열 스택 */
 
-@media (max-width:880px){
+@media (max-width:1024px){  /* 기존 880px → 1024px 로 확장 */
   .intro{
     grid-template-columns:1fr;
     grid-template-areas:
-      "photo" "title" "lead" "about" "full";
+      "photo"
+      "title"
+      "lead"
+      "about"
+      "full";
     text-align: unset !important;
   }
-  .intro__img{ width:90%; justify-self:center; }
+  .intro__img{
+    width:95%;
+    justify-self:center;
+  }
   .intro__title,
   .intro__lead,
   .aboutme,
-  .about-sections {
+  .about-sections{
     text-align: unset !important;
+    font-weight: 500; /* 기본 700일 경우 중간 정도로 낮춰줌 */
+    -webkit-font-smoothing: antialiased; /* 크롬, 사파리에서 부드럽게 */
+    -moz-osx-font-smoothing: grayscale;  /* 파이어폭스용 */
+    text-rendering: optimizeLegibility;  /* 렌더링 품질 개선 */
   }
 }
+
 .about-sections h3 {
   margin-top: 0.1rem;   /* 위쪽 간격 줄이기 */
   margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
