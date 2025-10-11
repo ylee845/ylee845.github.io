@@ -48,16 +48,16 @@ redirect_from:
 /* 페이지 기본 타이포 */
 .page__content {
   max-width: none !important;
+  text-align: justify;
   margin: 0 auto;
   width: 100% !important;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   color:#333; font-weight:300; line-height:1.45;
 }
 
-/* Intro: 사진 | 텍스트 2열 */
 .intro{
-  display:grid !important;
-  grid-template-columns: 280px 1fr;           /* ← 2열 */
+  display: grid !important;
+  grid-template-columns: 280px 1fr;
   grid-template-areas:
     "photo title"
     "photo lead"
@@ -65,8 +65,8 @@ redirect_from:
     "full  full";
   column-gap: 1.25rem;
   row-gap: .6rem;
-  margin: 1.2rem 0 0.5rem;
-  align-items:start;
+  margin: 1.2rem 0 .5rem;
+  align-items: start;
 }
 
 .intro__img{
@@ -76,88 +76,89 @@ redirect_from:
   object-fit: cover;
 }
 
-.intro__body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
-  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
-  letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
-  color: var(--text);
-  max-width: 600px;
-}
-.intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
-.aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
-.about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
-
-.intro__title,
+/* =========================
+   본문 타이포 통일
+   ========================= */
+.intro__body,
 .intro__lead,
 .aboutme,
-.about-sections {
-  text-align: unset;     /* 기본 정렬로 되돌림 (보통 왼쪽) */
+.about-sections p,
+.about-sections li{
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -0.1px;
+  color: var(--text);
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* 반응형: 1열 스택 */
+/* intro 본문 폭 통일(A안: 제한 해제) */
+.intro__body{ max-width: none; }
 
-@media (max-width:1024px){  /* 기존 880px → 1024px 로 확장 */
+/* 타이틀·리드·섹션 배치 */
+.intro__title{ grid-area: title; margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; color: #111; }
+.intro__lead { grid-area: lead;  margin: 0 0 .6rem; }
+.aboutme     { grid-area: about; margin-top: .1rem; }
+.about-sections{ grid-area: full; margin-top: .15rem; }
+
+/* =========================
+   반응형(1열 스택)
+   ========================= */
+@media (max-width:1024px){
   .intro{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
       "photo"
       "title"
       "lead"
       "about"
       "full";
-    text-align: unset !important;
   }
   .intro__img{
-    width:95%;
-    justify-self:center;
+    width: 95%;
+    justify-self: center;
   }
-  .intro__title,
+  /* 모바일에서 볼드 과강조 완화 */
+  .intro__title{ font-weight: 600; }
   .intro__lead,
   .aboutme,
-  .about-sections{
-    text-align: unset !important;
-    font-weight: 500; /* 기본 700일 경우 중간 정도로 낮춰줌 */
-    -webkit-font-smoothing: antialiased; /* 크롬, 사파리에서 부드럽게 */
-    -moz-osx-font-smoothing: grayscale;  /* 파이어폭스용 */
-    text-rendering: optimizeLegibility;  /* 렌더링 품질 개선 */
-  }
+  .about-sections{ font-weight: 500; }
 }
 
-.about-sections h3 {
-  margin-top: 0.1rem;   /* 위쪽 간격 줄이기 */
-  margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
+/* =========================
+   헤딩/문단/리스트
+   ========================= */
+.about-sections h3{
+  margin-top: .1rem;
+  margin-bottom: .2rem;
   font-weight: 700;
   font-size: 1.05rem;
 }
 
-h4 {
-  color: #3A5F91;        /* 진회색 555 */
-  /*font-weight: 500; */     /* 볼드 강조 500 */
-  font-size: 1rem;    /* 약간 크게 */
-  letter-spacing: 0.15px;
+h4{
+  color: #3A5F91;
+  font-size: 1rem;
+  letter-spacing: .15px;
   margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: .4rem;
   line-height: 1.3;
 }
 
-.about-sections p {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
-  letter-spacing: -0.1px;
-  font-size: 1rem; 
+.about-sections p{
+  margin: 0 0 .6rem;
 }
 
-.about-sections ul {
-  margin-top: 0.3rem;
-  margin-bottom: 0.8rem; /* 리스트와 다음 섹션 간격 살짝만 */
-  font-size: 1rem; 
+.about-sections ul{
+  margin-top: .3rem;
+  margin-bottom: .8rem;
+  font-size: 1rem;
 }
 
-.about-sections li {
-  margin-bottom: 0.2rem; /* 리스트 내부 항목 간 간격 */
+.about-sections li{
+  margin-bottom: .2rem;
 }
   
 </style>
@@ -185,7 +186,7 @@ h4 {
     Please feel free to contact me at 
     <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
     <br>
-    <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (last updated Oct 2025)
+    <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (Updated Oct 2025)
      &nbsp;|&nbsp;
     <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" 
      target="_blank" 
@@ -203,28 +204,28 @@ h4 {
 
 <h4>Why Knowledge-Informed ML?</h4>
 <p>
-Real-world data often suffers from <strong>scarcity</strong>, <strong>heterogeneity</strong>, 
-and <strong>high dimensionality</strong>, making it difficult for purely data-driven models to generalize. 
+Real-world data often suffers from <span style="font-weight:600; letter-spacing:0.2px;">scarcity</span>, <span style="font-weight:600; letter-spacing:0.2px;">heterogeneity</span>, 
+and <span style="font-weight:600; letter-spacing:0.2px;">high dimensionality</span>, making it difficult for purely data-driven models to generalize. 
 Knowledge-informed ML integrates domain understanding to enhance robustness and interpretability.
 </p>
 
 <h4>Where to Inform?</h4>
 <p>
-At the <strong>input</strong>, <strong>architecture</strong>, and <strong>inference</strong> levels — 
+At the <span style="font-weight:600; letter-spacing:0.2px;">input</span>, <span style="font-weight:600; letter-spacing:0.2px;">architecture</span>, and <span style="font-weight:600; letter-spacing:0.2px;">inference</span> levels — 
 where domain knowledge can guide representation, structure, and decision-making.
 </p>
 
 <h4>How to Inform?</h4>
 <p>
-Through <strong>representations</strong>, <strong>constraints</strong>, and <strong>rules</strong> — 
+Through <span style="font-weight:600; letter-spacing:0.2px;">representations</span>, <span style="font-weight:600; letter-spacing:0.2px;">constraints</span>, and <span style="font-weight:600; letter-spacing:0.2px;">rules</span> — 
 translating expert understanding into model priors and learning objectives.
 </p>
 
 <h4>Applications</h4>
 <ul>
-  <li><strong>Healthcare</strong> – dental lesion detection and medical image translation</li>
-  <li><strong>Precision Agriculture</strong> – yield forecasting, anomaly detection, and change-point detection</li>
-  <li><strong>Manufacturing</strong> – root cause analysis and process optimization</li>
+  <li><span style="font-weight:600; letter-spacing:0.2px;">Healthcare</span> – dental lesion detection and medical image translation</li>
+  <li><span style="font-weight:600; letter-spacing:0.2px;">Precision Agriculture</span> – yield forecasting, anomaly detection, and change-point detection</li>
+  <li><span style="font-weight:600; letter-spacing:0.2px;">Manufacturing</span> – root cause analysis and process optimization</li>
 </ul>
 
   <p>
