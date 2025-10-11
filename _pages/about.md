@@ -218,28 +218,28 @@ h4 {
 
 <h4>Why Knowledge-Informed ML?</h4>
 <p>
-Real-world data often suffers from <span style="font-weight:500; letter-spacing:0.2px;">scarcity</span>, <span style="font-weight:500; letter-spacing:0.2px;">heterogeneity</span>, 
-and <span style="font-weight:500; letter-spacing:0.2px;">high dimensionality</span>, making it difficult for purely data-driven models to generalize. 
+Real-world data often suffers from <span style="font-weight:550; letter-spacing:0.2px;">scarcity</span>, <span style="font-weight:550; letter-spacing:0.2px;">heterogeneity</span>, 
+and <span style="font-weight:550; letter-spacing:0.2px;">high dimensionality</span>, making it difficult for purely data-driven models to generalize. 
 Knowledge-informed ML integrates domain understanding to enhance robustness and interpretability.
 </p>
 
 <h4>Where to Inform?</h4>
 <p>
-At the <span style="font-weight:500; letter-spacing:0.2px;">input</span>, <span style="font-weight:500; letter-spacing:0.2px;">architecture</span>, and <span style="font-weight:500; letter-spacing:0.2px;">inference</span> levels — 
+At the <span style="font-weight:550; letter-spacing:0.2px;">input</span>, <span style="font-weight:550; letter-spacing:0.2px;">architecture</span>, and <span style="font-weight:550; letter-spacing:0.2px;">inference</span> levels — 
 where domain knowledge can guide representation, structure, and decision-making.
 </p>
 
 <h4>How to Inform?</h4>
 <p>
-Through <span style="font-weight:500; letter-spacing:0.2px;">representations</span>, <span style="font-weight:500; letter-spacing:0.2px;">constraints</span>, and <span style="font-weight:500; letter-spacing:0.2px;">rules</span> — 
+Through <span style="font-weight:550; letter-spacing:0.2px;">representations</span>, <span style="font-weight:550; letter-spacing:0.2px;">constraints</span>, and <span style="font-weight:550; letter-spacing:0.2px;">rules</span> — 
 translating expert understanding into model priors and learning objectives.
 </p>
 
 <h4>Applications</h4>
 <ul>
-  <li><span style="font-weight:500; letter-spacing:0.2px;">Healthcare</span> – dental lesion detection and medical image translation</li>
-  <li><span style="font-weight:500; letter-spacing:0.2px;">Precision Agriculture</span> – yield forecasting, anomaly detection, and change-point detection</li>
-  <li><span style="font-weight:500; letter-spacing:0.2px;">Manufacturing</span> – root cause analysis and process optimization</li>
+  <li><span style="font-weight:550; letter-spacing:0.2px;">Healthcare</span> – dental lesion detection and medical image translation</li>
+  <li><span style="font-weight:550; letter-spacing:0.2px;">Precision Agriculture</span> – yield forecasting, anomaly detection, and change-point detection</li>
+  <li><span style="font-weight:550; letter-spacing:0.2px;">Manufacturing</span> – root cause analysis and process optimization</li>
 </ul>
 
   <p>
