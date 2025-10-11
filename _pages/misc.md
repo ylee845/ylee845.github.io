@@ -23,13 +23,15 @@ permalink: /misc/
 /* 이미지 그룹 (2장) */
 .personal-gallery {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   margin-bottom: 1.2rem;
 }
 
 .personal-gallery img {
-  width: 48%;
+  width: 32%;
+  min-width: 220px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -39,7 +41,6 @@ permalink: /misc/
 .personal-gallery img:hover {
   transform: scale(1.02);
 }
-
 /* 본문 */
 .personal-section p {
   font-family: "Inter","Helvetica Neue",Arial,sans-serif;
@@ -90,7 +91,6 @@ permalink: /misc/
 </style>
 
 <section class="personal-section">
-  <h1>Personal</h1>
 
   <!-- 이미지 3장 -->
   <div class="personal-gallery">
