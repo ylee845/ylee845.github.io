@@ -56,8 +56,8 @@ redirect_from:
 }
 
 .intro{
-  display: grid !important;
-  grid-template-columns: 280px 1fr;
+  display:grid !important;
+  grid-template-columns: 280px 1fr;           /* ← 2열 */
   grid-template-areas:
     "photo title"
     "photo lead"
@@ -65,8 +65,8 @@ redirect_from:
     "full  full";
   column-gap: 1.25rem;
   row-gap: .6rem;
-  margin: 1.2rem 0 .5rem;
-  align-items: start;
+  margin: 1.2rem 0 0.5rem;
+  align-items:start;
 }
 
 .intro__img{
@@ -76,95 +76,103 @@ redirect_from:
   object-fit: cover;
 }
 
-/* =========================
-   본문 타이포 통일
-   ========================= */
+.intro__body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
+  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
+  letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
+  color: var(--text);
+  max-width: 600px;
+  text-align: justify;
+}
+
 .intro__body,
-.intro__lead,
-.aboutme,
 .about-sections p,
-.about-sections li{
+.about-sections li {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: -0.1px;
   color: var(--text);
-  text-align: justify;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+  
+.intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
+.intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
+.aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
+.about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
 
-/* intro 본문 폭 통일(A안: 제한 해제) */
-.intro__body{ max-width: none; }
+.intro__title,
+.intro__lead,
+.aboutme,
+.about-sections {
+  text-align: justify;     /* 기본 정렬로 되돌림 (보통 왼쪽) */
+}
 
-/* 타이틀·리드·섹션 배치 */
-.intro__title{ grid-area: title; margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; color: #111; }
-.intro__lead { grid-area: lead;  margin: 0 0 .6rem; }
-.aboutme     { grid-area: about; margin-top: .1rem; }
-.about-sections{ grid-area: full; margin-top: .15rem; }
+/* 반응형: 1열 스택 */
 
-/* =========================
-   반응형(1열 스택)
-   ========================= */
-@media (max-width:1024px){
+@media (max-width:1024px){  /* 기존 880px → 1024px 로 확장 */
   .intro{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
     grid-template-areas:
       "photo"
       "title"
       "lead"
       "about"
       "full";
+    text-align: unset !important;
   }
   .intro__img{
-    width: 95%;
-    justify-self: center;
+    width:95%;
+    justify-self:center;
   }
-  /* 모바일에서 볼드 과강조 완화 */
-  .intro__title{ font-weight: 600; }
-  .intro__lead,
-  .aboutme,
-  .about-sections{ font-weight: 500; }
-
   .intro__title,
   .intro__lead,
   .aboutme,
-  .about-sections {
-    text-align: left !important;
+  .about-sections{
+    text-align: unset !important;
+    font-weight: 500; /* 기본 700일 경우 중간 정도로 낮춰줌 */
+    -webkit-font-smoothing: antialiased; /* 크롬, 사파리에서 부드럽게 */
+    -moz-osx-font-smoothing: grayscale;  /* 파이어폭스용 */
+    text-rendering: optimizeLegibility;  /* 렌더링 품질 개선 */
+  }
 }
 
-/* =========================
-   헤딩/문단/리스트
-   ========================= */
-.about-sections h3{
-  margin-top: .1rem;
-  margin-bottom: .2rem;
+.about-sections h3 {
+  margin-top: 0.1rem;   /* 위쪽 간격 줄이기 */
+  margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
   font-weight: 700;
   font-size: 1.05rem;
 }
 
-h4{
-  color: #3A5F91;
-  font-size: 1rem;
-  letter-spacing: .15px;
+h4 {
+  color: #3A5F91;        /* 진회색 555 */
+  /*font-weight: 500; */     /* 볼드 강조 500 */
+  font-size: 1rem;    /* 약간 크게 */
+  letter-spacing: 0.15px;
   margin-top: 1.2rem;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
   line-height: 1.3;
 }
 
-.about-sections p{
-  margin: 0 0 .6rem;
+.about-sections p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
+  letter-spacing: -0.1px;
+  font-size: 1rem; 
 }
 
-.about-sections ul{
-  margin-top: .3rem;
-  margin-bottom: .8rem;
-  font-size: 1rem;
+.about-sections ul {
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem; /* 리스트와 다음 섹션 간격 살짝만 */
+  font-size: 1rem; 
 }
 
-.about-sections li{
-  margin-bottom: .2rem;
+.about-sections li {
+  margin-bottom: 0.2rem; /* 리스트 내부 항목 간 간격 */
 }
   
 </style>
@@ -191,7 +199,6 @@ h4{
     data-efficient, robust, and interpretable systems. 
     Please feel free to contact me at 
     <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
-    <br>
     <br>
     <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (Updated Oct 2025)
      &nbsp;|&nbsp;
