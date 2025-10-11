@@ -170,8 +170,8 @@ h4 {
 
     <p>
       Hello! I’m a Ph.D. student in the 
-      <strong>H. Milton Stewart School of Industrial & Systems Engineering</strong> at 
-      <strong>Georgia Tech</strong>, advised by 
+      <span style="font-weight:600; letter-spacing:0.2px;"> H. Milton Stewart School of Industrial & Systems Engineering</span> at 
+      <span style="font-weight:600; letter-spacing:0.2px;">Georgia Tech</span>, advised by 
       <a href="https://isye.gatech.edu/users/jing-li" target="_blank">Dr. Jing Li</a>.
     </p>
 
