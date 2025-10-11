@@ -11,28 +11,25 @@ permalink: /misc/
   padding: 0;
 }
 
-.personal-section h3 {
+.personal-section h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
   margin: 0 0 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;              /* 기존 800 → 600으로 */
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  color: #24292f;                /* GitHub Primer 기본 텍스트 컬러 */
-  letter-spacing: 0.1px;
   line-height: 1.3;
+  letter-spacing: 0.2px;
 }
 
-/* 이미지 그룹 */
+/* 이미지 그룹 (2장) */
 .personal-gallery {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-bottom: 1.2rem;
 }
 
 .personal-gallery img {
-  width: 32%;
-  min-width: 220px;
+  width: 48%;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -93,7 +90,7 @@ permalink: /misc/
 </style>
 
 <section class="personal-section">
-  <h3>Personal</h3>
+  <h1>Personal</h1>
 
   <!-- 이미지 3장 -->
   <div class="personal-gallery">
