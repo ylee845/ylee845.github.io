@@ -13,9 +13,12 @@ permalink: /misc/
 
 .personal-section h3 {
   margin: 0 0 1rem;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #111;
+  font-size: 1.5rem;
+  font-weight: 600;              /* 기존 800 → 600으로 */
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #24292f;                /* GitHub Primer 기본 텍스트 컬러 */
+  letter-spacing: 0.1px;
+  line-height: 1.3;
 }
 
 /* 이미지 그룹 */
