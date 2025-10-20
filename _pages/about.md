@@ -48,7 +48,7 @@ redirect_from:
 /* 페이지 기본 타이포 */
 .page__content {
   max-width: none !important;
-  text-align: justify;
+  /*text-align: justify;*/
   margin: 0 auto;
   width: 100% !important;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -83,7 +83,7 @@ redirect_from:
   letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
   color: var(--text);
   max-width: 600px;
-  text-align: justify;
+  /*text-align: justify;*/
 }
 
 .intro__body,
@@ -108,7 +108,7 @@ redirect_from:
 .intro__lead,
 .aboutme,
 .about-sections {
-  text-align: justify;     /* 기본 정렬로 되돌림 (보통 왼쪽) */
+  /*text-align: justify;*/     /* 기본 정렬로 되돌림 (보통 왼쪽) */
 }
 
 /* 반응형: 1열 스택 */
