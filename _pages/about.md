@@ -149,7 +149,7 @@ redirect_from:
 
 h4 {
   color: #3A5F91;        /* 진회색 555 */
-  font-weight: 650;     /* 볼드 강조 500 */
+  font-weight: 620;     /* 볼드 강조 500 */
   font-size: 1rem;    /* 약간 크게 */
   letter-spacing: 0.2px;
   margin-top: 1.2rem;
