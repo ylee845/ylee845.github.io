@@ -128,7 +128,7 @@ redirect_from:
     width:95%;
     justify-self:center;
   }
-  .intro__title,
+  .intro,
   .intro__lead,
   .aboutme,
   .about-sections{
