@@ -223,7 +223,7 @@ and <span style="font-weight:550; letter-spacing:0.2px;">high dimensionality</sp
 Knowledge-informed ML integrates domain understanding to enhance robustness and interpretability.
 </p>
 
-<h4>Where to Inform?</h4>
+<span style="font-weight:550; letter-spacing:0.2px;">Where to Inform?<span style="font-weight:550; letter-spacing:0.2px;">
 <p>
 At the <span style="font-weight:550; letter-spacing:0.2px;">input</span>, <span style="font-weight:550; letter-spacing:0.2px;">architecture</span>, and <span style="font-weight:550; letter-spacing:0.2px;">inference</span> levels — 
 where domain knowledge can guide representation, structure, and decision-making.
