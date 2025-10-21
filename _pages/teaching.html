@@ -59,8 +59,8 @@ permalink: /teaching/
       </div>
 
       {% assign course_line = nil %}
-      {% if t.course and t.course_code %}
-        {% assign course_line = t.course | append: " (" | append: t.course_code | append: ")" %}
+      {% if t.course and t.code %}
+        {% assign course_line = t.course | append: " (" | append: t.code | append: ")" %}
       {% elsif t.course %}
         {% assign course_line = t.course %}
       {% elsif t.course_code %}
