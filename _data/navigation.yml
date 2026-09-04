@@ -7,27 +7,17 @@
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
 
+# The following is the order of the links in the header of the website.
+
 main:
+  - title: "Research"
+    url: /#selected-research
+
   - title: "Publications"
     url: /publications/
 
-  #- title: "Talks"
-  #  url: /talks/    
-
   - title: "Teaching"
-    url: /teaching/    
-    
-  #- title: "Portfolio"
-  #  url: /portfolio/
-        
-  #- title: "Blog Posts"
-  #  url: /year-archive/
-    
-  - title: "Personal"
-    url: /misc/
-  
-  # - title: "CV"
-  #   url: /cv-json/
-    
-  #- title: "Guide"
-  #  url: /markdown/
+    url: /teaching/
+
+  - title: "CV"
+    url: /files/Yeonju_Lee_CV.pdf
