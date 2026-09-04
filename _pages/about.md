@@ -11,100 +11,98 @@ redirect_from:
 ---
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap');
-
 :root {
-  --ink: #17191c;
-  --muted: #626a73;
+  --ink: #202327;
+  --muted: #687078;
   --accent: #31577a;
-  --line: #e4e7ea;
+  --line: #e8ebee;
 }
 
-.sidebar, .page__sidebar { display: none !important; }
-.page__content { float: none !important; width: 100% !important; }
+/* Remove the large vertical gap inherited from the theme */
+#main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.page,
+.page__inner-wrap,
+.page__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
 .page__content {
-  max-width: 1120px !important;
-  margin: 0 auto !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.65;
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.page__content a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.page__content a:hover { text-decoration: underline; }
-
+/* Compact first screen */
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(210px, .62fr);
-  gap: 4.5rem;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 3.2rem;
   align-items: center;
-  padding: 3.8rem 0 3.5rem;
+  padding: 1.35rem 0 2.1rem;
   border-bottom: 1px solid var(--line);
 }
 
 .eyebrow {
-  margin: 0 0 .85rem;
+  margin: 0 0 .42rem;
   color: var(--muted);
-  font-size: .82rem;
+  font-size: .77rem;
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .hero-name {
-  margin: 0 0 .55rem;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: clamp(2.35rem, 5vw, 4.15rem);
-  font-weight: 600;
-  line-height: 1.02;
+  margin: 0 0 .32rem;
+  font-size: clamp(2.25rem, 4vw, 3.35rem);
+  font-weight: 650;
+  line-height: 1.03;
   letter-spacing: -.035em;
   color: var(--ink);
 }
 
 .hero-title {
-  margin: 0 0 1.25rem;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: clamp(1.45rem, 2.7vw, 2.15rem);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -.018em;
+  margin: 0 0 .9rem;
+  max-width: 720px;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -.025em;
   color: var(--accent);
-  max-width: 760px;
 }
 
 .hero-description {
-  max-width: 720px;
-  margin: 0 0 1.15rem;
-  color: #34393f;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 0 .72rem;
+  color: #3f454b;
+  font-size: .98rem;
+  line-height: 1.58;
 }
 
 .hero-meta {
-  margin: 0 0 1.35rem;
+  margin: 0 0 .95rem;
   color: var(--muted);
-  font-size: .94rem;
+  font-size: .87rem;
+  line-height: 1.5;
 }
 
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: .55rem;
+  gap: .4rem;
 }
 
 .hero-links a {
   display: inline-block;
-  padding: .48rem .78rem;
-  border: 1px solid #ccd2d7;
-  border-radius: 3px;
-  color: #253340;
-  font-size: .88rem;
+  padding: .36rem .62rem;
+  border: 1px solid #d2d7dc;
+  border-radius: 2px;
+  color: #2d3b47;
+  font-size: .82rem;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -117,123 +115,136 @@ redirect_from:
 
 .hero-photo {
   width: 100%;
-  max-width: 255px;
+  max-width: 210px;
   justify-self: end;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
 }
 
+/* Main sections */
 .home-section {
-  padding: 3rem 0 2.5rem;
+  padding: 2.35rem 0 2rem;
   border-bottom: 1px solid var(--line);
 }
 
 .section-kicker {
-  margin: 0 0 .55rem;
+  margin: 0 0 .3rem;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: .74rem;
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .section-title {
-  margin: 0 0 1.8rem;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.85rem;
-  font-weight: 600;
+  margin: 0 0 1.2rem;
+  font-size: 1.45rem;
+  font-weight: 650;
   color: var(--ink);
   letter-spacing: -.018em;
 }
 
 .research-item {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 1.5rem;
-  padding: 1.45rem 0;
+  grid-template-columns: 135px minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.05rem 0;
   border-top: 1px solid var(--line);
 }
 
-.research-item:first-of-type { border-top: 0; padding-top: 0; }
+.research-item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
 
 .research-status {
   color: var(--muted);
-  font-size: .82rem;
+  font-size: .78rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .research-title {
-  margin: 0 0 .4rem;
-  font-size: 1.06rem;
+  margin: 0 0 .25rem;
+  font-size: .99rem;
   font-weight: 650;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--ink);
 }
 
 .research-desc {
   margin: 0;
-  color: #4f565d;
-  font-size: .93rem;
-  line-height: 1.6;
+  color: #50575e;
+  font-size: .88rem;
+  line-height: 1.52;
 }
 
 .research-tags {
-  margin-top: .55rem;
+  margin-top: .4rem;
   color: var(--accent);
-  font-size: .79rem;
+  font-size: .75rem;
   font-weight: 600;
 }
 
 .area-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.1rem;
+  gap: 1.65rem;
 }
 
 .area h3 {
-  margin: 0 0 .55rem;
+  margin: 0 0 .35rem;
   color: var(--ink);
-  font-size: 1rem;
+  font-size: .95rem;
   font-weight: 650;
 }
 
 .area p {
   margin: 0;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.6;
+  font-size: .84rem;
+  line-height: 1.5;
 }
 
 .highlights {
-  padding: 2.4rem 0 1.2rem;
+  padding: 1.9rem 0 .6rem;
 }
 
 .highlight-line {
   margin: 0;
-  color: #4f565d;
-  font-size: .9rem;
-  line-height: 1.8;
+  color: #555d64;
+  font-size: .84rem;
+  line-height: 1.65;
 }
 
-.highlight-line strong { color: var(--ink); font-weight: 600; }
+.highlight-line strong {
+  color: var(--ink);
+  font-weight: 600;
+}
 
 @media (max-width: 760px) {
   .home-hero {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 1.3rem;
+    padding-top: .8rem;
   }
 
   .hero-photo {
     grid-row: 1;
     justify-self: start;
-    width: 155px;
+    width: 145px;
   }
 
-  .research-item { grid-template-columns: 1fr; gap: .35rem; }
-  .area-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .research-item {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .area-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 </style>
 
@@ -276,7 +287,7 @@ redirect_from:
   </div>
 
   <div class="research-item">
-    <div class="research-status">2026<br>Computers and Electronics in Agriculture</div>
+    <div class="research-status">2026<br>Revised manuscript under review</div>
     <div>
       <p class="research-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
       <p class="research-desc">Using large language models with agronomic knowledge to analyze complex spatiotemporal soil-moisture patterns.</p>
@@ -296,7 +307,7 @@ redirect_from:
 
 <section class="home-section" id="research-areas">
   <p class="section-kicker">Research Areas</p>
-  <h2 class="section-title">How I Approach Scientific Machine Learning</h2>
+  <h2 class="section-title">Research Themes</h2>
 
   <div class="area-grid">
     <div class="area">
@@ -304,12 +315,12 @@ redirect_from:
       <p>Using domain and scientific knowledge as supervision, structure, and inductive bias when data alone are insufficient.</p>
     </div>
     <div class="area">
-      <h3>Foundation Models for Scientific Data</h3>
-      <p>Leveraging foundation models to represent and operationalize domain knowledge in complex scientific data.</p>
+      <h3>Foundation Models for Scientific Reasoning</h3>
+      <p>Using foundation models to represent and operationalize scientific knowledge in complex data.</p>
     </div>
     <div class="area">
-      <h3>Reliable Learning for Complex Systems</h3>
-      <p>Developing models that remain useful under limited data, heterogeneity, and changing deployment environments.</p>
+      <h3>Robust Learning-Enabled Decision-Making</h3>
+      <p>Developing learning methods for reliable decisions under limited data and changing environments.</p>
     </div>
   </div>
 </section>
