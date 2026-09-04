@@ -14,7 +14,7 @@ redirect_from:
 :root {
   --ink: #202327;
   --muted: #687078;
-  --accent: #31577a;
+  --accent: #294f73;
   --line: #e8ebee;
 }
 
@@ -49,7 +49,7 @@ redirect_from:
 
 .eyebrow {
   margin: 0 0 .42rem;
-  color: var(--muted);
+  color: #59626b;
   font-size: .77rem;
   font-weight: 600;
   letter-spacing: .07em;
@@ -78,14 +78,14 @@ redirect_from:
 .hero-description {
   max-width: 680px;
   margin: 0 0 .72rem;
-  color: #3f454b;
+  color: #2f3439;
   font-size: .98rem;
   line-height: 1.58;
 }
 
 .hero-meta {
   margin: 0 0 .95rem;
-  color: var(--muted);
+  color: #4e565e;
   font-size: .87rem;
   line-height: 1.5;
 }
