@@ -1,122 +1,213 @@
 ---
-layout: archive
+layout: single
 title: "Publications"
 permalink: /publications/
 author_profile: false
-sidebar: false      # ← 사이드바 완전 비활성
+sidebar: false
 toc: false
-classes: wide       # ← 본문을 넓게(가로폭 회수)
+classes: wide
 ---
-{% include base_path %}
-{% assign inprep = site.publications | where: "status", "in preparation" | sort: "date" | reverse %}
-{% assign pubs   = site.publications | where_exp:"p","p.status != 'in preparation'" | sort: "date" | reverse %}
-{% assign offset = inprep.size %}
 
 <style>
-/* ===== Typography & layout (Teaching 스타일과 통일) ===== */
-.pubs{ ffont-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; max-width: 75ch; }
-.pubs h2{ font-weight:550; color:#555; font-size:clamp(1.25rem,2vw,1.9rem); margin:1.2rem 0 .6rem }
+.pub-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
 
-/* 한 항목 */
-.paper{ display:flex; justify-content:space-between; gap:1rem;
-        padding:.9rem 0 1rem; border-bottom:1px solid #eee; }
-.paper:last-child{ border-bottom:0 }
+.pub-section { margin-top: 2.35rem; }
+.pub-section:first-child { margin-top: .2rem; }
 
-/* 왼쪽: 번호 + 제목 + 메타 */
-.left{ max-width:82% }
-.paper h3{ margin:0; line-height:1.35; font-weight:600; color:#333 }
-.paper h3 .num{ display:inline-block; width:2.2ch; margin-right:.6rem;
-                color:#9aa0a6; text-align:right; font-variant-numeric:tabular-nums }
-.paper h3 .title{ font-size:clamp(1rem,1.55vw,1.25rem) }
-.meta{ margin:.35rem 0 0; color:#6b6b6b; font-size:clamp(.92rem,1.2vw,1rem); line-height:1.45 }
+.pub-section-title {
+  margin: 0 0 .55rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #e8ebee;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #30353a !important;
+}
 
-/* 초록 */
-.excerpt{ margin:.35rem 0 0; font-size:clamp(.88rem,1.1vw,.95rem); color:#4169E1; font-weight:550}
+.pub-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 1.35rem;
+  padding: 1.05rem 0 1.1rem;
+  border-bottom: 1px solid #f0f1f2;
+}
 
-/* 오른쪽: 상태/연도 */
-.right{ min-width:10ch; text-align:right; }
-.tag{ display:inline-block; font-size:.8rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }
-.tag.blue{ color:#777 }
-.year{ display:block; color:#777; font-size:.95rem; margin-top:.2rem }
+.pub-item:last-child { border-bottom: 0; }
 
-@media (max-width:700px){
-  .paper{ flex-direction:column; gap:.4rem }
-  .right{ text-align:left }
+.pub-title {
+  margin: 0 0 .24rem;
+  font-size: .98rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #22262a;
+}
+
+.pub-authors {
+  margin: 0;
+  color: #727980;
+  font-size: .88rem;
+  line-height: 1.42;
+}
+
+.pub-venue {
+  margin: .18rem 0 0;
+  color: #4f5962;
+  font-size: .87rem;
+  line-height: 1.4;
+}
+
+.pub-note {
+  display: inline-block;
+  margin-top: .32rem;
+  color: #31577a;
+  font-size: .79rem;
+  font-weight: 600;
+}
+
+.pub-side {
+  padding-top: .05rem;
+  text-align: right;
+  color: #7a8188;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+.pub-status {
+  display: block;
+  font-weight: 600;
+  color: #5d666e;
+}
+
+.pub-year {
+  display: block;
+  margin-top: .12rem;
+}
+
+@media (max-width: 680px) {
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: .3rem;
+  }
+  .pub-side {
+    text-align: left;
+    order: -1;
+  }
 }
 </style>
 
-<div class="pubs">
+<div class="pub-wrap">
 
-  <h2>In Preparation</h2>
-  <div>
-    {% for post in inprep %}
-      <div class="paper">
-        <div class="left">
-          <h3>
-            <span class="num">{{ forloop.index }}.</span>
-            <span class="title">{{ post.title | escape }}</span>
-          </h3>
-          <div class="meta">
-            {{ post.authors }}
-          </div>
-          {% if post.excerpt %}
-            <div class="excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</div>
-          {% endif %}
-        </div>
-        <div class="right">
-          <span class="tag blue">In Preparation</span>
-          {% if post.year %}<span class="year">{{ post.year }}</span>{% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+<section class="pub-section">
+  <h2 class="pub-section-title">Manuscripts in Preparation</h2>
 
-<h2>Published & Under Review</h2>
-<div>
-  {% for post in pubs %}
-    <div class="paper">
-      <div class="left">
-        <h3>
-          <span class="num">{{ forloop.index | plus: offset }}.</span>
-          <span class="title">{{ post.title | escape }}</span>
-        </h3>
-
-        <div class="meta">
-          {%- assign parts = "" | split:"|" -%}
-          {%- if post.authors -%}{%- assign parts = parts | push: post.authors -%}{%- endif -%}
-          {%- if post.venue   -%}{%- assign parts = parts | push: post.venue   -%}{%- endif -%}
-
-          {%- assign issue_parts = "" | split:"|" -%}
-          {%- if post.volume and post.issue -%}
-            {%- assign vol_issue = post.volume | append: " (" | append: post.issue | append: ")" -%}
-            {%- assign issue_parts = issue_parts | push: vol_issue -%}
-          {%- elsif post.volume -%}
-            {%- assign issue_parts = issue_parts | push: post.volume -%}
-          {%- elsif post.issue -%}
-            {%- assign issue_parts = issue_parts | push: "(" | append: post.issue | append: ")" -%}
-          {%- endif -%}
-          {%- if post.pages -%}{%- assign issue_parts = issue_parts | push: post.pages -%}{%- endif -%}
-          {%- if post.year  -%}{%- assign issue_parts = issue_parts | push: post.year  -%}{%- endif -%}
-
-          {%- capture issue_joined -%}{{ issue_parts | join: ", " }}{%- endcapture -%}
-          {%- unless issue_joined == "" -%}{%- assign parts = parts | push: issue_joined -%}{%- endunless -%}
-
-          {{ parts | join: ", " }}
-        </div>
-
-        {% if post.excerpt %}
-          <div class="excerpt">
-            {{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}
-          </div>
-        {% endif %}
-      </div>  <!-- 👈 여기서 .left 닫기 꼭 필요 -->
-
-      <div class="right">
-        {% if post.status %}<span class="tag blue">{{ post.status }}</span>{% endif %}
-        {% if post.year   %}<span class="year">{{ post.year }}</span>{% endif %}
-      </div>
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">LLM-Guided Knowledge Alignment for Robust Learned Control in Complex Physical Systems</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
     </div>
-  {% endfor %}
-</div>
+    <div class="pub-side"><span class="pub-status">In preparation</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
+    </div>
+    <div class="pub-side"><span class="pub-status">In preparation</span></div>
+  </article>
+</section>
+
+<section class="pub-section">
+  <h2 class="pub-section-title">Published &amp; Under Review</h2>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
+      <p class="pub-venue"><em>Computers and Electronics in Agriculture</em></p>
+    </div>
+    <div class="pub-side">
+      <span class="pub-status">Revised manuscript under review</span>
+      <span class="pub-year">2026</span>
+    </div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
+      <p class="pub-venue"><em>Journal of Endodontics</em></p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2026</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
+      <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
+      <p class="pub-venue"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13</p>
+      <span class="pub-note">Selected for the journal’s Monthly Spotlight Series</span>
+    </div>
+    <div class="pub-side"><span class="pub-year">2026</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
+      <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, J. Li</p>
+      <p class="pub-venue"><em>Dental Clinics of North America</em>, 70(2), 351–359</p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2026</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
+      <p class="pub-authors">A. Cohen, Y. Sun, Z. Qin, H. Muriki, Z. Xiao, <strong>Y. Lee</strong>, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen</p>
+      <p class="pub-venue"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089–1105</p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2026</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Foundation model cascades enable zero-shot microscopy image analysis for cell therapy manufacturing</p>
+      <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
+      <p class="pub-venue"><em>Cytotherapy</em>, 28(5), 102078</p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2026</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
+      <p class="pub-venue"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218</p>
+      <span class="pub-note">IISE DAIS Best Paper Finalist</span>
+    </div>
+    <div class="pub-side"><span class="pub-year">2025</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
+      <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
+      <p class="pub-venue"><em>Journal of Endodontics</em>, 50(10), 1505–1514</p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2024</span></div>
+  </article>
+
+  <article class="pub-item">
+    <div>
+      <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
+      <p class="pub-authors"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
+      <p class="pub-venue"><em>International Journal of Production Research</em>, 62(9), 3305–3319</p>
+    </div>
+    <div class="pub-side"><span class="pub-year">2024</span></div>
+  </article>
+</section>
 
 </div>
