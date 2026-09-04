@@ -2,247 +2,323 @@
 permalink: /
 layout: single
 author_profile: false
-#classes: about-inline
-sidebar: false      # ← 사이드바 완전 비활성
+sidebar: false
 toc: false
-classes: wide       # ← 본문을 넓게(가로폭 회수)
-redirect_from: 
+classes: wide
+redirect_from:
   - /about/
   - /about.html
 ---
-<!-- About hero: 사진 왼쪽, 텍스트 오른쪽 (깔끔·세련) -->
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap');
 
-:root{
-  --brand:#3b5bdb;
-  --line:#e9e9ee;
+:root {
+  --ink: #17191c;
+  --muted: #626a73;
+  --accent: #31577a;
+  --line: #e4e7ea;
 }
 
-/* 페이지 폭 정상화 (가로 스크롤/튐 방지) */
-.about-inline .page__content {
-  max-width: none; !important;      /* 필요시 1100~1320 조절 */
-  margin: 0 auto;
-  width: 100% !important;            /* ← 180% 제거 */
-  #padding: 0 .75rem !important;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  color: #333;
-  font-weight: 300;
-  line-height: 1.45;                 /* 줄간격 적당히 타이트 */
-}
+.sidebar, .page__sidebar { display: none !important; }
+.page__content { float: none !important; width: 100% !important; }
 
-.sidebar, .page__sidebar {display:none !important;}
-.page__content {float:none !important; width:100% !important;}
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-
-:root{
-  --brand:#3b5bdb;
-  --line:#e9e9ee;
-  --sidebar-w: 280px;
-}
-
-/* 사이드바 끄고 본문을 100%로 */
-.sidebar, .page__sidebar { display:none !important; }
-.page__content { float:none !important; width:100% !important; }
-
-/* 페이지 기본 타이포 */
 .page__content {
-  max-width: none !important;
-  /*text-align: justify;*/
-  margin: 0 auto;
-  width: 100% !important;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  color:#333; font-weight:300; line-height:1.45;
-}
-
-.intro{
-  display:grid !important;
-  grid-template-columns: 280px 1fr;           /* ← 2열 */
-  grid-template-areas:
-    "photo title"
-    "photo lead"
-    "photo about"
-    "full  full";
-  column-gap: 1.25rem;
-  row-gap: .6rem;
-  margin: 1.2rem 0 0.5rem;
-  align-items:start;
-}
-
-.intro__img{
-  grid-area: photo;
-  width: 100%;
-  border-radius: 0;
-  object-fit: cover;
-}
-
-.intro__body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;          /* 살짝 작게 (기존 1rem → 0.98rem) */
-  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
-  letter-spacing: -0.1px;      /* 살짝 좁혀서 정돈된 느낌 */
-  color: var(--text);
-  max-width: 600px;
-  /*text-align: justify;*/
-}
-
-.intro__body,
-.about-sections p,
-.about-sections li {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  font-size: 16px;
   line-height: 1.65;
-  letter-spacing: -0.1px;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-  
-.intro__title{ grid-area:title; margin:0 0 .4rem; font-size:2rem; font-weight:700; color:#111; }
-.intro__lead { grid-area:lead;  margin:0 0 .6rem; font-size:1rem; color:#2f2f2f; }
-.aboutme     { grid-area:about; font-size:1rem; margin-top:.1rem; }
-.about-sections{ grid-area:full; margin-top:.15rem; font-size:1rem; }
-
-.intro__title,
-.intro__lead,
-.aboutme,
-.about-sections {
-  /*text-align: justify;*/     /* 기본 정렬로 되돌림 (보통 왼쪽) */
 }
 
-/* 반응형: 1열 스택 */
+.page__content a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
-@media (max-width:1024px){  /* 기존 880px → 1024px 로 확장 */
-  .intro{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "photo"
-      "title"
-      "lead"
-      "about"
-      "full";
-    text-align: unset !important;
+.page__content a:hover { text-decoration: underline; }
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(210px, .62fr);
+  gap: 4.5rem;
+  align-items: center;
+  padding: 3.8rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 .85rem;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  margin: 0 0 .55rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(2.35rem, 5vw, 4.15rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  color: var(--ink);
+}
+
+.hero-title {
+  margin: 0 0 1.25rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(1.45rem, 2.7vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.018em;
+  color: var(--accent);
+  max-width: 760px;
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 0 0 1.15rem;
+  color: #34393f;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  margin: 0 0 1.35rem;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.hero-links a {
+  display: inline-block;
+  padding: .48rem .78rem;
+  border: 1px solid #ccd2d7;
+  border-radius: 3px;
+  color: #253340;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 255px;
+  justify-self: end;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-section {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-kicker {
+  margin: 0 0 .55rem;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0 0 1.8rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -.018em;
+}
+
+.research-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.45rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.research-item:first-of-type { border-top: 0; padding-top: 0; }
+
+.research-status {
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.research-title {
+  margin: 0 0 .4rem;
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.research-desc {
+  margin: 0;
+  color: #4f565d;
+  font-size: .93rem;
+  line-height: 1.6;
+}
+
+.research-tags {
+  margin-top: .55rem;
+  color: var(--accent);
+  font-size: .79rem;
+  font-weight: 600;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.1rem;
+}
+
+.area h3 {
+  margin: 0 0 .55rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.area p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.highlights {
+  padding: 2.4rem 0 1.2rem;
+}
+
+.highlight-line {
+  margin: 0;
+  color: #4f565d;
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.highlight-line strong { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 760px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
   }
-  .intro__img{
-    width:95%;
-    justify-self:center;
+
+  .hero-photo {
+    grid-row: 1;
+    justify-self: start;
+    width: 155px;
   }
-  .intro,
-  .intro__lead,
-  .aboutme,
-  .about-sections{
-    text-align: unset !important;
-    font-weight: 500; /* 기본 700일 경우 중간 정도로 낮춰줌 */
-    -webkit-font-smoothing: antialiased; /* 크롬, 사파리에서 부드럽게 */
-    -moz-osx-font-smoothing: grayscale;  /* 파이어폭스용 */
-    text-rendering: optimizeLegibility;  /* 렌더링 품질 개선 */
-  }
-}
 
-.about-sections h3 {
-  margin-top: 0.1rem;   /* 위쪽 간격 줄이기 */
-  margin-bottom: 0.2rem; /* 아래쪽 간격 줄이기 */
-  font-weight: 700;
-  font-size: 1.05rem;
+  .research-item { grid-template-columns: 1fr; gap: .35rem; }
+  .area-grid { grid-template-columns: 1fr; gap: 1.6rem; }
 }
-
-h4 {
-  color: #3A5F91;        /* 진회색 555 */
-  font-weight: 640;     /* 볼드 강조 500 */
-  font-size: 1rem;    /* 약간 크게 */
-  letter-spacing: 0.2px;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
-}
-
-.about-sections p {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1.65;           /* 줄 간격 약간 촘촘하게 */
-  letter-spacing: -0.1px;
-  font-size: 1rem; 
-}
-
-.about-sections ul {
-  margin-top: 0.3rem;
-  margin-bottom: 0.8rem; /* 리스트와 다음 섹션 간격 살짝만 */
-  font-size: 1rem; 
-}
-
-.about-sections li {
-  margin-bottom: 0.2rem; /* 리스트 내부 항목 간 간격 */
-}
-  
 </style>
 
-<div class="intro">
-  <img class="intro__img" src="/images/prof_headshot7.jpg" alt="Yeonju Lee Portrait">
+<section class="home-hero">
+  <div>
+    <p class="eyebrow">Machine Learning · Complex Systems</p>
+    <h1 class="hero-name">Yeonju Lee</h1>
+    <h2 class="hero-title">Knowledge-Informed Machine Learning for Complex Systems</h2>
 
-  <div class="intro__body">
-    <h2 class="intro__title">Yeonju Lee</h2>
-
-    <p>
-      Hello! I’m a Ph.D. student in the 
-      <span style="font-weight:600; letter-spacing:0.2px;"> H. Milton Stewart School of Industrial & Systems Engineering</span> at 
-      <span style="font-weight:600; letter-spacing:0.2px;">Georgia Tech</span>, advised by 
-      <a href="https://isye.gatech.edu/users/jing-li" target="_blank">Dr. Jing Li</a>.
+    <p class="hero-description">
+      I develop learning methods that integrate domain and scientific knowledge to improve reliability under limited data and changing environments.
     </p>
 
-    <p>
-      My research focuses on 
-    <span style="color:#3A5F91; font-weight:600; letter-spacing:0.2px;">
-      knowledge-informed machine learning (ML)
-    </span>,
-    developing models that integrate domain knowledge to build more 
-    data-efficient, robust, and interpretable systems. 
-    Please feel free to contact me at 
-    <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>. 
-    <br>
-    <a href="/files/Yeonju_Lee_CV.pdf" style="color:#3A5F91;">CV</a> (Updated Oct 2025)
-     &nbsp;|&nbsp;
-    <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" 
-     target="_blank" 
-     style="color:#3A5F91;">
-     Google Scholar
-    </a> 
+    <p class="hero-meta">
+      Ph.D. Student in Machine Learning · H. Milton Stewart School of Industrial &amp; Systems Engineering · Georgia Institute of Technology
     </p>
+
+    <div class="hero-links">
+      <a href="/files/Yeonju_Lee_CV.pdf">CV</a>
+      <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="mailto:ylee845@gatech.edu">Email</a>
+      <a href="/publications/">Publications</a>
+    </div>
   </div>
-</div>
 
-<hr>
-<section class="about-sections">
-  <h3>Knowledge-Informed ML: <span class="accent">Why, Where, and How</span></h3>
-  <hr class="section-divider" style="margin-top:0.8rem; margin-bottom:0.8rem;">
+  <img class="hero-photo" src="/images/prof_headshot7.jpg" alt="Portrait of Yeonju Lee">
+</section>
 
-<h4>Why Knowledge-Informed ML?</h4>
-<p>
-Real-world data often suffers from <span style="font-weight:550; letter-spacing:0.2px;">scarcity</span>, <span style="font-weight:550; letter-spacing:0.2px;">heterogeneity</span>, 
-and <span style="font-weight:550; letter-spacing:0.2px;">high dimensionality</span>, making it difficult for purely data-driven models to generalize. 
-Knowledge-informed ML integrates domain understanding to enhance robustness and interpretability.
-</p>
+<section class="home-section" id="selected-research">
+  <p class="section-kicker">Selected Research</p>
+  <h2 class="section-title">Recent and Representative Work</h2>
 
-<h4>Where to Inform?</h4>
-<p>
-At the <span style="font-weight:550; letter-spacing:0.2px;">input</span>, <span style="font-weight:550; letter-spacing:0.2px;">architecture</span>, and <span style="font-weight:550; letter-spacing:0.2px;">inference</span> levels — 
-where domain knowledge can guide representation, structure, and decision-making.
-</p>
+  <div class="research-item">
+    <div class="research-status">Current research<br>Manuscript in preparation</div>
+    <div>
+      <p class="research-title">LLM-Guided Knowledge Alignment for Robust Learned Control in Complex Physical Systems</p>
+      <p class="research-desc">Integrating scientific knowledge with learned control to improve robustness under changing physical environments.</p>
+      <div class="research-tags">Knowledge alignment · Learned control · Distribution shift</div>
+    </div>
+  </div>
 
-<h4>How to Inform?</h4>
-<p>
-Through <span style="font-weight:550; letter-spacing:0.2px;">representations</span>, <span style="font-weight:550; letter-spacing:0.2px;">constraints</span>, and <span style="font-weight:550; letter-spacing:0.2px;">rules</span> — 
-translating expert understanding into model priors and learning objectives.
-</p>
+  <div class="research-item">
+    <div class="research-status">2026<br>Computers and Electronics in Agriculture</div>
+    <div>
+      <p class="research-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
+      <p class="research-desc">Using large language models with agronomic knowledge to analyze complex spatiotemporal soil-moisture patterns.</p>
+      <div class="research-tags">Foundation models · Scientific data · Precision agriculture</div>
+    </div>
+  </div>
 
-<h4>Applications</h4>
-<ul>
-  <li><span style="font-weight:550; letter-spacing:0.2px;">Healthcare</span> – dental lesion detection and medical image translation</li>
-  <li><span style="font-weight:550; letter-spacing:0.2px;">Precision Agriculture</span> – yield forecasting, anomaly detection, and change-point detection</li>
-  <li><span style="font-weight:550; letter-spacing:0.2px;">Manufacturing</span> – root cause analysis and process optimization</li>
-</ul>
+  <div class="research-item">
+    <div class="research-status">2025<br>IEEE TASE</div>
+    <div>
+      <p class="research-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+      <p class="research-desc">Embedding anatomical knowledge into semi-supervised learning to improve 3D medical-image learning with limited labels.</p>
+      <div class="research-tags">Domain-guided learning · Limited labels · Medical imaging · IISE DAIS Best Paper Finalist</div>
+    </div>
+  </div>
+</section>
 
-  <p>
-    For more details, please refer to the <a href="/publications">Publications</a> section.
+<section class="home-section" id="research-areas">
+  <p class="section-kicker">Research Areas</p>
+  <h2 class="section-title">How I Approach Scientific Machine Learning</h2>
+
+  <div class="area-grid">
+    <div class="area">
+      <h3>Knowledge-Informed Learning</h3>
+      <p>Using domain and scientific knowledge as supervision, structure, and inductive bias when data alone are insufficient.</p>
+    </div>
+    <div class="area">
+      <h3>Foundation Models for Scientific Data</h3>
+      <p>Leveraging foundation models to represent and operationalize domain knowledge in complex scientific data.</p>
+    </div>
+    <div class="area">
+      <h3>Reliable Learning for Complex Systems</h3>
+      <p>Developing models that remain useful under limited data, heterogeneity, and changing deployment environments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <p class="section-kicker">Selected Recognition</p>
+  <p class="highlight-line">
+    <strong>IISE DAIS Best Paper Finalist</strong> ·
+    <strong>IISE Transactions on Healthcare Systems Engineering Monthly Spotlight</strong> ·
+    <strong>2 U.S. Provisional Patent Applications</strong>
   </p>
 </section>
