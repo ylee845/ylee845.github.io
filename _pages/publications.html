@@ -12,31 +12,32 @@ classes: wide
 .pub-page {
   max-width: 930px;
   margin: 0 auto;
-  padding: 0 0 2rem;
+  padding: 0 0 1.4rem;
 }
 
 .pub-group {
-  margin-top: 1.45rem;
+  margin-top: .95rem;
 }
 
 .pub-group:first-child {
-  margin-top: .15rem;
+  margin-top: .05rem;
 }
 
-.pub-group-title {
-  margin: 0 0 .35rem;
-  padding-bottom: .35rem;
+.page__content .pub-group-title {
+  margin: 0 0 .28rem !important;
+  padding: 0 0 .28rem !important;
   border-bottom: 1px solid #e7eaed;
   color: #22272b !important;
-  font-size: 1.02rem !important;
+  font-size: 1.00rem !important;
   font-weight: 600 !important;
+  line-height: 1.2 !important;
 }
 
 .pub-entry {
   display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: .5rem;
-  padding: .55rem 0 .62rem;
+  grid-template-columns: 1.65rem minmax(0, 1fr);
+  gap: .42rem;
+  padding: .42rem 0 .46rem;
 }
 
 .pub-entry + .pub-entry {
@@ -44,54 +45,58 @@ classes: wide
 }
 
 .pub-num {
-  color: #8a9197;
-  font-size: .86rem;
-  line-height: 1.4;
+  color: #6f777e;
+  font-size: .87rem;
+  line-height: 1.22;
   text-align: right;
   padding-top: .02rem;
 }
 
-.pub-title {
-  margin: 0;
-  color: #23272b;
-  font-size: .94rem;
+.page__content .pub-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #1f2429;
+  font-size: 1.00rem;
   font-weight: 600;
-  line-height: 1.34;
+  line-height: 1.24 !important;
 }
 
-.pub-authors {
-  margin: .08rem 0 0;
-  color: #5c646b;
-  font-size: .84rem;
-  line-height: 1.35;
+.page__content .pub-authors {
+  margin: .10rem 0 0 !important;
+  padding: 0 !important;
+  color: #444c53;
+  font-size: .90rem;
+  line-height: 1.24 !important;
 }
 
-.pub-authors strong {
+.page__content .pub-authors strong {
   color: #2f3438;
   font-weight: 600;
 }
 
-.pub-meta {
-  margin: .06rem 0 0;
-  color: #70777d;
-  font-size: .82rem;
-  line-height: 1.34;
+.page__content .pub-meta {
+  margin: .08rem 0 0 !important;
+  padding: 0 !important;
+  color: #596168;
+  font-size: .87rem;
+  line-height: 1.24 !important;
 }
 
-.pub-meta em {
+.page__content .pub-meta em {
   color: #50575d;
 }
 
 .pub-note {
-  margin-left: .3rem;
+  margin-left: .28rem;
   color: #496a82;
   font-weight: 500;
 }
 
 @media (max-width: 680px) {
   .pub-entry {
-    grid-template-columns: 1.55rem minmax(0, 1fr);
-    gap: .4rem;
+    grid-template-columns: 1.35rem minmax(0, 1fr);
+    gap: .32rem;
+    padding: .38rem 0 .42rem;
   }
 }
 </style>
@@ -120,7 +125,6 @@ classes: wide
     </article>
   </section>
 
-
   <section class="pub-group">
     <h2 class="pub-group-title">Under Review</h2>
 
@@ -133,7 +137,6 @@ classes: wide
       </div>
     </article>
   </section>
-
 
   <section class="pub-group">
     <h2 class="pub-group-title">Peer-Reviewed Publications</h2>
@@ -152,9 +155,7 @@ classes: wide
       <div>
         <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
         <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13, 2026.
-          <span class="pub-note">Monthly Spotlight Series</span>
-        </p>
+        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13, 2026.<span class="pub-note">Monthly Spotlight Series</span></p>
       </div>
     </article>
 
@@ -190,9 +191,7 @@ classes: wide
       <div>
         <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218, 2025.
-          <span class="pub-note">IISE DAIS Best Paper Finalist</span>
-        </p>
+        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218, 2025.<span class="pub-note">IISE DAIS Best Paper Finalist</span></p>
       </div>
     </article>
 
