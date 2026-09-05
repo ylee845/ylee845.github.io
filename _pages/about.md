@@ -31,7 +31,7 @@ redirect_from:
 }
 
 .page__content {
-  max-width: 1360px !important;
+  max-width: 1440px !important;
 }
 
 /* ===== Hero ===== */
@@ -135,10 +135,10 @@ redirect_from:
 
 /* ===== Research program ===== */
 .research-program {
-  width: calc(100vw - 72px);
-  max-width: 1480px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  transform: none;
   padding: 1.55rem 0 .9rem;
 }
 
@@ -153,7 +153,7 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.55rem;
+  gap: 1.8rem;
 }
 
 .research-card {
