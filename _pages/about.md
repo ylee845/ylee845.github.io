@@ -49,7 +49,7 @@ redirect_from:
 
 .home-hero,
 .research-program {
-  width: min(1360px, calc(100vw - 96px));
+  width: min(1540px, calc(100vw - 56px));
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -260,7 +260,7 @@ redirect_from:
 @media (max-width: 760px) {
   .home-hero,
   .research-program {
-    width: calc(100vw - 28px);
+    width: calc(100vw - 22px);
   }
 
   .home-hero {
