@@ -49,7 +49,7 @@ redirect_from:
 
 .home-hero,
 .research-program {
-  width: min(1540px, calc(100vw - 56px));
+  width: min(1180px, calc(100vw - 64px));
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -58,7 +58,7 @@ redirect_from:
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
-  gap: 4rem;
+  gap: 3rem;
   align-items: stretch;
   padding: 1.05rem 0 1.7rem;
   border-bottom: 1px solid #e7eaed;
@@ -169,7 +169,7 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.6rem;
+  gap: 1.25rem;
 }
 
 .research-card {
@@ -260,7 +260,19 @@ redirect_from:
 @media (max-width: 760px) {
   .home-hero,
   .research-program {
-    width: calc(100vw - 22px);
+    width: calc(100vw - 16px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .home-hero {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-hero,
+  .research-program {
+    width: calc(100vw - 16px);
   }
 
   .home-hero {
@@ -272,19 +284,12 @@ redirect_from:
   .hero-photo-wrap {
     grid-row: 1;
     justify-self: center;
-    width: 230px;
-    height: 288px;
+    width: min(78vw, 320px);
+    height: auto;
+    aspect-ratio: 4 / 5;
     min-height: 0;
   }
-
-  .research-program {
-    width: auto;
-    max-width: none;
-    margin-left: 0;
-    transform: none;
-  }
-
-  .research-grid {
+.research-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
