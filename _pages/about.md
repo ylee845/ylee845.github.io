@@ -81,51 +81,63 @@ redirect_from:
   object-position: center;
 }
 
-.trajectory { padding: 1.75rem 0 .8rem; }
+.research-program {
+  padding: 1.75rem 0 .8rem;
+}
 
-.trajectory-label {
-  margin: 0 0 .85rem;
+.research-label {
+  margin: 0 0 1rem;
   color: var(--muted);
   font-size: .76rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.trajectory-grid {
+.research-grid {
   display: grid;
-  grid-template-columns: 1fr 34px 1fr 34px 1fr;
-  gap: .85rem;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.2rem;
 }
 
-.step-title {
-  margin: 0 0 .28rem;
+.research-column {
+  min-width: 0;
+}
+
+.research-stage {
+  margin: 0 0 .26rem;
   color: var(--text);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
-.step-subtitle {
-  margin: 0 0 .34rem;
+.research-focus {
+  margin: 0 0 .45rem;
   color: var(--accent);
-  font-size: .86rem;
+  font-size: .87rem;
   font-weight: 500;
   line-height: 1.4;
 }
 
-.step-detail {
-  margin: 0;
+.research-description {
+  margin: 0 0 .65rem;
   color: var(--text-soft);
-  font-size: .86rem;
+  font-size: .85rem;
   line-height: 1.48;
 }
 
-.trajectory-arrow {
-  padding-top: .18rem;
-  color: #a6adb3;
-  font-size: 1.05rem;
-  text-align: center;
+.research-work {
+  margin: 0;
+  padding-top: .55rem;
+  border-top: 1px solid #edf0f2;
+  color: #555d64;
+  font-size: .80rem;
+  line-height: 1.4;
+}
+
+.research-work strong {
+  color: #394047;
+  font-weight: 500;
 }
 
 @media (max-width: 760px) {
@@ -142,12 +154,10 @@ redirect_from:
     height: 168px;
   }
 
-  .trajectory-grid {
+  .research-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.4rem;
   }
-
-  .trajectory-arrow { display: none; }
 }
 </style>
 
@@ -180,35 +190,40 @@ redirect_from:
   <img class="hero-photo" src="/images/prof_headshot7.jpg" alt="Portrait of Yeonju Lee">
 </section>
 
-<section class="trajectory">
-  <p class="trajectory-label">Research Trajectory</p>
+<section class="research-program">
+  <p class="research-label">Research Program</p>
 
-  <div class="trajectory-grid">
-    <div class="trajectory-step">
-      <h3 class="step-title">Representation</h3>
-      <p class="step-subtitle">Knowledge-guided representation learning</p>
-      <p class="step-detail">
-        Domain structure and anatomical knowledge for learning from limited and heterogeneous scientific data.
+  <div class="research-grid">
+    <div class="research-column">
+      <h3 class="research-stage">Representation</h3>
+      <p class="research-focus">Knowledge-guided representation learning</p>
+      <p class="research-description">
+        Domain and anatomical knowledge for learning from limited and heterogeneous scientific data.
+      </p>
+      <p class="research-work">
+        <strong>Representative work:</strong> Oral-Anatomical Knowledge-Informed Semi-Supervised Learning
       </p>
     </div>
 
-    <div class="trajectory-arrow">→</div>
-
-    <div class="trajectory-step">
-      <h3 class="step-title">Reasoning</h3>
-      <p class="step-subtitle">Knowledge-grounded scientific reasoning</p>
-      <p class="step-detail">
+    <div class="research-column">
+      <h3 class="research-stage">Reasoning</h3>
+      <p class="research-focus">Knowledge-grounded scientific reasoning</p>
+      <p class="research-description">
         Foundation models that use scientific knowledge to interpret complex spatiotemporal patterns.
       </p>
+      <p class="research-work">
+        <strong>Representative work:</strong> SPADE
+      </p>
     </div>
 
-    <div class="trajectory-arrow">→</div>
-
-    <div class="trajectory-step">
-      <h3 class="step-title">Decision &amp; Control</h3>
-      <p class="step-subtitle">Reliable learning-enabled decision-making</p>
-      <p class="step-detail">
+    <div class="research-column">
+      <h3 class="research-stage">Decision &amp; Control</h3>
+      <p class="research-focus">Reliable learning-enabled decision-making</p>
+      <p class="research-description">
         Knowledge-informed learning for robust decisions under changing physical environments.
+      </p>
+      <p class="research-work">
+        <strong>Current work:</strong> LLM-Guided Knowledge Alignment for Robust Learned Control
       </p>
     </div>
   </div>
