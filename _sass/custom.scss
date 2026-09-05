@@ -1,138 +1,203 @@
-/* ===== Base / Global ===== */
+/* ===== Unified site typography & palette ===== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap');
 
-/* Google Fonts: Inter (light->bold) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-
-:root{
-  --bg:#ffffff;
-  --text:#222;
-  --muted:#666;
-  --line:#e9e9ee;
-  --brand:#3b5bdb;         /* Royal-ish blue */
-  --brand-weak:#eef2ff;
-  --card:#ffffff;
-  --radius-lg:16px;
-  --radius:12px;
-  --shadow:0 1px 2px rgba(0,0,0,.04), 0 6px 18px -12px rgba(0,0,0,.12);
+:root {
+  --bg: #ffffff;
+  --text: #202428;
+  --text-soft: #4f565d;
+  --muted: #6d747b;
+  --line: #e5e8eb;
+  --accent: #3f6078;
 }
 
-html{ scroll-behavior:smooth }
-body{
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-  font-weight:300;               /* 기본을 가볍게 */
-  color:var(--text);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+html { scroll-behavior: smooth; background: var(--bg) !important; }
+
+body {
+  padding-top: 54px;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links */
-a{ color:inherit; text-decoration:none }
-a:hover{ color:var(--brand) }
-
-/* Subtle separators */
-hr{
-  border:0; height:1px;
-  background:linear-gradient(to right, transparent, var(--line), transparent);
-  margin:1.25rem 0;
+body, .page, .page__inner-wrap, .page__content, .page__content *,
+.masthead, .masthead *, .site-title {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
 }
 
-/* ===== Layout helpers ===== */
-.container{
-  max-width:100%;
-  margin:0 auto;
-  padding:0 1rem;
-}
+.page__content *, .masthead * { letter-spacing: 0 !important; }
 
-/* ===== Sidebar / Author card ===== */
-/* === 2-1. 사이드바 열 자체 제거 + 본문 확장 === */
-.page__sidebar, .sidebar, .sidebar__right {
-  display: none !important;
-  position: static !important;
-  width: 0 !important;
-  max-width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: #29485f; text-decoration: underline; }
+
+.page__sidebar, .sidebar, .sidebar__right { display: none !important; }
 
 .page__content,
 .layout--single .page__content,
-.layout--archive .page__content{
-  float:none !important;
-  width:100% !important;
-  margin-left:0 !important;
-  max-width: 100%;     /* 필요시 1200~1400 사이에서 조절 */
-  margin: 0 auto;
-  padding: 0 0.75rem;       /* 좌우 여백(좁히려면 .75rem) */
+.layout--archive .page__content {
+  float: none !important;
+  width: 100% !important;
+  max-width: 1040px !important;
+  margin: 0 auto !important;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
 }
 
-/* 페이지 내용이 상단바에 가리지 않게 offset 추가 */
-body {
-  padding-top: 60px;   /* 상단바 높이에 맞게 조정 (기본 55~65px) */
+.masthead {
+  background: rgba(255, 255, 255, .98) !important;
+  border-bottom: 1px solid var(--line);
+  box-shadow: none !important;
 }
 
-/* 2) 폰트를 Inter로 통일 */
-body, .masthead, .masthead__menu-item a, .site-title {
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !important;
-  letter-spacing: 0.2px;
-}
-
-/* 3) 메뉴 항목 강조 (더 두껍고 깔끔하게) */
-.masthead__menu-item a {
-  font-weight: 550 !important;     /* 원래 500~550 정도 → 약간 굵게 */
-  font-size: 1.02rem;
-  color: var(--text) !important;
-  transition: color 0.15s ease, background-color 0.15s ease;
-}
-
-.masthead__menu-item a:hover {
-  color: var(--brand) !important;
-  background: var(--brand-weak);
-}
-
-/* Site title도 약간 강조 */
 .site-title {
-  font-weight: 800 !important;
-  font-size: 1.1rem;
+  color: var(--text) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
   margin-right: 1.2rem;
 }
 
-/* ===== Force Light Mode (Disable Dark Theme) ===== */
-html, body {
+.masthead__menu-item a {
+  color: #363b40 !important;
+  font-size: .94rem !important;
+  font-weight: 500 !important;
+  padding-left: .7rem;
+  padding-right: .7rem;
+}
+
+.masthead__menu-item a:hover {
+  color: var(--accent) !important;
+  background: transparent !important;
+  text-decoration: none;
+}
+
+.page__title {
+  margin: .8rem 0 1.45rem !important;
+  color: var(--text) !important;
+  font-size: 1.55rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2;
+}
+
+.page__content h1, .page__content h2, .page__content h3, .page__content h4 {
+  color: var(--text);
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 1.25rem 0;
+}
+
+html[data-theme="dark"], html[data-theme="dark"] body {
   background: #ffffff !important;
-  color: #111111 !important;
+  color: var(--text) !important;
 }
 
-/* 다크모드 전용 설정 강제 무효화 */
-html[data-theme="dark"] {
-  background: #ffffff !important;
-  color: #111111 !important;
-}
-
-html[data-theme="dark"] * {
-  background-color: inherit !important;
-  color: inherit !important;
-  border-color: inherit !important;
-}
-
-.theme-toggle,
-.color-scheme-toggle,
-[data-theme-toggle],
-button[aria-label*="theme"],
-button[title*="theme"],
-button[aria-label*="Theme"],
-button[title*="Theme"],
-.masthead__menu-item [title*="theme"],
-.masthead__menu-item [aria-label*="theme"] {
+.theme-toggle, .color-scheme-toggle, [data-theme-toggle],
+button[aria-label*="theme"], button[title*="theme"],
+button[aria-label*="Theme"], button[title*="Theme"] {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  width: 0 !important;
-  height: 0 !important;
+}
+
+
+/* ===== Harmonize Publications + Teaching ===== */
+.pub-wrap,
+.teach-list {
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.pub-section-title {
+  color: var(--text) !important;
+  font-size: 1.08rem !important;
+  font-weight: 600 !important;
+}
+
+.pub-title,
+.teach .role {
+  color: var(--text) !important;
+  font-size: .96rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.pub-authors,
+.pub-venue,
+.teach .institution,
+.teach .course {
+  color: var(--text-soft) !important;
+  font-size: .86rem !important;
+  font-weight: 400 !important;
+  line-height: 1.42 !important;
+}
+
+.pub-side,
+.teach .note,
+.teach .term {
+  color: var(--muted) !important;
+  font-size: .79rem !important;
+  font-weight: 400 !important;
+}
+
+.pub-note,
+.teach .term {
+  color: var(--accent) !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.paper,
+.pub-item,
+.teach,
+.teach__inner {
+  border-color: #eef0f2 !important;
+}
+
+.teach__inner {
+  max-width: none !important;
   margin: 0 !important;
-  padding: 0 !important;
+}
+
+
+/* Higher-specificity overrides for inline page styles */
+.page__content .pub-section-title {
+  color: var(--text) !important;
+  font-size: 1.08rem !important;
+  font-weight: 600 !important;
+}
+
+.page__content .pub-title,
+.page__content .teach .role {
+  color: var(--text) !important;
+  font-size: .96rem !important;
+  font-weight: 600 !important;
+}
+
+.page__content .pub-authors,
+.page__content .pub-venue,
+.page__content .teach .institution,
+.page__content .teach .course {
+  color: var(--text-soft) !important;
+  font-size: .86rem !important;
+}
+
+.page__content .pub-side,
+.page__content .teach .note {
+  color: var(--muted) !important;
+  font-size: .79rem !important;
+}
+
+.page__content .pub-note,
+.page__content .teach .term {
+  color: var(--accent) !important;
+  font-size: .79rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
 }
