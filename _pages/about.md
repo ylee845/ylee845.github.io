@@ -30,8 +30,28 @@ redirect_from:
   padding-top: 0 !important;
 }
 
+.page {
+  float: none !important;
+  width: 100% !important;
+}
+
+#main {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .page__content {
-  max-width: 1440px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+}
+
+.home-hero,
+.research-program {
+  width: min(1360px, calc(100vw - 96px));
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* ===== Hero ===== */
@@ -135,10 +155,6 @@ redirect_from:
 
 /* ===== Research program ===== */
 .research-program {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  transform: none;
   padding: 1.55rem 0 .9rem;
 }
 
@@ -153,7 +169,7 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
 .research-card {
@@ -242,6 +258,11 @@ redirect_from:
 }
 
 @media (max-width: 760px) {
+  .home-hero,
+  .research-program {
+    width: calc(100vw - 28px);
+  }
+
   .home-hero {
     grid-template-columns: 1fr;
     gap: 1rem;
