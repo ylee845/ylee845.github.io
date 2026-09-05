@@ -9,205 +9,223 @@ classes: wide
 ---
 
 <style>
-.pub-wrap {
-  max-width: 980px;
+/* Compact, CV-like publication list */
+.pub-page {
+  max-width: 930px;
   margin: 0 auto;
-  padding-bottom: 2rem;
+  padding: 0 0 2.5rem;
 }
 
-.pub-section { margin-top: 2.35rem; }
-.pub-section:first-child { margin-top: .2rem; }
+.pub-group {
+  margin-top: 2.1rem;
+}
 
-.pub-section-title {
-  margin: 0 0 .55rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid #e8ebee;
-  font-size: 1.15rem !important;
+.pub-group:first-child {
+  margin-top: .25rem;
+}
+
+.pub-group-title {
+  margin: 0 0 .7rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid #e7eaed;
+  color: #22272b !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
-  color: #30353a !important;
+  letter-spacing: 0 !important;
 }
 
-.pub-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 128px;
-  gap: 1.35rem;
-  padding: 1.05rem 0 1.1rem;
-  border-bottom: 1px solid #f0f1f2;
+.pub-entry {
+  position: relative;
+  padding: .82rem 0 .92rem;
 }
 
-.pub-item:last-child { border-bottom: 0; }
+.pub-entry + .pub-entry {
+  border-top: 1px solid #f0f2f3;
+}
+
+.pub-title-line {
+  display: flex;
+  align-items: baseline;
+  gap: .45rem;
+  flex-wrap: wrap;
+}
 
 .pub-title {
-  margin: 0 0 .24rem;
-  font-size: .98rem;
-  line-height: 1.4;
+  margin: 0;
+  color: #23272b;
+  font-size: .96rem;
   font-weight: 600;
-  color: #22262a;
+  line-height: 1.38;
+}
+
+.first-author {
+  color: #496a82;
+  font-size: .70rem;
+  font-weight: 600;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .pub-authors {
-  margin: 0;
-  color: #727980;
-  font-size: .88rem;
+  margin: .18rem 0 0;
+  color: #5c646b;
+  font-size: .86rem;
   line-height: 1.42;
 }
 
-.pub-venue {
-  margin: .18rem 0 0;
-  color: #4f5962;
-  font-size: .87rem;
+.pub-authors strong {
+  color: #2f3438;
+  font-weight: 600;
+}
+
+.pub-meta {
+  margin: .14rem 0 0;
+  color: #6a7279;
+  font-size: .84rem;
   line-height: 1.4;
+}
+
+.pub-meta em {
+  color: #4e565d;
 }
 
 .pub-note {
-  display: inline-block;
-  margin-top: .32rem;
-  color: #31577a;
-  font-size: .79rem;
-  font-weight: 600;
-}
-
-.pub-side {
-  padding-top: .05rem;
-  text-align: right;
-  color: #7a8188;
-  font-size: .78rem;
-  line-height: 1.4;
-}
-
-.pub-status {
-  display: block;
-  font-weight: 600;
-  color: #5d666e;
-}
-
-.pub-year {
-  display: block;
-  margin-top: .12rem;
+  margin-left: .35rem;
+  color: #496a82;
+  font-weight: 500;
 }
 
 @media (max-width: 680px) {
-  .pub-item {
-    grid-template-columns: 1fr;
-    gap: .3rem;
+  .pub-page {
+    padding-left: .1rem;
+    padding-right: .1rem;
   }
-  .pub-side {
-    text-align: left;
-    order: -1;
+
+  .pub-title-line {
+    display: block;
+  }
+
+  .first-author {
+    display: inline-block;
+    margin-top: .18rem;
   }
 }
 </style>
 
-<div class="pub-wrap">
+<div class="pub-page">
 
-<section class="pub-section">
-  <h2 class="pub-section-title">Manuscripts in Preparation</h2>
+  <section class="pub-group">
+    <h2 class="pub-group-title">Working Papers</h2>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">LLM-Guided Knowledge Alignment for Robust Learned Control in Complex Physical Systems</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">LLM-Guided Knowledge Alignment for Robust Learned Control in Complex Physical Systems</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
-    </div>
-    <div class="pub-side"><span class="pub-status">In preparation</span></div>
-  </article>
+      <p class="pub-meta">Manuscript in preparation.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
-    </div>
-    <div class="pub-side"><span class="pub-status">In preparation</span></div>
-  </article>
-</section>
+      <p class="pub-meta">Manuscript in preparation.</p>
+    </article>
+  </section>
 
-<section class="pub-section">
-  <h2 class="pub-section-title">Published &amp; Under Review</h2>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
+  <section class="pub-group">
+    <h2 class="pub-group-title">Under Review</h2>
+
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
-      <p class="pub-venue"><em>Computers and Electronics in Agriculture</em></p>
-    </div>
-    <div class="pub-side">
-      <span class="pub-status">Revised manuscript under review</span>
-      <span class="pub-year">2026</span>
-    </div>
-  </article>
+      <p class="pub-meta">Revised manuscript under review in <em>Computers and Electronics in Agriculture</em>, 2026.</p>
+    </article>
+  </section>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
+
+  <section class="pub-group">
+    <h2 class="pub-group-title">Peer-Reviewed Publications</h2>
+
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-      <p class="pub-venue"><em>Journal of Endodontics</em></p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2026</span></div>
-  </article>
+      <p class="pub-meta"><em>Journal of Endodontics</em>, 2026.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
+      </div>
       <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-      <p class="pub-venue"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13</p>
-      <span class="pub-note">Selected for the journal’s Monthly Spotlight Series</span>
-    </div>
-    <div class="pub-side"><span class="pub-year">2026</span></div>
-  </article>
+      <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13, 2026.
+        <span class="pub-note">Monthly Spotlight Series</span>
+      </p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
+      </div>
       <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, J. Li</p>
-      <p class="pub-venue"><em>Dental Clinics of North America</em>, 70(2), 351–359</p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2026</span></div>
-  </article>
+      <p class="pub-meta"><em>Dental Clinics of North America</em>, 70(2), 351–359, 2026.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
+      </div>
       <p class="pub-authors">A. Cohen, Y. Sun, Z. Qin, H. Muriki, Z. Xiao, <strong>Y. Lee</strong>, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen</p>
-      <p class="pub-venue"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089–1105</p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2026</span></div>
-  </article>
+      <p class="pub-meta"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089–1105, 2026.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Foundation model cascades enable zero-shot microscopy image analysis for cell therapy manufacturing</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Foundation model cascades enable zero-shot microscopy image analysis for cell therapy manufacturing</p>
+      </div>
       <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
-      <p class="pub-venue"><em>Cytotherapy</em>, 28(5), 102078</p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2026</span></div>
-  </article>
+      <p class="pub-meta"><em>Cytotherapy</em>, 28(5), 102078, 2026.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-      <p class="pub-venue"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218</p>
-      <span class="pub-note">IISE DAIS Best Paper Finalist</span>
-    </div>
-    <div class="pub-side"><span class="pub-year">2025</span></div>
-  </article>
+      <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218, 2025.
+        <span class="pub-note">IISE DAIS Best Paper Finalist</span>
+      </p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
+      </div>
       <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-      <p class="pub-venue"><em>Journal of Endodontics</em>, 50(10), 1505–1514</p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2024</span></div>
-  </article>
+      <p class="pub-meta"><em>Journal of Endodontics</em>, 50(10), 1505–1514, 2024.</p>
+    </article>
 
-  <article class="pub-item">
-    <div>
-      <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
+    <article class="pub-entry">
+      <div class="pub-title-line">
+        <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
+        <span class="first-author">First author</span>
+      </div>
       <p class="pub-authors"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
-      <p class="pub-venue"><em>International Journal of Production Research</em>, 62(9), 3305–3319</p>
-    </div>
-    <div class="pub-side"><span class="pub-year">2024</span></div>
-  </article>
-</section>
+      <p class="pub-meta"><em>International Journal of Production Research</em>, 62(9), 3305–3319, 2024.</p>
+    </article>
+
+  </section>
 
 </div>
