@@ -119,10 +119,10 @@ redirect_from:
 
 .hero-photo-wrap {
   width: 250px;
-  min-height: 292px;
+  height: 292px;
   overflow: hidden;
   justify-self: end;
-  align-self: stretch;
+  align-self: center;
 }
 
 .hero-photo {
@@ -130,11 +130,15 @@ redirect_from:
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 12%;
 }
 
 /* ===== Research program ===== */
 .research-program {
+  width: calc(100vw - 72px);
+  max-width: 1480px;
+  margin-left: 50%;
+  transform: translateX(-50%);
   padding: 1.55rem 0 .9rem;
 }
 
@@ -149,7 +153,7 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.35rem;
+  gap: 1.55rem;
 }
 
 .research-card {
@@ -228,7 +232,8 @@ redirect_from:
   }
 
   .hero-photo-wrap {
-    width: 205px;
+    width: 220px;
+    height: 275px;
   }
 
   .research-grid {
@@ -245,10 +250,17 @@ redirect_from:
 
   .hero-photo-wrap {
     grid-row: 1;
-    justify-self: start;
-    width: 150px;
-    height: 188px;
+    justify-self: center;
+    width: 230px;
+    height: 288px;
     min-height: 0;
+  }
+
+  .research-program {
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    transform: none;
   }
 
   .research-grid {
@@ -284,7 +296,7 @@ redirect_from:
       &nbsp;·&nbsp;
       <a href="mailto:ylee845@gatech.edu">Email</a>
       &nbsp;·&nbsp;
-      <a href="/publications/">Publications</a>
+      <a href="https://www.linkedin.com/in/ylee845" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </div>
 
@@ -294,7 +306,7 @@ redirect_from:
 </section>
 
 <section class="research-program">
-  <p class="research-label">Research Program</p>
+  <p class="research-label">Research Areas</p>
 
   <div class="research-grid">
     <div class="research-card">
