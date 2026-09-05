@@ -11,13 +11,15 @@ redirect_from:
 ---
 
 <style>
-/* Homepage palette: slightly brighter, still academic */
+/* Homepage only */
 :root {
-  --accent: #2f5f91;
-  --accent-dark: #244c76;
-  --ink-strong: #1f252b;
-  --text-soft-home: #4c555e;
-  --line-home: #e5e9ed;
+  --gt-navy: #003057;
+  --gt-gold: #B3A369;
+  --ink: #202428;
+  --text-soft-home: #4b545d;
+  --muted-home: #6d747b;
+  --card-bg: #fbfbfa;
+  --card-line: #e4e7ea;
 }
 
 #main,
@@ -29,17 +31,17 @@ redirect_from:
 }
 
 .page__content {
-  max-width: 1240px !important;
+  max-width: 1360px !important;
 }
 
-/* Hero */
+/* ===== Hero ===== */
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 245px;
-  gap: 3.6rem;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 4rem;
   align-items: stretch;
-  padding: 1.1rem 0 1.8rem;
-  border-bottom: 1px solid var(--line-home);
+  padding: 1.05rem 0 1.7rem;
+  border-bottom: 1px solid #e7eaed;
 }
 
 .hero-copy {
@@ -48,69 +50,76 @@ redirect_from:
 
 .hero-name {
   margin: 0 0 .18rem;
-  color: var(--ink-strong);
-  font-size: 2rem;
+  color: var(--ink);
+  font-size: 1.95rem;
   font-weight: 600;
   line-height: 1.08;
 }
 
 .hero-meta {
-  margin: 0 0 .9rem;
+  margin: 0 0 .82rem;
   color: #46515b;
-  font-size: .92rem;
-  line-height: 1.5;
+  font-size: .91rem;
+  line-height: 1.48;
 }
 
 .hero-meta a {
-  color: var(--accent-dark);
+  color: var(--gt-navy);
   text-decoration: underline;
-  text-decoration-color: #9fb5c8;
+  text-decoration-color: #9db0bf;
   text-underline-offset: 2px;
 }
 
 .hero-title {
-  max-width: 760px;
-  margin: 0 0 .65rem;
-  color: var(--accent-dark);
-  font-size: 1.42rem;
+  max-width: 800px;
+  margin: 0 0 .58rem;
+  color: var(--gt-navy);
+  font-size: 1.40rem;
   font-weight: 600;
   line-height: 1.22;
 }
 
 .hero-description {
-  max-width: 760px;
-  margin: 0 0 .8rem;
+  max-width: 800px;
+  margin: 0 0 .34rem;
   color: #333b43;
-  font-size: .96rem;
-  line-height: 1.58;
+  font-size: .95rem;
+  line-height: 1.55;
+}
+
+.hero-applications {
+  margin: 0 0 .72rem;
+  color: #56616b;
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.hero-applications strong {
+  color: #3e474f;
+  font-weight: 600;
 }
 
 .hero-links {
   margin: 0;
   color: #59636d;
-  font-size: .88rem;
+  font-size: .87rem;
   font-weight: 500;
 }
 
 .hero-links a {
-  color: var(--accent);
-}
-
-.hero-links a:hover {
-  color: var(--accent-dark);
+  color: var(--gt-navy);
 }
 
 .cv-updated {
-  margin-left: .28rem;
-  color: #7a838b;
-  font-size: .74rem;
+  margin-left: .24rem;
+  color: #7b838a;
+  font-size: .72rem;
   font-weight: 400;
 }
 
 .hero-photo-wrap {
-  width: 245px;
-  height: 100%;
-  min-height: 285px;
+  width: 250px;
+  min-height: 292px;
   overflow: hidden;
   justify-self: end;
   align-self: stretch;
@@ -124,15 +133,15 @@ redirect_from:
   object-position: center top;
 }
 
-/* Research program */
+/* ===== Research program ===== */
 .research-program {
-  padding: 1.65rem 0 .8rem;
+  padding: 1.55rem 0 .9rem;
 }
 
 .research-label {
-  margin: 0 0 .95rem;
-  color: #5d6974;
-  font-size: .76rem;
+  margin: 0 0 .82rem;
+  color: #5f6871;
+  font-size: .74rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -140,75 +149,90 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3.5rem;
+  gap: 2.35rem;
 }
 
-.research-column {
+.research-card {
+  position: relative;
   min-width: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 4px;
+  padding: 1.15rem 1.2rem 1.05rem;
+}
+
+.research-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: var(--gt-gold);
+  border-radius: 4px 4px 0 0;
 }
 
 .research-stage {
-  margin: 0 0 .22rem;
-  color: var(--ink-strong);
-  font-size: 1rem;
+  margin: .08rem 0 .2rem;
+  color: var(--ink);
+  font-size: 1.02rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.28;
 }
 
 .research-focus {
-  margin: 0 0 .38rem;
-  color: var(--accent);
-  font-size: .87rem;
+  margin: 0 0 .48rem;
+  color: var(--gt-navy);
+  font-size: .88rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.38;
 }
 
 .research-description {
-  margin: 0 0 .62rem;
+  margin: 0 0 .8rem;
   color: var(--text-soft-home);
   font-size: .84rem;
-  line-height: 1.46;
+  line-height: 1.48;
 }
 
 .research-paper {
   margin: 0;
-  padding-top: .52rem;
-  border-top: 1px solid var(--line-home);
-  color: #4a535c;
-  font-size: .79rem;
-  line-height: 1.42;
+  padding-top: .62rem;
+  border-top: 1px solid #e4e7ea;
 }
 
 .research-paper-label {
   display: block;
-  margin-bottom: .12rem;
-  color: var(--accent);
-  font-size: .70rem;
+  margin-bottom: .16rem;
+  color: #867b4f;
+  font-size: .68rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .research-paper-title {
-  color: #313941;
+  color: #353c43;
+  font-size: .79rem;
   font-weight: 500;
+  line-height: 1.4;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .page__content {
-    max-width: 1040px !important;
+    max-width: 1120px !important;
   }
 
   .home-hero {
-    grid-template-columns: minmax(0, 1fr) 200px;
-    gap: 2.2rem;
+    grid-template-columns: minmax(0, 1fr) 205px;
+    gap: 2.4rem;
   }
 
   .hero-photo-wrap {
-    width: 200px;
+    width: 205px;
   }
 
   .research-grid {
-    gap: 2rem;
+    gap: 1.4rem;
   }
 }
 
@@ -229,7 +253,7 @@ redirect_from:
 
   .research-grid {
     grid-template-columns: 1fr;
-    gap: 1.35rem;
+    gap: 1rem;
   }
 }
 </style>
@@ -247,6 +271,10 @@ redirect_from:
 
     <p class="hero-description">
       I develop learning methods that integrate domain and scientific knowledge to improve reliability under limited data and changing environments.
+    </p>
+
+    <p class="hero-applications">
+      <strong>Applications:</strong> Healthcare · Precision Agriculture
     </p>
 
     <p class="hero-links">
@@ -269,7 +297,7 @@ redirect_from:
   <p class="research-label">Research Program</p>
 
   <div class="research-grid">
-    <div class="research-column">
+    <div class="research-card">
       <h3 class="research-stage">Representation</h3>
       <p class="research-focus">Knowledge-guided representation learning</p>
       <p class="research-description">
@@ -283,7 +311,7 @@ redirect_from:
       </p>
     </div>
 
-    <div class="research-column">
+    <div class="research-card">
       <h3 class="research-stage">Reasoning</h3>
       <p class="research-focus">Knowledge-grounded scientific reasoning</p>
       <p class="research-description">
@@ -297,7 +325,7 @@ redirect_from:
       </p>
     </div>
 
-    <div class="research-column">
+    <div class="research-card">
       <h3 class="research-stage">Decision &amp; Control</h3>
       <p class="research-focus">Reliable learning-enabled decision-making</p>
       <p class="research-description">
