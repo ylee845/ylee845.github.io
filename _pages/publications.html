@@ -9,25 +9,35 @@ classes: wide
 ---
 
 <style>
-.pub-page {
-  max-width: 930px;
+.page__title { display: none !important; }
+
+.pub-shell {
+  width: min(1120px, calc(100vw - 80px));
   margin: 0 auto;
-  padding: 0 0 1.4rem;
+  padding: .9rem 0 2rem;
+}
+
+.pub-page-title {
+  margin: 0 0 1.05rem;
+  color: var(--text);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 .pub-group {
-  margin-top: .95rem;
+  margin-top: 1.15rem;
 }
 
-.pub-group:first-child {
-  margin-top: .05rem;
+.pub-group:first-of-type {
+  margin-top: 0;
 }
 
-.page__content .pub-group-title {
-  margin: 0 0 .28rem !important;
-  padding: 0 0 .28rem !important;
-  border-bottom: 1px solid #e7eaed;
-  color: #22272b !important;
+.pub-group-title {
+  margin: 0;
+  padding: 0 0 .32rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--gt-navy) !important;
   font-size: 1.00rem !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
@@ -37,71 +47,79 @@ classes: wide
   display: grid;
   grid-template-columns: 1.65rem minmax(0, 1fr);
   gap: .42rem;
-  padding: .42rem 0 .46rem;
+  padding: .46rem 0 .50rem;
 }
 
 .pub-entry + .pub-entry {
-  border-top: 1px solid #f1f2f3;
+  border-top: 1px solid #eef0f2;
 }
 
 .pub-num {
-  color: #6f777e;
+  color: #727a82;
   font-size: .87rem;
-  line-height: 1.22;
+  line-height: 1.24;
   text-align: right;
   padding-top: .02rem;
 }
 
-.page__content .pub-title {
+.pub-title {
   margin: 0 !important;
-  padding: 0 !important;
-  color: #1f2429;
-  font-size: 1.00rem;
+  color: var(--text);
+  font-size: .98rem;
   font-weight: 600;
   line-height: 1.24 !important;
 }
 
-.page__content .pub-authors {
-  margin: .10rem 0 0 !important;
-  padding: 0 !important;
-  color: #444c53;
-  font-size: .90rem;
-  line-height: 1.24 !important;
-}
-
-.page__content .pub-authors strong {
-  color: #2f3438;
-  font-weight: 600;
-}
-
-.page__content .pub-meta {
+.pub-authors {
   margin: .08rem 0 0 !important;
-  padding: 0 !important;
-  color: #596168;
-  font-size: .87rem;
+  color: var(--text-soft);
+  font-size: .88rem;
   line-height: 1.24 !important;
 }
 
-.page__content .pub-meta em {
-  color: #50575d;
+.pub-authors strong {
+  color: #2b3136;
+  font-weight: 600;
+}
+
+.pub-meta {
+  margin: .06rem 0 0 !important;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.24 !important;
+}
+
+.pub-meta em {
+  color: #294e6d;
+  font-style: italic;
 }
 
 .pub-note {
   margin-left: .28rem;
-  color: #496a82;
+  color: #8f7f3f;
   font-weight: 500;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 760px) {
+  .pub-shell {
+    width: calc(100vw - 28px);
+    padding-top: .65rem;
+  }
+
   .pub-entry {
     grid-template-columns: 1.35rem minmax(0, 1fr);
     gap: .32rem;
-    padding: .38rem 0 .42rem;
+    padding: .42rem 0 .46rem;
+  }
+
+  .pub-title {
+    font-size: .95rem;
   }
 }
 </style>
 
-<div class="pub-page">
+<div class="pub-shell">
+  <h1 class="pub-page-title">Publications</h1>
 
   <section class="pub-group">
     <h2 class="pub-group-title">Working Papers</h2>
@@ -212,7 +230,5 @@ classes: wide
         <p class="pub-meta"><em>International Journal of Production Research</em>, 62(9), 3305–3319, 2024.</p>
       </div>
     </article>
-
   </section>
-
 </div>
