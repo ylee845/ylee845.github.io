@@ -11,6 +11,36 @@ redirect_from:
 ---
 
 <style>
+
+/* ===== One shared homepage width ===== */
+.home-hero,
+.research-program {
+  width: min(1240px, calc(100vw - 80px)) !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.research-grid,
+.research-card {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 980px) {
+  .home-hero,
+  .research-program {
+    width: min(1040px, calc(100vw - 48px)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-hero,
+  .research-program {
+    width: calc(100vw - 28px) !important;
+    max-width: none !important;
+  }
+}
 /* Homepage only */
 :root {
   --gt-navy: #003057;
