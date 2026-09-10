@@ -1,54 +1,68 @@
-/* ===== Unified site typography & palette ===== */
+/* ===== Unified site typography & layout ===== */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap');
 
 :root {
   --bg: #ffffff;
   --text: #202428;
-  --text-soft: #4f565d;
-  --muted: #6d747b;
-  --line: #e5e8eb;
-  --accent: #3f6078;
+  --text-soft: #4a525a;
+  --muted: #69727a;
+  --line: #e6e9ec;
+  --gt-navy: #003057;
+  --gt-gold: #B3A369;
 }
 
-html { scroll-behavior: smooth; background: var(--bg) !important; }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg) !important;
+}
 
 body {
   padding-top: 54px;
   background: var(--bg) !important;
   color: var(--text) !important;
-  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Helvetica, Arial, sans-serif !important;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.58;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body, .page, .page__inner-wrap, .page__content, .page__content *,
 .masthead, .masthead *, .site-title {
-  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Helvetica, Arial, sans-serif !important;
 }
 
 .page__content *, .masthead * { letter-spacing: 0 !important; }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: #29485f; text-decoration: underline; }
+a { color: var(--gt-navy); text-decoration: none; }
+a:hover { color: #244c76; text-decoration: underline; }
 
 .page__sidebar, .sidebar, .sidebar__right { display: none !important; }
 
+/* IMPORTANT: do not constrain all pages here.
+   Each page gets its own centered shell. */
+.page,
+.page__inner-wrap,
 .page__content,
 .layout--single .page__content,
 .layout--archive .page__content {
   float: none !important;
   width: 100% !important;
-  max-width: 1040px !important;
-  margin: 0 auto !important;
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.page__content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .masthead {
-  background: rgba(255, 255, 255, .98) !important;
+  background: rgba(255,255,255,.98) !important;
   border-bottom: 1px solid var(--line);
   box-shadow: none !important;
 }
@@ -69,32 +83,20 @@ a:hover { color: #29485f; text-decoration: underline; }
 }
 
 .masthead__menu-item a:hover {
-  color: var(--accent) !important;
+  color: var(--gt-navy) !important;
   background: transparent !important;
   text-decoration: none;
 }
 
 .page__title {
-  margin: .8rem 0 1.45rem !important;
   color: var(--text) !important;
   font-size: 1.55rem !important;
   font-weight: 600 !important;
   line-height: 1.2;
 }
 
-.page__content h1, .page__content h2, .page__content h3, .page__content h4 {
-  color: var(--text);
-  font-weight: 600;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background: var(--line);
-  margin: 1.25rem 0;
-}
-
-html[data-theme="dark"], html[data-theme="dark"] body {
+html[data-theme="dark"],
+html[data-theme="dark"] body {
   background: #ffffff !important;
   color: var(--text) !important;
 }
@@ -103,101 +105,4 @@ html[data-theme="dark"], html[data-theme="dark"] body {
 button[aria-label*="theme"], button[title*="theme"],
 button[aria-label*="Theme"], button[title*="Theme"] {
   display: none !important;
-}
-
-
-/* ===== Harmonize Publications + Teaching ===== */
-.pub-wrap,
-.teach-list {
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.pub-section-title {
-  color: var(--text) !important;
-  font-size: 1.08rem !important;
-  font-weight: 600 !important;
-}
-
-.pub-title,
-.teach .role {
-  color: var(--text) !important;
-  font-size: .96rem !important;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-}
-
-.pub-authors,
-.pub-venue,
-.teach .institution,
-.teach .course {
-  color: var(--text-soft) !important;
-  font-size: .86rem !important;
-  font-weight: 400 !important;
-  line-height: 1.42 !important;
-}
-
-.pub-side,
-.teach .note,
-.teach .term {
-  color: var(--muted) !important;
-  font-size: .79rem !important;
-  font-weight: 400 !important;
-}
-
-.pub-note,
-.teach .term {
-  color: var(--accent) !important;
-  font-weight: 500 !important;
-  text-transform: none !important;
-}
-
-.paper,
-.pub-item,
-.teach,
-.teach__inner {
-  border-color: #eef0f2 !important;
-}
-
-.teach__inner {
-  max-width: none !important;
-  margin: 0 !important;
-}
-
-
-/* Higher-specificity overrides for inline page styles */
-.page__content .pub-section-title {
-  color: var(--text) !important;
-  font-size: 1.08rem !important;
-  font-weight: 600 !important;
-}
-
-.page__content .pub-title,
-.page__content .teach .role {
-  color: var(--text) !important;
-  font-size: .96rem !important;
-  font-weight: 600 !important;
-}
-
-.page__content .pub-authors,
-.page__content .pub-venue,
-.page__content .teach .institution,
-.page__content .teach .course {
-  color: var(--text-soft) !important;
-  font-size: .86rem !important;
-}
-
-.page__content .pub-side,
-.page__content .teach .note {
-  color: var(--muted) !important;
-  font-size: .79rem !important;
-}
-
-.page__content .pub-note,
-.page__content .teach .term {
-  color: var(--accent) !important;
-  font-size: .79rem !important;
-  font-weight: 500 !important;
-  text-transform: none !important;
 }
