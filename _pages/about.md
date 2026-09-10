@@ -11,51 +11,20 @@ redirect_from:
 ---
 
 <style>
-
-/* ===== One shared homepage width ===== */
-.home-hero,
-.research-program {
-  width: min(1240px, calc(100vw - 80px)) !important;
-  max-width: 1240px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-}
-
-.research-grid,
-.research-card {
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 980px) {
-  .home-hero,
-  .research-program {
-    width: min(1040px, calc(100vw - 48px)) !important;
-  }
-}
-
-@media (max-width: 760px) {
-  .home-hero,
-  .research-program {
-    width: calc(100vw - 28px) !important;
-    max-width: none !important;
-  }
-}
-/* Homepage only */
 :root {
   --gt-navy: #003057;
   --gt-gold: #B3A369;
   --ink: #202428;
   --text-soft-home: #4b545d;
-  --muted-home: #6d747b;
   --card-bg: #fbfbfa;
   --card-line: #e4e7ea;
 }
 
+/* Kill AcademicPages' inherited content-column offset.
+   page__content becomes viewport-wide; both sections are then centered inside it. */
 #main,
 .page,
-.page__inner-wrap,
-.page__content {
+.page__inner-wrap {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
@@ -63,28 +32,30 @@ redirect_from:
 .page {
   float: none !important;
   width: 100% !important;
+  max-width: none !important;
 }
 
-#main {
+.page__content {
+  position: relative !important;
+  left: 50% !important;
+  width: 100vw !important;
   max-width: none !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.page__content {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 auto !important;
-}
-
+/* One shared centered container for BOTH blocks */
 .home-hero,
 .research-program {
-  width: min(1240px, calc(100vw - 80px));
+  width: min(1240px, calc(100vw - 80px)) !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  box-sizing: border-box !important;
 }
 
-/* ===== Hero ===== */
+/* Hero */
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
@@ -183,7 +154,7 @@ redirect_from:
   object-position: center 12%;
 }
 
-/* ===== Research program ===== */
+/* Research areas */
 .research-program {
   padding: 1.55rem 0 .9rem;
 }
@@ -200,11 +171,14 @@ redirect_from:
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .research-card {
   position: relative;
   min-width: 0;
+  box-sizing: border-box;
   background: var(--card-bg);
   border: 1px solid var(--card-line);
   border-radius: 4px;
@@ -268,41 +242,40 @@ redirect_from:
 }
 
 @media (max-width: 980px) {
-  .page__content {
-    max-width: 1120px !important;
+  .home-hero,
+  .research-program {
+    width: min(1040px, calc(100vw - 48px)) !important;
   }
 
   .home-hero {
     grid-template-columns: minmax(0, 1fr) 205px;
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
   .hero-photo-wrap {
-    width: 220px;
-    height: 275px;
+    width: 205px;
+    height: 255px;
   }
 
   .research-grid {
-    gap: 1.4rem;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 760px) {
   .home-hero,
   .research-program {
-    width: calc(100vw - 28px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .home-hero {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .home-hero,
   .research-program {
-    width: calc(100vw - 16px);
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 
   .home-hero {
@@ -317,9 +290,9 @@ redirect_from:
     width: min(78vw, 320px);
     height: auto;
     aspect-ratio: 4 / 5;
-    min-height: 0;
   }
-.research-grid {
+
+  .research-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
