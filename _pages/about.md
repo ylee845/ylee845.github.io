@@ -311,9 +311,9 @@ redirect_from:
         Knowledge-informed learning for robust decisions under changing physical environments.
       </p>
       <p class="research-paper">
-        <span class="research-paper-label">Current paper</span>
+        <span class="research-paper-label">Current work</span>
         <span class="research-paper-title">
-          LLM-Guided Knowledge Alignment for Robust Learned Control in Complex Physical Systems
+          Knowledge-informed control under distribution shift
         </span>
       </p>
     </div>
