@@ -42,8 +42,26 @@ a:hover { color: #244c76; text-decoration: underline; }
 
 .page__sidebar, .sidebar, .sidebar__right { display: none !important; }
 
-/* IMPORTANT: do not constrain all pages here.
-   Each page gets its own centered shell. */
+/* ============================================================
+   SHARED LAYOUT SYSTEM
+   Single source of truth for content width, horizontal gutter,
+   centering axis, and section spacing. Pages use .l-shell
+   (+ optional .l-shell--wide) and .section-title instead of
+   redefining widths / padding / breakpoints in their own <style>.
+   ============================================================ */
+:root {
+  --l-max: 1120px;          /* shared content band                    */
+  --l-max-wide: 1240px;     /* opt-in for content-heavy pages          */
+  --l-gutter: 40px;         /* horizontal breathing room, desktop     */
+  --l-gutter-mobile: 16px;
+  --l-pad-top: 1.5rem;      /* masthead / previous section -> content */
+  --l-pad-bottom: 2.25rem;  /* vertical gap between sections          */
+  --l-heading-gap: 1.05rem; /* section heading -> section body        */
+}
+
+/* One centering axis for every page: wrappers go full-bleed and
+   a centered .l-shell owns the actual content band. */
+#main,
 .page,
 .page__inner-wrap,
 .page__content,
@@ -52,13 +70,54 @@ a:hover { color: #244c76; text-decoration: underline; }
   float: none !important;
   width: 100% !important;
   max-width: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.page__content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+#main { margin-top: 0 !important; }
+
+.l-shell {
+  max-width: var(--l-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--l-pad-top) var(--l-gutter) var(--l-pad-bottom);
+  box-sizing: border-box;
+}
+
+.l-shell--wide { --l-max: var(--l-max-wide); }
+
+/* Stacked sections share one rhythm: the gap between them is the
+   first section's pad-bottom, not pad-bottom + the next pad-top. */
+.l-shell + .l-shell { padding-top: 0; }
+
+/* Fallback container for pages without .l-shell markup
+   (markdown pages, archives, 404) so they keep a sane measure
+   and gutter instead of running edge-to-edge. */
+.page > .page__inner-wrap > header,
+.page__content > :not(.l-shell):not(style):not(script) {
+  max-width: var(--l-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--l-gutter);
+  padding-right: var(--l-gutter);
+}
+
+.section-title {
+  margin: 0 0 var(--l-heading-gap);
+  color: var(--text);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --l-gutter: var(--l-gutter-mobile);
+    --l-pad-top: 1rem;
+    --l-pad-bottom: 1.75rem;
+  }
 }
 
 .masthead {

@@ -11,19 +11,8 @@ classes: wide
 <style>
 .page__title { display: none !important; }
 
-.pub-shell {
-  width: min(1120px, calc(100vw - 80px));
-  margin: 0 auto;
-  padding: .9rem 0 2rem;
-}
-
-.pub-page-title {
-  margin: 0 0 1.05rem;
-  color: var(--text);
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1.15;
-}
+/* Publications keeps the shared (narrower) --l-max; layout comes
+   from .l-shell / .section-title in custom.scss. */
 
 .pub-group {
   margin-top: 1.15rem;
@@ -101,11 +90,6 @@ classes: wide
 }
 
 @media (max-width: 760px) {
-  .pub-shell {
-    width: calc(100vw - 28px);
-    padding-top: .65rem;
-  }
-
   .pub-entry {
     grid-template-columns: 1.35rem minmax(0, 1fr);
     gap: .32rem;
@@ -118,8 +102,8 @@ classes: wide
 }
 </style>
 
-<div class="pub-shell">
-  <h1 class="pub-page-title">Publications</h1>
+<div class="l-shell">
+  <h1 class="section-title">Publications</h1>
 
   <section class="pub-group">
     <h2 class="pub-group-title">Working Papers</h2>

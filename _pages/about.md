@@ -11,57 +11,21 @@ redirect_from:
 ---
 
 <style>
+/* Homepage-specific colours only. Layout (width, gutter, centering,
+   section spacing) comes from the shared .l-shell system in custom.scss. */
 :root {
-  --gt-navy: #003057;
-  --gt-gold: #B3A369;
   --ink: #202428;
   --text-soft-home: #4b545d;
   --card-bg: #fbfbfa;
   --card-line: #e4e7ea;
 }
 
-/* Kill AcademicPages' inherited content-column offset.
-   page__content becomes viewport-wide; both sections are then centered inside it. */
-#main,
-.page,
-.page__inner-wrap {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.page {
-  float: none !important;
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.page__content {
-  position: relative !important;
-  left: 50% !important;
-  width: 100vw !important;
-  max-width: none !important;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* One shared centered container for BOTH blocks */
-.home-hero,
-.research-program {
-  width: min(1240px, calc(100vw - 80px)) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-}
-
-/* Hero */
+/* ===== Hero ===== */
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
   gap: 2.5rem;
   align-items: stretch;
-  padding: 1.05rem 0 1.7rem;
   border-bottom: 1px solid #e7eaed;
 }
 
@@ -154,13 +118,9 @@ redirect_from:
   object-position: center 12%;
 }
 
-/* Research areas */
-.research-program {
-  padding: 1.55rem 0 .9rem;
-}
-
+/* ===== Research areas ===== */
 .research-label {
-  margin: 0 0 .82rem;
+  margin: 0 0 var(--l-heading-gap);
   color: #5f6871;
   font-size: .74rem;
   font-weight: 600;
@@ -170,9 +130,7 @@ redirect_from:
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-  width: 100%;
-  box-sizing: border-box;
+  gap: 1.6rem;
 }
 
 .research-card {
@@ -241,12 +199,8 @@ redirect_from:
   line-height: 1.4;
 }
 
+/* Hero column collapses before the shared 760px breakpoint */
 @media (max-width: 980px) {
-  .home-hero,
-  .research-program {
-    width: min(1040px, calc(100vw - 48px)) !important;
-  }
-
   .home-hero {
     grid-template-columns: minmax(0, 1fr) 205px;
     gap: 2rem;
@@ -258,30 +212,14 @@ redirect_from:
   }
 
   .research-grid {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 
 @media (max-width: 760px) {
-  .home-hero,
-  .research-program {
-    width: 100vw !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .home-hero,
-  .research-program {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-
   .home-hero {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding-top: .7rem;
   }
 
   .hero-photo-wrap {
@@ -299,7 +237,7 @@ redirect_from:
 }
 </style>
 
-<section class="home-hero">
+<section class="home-hero l-shell l-shell--wide">
   <div class="hero-copy">
     <h1 class="hero-name">Yeonju Lee</h1>
 
@@ -334,7 +272,7 @@ redirect_from:
   </div>
 </section>
 
-<section class="research-program">
+<section class="research-program l-shell l-shell--wide">
   <p class="research-label">Research Areas</p>
 
   <div class="research-grid">

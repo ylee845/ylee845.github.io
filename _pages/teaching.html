@@ -11,19 +11,7 @@ classes: wide
 <style>
 .page__title { display: none !important; }
 
-.teaching-shell {
-  width: min(1120px, calc(100vw - 80px));
-  margin: 0 auto;
-  padding: .9rem 0 2rem;
-}
-
-.teaching-page-title {
-  margin: 0 0 1.05rem;
-  color: var(--text);
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1.15;
-}
+/* Layout comes from .l-shell / .section-title in custom.scss. */
 
 .teach-list {
   margin: 0;
@@ -43,7 +31,6 @@ classes: wide
 
 .teach__inner {
   width: 100%;
-  max-width: none;
   margin: 0;
   padding: 0;
 }
@@ -82,17 +69,10 @@ classes: wide
   font-weight: 500;
   line-height: 1.3;
 }
-
-@media (max-width: 760px) {
-  .teaching-shell {
-    width: calc(100vw - 28px);
-    padding-top: .65rem;
-  }
-}
 </style>
 
-<div class="teaching-shell">
-  <h1 class="teaching-page-title">Teaching</h1>
+<div class="l-shell">
+  <h1 class="section-title">Teaching</h1>
 
   {% assign items = site.teaching | sort: "date" | reverse %}
   <div class="teach-list">
