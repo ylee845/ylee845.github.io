@@ -257,7 +257,7 @@ redirect_from:
     </p>
 
     <p class="hero-links">
-      <a href="/files/Yeonju_Lee_CV.pdf">CV</a><span class="cv-updated">Last updated Sep 4, 2026</span>
+      <a href="/files/Yeonju_Lee_CV.pdf">CV</a><span class="cv-updated">Last updated Sep, 2026</span>
       &nbsp;·&nbsp;
       <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
       &nbsp;·&nbsp;
