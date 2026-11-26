@@ -1,11 +1,11 @@
 /* ===== Unified site typography & layout ===== */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap');
 
 :root {
   --bg: #ffffff;
-  --text: #202428;
-  --text-soft: #4a525a;
-  --muted: #69727a;
+  --text: #15181c;
+  --text-soft: #2e353c;
+  --muted: #4f5861;
   --line: #e6e9ec;
   --gt-navy: #003057;
   --gt-gold: #B3A369;
@@ -197,3 +197,25 @@ button[aria-label*="Theme"], button[title*="Theme"] {
   background: #faf7ec;
   color: #6d5f2a;
 }
+
+/* ===== Typography: serif headings (Option C) ===== */
+:root { --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif; }
+
+.page__content .section-title,
+.page__content .hero-name,
+.page__content .hero-title,
+.page__content .thrust h3,
+.page__content .sel-pub .t,
+.page__content .r-side h3,
+.page__content .r-apps h3,
+.page__content .r-future h3,
+.page__content .r-collab h3,
+.page__content .pub-title,
+.page__content .pub-group-title,
+.page__content .teach-subtitle {
+  font-family: var(--serif) !important;
+  font-weight: 600 !important;
+}
+
+.page__content .hero-name,
+.page__content .section-title { letter-spacing: -0.01em !important; }

@@ -21,7 +21,7 @@ redirect_from:
   align-items: center;
 }
 .hero-name { margin: 0 0 .25rem; color: var(--text); font-size: 2.1rem; font-weight: 600; line-height: 1.05; }
-.hero-meta { margin: 0 0 1.3rem; color: var(--text-soft); font-size: .95rem; line-height: 1.55; }
+.hero-meta { margin: 0 0 1.3rem; color: var(--text-soft); font-size: 0.97rem; line-height: 1.55; }
 .hero-meta a { text-decoration: underline; text-decoration-color: #9db0bf; text-underline-offset: 2px; }
 .hero-title {
   max-width: 760px;
@@ -33,8 +33,8 @@ redirect_from:
   font-weight: 600;
   line-height: 1.3;
 }
-.hero-description { max-width: 740px; margin: 0; color: #333b43; font-size: 1rem; line-height: 1.65; }
-.hero-links { margin: 1.2rem 0 0; color: var(--muted); font-size: .92rem; }
+.hero-description { max-width: 760px; margin: 0; color: #1f2429; font-size: 1.04rem !important; line-height: 1.65; }
+.hero-links { margin: 1.2rem 0 0; color: var(--muted); font-size: 0.97rem; }
 .hero-links a { font-weight: 600; text-decoration: underline !important; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .hero-links .sep { margin: 0 .45rem; color: #c2c8ce; }
 .hero-photo-wrap { width: 225px; height: 300px; overflow: hidden; border-radius: 3px; justify-self: end; }
@@ -42,25 +42,25 @@ redirect_from:
 
 /* ===== Shared section rhythm ===== */
 .home-section { border-top: 1px solid var(--line); padding-top: 2rem !important; }
-.section-lede { max-width: 820px; margin: -.3rem 0 1.6rem; color: var(--text-soft); font-size: .98rem; line-height: 1.6; }
+.section-lede { max-width: 820px; margin: -.3rem 0 1.6rem; color: var(--text-soft); font-size: 1rem; line-height: 1.6; }
 
 /* ===== Research thrusts ===== */
 .thrusts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; }
-.thrust .num { display: block; margin-bottom: .35rem; color: var(--gt-gold); font-size: .9rem; font-weight: 600; }
+.thrust .num { display: block; margin-bottom: .35rem; color: var(--gt-gold); font-size: 0.97rem; font-weight: 600; }
 .thrust h3 { margin: 0 0 .5rem; color: var(--text); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
-.thrust p { margin: 0 0 .7rem; color: var(--text-soft); font-size: .9rem; line-height: 1.6; }
-.thrust .keys { color: var(--muted); font-size: .82rem; }
-.thrust .rep { margin: 0; color: #3a4148; font-size: .82rem; line-height: 1.5; }
+.thrust p { margin: 0 0 .7rem; color: var(--text-soft); font-size: 0.97rem; line-height: 1.6; }
+.thrust .keys { color: var(--muted); font-size: 0.88rem; }
+.thrust .rep { margin: 0; color: #2e353c; font-size: 0.88rem; line-height: 1.5; }
 .thrust .rep em { color: var(--muted); }
 
 /* ===== Selected publications ===== */
 .sel-pub { margin: 0 0 1rem; }
-.sel-pub .t { margin: 0; color: var(--text); font-size: .94rem; font-weight: 600; line-height: 1.35; }
-.sel-pub .a { margin: .12rem 0 0; color: var(--text-soft); font-size: .85rem; line-height: 1.4; }
+.sel-pub .t { margin: 0; color: var(--text); font-size: 0.97rem; font-weight: 600; line-height: 1.35; }
+.sel-pub .a { margin: .12rem 0 0; color: var(--text-soft); font-size: 0.88rem; line-height: 1.4; }
 .sel-pub .a strong { color: var(--text); }
-.sel-pub .v { margin: .08rem 0 0; color: var(--muted); font-size: .85rem; }
+.sel-pub .v { margin: .08rem 0 0; color: var(--muted); font-size: 0.88rem; }
 .sel-pub .v em { color: #294e6d; }
-.more-link { font-size: .9rem; font-weight: 600; }
+.more-link { font-size: 0.97rem; font-weight: 600; }
 
 @media (max-width: 980px) {
   .home-hero { grid-template-columns: minmax(0, 1fr) 190px; gap: 2rem; }
