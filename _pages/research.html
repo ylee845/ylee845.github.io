@@ -30,10 +30,6 @@ classes: wide
 .r-papers em { color: #294e6d; }
 .r-papers .chip { margin-left: .3rem; }
 
-.r-numbers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin: 0 0 1rem; }
-.r-numbers div { padding: .65rem .8rem; background: #f6f9fb; border-radius: 3px; }
-.r-numbers b { display: block; color: var(--gt-navy); font-size: 1.3rem; font-weight: 600; line-height: 1.1; }
-.r-numbers span { display: block; margin-top: .2rem; color: var(--text-soft); font-size: .78rem; line-height: 1.4; }
 
 .r-future { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
 .r-future article { padding: 1rem 1.1rem; border: 1px solid var(--line); border-top: 3px solid var(--gt-navy); border-radius: 4px; }
@@ -50,8 +46,7 @@ classes: wide
   .r-collab { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .r-numbers { grid-template-columns: 1fr; }
-}
+  }
 </style>
 
 <div class="l-shell">
@@ -126,11 +121,6 @@ classes: wide
       <p class="plain">Before irrigating, a good farmer imagines how the crop will respond. A world model is that imagination for an AI. My work lets it adapt to a new farm by reading a description of the farm&rsquo;s soil and climate and then fine-tuning from just a few sensor readings.</p>
       <h4>What I do</h4>
       <p>In <strong>KIWIC</strong>, an action-conditioned world model learns shared soil&ndash;water&ndash;crop dynamics. A lightweight adapter captures what is specific to each environment: an LLM encodes environmental knowledge, a hypernetwork turns it into the adapter&rsquo;s initialization, meta-learning with factual and counterfactual irrigation responses teaches the adapter how to adapt, and test-time adaptation refines it from sparse soil-moisture observations. The adapted model then drives model predictive control. I also analyze why prior knowledge matters when sparse observations leave the dynamics only partially identifiable, and derive a regret bound that connects prediction error to control decisions.</p>
-      <div class="r-numbers">
-        <div><b>60</b><span>agricultural environments never seen during training</span></div>
-        <div><b>+11.6%</b><span>crop yield over the non-adapted world model, with less water</span></div>
-        <div><b>&minus;15%</b><span>decision regret vs. the strongest adaptation baseline</span></div>
-      </div>
       <h4>Key paper</h4>
       <ul class="r-papers">
         <li>Knowledge-informed world model adaptation for predictive irrigation control under environmental shifts &mdash; <em>IISE Transactions</em>, submitted</li>

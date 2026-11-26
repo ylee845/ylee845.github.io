@@ -141,37 +141,6 @@ redirect_from:
 .thrust .reps p { margin: 0 0 .35rem; color: #353c43; font-size: .8rem; line-height: 1.4; }
 .thrust .reps p em { color: var(--muted); }
 
-/* ===== Featured paper ===== */
-.featured {
-  padding: 1.5rem 1.6rem;
-  border: 1px solid #d6dee6;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #f6f9fb 0%, #ffffff 100%);
-}
-.featured-head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: .45rem; }
-.featured h3 { margin: 0 0 .3rem; color: var(--text); font-size: 1.22rem; font-weight: 600; line-height: 1.3; }
-.featured .byline { margin: 0 0 .9rem; color: var(--muted); font-size: .86rem; }
-.featured .byline strong { color: var(--text-soft); }
-.featured .lede { max-width: 900px; margin: 0 0 1.1rem; color: #333b43; font-size: .97rem; line-height: 1.6; }
-.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin-bottom: 1.2rem; counter-reset: step; }
-.step { position: relative; padding: .8rem .85rem .8rem; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
-.step::before {
-  counter-increment: step;
-  content: counter(step);
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 1.45rem; height: 1.45rem; margin-bottom: .4rem;
-  border-radius: 50%; background: var(--gt-navy); color: #fff;
-  font-size: .78rem; font-weight: 600;
-}
-.step b { display: block; color: var(--text); font-size: .92rem; font-weight: 600; line-height: 1.3; }
-.step span { display: block; margin-top: .25rem; color: var(--text-soft); font-size: .8rem; line-height: 1.45; }
-.step small { display: block; margin-top: .4rem; color: #867b4f; font-size: .72rem; font-weight: 600; }
-.results { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
-.result { padding: .75rem .9rem; border-left: 3px solid var(--gt-gold); background: #fff; }
-.result b { display: block; color: var(--gt-navy); font-size: 1.45rem; font-weight: 600; line-height: 1.1; }
-.result span { display: block; margin-top: .25rem; color: var(--text-soft); font-size: .8rem; line-height: 1.4; }
-.fine { margin: .8rem 0 0; color: var(--muted); font-size: .76rem; line-height: 1.45; }
-
 /* ===== Highlights + selected pubs ===== */
 .two-col { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; }
 .sel-pub { padding: .6rem 0; border-top: 1px solid #eef0f2; }
@@ -193,7 +162,6 @@ redirect_from:
   .pipeline { grid-template-columns: 1fr; }
   .pipe-arrow { justify-self: center; transform: rotate(90deg); }
   .thrust-grid { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .two-col { grid-template-columns: 1fr; gap: 1.8rem; }
 }
 @media (max-width: 760px) {
@@ -204,8 +172,7 @@ redirect_from:
   .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .glance div:nth-child(3) { border-left: 0; }
   .glance div:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .pipe-steps, .steps, .results { grid-template-columns: 1fr; }
-  .featured { padding: 1.1rem 1rem; }
+  .pipe-steps { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -326,40 +293,6 @@ redirect_from:
         <p>KIWIC: Knowledge-informed world model adaptation for predictive irrigation control &mdash; <em>IISE Transactions, submitted</em></p>
       </div>
     </article>
-  </div>
-</section>
-
-<!-- ============ FEATURED ============ -->
-<section class="l-shell l-shell--wide">
-  <h2 class="section-title">Featured: Newest Work</h2>
-  <div class="featured">
-    <div class="featured-head">
-      <span class="chip chip--gold">New</span>
-      <span class="chip">IISE Transactions (submitted)</span>
-      <span class="chip">World models · Meta-learning · LLMs · MPC</span>
-    </div>
-    <h3>Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</h3>
-    <p class="byline"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li</p>
-
-    <p class="lede">
-      Agriculture uses about 72% of the world&rsquo;s freshwater, yet the same irrigation decision can help or hurt a crop depending on the soil and climate.
-      An AI controller trained on some farms therefore breaks down on new ones, and a new farm rarely has enough sensor data to re-learn from scratch.
-      <strong>KIWIC</strong> closes this gap by combining what we can <em>read</em> about a new farm with the few things we can <em>measure</em> there.
-    </p>
-
-    <div class="steps">
-      <div class="step"><b>Learn shared physics</b><span>A world model learns how irrigation drives soil moisture, canopy cover, and biomass across many source farms.</span><small>Action-conditioned world model</small></div>
-      <div class="step"><b>Read the new farm</b><span>An LLM encodes the farm&rsquo;s soil and climate description; a hypernetwork turns it into a tailored starting point.</span><small>LLM + hypernetwork initialization</small></div>
-      <div class="step"><b>Adapt on the fly</b><span>A lightweight adapter is refined from a handful of soil-moisture readings, trained with factual &amp; counterfactual supervision.</span><small>Meta-learning + test-time adaptation</small></div>
-      <div class="step"><b>Plan irrigation</b><span>The adapted model simulates candidate schedules and picks the best one under a water budget.</span><small>Model predictive control</small></div>
-    </div>
-
-    <div class="results">
-      <div class="result"><b>+11.6%</b><span>crop yield vs. the non-adapted world model, while using less water (45.0 vs. 40.3 t/ha)</span></div>
-      <div class="result"><b>&minus;15%</b><span>decision regret vs. the strongest adaptation baseline (0.044 vs. 0.052)</span></div>
-      <div class="result"><b>+31%</b><span>yield with the <em>same</em> 500 mm of water in a representative site, from smarter timing alone</span></div>
-    </div>
-    <p class="fine">Evaluated in AquaCrop simulation on sugar beet across 60 environments unseen during training. The paper also proves decision-preservation conditions and a regret bound that links prediction error to control quality.</p>
   </div>
 </section>
 
