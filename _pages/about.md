@@ -35,17 +35,6 @@ redirect_from:
   line-height: 1.5;
 }
 .hero-meta a { text-decoration: underline; text-decoration-color: #9db0bf; text-underline-offset: 2px; }
-.market-pill {
-  display: inline-block;
-  margin: 0 0 .9rem;
-  padding: .2rem .7rem;
-  border: 1px solid var(--gt-gold);
-  border-radius: 999px;
-  background: #faf7ec;
-  color: #6d5f2a;
-  font-size: .8rem;
-  font-weight: 600;
-}
 .hero-title {
   max-width: 780px;
   padding: 0 !important;
@@ -229,8 +218,6 @@ redirect_from:
       Advised by <a href="https://isye.gatech.edu/users/jing-li" target="_blank" rel="noopener">Prof. Jing Li</a>
     </p>
 
-    <span class="market-pill">On the 2026–27 academic job market</span>
-
     <h2 class="hero-title">Knowledge-informed AI that perceives, predicts, and decides in complex physical and biomedical systems</h2>
 
     <p class="hero-description">
@@ -347,7 +334,7 @@ redirect_from:
   <h2 class="section-title">Featured: Newest Work</h2>
   <div class="featured">
     <div class="featured-head">
-      <span class="chip chip--gold">Job-market paper</span>
+      <span class="chip chip--gold">New</span>
       <span class="chip">IISE Transactions (submitted)</span>
       <span class="chip">World models · Meta-learning · LLMs · MPC</span>
     </div>
@@ -412,7 +399,7 @@ redirect_from:
     <div>
       <h2 class="section-title">Highlights</h2>
       <ul class="news">
-        <li><span class="yr">2026</span><span>Job-market paper on knowledge-informed world models for irrigation control submitted to <em>IISE Transactions</em>.</span></li>
+        <li><span class="yr">2026</span><span>Paper on knowledge-informed world models for irrigation control submitted to <em>IISE Transactions</em>.</span></li>
         <li><span class="yr">2026</span><span><em>BrainNormalizer</em> selected for the journal&rsquo;s Monthly Spotlight Series and featured in <em>ISE Magazine</em>.</span></li>
         <li><span class="yr">2026</span><span>Four more journal articles published or in press in <em>J. Endodontics</em>, <em>Cytotherapy</em>, <em>ACS ES&amp;T Eng.</em>, and <em>Dental Clinics of N. America</em>.</span></li>
         <li><span class="yr">2025</span><span>George Fellowship and Stewart Fellowship, Georgia Tech ISyE.</span></li>
