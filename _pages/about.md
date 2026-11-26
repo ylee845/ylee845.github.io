@@ -35,7 +35,7 @@ redirect_from:
 }
 .hero-description { max-width: 760px; margin: 0; color: #1f2429; font-size: 1.04rem !important; line-height: 1.65; }
 .hero-links { margin: 1.2rem 0 0; color: var(--muted); font-size: 0.97rem; }
-.hero-links a { font-weight: 600; text-decoration: underline !important; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.hero-links a { font-weight: 400 !important; text-decoration: underline !important; text-decoration-color: #9db0bf; padding: .15rem 0; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .hero-links .sep { margin: 0 .45rem; color: #c2c8ce; }
 .hero-photo-wrap { width: 225px; height: 300px; overflow: hidden; border-radius: 3px; justify-self: end; }
 .hero-photo { width: 100%; height: 100%; display: block; object-fit: contain; }
