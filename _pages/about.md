@@ -53,22 +53,6 @@ redirect_from:
 .thrust .rep { margin: 0; color: #3a4148; font-size: .82rem; line-height: 1.5; }
 .thrust .rep em { color: var(--muted); }
 
-/* ===== Recent work ===== */
-.recent-title { margin: 0 0 .25rem; color: var(--text); font-size: 1.12rem; font-weight: 600; line-height: 1.35; }
-.recent-meta { margin: 0 0 1rem; color: var(--muted); font-size: .88rem; }
-.recent-meta strong { color: var(--text-soft); }
-.recent-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.6rem; }
-.recent-body p { margin: 0 0 .8rem; color: #333b43; font-size: .95rem; line-height: 1.65; }
-.recent-steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
-.recent-steps li { position: relative; padding: 0 0 .75rem 1.9rem; color: var(--text-soft); font-size: .9rem; line-height: 1.55; counter-increment: s; }
-.recent-steps li::before {
-  content: counter(s);
-  position: absolute; left: 0; top: .05rem;
-  width: 1.3rem; height: 1.3rem; border: 1px solid var(--gt-navy); border-radius: 50%;
-  color: var(--gt-navy); font-size: .74rem; font-weight: 600; line-height: 1.2rem; text-align: center;
-}
-.recent-steps b { color: var(--text); font-weight: 600; }
-
 /* ===== Publications + news ===== */
 .two-col { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 3rem; }
 .sel-pub { margin: 0 0 1rem; }
@@ -86,7 +70,7 @@ redirect_from:
   .home-hero { grid-template-columns: minmax(0, 1fr) 190px; gap: 2rem; }
   .hero-photo-wrap { width: 190px; height: 253px; }
   .thrusts { grid-template-columns: 1fr; gap: 1.6rem; }
-  .recent-body, .two-col { grid-template-columns: 1fr; gap: 1.4rem; }
+  .two-col { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 @media (max-width: 760px) {
   .home-hero { grid-template-columns: 1fr; gap: 1.2rem; }
@@ -156,31 +140,6 @@ redirect_from:
     </div>
   </div>
   <p style="margin:1.6rem 0 0;"><a class="more-link" href="/research/">More about my research &rarr;</a></p>
-</section>
-
-<section class="l-shell home-section">
-  <h2 class="section-title">Recent Work</h2>
-  <p class="recent-title">Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</p>
-  <p class="recent-meta"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li · <em>IISE Transactions</em>, under review</p>
-
-  <div class="recent-body">
-    <div>
-      <p>
-        The same irrigation decision can help or hurt a crop depending on the soil and climate, so a controller learned on some farms often fails on new ones,
-        where sensor data are too sparse to relearn the dynamics. This work combines what we can <em>read</em> about a new farm with the few things we can <em>measure</em> there.
-      </p>
-      <p>
-        Across 60 unseen environments in simulation, the method improved crop-response prediction, lowered decision regret, and achieved the highest yield among compared methods.
-        We also establish a regret bound that links prediction error to control quality.
-      </p>
-    </div>
-    <ol class="recent-steps">
-      <li><b>Learn shared dynamics.</b> A world model learns how irrigation drives soil moisture, canopy cover, and biomass.</li>
-      <li><b>Use environmental knowledge.</b> An LLM encodes soil and climate descriptions, and a hypernetwork turns them into an environment-specific starting point.</li>
-      <li><b>Adapt with sparse data.</b> A lightweight adapter is meta-learned and refined at test time from a few soil-moisture readings.</li>
-      <li><b>Plan.</b> The adapted model drives model predictive control under a water budget.</li>
-    </ol>
-  </div>
 </section>
 
 <section class="l-shell home-section">
