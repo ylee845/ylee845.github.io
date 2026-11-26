@@ -53,8 +53,7 @@ redirect_from:
 .thrust .rep { margin: 0; color: #3a4148; font-size: .82rem; line-height: 1.5; }
 .thrust .rep em { color: var(--muted); }
 
-/* ===== Publications + news ===== */
-.two-col { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 3rem; }
+/* ===== Selected publications ===== */
 .sel-pub { margin: 0 0 1rem; }
 .sel-pub .t { margin: 0; color: var(--text); font-size: .94rem; font-weight: 600; line-height: 1.35; }
 .sel-pub .a { margin: .12rem 0 0; color: var(--text-soft); font-size: .85rem; line-height: 1.4; }
@@ -62,15 +61,11 @@ redirect_from:
 .sel-pub .v { margin: .08rem 0 0; color: var(--muted); font-size: .85rem; }
 .sel-pub .v em { color: #294e6d; }
 .more-link { font-size: .9rem; font-weight: 600; }
-.news { margin: 0; padding: 0; list-style: none; }
-.news li { display: grid; grid-template-columns: 2.8rem minmax(0, 1fr); gap: .5rem; margin: 0 0 .7rem; color: var(--text-soft); font-size: .88rem; line-height: 1.5; }
-.news .yr { color: var(--muted); font-weight: 600; }
 
 @media (max-width: 980px) {
   .home-hero { grid-template-columns: minmax(0, 1fr) 190px; gap: 2rem; }
   .hero-photo-wrap { width: 190px; height: 253px; }
   .thrusts { grid-template-columns: 1fr; gap: 1.6rem; }
-  .two-col { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 @media (max-width: 760px) {
   .home-hero { grid-template-columns: 1fr; gap: 1.2rem; }
@@ -143,41 +138,31 @@ redirect_from:
 </section>
 
 <section class="l-shell home-section">
-  <div class="two-col">
-    <div>
-      <h2 class="section-title">Selected Publications</h2>
-      <div class="sel-pub">
-        <p class="t">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
-        <p class="a"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-        <p class="v"><em>IEEE Transactions on Automation Science and Engineering</em>, 2025. IISE DAIS Best Paper Finalist.</p>
-      </div>
-      <div class="sel-pub">
-        <p class="t">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
-        <p class="a"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-        <p class="v"><em>Journal of Endodontics</em>, in press, 2026.</p>
-      </div>
-      <div class="sel-pub">
-        <p class="t">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
-        <p class="a">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-        <p class="v"><em>IISE Transactions on Healthcare Systems Engineering</em>, 2026.</p>
-      </div>
-      <div class="sel-pub">
-        <p class="t">Foundation Model Cascades Enable Zero-Shot Microscopy Image Analysis for Cell Therapy Manufacturing</p>
-        <p class="a">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
-        <p class="v"><em>Cytotherapy</em>, 2026.</p>
-      </div>
-      <p style="margin:.4rem 0 0;"><a class="more-link" href="/publications/">All publications &rarr;</a></p>
-    </div>
-
-    <div>
-      <h2 class="section-title">News</h2>
-      <ul class="news">
-        <li><span class="yr">2026</span><span>Paper on knowledge-informed world models for irrigation control submitted to <em>IISE Transactions</em>.</span></li>
-        <li><span class="yr">2026</span><span><em>BrainNormalizer</em> selected for the journal&rsquo;s Monthly Spotlight Series and featured in <em>ISE Magazine</em>.</span></li>
-        <li><span class="yr">2025</span><span>George Fellowship and Stewart Fellowship, Georgia Tech ISyE.</span></li>
-        <li><span class="yr">2025</span><span>Invited talk, INFORMS Annual Meeting, Atlanta.</span></li>
-        <li><span class="yr">2024</span><span>Finalist, Best Track Paper Award, IISE DAIS.</span></li>
-      </ul>
-    </div>
+  <h2 class="section-title">Selected Publications</h2>
+  <div class="sel-pub">
+    <p class="t">Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</p>
+    <p class="a"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li</p>
+    <p class="v"><em>IISE Transactions</em> (submitted).</p>
   </div>
+  <div class="sel-pub">
+    <p class="t">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
+    <p class="a"><strong>Y. Lee</strong>, R.Q. Chen, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
+    <p class="v"><em>Computers and Electronics in Agriculture</em> (revised paper under second-round review).</p>
+  </div>
+  <div class="sel-pub">
+    <p class="t">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
+    <p class="a">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
+    <p class="v"><em>IISE Transactions on Healthcare Systems Engineering</em>, 16(4), 474&ndash;486, 2026.</p>
+  </div>
+  <div class="sel-pub">
+    <p class="t">Foundation Model Cascades Enable Zero-Shot Microscopy Image Analysis for Cell Therapy Manufacturing</p>
+    <p class="a">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
+    <p class="v"><em>Cytotherapy</em>, 28(5), 102078, 2026.</p>
+  </div>
+  <div class="sel-pub">
+    <p class="t">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+    <p class="a"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
+    <p class="v"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205&ndash;11218, 2025. IISE DAIS Best Paper Finalist, 2024.</p>
+  </div>
+  <p style="margin:.4rem 0 0;"><a class="more-link" href="/publications/">All publications &rarr;</a></p>
 </section>
