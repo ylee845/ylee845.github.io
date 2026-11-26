@@ -11,158 +11,146 @@ classes: wide
 <style>
 .page__title { display: none !important; }
 
-.r-lede { max-width: 860px; margin: 0 0 1.2rem; color: #333b43; font-size: 1.02rem; line-height: 1.65; }
-.r-principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
-.r-principles li { padding: .85rem 1rem; border: 1px solid var(--line); border-left: 3px solid var(--gt-gold); border-radius: 3px; background: #fbfbfa; color: var(--text-soft); font-size: .86rem; line-height: 1.5; }
-.r-principles b { display: block; margin-bottom: .2rem; color: var(--text); font-size: .93rem; font-weight: 600; }
+.r-lede { max-width: 820px; margin: 0 0 1rem; color: #333b43; font-size: 1rem; line-height: 1.7; }
+.r-approach { max-width: 820px; margin: 0; padding: 0; list-style: none; }
+.r-approach li { margin: 0 0 .55rem; color: var(--text-soft); font-size: .94rem; line-height: 1.6; }
+.r-approach b { color: var(--text); font-weight: 600; }
 
-.r-thrust { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 2rem; padding: 1.6rem 0; border-top: 1px solid var(--line); }
-.r-thrust:first-of-type { border-top: 0; padding-top: .4rem; }
-.r-side .num { color: var(--gt-gold); font-size: 2.2rem; font-weight: 600; line-height: 1; }
-.r-side h3 { margin: .35rem 0 .5rem; color: var(--gt-navy); font-size: 1.15rem; font-weight: 600; line-height: 1.25; }
-.r-side .chip { margin: 0 .2rem .3rem 0; }
-.r-body h4 { margin: 0 0 .25rem; color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em !important; }
-.r-body p { margin: 0 0 .9rem; color: #333b43; font-size: .94rem; line-height: 1.6; }
-.r-body .plain { color: var(--text); font-size: 1rem; }
-.r-papers { margin: 0; padding: 0; list-style: none; }
-.r-papers li { padding: .4rem 0 .4rem .9rem; border-left: 2px solid #e1e6eb; color: var(--text-soft); font-size: .86rem; line-height: 1.45; }
-.r-papers li + li { margin-top: .3rem; }
+.r-section { border-top: 1px solid var(--line); padding-top: 2rem !important; }
+
+.r-thrust { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 2.2rem; margin: 0 0 2.2rem; }
+.r-thrust:last-child { margin-bottom: 0; }
+.r-side .num { display: block; color: var(--gt-gold); font-size: .9rem; font-weight: 600; }
+.r-side h3 { margin: .25rem 0 .4rem; color: var(--text); font-size: 1.08rem; font-weight: 600; line-height: 1.3; }
+.r-side .keys { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+.r-body p { margin: 0 0 .8rem; color: #333b43; font-size: .95rem; line-height: 1.65; }
+.r-papers { margin: .2rem 0 0; padding: 0; list-style: none; }
+.r-papers li { margin: 0 0 .35rem; color: var(--text-soft); font-size: .87rem; line-height: 1.5; }
 .r-papers em { color: #294e6d; }
-.r-papers .chip { margin-left: .3rem; }
 
+.r-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; }
+.r-apps h3, .r-future h3 { margin: 0 0 .45rem; color: var(--text); font-size: 1rem; font-weight: 600; line-height: 1.3; }
+.r-apps p, .r-future p { margin: 0; color: var(--text-soft); font-size: .9rem; line-height: 1.6; }
+.r-future { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; }
 
-.r-future { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
-.r-future article { padding: 1rem 1.1rem; border: 1px solid var(--line); border-top: 3px solid var(--gt-navy); border-radius: 4px; }
-.r-future h3 { margin: 0 0 .4rem; color: var(--text); font-size: 1rem; font-weight: 600; line-height: 1.3; }
-.r-future p { margin: 0; color: var(--text-soft); font-size: .86rem; line-height: 1.55; }
-
-.r-collab { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; }
-.r-collab ul { margin: 0; padding-left: 1.1rem; color: var(--text-soft); font-size: .9rem; line-height: 1.6; }
+.r-collab { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; }
 .r-collab h3 { margin: 0 0 .5rem; color: var(--text); font-size: 1rem; font-weight: 600; }
+.r-collab ul { margin: 0; padding-left: 1.1rem; color: var(--text-soft); font-size: .9rem; line-height: 1.65; }
 
 @media (max-width: 900px) {
-  .r-principles, .r-future { grid-template-columns: 1fr; }
-  .r-thrust { grid-template-columns: 1fr; gap: .8rem; }
-  .r-collab { grid-template-columns: 1fr; }
+  .r-thrust { grid-template-columns: 1fr; gap: .6rem; }
+  .r-apps, .r-future, .r-collab { grid-template-columns: 1fr; gap: 1.4rem; }
 }
-@media (max-width: 600px) {
-  }
 </style>
 
 <div class="l-shell">
   <h1 class="section-title">Research</h1>
   <p class="r-lede">
     I develop <strong>knowledge-informed machine learning</strong> for complex scientific and physical systems.
-    In medicine, agriculture, and manufacturing, labeled data are expensive, every patient, field, or production line is a little different, and a wrong decision is costly.
-    Rather than asking AI to learn everything from data, I design models that start from what domain experts already know and use data to learn the rest.
-    This makes them <strong>data-efficient</strong>, <strong>robust when conditions shift</strong>, and <strong>useful for real decisions</strong>.
+    In medicine, agriculture, and manufacturing, labeled data are expensive, every patient, field, or production line differs, and wrong decisions are costly.
+    Instead of asking AI to learn everything from data, I design models that start from what domain experts already know and use data to learn the rest.
   </p>
-  <ul class="r-principles">
-    <li><b>Knowledge as a prior</b>Anatomy, soil&ndash;water&ndash;crop physics, and process structure are encoded into model architecture, losses, and initialization.</li>
-    <li><b>Modern AI as the engine</b>Foundation models, LLMs, generative models (ControlNet), and world models provide flexible capacity.</li>
-    <li><b>Decisions as the goal</b>Models are judged by the quality of the diagnoses and control actions they enable, with theory linking prediction error to decision regret.</li>
+  <ul class="r-approach">
+    <li><b>Knowledge as a prior.</b> Anatomy, soil&ndash;water&ndash;crop dynamics, and process structure are built into model architectures, training objectives, and initialization.</li>
+    <li><b>Modern AI as the engine.</b> Foundation models, LLMs, generative models, and world models provide flexible capacity.</li>
+    <li><b>Decisions as the goal.</b> Models are evaluated by the quality of the diagnoses and control actions they enable.</li>
   </ul>
 </div>
 
-<div class="l-shell">
+<div class="l-shell r-section">
   <h2 class="section-title">Research Thrusts</h2>
 
   <section class="r-thrust">
     <div class="r-side">
-      <div class="num">01</div>
-      <h3>Perception: learning to see with few labels</h3>
-      <span class="chip">Semi-supervised learning</span><span class="chip">Generative AI</span><span class="chip">Foundation models</span><span class="chip">3D medical imaging</span>
+      <span class="num">01</span>
+      <h3>Perception from scarce data</h3>
+      <p class="keys">Semi-supervised learning · generative models · foundation models · 3D medical imaging</p>
     </div>
     <div class="r-body">
-      <h4>In plain words</h4>
-      <p class="plain">A dentist can spot a lesion on a 3D scan because they know where teeth, bone, and nerves should be. I give AI that same anatomical sense, so it can learn from a small number of expert-labeled scans.</p>
-      <h4>What I do</h4>
-      <p>I integrate oral-anatomical knowledge into semi-supervised 3D segmentation of cone-beam CT (CBCT), normalize radiomic features by anatomy to separate lesion types, reconstruct pseudo-healthy brain MRI with an edge-guided ControlNet, and cascade foundation models for zero-shot microscopy analysis in cell-therapy manufacturing. Two methods are protected by U.S. provisional patents and developed with clinicians.</p>
-      <h4>Key papers</h4>
+      <p>A clinician can spot a lesion on a 3D scan because they know where teeth, bone, and nerves should be. I give AI that same anatomical understanding so it can learn from a small number of expert-labeled scans.</p>
+      <p>This includes anatomy-informed semi-supervised segmentation and lesion detection in dental cone-beam CT, anatomy-normalized radiomics for differential diagnosis, anatomy-informed pseudo-healthy reconstruction of brain MRI, and foundation-model cascades for zero-shot microscopy analysis. Two of these methods are the subject of U.S. provisional patent applications.</p>
       <ul class="r-papers">
-        <li>Oral-anatomical knowledge-informed semi-supervised learning for 3D dental CBCT segmentation and lesion detection &mdash; <em>IEEE T-ASE</em>, 2025 <span class="chip chip--gold">Best Paper Finalist</span></li>
-        <li>Dentin-normalized CBCT radiomics for differentiating granulomas and radicular cysts &mdash; <em>J. Endodontics</em>, in press, 2026</li>
-        <li>BrainNormalizer: anatomy-informed pseudo-healthy brain reconstruction &mdash; <em>IISE Trans. Healthcare Sys. Eng.</em>, 2026 <span class="chip chip--gold">Spotlight</span></li>
-        <li>Foundation model cascades for zero-shot microscopy image analysis &mdash; <em>Cytotherapy</em>, 2026</li>
-        <li>Pretrained transformers for CBCT segmentation and lesion detection &mdash; <em>J. Endodontics</em>, 2024</li>
+        <li>Oral-anatomical knowledge-informed semi-supervised learning for 3D dental CBCT segmentation and lesion detection, <em>IEEE T-ASE</em>, 2025</li>
+        <li>Dentin-normalized CBCT radiomics for differentiating granulomas and radicular cysts, <em>J. Endodontics</em>, in press, 2026</li>
+        <li>BrainNormalizer: anatomy-informed pseudo-healthy brain reconstruction, <em>IISE Trans. Healthcare Sys. Eng.</em>, 2026</li>
+        <li>Foundation model cascades for zero-shot microscopy image analysis, <em>Cytotherapy</em>, 2026</li>
       </ul>
     </div>
   </section>
 
   <section class="r-thrust">
     <div class="r-side">
-      <div class="num">02</div>
-      <h3>Reasoning &amp; prediction: foundation models for scientific signals</h3>
-      <span class="chip">LLMs</span><span class="chip">Spatiotemporal learning</span><span class="chip">Anomaly detection</span><span class="chip">Precision agriculture</span>
+      <span class="num">02</span>
+      <h3>Reasoning over scientific signals</h3>
+      <p class="keys">LLMs · spatiotemporal learning · anomaly detection</p>
     </div>
     <div class="r-body">
-      <h4>In plain words</h4>
-      <p class="plain">Soil sensors produce streams of numbers that only an expert can read. I build models that read these streams like an agronomist, recognizing what is happening underground and anticipating what it means for the harvest.</p>
-      <h4>What I do</h4>
-      <p>I develop LLM-based frameworks that combine domain knowledge with sensor data for soil-moisture pattern recognition and anomaly detection, learn depth-specific soil-moisture trajectories to predict yield across years, and build lightweight anomaly detection for on-site nutrient management and multi-farm decision support.</p>
-      <h4>Key papers</h4>
+      <p>Soil sensors produce streams of numbers that only an expert can interpret. I build models that read these signals like an agronomist, recognizing what is happening in the soil and what it means for the crop.</p>
+      <p>This includes LLM-based frameworks for soil-moisture pattern recognition and anomaly detection, spatiotemporal learning of depth-specific soil-moisture trajectories for cross-year yield prediction, and lightweight anomaly detection for on-site nutrient management.</p>
       <ul class="r-papers">
-        <li>SPADE: an LLM framework for soil-moisture pattern recognition and anomaly detection &mdash; <em>Computers and Electronics in Agriculture</em>, second-round review</li>
-        <li>Lightweight anomaly detection for sustainable nutrient management &mdash; <em>ACS ES&amp;T Engineering</em>, 2026</li>
-        <li>ACREE: a reconfigurable platform for multi-farm agricultural decision support &mdash; <em>Smart Agricultural Technology</em>, second-round review</li>
-        <li>Depth-specific soil-moisture trajectories for cross-year sugar beet yield prediction &mdash; in preparation</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="r-thrust" id="kiwic">
-    <div class="r-side">
-      <div class="num">03</div>
-      <h3>Decision &amp; control: adaptive world models</h3>
-      <span class="chip">World models</span><span class="chip">Meta-learning</span><span class="chip">Test-time adaptation</span><span class="chip">Model predictive control</span>
-    </div>
-    <div class="r-body">
-      <h4>In plain words</h4>
-      <p class="plain">Before irrigating, a good farmer imagines how the crop will respond. A world model is that imagination for an AI. My work lets it adapt to a new farm by reading a description of the farm&rsquo;s soil and climate and then fine-tuning from just a few sensor readings.</p>
-      <h4>What I do</h4>
-      <p>In <strong>KIWIC</strong>, an action-conditioned world model learns shared soil&ndash;water&ndash;crop dynamics. A lightweight adapter captures what is specific to each environment: an LLM encodes environmental knowledge, a hypernetwork turns it into the adapter&rsquo;s initialization, meta-learning with factual and counterfactual irrigation responses teaches the adapter how to adapt, and test-time adaptation refines it from sparse soil-moisture observations. The adapted model then drives model predictive control. I also analyze why prior knowledge matters when sparse observations leave the dynamics only partially identifiable, and derive a regret bound that connects prediction error to control decisions.</p>
-      <h4>Key paper</h4>
-      <ul class="r-papers">
-        <li>Knowledge-informed world model adaptation for predictive irrigation control under environmental shifts &mdash; <em>IISE Transactions</em>, submitted</li>
+        <li>SPADE: an LLM framework for soil-moisture pattern recognition and anomaly detection, <em>Computers and Electronics in Agriculture</em>, under review</li>
+        <li>Lightweight anomaly detection for sustainable nutrient management, <em>ACS ES&amp;T Engineering</em>, 2026</li>
       </ul>
     </div>
   </section>
 
   <section class="r-thrust">
     <div class="r-side">
-      <div class="num">+</div>
-      <h3>Roots in manufacturing analytics</h3>
-      <span class="chip">Data mining</span><span class="chip">Quality &amp; reliability</span>
+      <span class="num">03</span>
+      <h3>Decisions under environment shifts</h3>
+      <p class="keys">World models · meta-learning · test-time adaptation · model predictive control</p>
     </div>
     <div class="r-body">
-      <p>My earlier work at Yonsei University developed a numerical association-rule mining method that pinpoints which tool groups introduce faults in a printed circuit board production line (<em>International Journal of Production Research</em>, 2024). It started my interest in turning industrial data into actionable engineering knowledge.</p>
+      <p>Before irrigating, a good farmer imagines how the crop will respond. A world model plays that role for an AI controller. My work lets it adapt to a new farm by reading a description of its soil and climate and then refining itself from a few sensor readings.</p>
+      <p>An action-conditioned world model learns shared soil&ndash;water&ndash;crop dynamics, and a lightweight adapter captures what is specific to each environment. An LLM encodes environmental knowledge, a hypernetwork turns it into the adapter&rsquo;s initialization, meta-learning with factual and counterfactual irrigation responses trains the adaptation, and test-time adaptation refines it from sparse observations before model predictive control. Theory characterizes the role of prior knowledge under partial identifiability and bounds decision regret by prediction error. Across 60 unseen environments in simulation, the approach achieved the highest crop yield and lowest decision regret among compared methods.</p>
+      <ul class="r-papers">
+        <li>Knowledge-informed world model adaptation for predictive irrigation control under environmental shifts, <em>IISE Transactions</em>, under review</li>
+      </ul>
     </div>
   </section>
 </div>
 
-<div class="l-shell">
-  <h2 class="section-title">Where This Research Is Going</h2>
-  <div class="r-future">
-    <article>
-      <h3>From simulation to the field</h3>
-      <p>Validate adaptive world models on working farms, adding remote sensing and plant-based measurements so adaptation stays reliable when observations are sparse.</p>
-    </article>
-    <article>
-      <h3>Scientific world models across systems</h3>
-      <p>Generalize knowledge-conditioned adaptation across crops, sites, and other physical systems such as manufacturing processes, so one model can quickly specialize to many environments.</p>
-    </article>
-    <article>
-      <h3>AI for clinical decisions</h3>
-      <p>Move from detecting disease to predicting treatment outcomes from 3D imaging, as in my ongoing work on endodontic prognosis and an NIH NIDCR proposal for CBCT clinical decision support.</p>
-    </article>
+<div class="l-shell r-section">
+  <h2 class="section-title">Applications</h2>
+  <div class="r-apps">
+    <div>
+      <h3>Precision diagnosis</h3>
+      <p>Lesion segmentation, differential diagnosis, and treatment-outcome prediction from 3D dental CBCT, and pseudo-healthy reconstruction of brain MRI, developed with clinical collaborators.</p>
+    </div>
+    <div>
+      <h3>Sustainable agriculture</h3>
+      <p>Soil-moisture interpretation, yield prediction, nutrient management, and irrigation control that adapts to new soils and climates.</p>
+    </div>
+    <div>
+      <h3>Intelligent manufacturing</h3>
+      <p>Automated quality assessment of cell-therapy manufacturing from microscopy, and discovery of fault-introducing tool groups in printed circuit board production.</p>
+    </div>
   </div>
 </div>
 
-<div class="l-shell">
+<div class="l-shell r-section">
+  <h2 class="section-title">Future Directions</h2>
+  <div class="r-future">
+    <div>
+      <h3>From simulation to the field</h3>
+      <p>Validating adaptive world models on working farms, with remote sensing and plant-based measurements to keep adaptation reliable under sparse observations.</p>
+    </div>
+    <div>
+      <h3>Scientific world models across systems</h3>
+      <p>Extending knowledge-conditioned adaptation across crops, sites, and other physical systems so one model can quickly specialize to many environments.</p>
+    </div>
+    <div>
+      <h3>AI for clinical decisions</h3>
+      <p>Moving from detecting disease to predicting treatment outcomes from 3D imaging to support clinical decision-making.</p>
+    </div>
+  </div>
+</div>
+
+<div class="l-shell r-section">
   <h2 class="section-title">Collaboration &amp; Funding</h2>
   <div class="r-collab">
     <div>
-      <h3>Interdisciplinary collaborators</h3>
+      <h3>Collaborators</h3>
       <ul>
         <li>Endodontists and oral radiologists (dental CBCT diagnosis and prognosis)</li>
         <li>Agricultural and biological systems engineers, University of Nebraska&ndash;Lincoln</li>
@@ -171,10 +159,10 @@ classes: wide
       </ul>
     </div>
     <div>
-      <h3>Grant proposal experience</h3>
+      <h3>Grant proposals</h3>
       <ul>
-        <li><strong>AI-PAD</strong>: AI-driven CBCT clinical decision support for periapical disease (NIH NIDCR, pending). Developed the AI prognostic framework and preliminary models.</li>
-        <li><strong>DeepYield-TR</strong>: AI-driven sucrose prediction and decision support for sugar beet growers (NSF TTP). Contributed technical writing on research translation.</li>
+        <li><strong>AI-PAD</strong>: AI-driven CBCT clinical decision support for periapical disease (NIH NIDCR, pending)</li>
+        <li><strong>DeepYield-TR</strong>: AI-driven sucrose prediction and decision support for sugar beet growers (NSF TTP)</li>
       </ul>
     </div>
   </div>

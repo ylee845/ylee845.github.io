@@ -11,197 +11,113 @@ redirect_from:
 ---
 
 <style>
-/* Homepage-only styles. Shared layout (.l-shell, colours, chips)
-   lives in _sass/custom.scss. */
+/* Homepage-only styles. Shared layout lives in _sass/custom.scss. */
 
 /* ===== Hero ===== */
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
-  gap: 2.75rem;
+  grid-template-columns: minmax(0, 1fr) 225px;
+  gap: 3rem;
   align-items: center;
 }
-.hero-name {
-  margin: 0 0 .2rem;
-  color: var(--text);
-  font-size: 2.15rem;
-  font-weight: 600;
-  line-height: 1.05;
-}
-.hero-meta {
-  margin: 0 0 1rem;
-  color: var(--text-soft);
-  font-size: .94rem;
-  line-height: 1.5;
-}
+.hero-name { margin: 0 0 .25rem; color: var(--text); font-size: 2.1rem; font-weight: 600; line-height: 1.05; }
+.hero-meta { margin: 0 0 1.3rem; color: var(--text-soft); font-size: .95rem; line-height: 1.55; }
 .hero-meta a { text-decoration: underline; text-decoration-color: #9db0bf; text-underline-offset: 2px; }
 .hero-title {
-  max-width: 780px;
+  max-width: 760px;
+  margin: 0 0 .8rem;
   padding: 0 !important;
   border: 0 !important;
-  margin: 0 0 .7rem;
   color: var(--gt-navy);
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  line-height: 1.22;
+  line-height: 1.3;
 }
-.hero-description {
-  max-width: 760px;
-  margin: 0 0 .55rem;
-  color: #333b43;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.hero-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin: 1rem 0 0;
-}
-.hero-links a {
-  display: inline-block;
-  padding: .32rem .8rem;
-  border: 1px solid #cfd8e0;
-  border-radius: 4px;
-  color: var(--gt-navy);
-  font-size: .86rem;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-.hero-links a.primary { background: var(--gt-navy); border-color: var(--gt-navy); color: #fff; }
-.hero-links a:hover { text-decoration: none; border-color: var(--gt-navy); }
-.hero-links a.primary:hover { background: #0b3d6b; color: #fff; }
-.cv-updated { align-self: center; color: var(--muted); font-size: .74rem; }
-.hero-photo-wrap { width: 240px; height: 320px; overflow: hidden; border-radius: 4px; justify-self: end; }
+.hero-description { max-width: 740px; margin: 0; color: #333b43; font-size: 1rem; line-height: 1.65; }
+.hero-links { margin: 1.2rem 0 0; color: var(--muted); font-size: .92rem; }
+.hero-links a { font-weight: 600; text-decoration: none !important; }
+.hero-links .sep { margin: 0 .45rem; color: #c2c8ce; }
+.hero-photo-wrap { width: 225px; height: 300px; overflow: hidden; border-radius: 3px; justify-self: end; }
 .hero-photo { width: 100%; height: 100%; display: block; object-fit: contain; }
 
-/* ===== At a glance ===== */
-.glance {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.glance div { padding: 1rem 1.1rem; }
-.glance div + div { border-left: 1px solid var(--line); }
-.glance b { display: block; color: var(--gt-navy); font-size: 1.9rem; font-weight: 600; line-height: 1; }
-.glance span { display: block; margin-top: .3rem; color: var(--text-soft); font-size: .84rem; line-height: 1.35; }
-.venues { margin: .8rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
-.venues strong { color: var(--text-soft); font-weight: 600; }
-
-/* ===== Research in one picture ===== */
-.big-question {
-  margin: 0 0 1.4rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--gt-gold);
-  color: var(--text);
-  font-size: 1.12rem;
-  line-height: 1.5;
-}
-.big-question em { color: var(--gt-navy); font-style: normal; font-weight: 600; }
-.pipeline {
-  display: grid;
-  grid-template-columns: 1fr auto 2.6fr auto 1fr;
-  gap: .9rem;
-  align-items: stretch;
-}
-.pipe-arrow { align-self: center; color: var(--gt-gold); font-size: 1.5rem; font-weight: 600; }
-.pipe-box {
-  padding: .95rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: #fbfbfa;
-}
-.pipe-box h4 { margin: 0 0 .4rem; color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em !important; }
-.pipe-box ul { margin: 0; padding-left: 1rem; color: var(--text-soft); font-size: .86rem; line-height: 1.5; }
-.pipe-core { display: flex; flex-direction: column; background: var(--gt-navy); border-color: var(--gt-navy); }
-.pipe-core h4 { color: #d9cfa6; }
-.pipe-steps { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
-.pipeline { align-items: center; }
-.pipe-step { padding: .8rem .8rem; border-radius: 3px; background: rgba(255,255,255,.08); }
-.pipe-step b { display: block; color: #fff; font-size: .95rem; font-weight: 600; }
-.pipe-step span { display: block; margin-top: .2rem; color: #c9d5e0; font-size: .8rem; line-height: 1.4; }
+/* ===== Shared section rhythm ===== */
+.home-section { border-top: 1px solid var(--line); padding-top: 2rem !important; }
+.section-lede { max-width: 820px; margin: -.3rem 0 1.6rem; color: var(--text-soft); font-size: .98rem; line-height: 1.6; }
 
 /* ===== Research thrusts ===== */
-.thrust-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
-.thrust {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 1.15rem 1.2rem 1.05rem;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--gt-gold);
-  border-radius: 4px;
-}
-.thrust-kicker { margin: 0; color: #867b4f; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em !important; }
-.thrust h3 { margin: .2rem 0 .45rem; color: var(--text); font-size: 1.08rem; font-weight: 600; line-height: 1.28; }
-.thrust .plain { margin: 0 0 .55rem; color: var(--gt-navy); font-size: .9rem; font-weight: 500; line-height: 1.45; }
-.thrust .tech { margin: 0 0 .8rem; color: var(--text-soft); font-size: .84rem; line-height: 1.5; }
-.thrust .reps { margin-top: auto; padding-top: .65rem; border-top: 1px solid var(--line); }
-.thrust .reps p { margin: 0 0 .35rem; color: #353c43; font-size: .8rem; line-height: 1.4; }
-.thrust .reps p em { color: var(--muted); }
+.thrusts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; }
+.thrust .num { display: block; margin-bottom: .35rem; color: var(--gt-gold); font-size: .9rem; font-weight: 600; }
+.thrust h3 { margin: 0 0 .5rem; color: var(--text); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+.thrust p { margin: 0 0 .7rem; color: var(--text-soft); font-size: .9rem; line-height: 1.6; }
+.thrust .keys { color: var(--muted); font-size: .82rem; }
+.thrust .rep { margin: 0; color: #3a4148; font-size: .82rem; line-height: 1.5; }
+.thrust .rep em { color: var(--muted); }
 
-/* ===== Highlights + selected pubs ===== */
-.two-col { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; }
-.sel-pub { padding: .6rem 0; border-top: 1px solid #eef0f2; }
-.sel-pub:first-of-type { border-top: 0; padding-top: 0; }
-.sel-pub .t { margin: 0; color: var(--text); font-size: .94rem; font-weight: 600; line-height: 1.3; }
-.sel-pub .a { margin: .12rem 0 0; color: var(--text-soft); font-size: .84rem; line-height: 1.35; }
+/* ===== Recent work ===== */
+.recent-title { margin: 0 0 .25rem; color: var(--text); font-size: 1.12rem; font-weight: 600; line-height: 1.35; }
+.recent-meta { margin: 0 0 1rem; color: var(--muted); font-size: .88rem; }
+.recent-meta strong { color: var(--text-soft); }
+.recent-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.6rem; }
+.recent-body p { margin: 0 0 .8rem; color: #333b43; font-size: .95rem; line-height: 1.65; }
+.recent-steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+.recent-steps li { position: relative; padding: 0 0 .75rem 1.9rem; color: var(--text-soft); font-size: .9rem; line-height: 1.55; counter-increment: s; }
+.recent-steps li::before {
+  content: counter(s);
+  position: absolute; left: 0; top: .05rem;
+  width: 1.3rem; height: 1.3rem; border: 1px solid var(--gt-navy); border-radius: 50%;
+  color: var(--gt-navy); font-size: .74rem; font-weight: 600; line-height: 1.2rem; text-align: center;
+}
+.recent-steps b { color: var(--text); font-weight: 600; }
+
+/* ===== Publications + news ===== */
+.two-col { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 3rem; }
+.sel-pub { margin: 0 0 1rem; }
+.sel-pub .t { margin: 0; color: var(--text); font-size: .94rem; font-weight: 600; line-height: 1.35; }
+.sel-pub .a { margin: .12rem 0 0; color: var(--text-soft); font-size: .85rem; line-height: 1.4; }
 .sel-pub .a strong { color: var(--text); }
-.sel-pub .v { margin: .1rem 0 0; color: var(--muted); font-size: .83rem; }
+.sel-pub .v { margin: .08rem 0 0; color: var(--muted); font-size: .85rem; }
 .sel-pub .v em { color: #294e6d; }
-.more-link { display: inline-block; margin-top: .7rem; font-size: .88rem; font-weight: 600; }
+.more-link { font-size: .9rem; font-weight: 600; }
 .news { margin: 0; padding: 0; list-style: none; }
-.news li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: .6rem; padding: .45rem 0; border-top: 1px solid #eef0f2; font-size: .86rem; line-height: 1.45; color: var(--text-soft); }
-.news li:first-child { border-top: 0; padding-top: 0; }
-.news .yr { color: var(--gt-navy); font-weight: 600; }
+.news li { display: grid; grid-template-columns: 2.8rem minmax(0, 1fr); gap: .5rem; margin: 0 0 .7rem; color: var(--text-soft); font-size: .88rem; line-height: 1.5; }
+.news .yr { color: var(--muted); font-weight: 600; }
 
 @media (max-width: 980px) {
-  .home-hero { grid-template-columns: minmax(0, 1fr) 200px; gap: 2rem; }
-  .hero-photo-wrap { width: 200px; height: 267px; }
-  .pipeline { grid-template-columns: 1fr; }
-  .pipe-arrow { justify-self: center; transform: rotate(90deg); }
-  .thrust-grid { grid-template-columns: 1fr; }
-  .two-col { grid-template-columns: 1fr; gap: 1.8rem; }
+  .home-hero { grid-template-columns: minmax(0, 1fr) 190px; gap: 2rem; }
+  .hero-photo-wrap { width: 190px; height: 253px; }
+  .thrusts { grid-template-columns: 1fr; gap: 1.6rem; }
+  .recent-body, .two-col { grid-template-columns: 1fr; gap: 1.4rem; }
 }
 @media (max-width: 760px) {
-  .home-hero { grid-template-columns: 1fr; gap: 1rem; }
-  .hero-photo-wrap { grid-row: 1; justify-self: center; width: min(70vw, 260px); height: auto; aspect-ratio: 3 / 4; }
-  .hero-name { font-size: 1.85rem; }
-  .hero-title { font-size: 1.3rem; }
-  .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .glance div:nth-child(3) { border-left: 0; }
-  .glance div:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .pipe-steps { grid-template-columns: 1fr; }
+  .home-hero { grid-template-columns: 1fr; gap: 1.2rem; }
+  .hero-photo-wrap { grid-row: 1; justify-self: start; width: 150px; height: 200px; }
+  .hero-name { font-size: 1.8rem; }
+  .hero-title { font-size: 1.25rem; }
 }
 </style>
 
-<!-- ============ HERO ============ -->
-<section class="home-hero l-shell l-shell--wide">
-  <div class="hero-copy">
+<section class="home-hero l-shell">
+  <div>
     <h1 class="hero-name">Yeonju Lee</h1>
     <p class="hero-meta">
-      Ph.D. in Machine Learning (expected 2027) · H. Milton Stewart School of Industrial &amp; Systems Engineering, Georgia Tech<br>
-      Advised by <a href="https://isye.gatech.edu/users/jing-li" target="_blank" rel="noopener">Prof. Jing Li</a>
+      Ph.D. Student in Machine Learning, Georgia Institute of Technology<br>
+      H. Milton Stewart School of Industrial &amp; Systems Engineering · Advisor: <a href="https://isye.gatech.edu/users/jing-li" target="_blank" rel="noopener">Prof. Jing Li</a>
     </p>
 
-    <h2 class="hero-title">Knowledge-informed AI that perceives, predicts, and decides in complex physical and biomedical systems</h2>
+    <h2 class="hero-title">Knowledge-Informed AI and ML for Complex Scientific and Physical Systems</h2>
 
     <p class="hero-description">
-      AI models are powerful, but in hospitals, farms, and factories they often face <strong>scarce labels</strong> and <strong>conditions that keep changing</strong>.
-      My research makes AI reliable in exactly those settings by building in what scientists and engineers already know &mdash; anatomy, soil&ndash;water&ndash;crop physics, process knowledge &mdash;
-      into modern architectures such as foundation models, generative models, and adaptive world models.
+      In hospitals, farms, and factories, AI must work with scarce labels and conditions that keep changing.
+      My research makes AI reliable in these settings by building scientific and engineering knowledge, such as anatomy and soil&ndash;water&ndash;crop dynamics,
+      into foundation models, generative models, and adaptive world models.
     </p>
 
-    <div class="hero-links">
-      <a class="primary" href="/files/Yeonju_Lee_CV.pdf">CV (PDF)</a>
-      <a href="/research/">Research</a>
-      <a href="/publications/">Publications</a>
-      <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+    <p class="hero-links">
+      <a href="/files/Yeonju_Lee_CV.pdf">CV</a><span class="sep">|</span>
+      <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a><span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/ylee845" target="_blank" rel="noopener">LinkedIn</a><span class="sep">|</span>
       <a href="mailto:ylee845@gatech.edu">ylee845@gatech.edu</a>
-      <a href="https://www.linkedin.com/in/ylee845" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="cv-updated">CV updated Nov 2026</span>
-    </div>
+    </p>
   </div>
 
   <div class="hero-photo-wrap">
@@ -209,136 +125,99 @@ redirect_from:
   </div>
 </section>
 
-<!-- ============ AT A GLANCE ============ -->
-<section class="l-shell l-shell--wide">
-  <div class="glance">
-    <div><b>13</b><span>journal papers<br>(8 published / accepted)</span></div>
-    <div><b>7</b><span>first-author papers<br>(3 published, 2 under review)</span></div>
-    <div><b>2</b><span>U.S. provisional patents on 3D medical-image AI</span></div>
-    <div><b>5</b><span>conference talks, incl. INFORMS invited session</span></div>
-  </div>
-  <p class="venues"><strong>Published in</strong> IEEE Transactions on Automation Science and Engineering · IISE Transactions on Healthcare Systems Engineering · International Journal of Production Research · Journal of Endodontics · Cytotherapy · ACS ES&amp;T Engineering · Dental Clinics of North America</p>
-</section>
-
-<!-- ============ RESEARCH IN ONE PICTURE ============ -->
-<section class="l-shell l-shell--wide">
-  <p class="eyebrow">Research in one picture</p>
-  <p class="big-question">
-    The question that drives my work: <em>How can AI make trustworthy decisions about the physical world when data are limited and the environment shifts?</em>
-    My answer is to let scientific knowledge do the work that missing data cannot.
+<section class="l-shell home-section">
+  <h2 class="section-title">Research</h2>
+  <p class="section-lede">
+    How can AI make trustworthy decisions about the physical world when data are limited and the environment shifts?
+    I approach this question by integrating domain knowledge with modern AI across three connected capabilities.
   </p>
 
-  <div class="pipeline">
-    <div class="pipe-box">
-      <h4>Inputs</h4>
-      <ul>
-        <li><strong>Domain knowledge</strong>: anatomy, crop &amp; soil physics, process rules, text descriptions</li>
-        <li><strong>Sparse data</strong>: 3D CT/MRI, microscopy, field sensors</li>
-      </ul>
+  <div class="thrusts">
+    <div class="thrust">
+      <span class="num">01</span>
+      <h3>Perception from scarce data</h3>
+      <p>Teaching models what clinicians already know about anatomy, so they can segment and detect disease in 3D images from few labeled examples.</p>
+      <p class="keys">Knowledge-informed semi-supervised learning · generative models · foundation models</p>
+      <p class="rep">IEEE T-ASE 2025 · IISE THSE 2026 · Cytotherapy 2026</p>
     </div>
-    <div class="pipe-arrow" aria-hidden="true">&rarr;</div>
-    <div class="pipe-box pipe-core">
-      <h4>Knowledge-informed AI</h4>
-      <div class="pipe-steps">
-        <div class="pipe-step"><b>Perceive</b><span>Knowledge-guided segmentation &amp; detection from few labels</span></div>
-        <div class="pipe-step"><b>Reason &amp; predict</b><span>Foundation-model reasoning over spatiotemporal signals</span></div>
-        <div class="pipe-step"><b>Decide &amp; control</b><span>Adaptive world models for control under environment shifts</span></div>
-      </div>
+    <div class="thrust">
+      <span class="num">02</span>
+      <h3>Reasoning over scientific signals</h3>
+      <p>Using large language models to read soil-moisture sensor data the way an agronomist would, recognizing meaningful patterns and anomalies to support prediction.</p>
+      <p class="keys">LLM-based reasoning · spatiotemporal learning · anomaly detection</p>
+      <p class="rep">Comput. Electron. Agric. (under review) · ACS ES&amp;T Eng. 2026</p>
     </div>
-    <div class="pipe-arrow" aria-hidden="true">&rarr;</div>
-    <div class="pipe-box">
-      <h4>Impact</h4>
-      <ul>
-        <li><strong>Precision diagnosis</strong> in dental &amp; brain imaging</li>
-        <li><strong>Sustainable agriculture</strong>: water &amp; nutrient management</li>
-        <li><strong>Intelligent manufacturing</strong>: quality &amp; fault discovery</li>
-      </ul>
+    <div class="thrust">
+      <span class="num">03</span>
+      <h3>Decisions under environment shifts</h3>
+      <p>Giving controllers a learned simulator of how a system responds to actions, and letting it adapt to environments it has never seen.</p>
+      <p class="keys">World models · meta-learning · test-time adaptation · model predictive control</p>
+      <p class="rep">IISE Transactions (under review)</p>
     </div>
+  </div>
+  <p style="margin:1.6rem 0 0;"><a class="more-link" href="/research/">More about my research &rarr;</a></p>
+</section>
+
+<section class="l-shell home-section">
+  <h2 class="section-title">Recent Work</h2>
+  <p class="recent-title">Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</p>
+  <p class="recent-meta"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li · <em>IISE Transactions</em>, under review</p>
+
+  <div class="recent-body">
+    <div>
+      <p>
+        The same irrigation decision can help or hurt a crop depending on the soil and climate, so a controller learned on some farms often fails on new ones,
+        where sensor data are too sparse to relearn the dynamics. This work combines what we can <em>read</em> about a new farm with the few things we can <em>measure</em> there.
+      </p>
+      <p>
+        Across 60 unseen environments in simulation, the method improved crop-response prediction, lowered decision regret, and achieved the highest yield among compared methods.
+        We also establish a regret bound that links prediction error to control quality.
+      </p>
+    </div>
+    <ol class="recent-steps">
+      <li><b>Learn shared dynamics.</b> A world model learns how irrigation drives soil moisture, canopy cover, and biomass.</li>
+      <li><b>Use environmental knowledge.</b> An LLM encodes soil and climate descriptions, and a hypernetwork turns them into an environment-specific starting point.</li>
+      <li><b>Adapt with sparse data.</b> A lightweight adapter is meta-learned and refined at test time from a few soil-moisture readings.</li>
+      <li><b>Plan.</b> The adapted model drives model predictive control under a water budget.</li>
+    </ol>
   </div>
 </section>
 
-<!-- ============ THRUSTS ============ -->
-<section class="l-shell l-shell--wide">
-  <h2 class="section-title">Research Thrusts</h2>
-  <div class="thrust-grid">
-    <article class="thrust">
-      <p class="thrust-kicker">Thrust 1 · Perception</p>
-      <h3>Knowledge-guided learning from scarce, high-dimensional data</h3>
-      <p class="plain">Teach a model what a clinician already knows about anatomy, so it finds lesions in 3D scans without thousands of labeled examples.</p>
-      <p class="tech">Anatomy-informed semi-supervised learning, generative (ControlNet) reconstruction, and foundation-model cascades for 3D CBCT, brain MRI, and microscopy.</p>
-      <div class="reps">
-        <p>Oral-anatomical knowledge-informed semi-supervised learning &mdash; <em>IEEE T-ASE 2025 · Best Paper Finalist</em></p>
-        <p>BrainNormalizer &mdash; <em>IISE Trans. Healthcare Sys. Eng. 2026 · Spotlight</em></p>
-        <p>Foundation model cascades for zero-shot microscopy &mdash; <em>Cytotherapy 2026</em></p>
-      </div>
-    </article>
-
-    <article class="thrust">
-      <p class="thrust-kicker">Thrust 2 · Reasoning &amp; Prediction</p>
-      <h3>Foundation-model reasoning over scientific time series</h3>
-      <p class="plain">Let a language model read soil-moisture signals the way an agronomist would, recognizing meaningful patterns and flagging anomalies, and use them to forecast what the season will bring.</p>
-      <p class="tech">LLM frameworks for pattern recognition and anomaly detection, and spatiotemporal learning of depth-specific trajectories for cross-year yield prediction.</p>
-      <div class="reps">
-        <p>SPADE: LLM framework for soil-moisture pattern recognition &mdash; <em>Comput. Electron. Agric., 2nd-round review</em></p>
-        <p>Lightweight anomaly detection for nutrient management &mdash; <em>ACS ES&amp;T Eng. 2026</em></p>
-      </div>
-    </article>
-
-    <article class="thrust">
-      <p class="thrust-kicker">Thrust 3 · Decision &amp; Control</p>
-      <h3>Adaptive world models for decisions under environment shifts</h3>
-      <p class="plain">Give an AI controller a &ldquo;mental simulator&rdquo; of how crops respond to water, and let it re-tune itself to a farm it has never seen before.</p>
-      <p class="tech">Knowledge-conditioned meta-learning, LLM-driven hypernetworks, test-time adaptation, and model predictive control, with regret guarantees.</p>
-      <div class="reps">
-        <p>KIWIC: Knowledge-informed world model adaptation for predictive irrigation control &mdash; <em>IISE Transactions, submitted</em></p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ============ HIGHLIGHTS + SELECTED PUBS ============ -->
-<section class="l-shell l-shell--wide">
+<section class="l-shell home-section">
   <div class="two-col">
     <div>
       <h2 class="section-title">Selected Publications</h2>
       <div class="sel-pub">
         <p class="t">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
         <p class="a"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-        <p class="v"><em>IEEE Transactions on Automation Science and Engineering</em>, 2025 <span class="chip chip--gold">IISE DAIS Best Paper Finalist</span></p>
+        <p class="v"><em>IEEE Transactions on Automation Science and Engineering</em>, 2025. IISE DAIS Best Paper Finalist.</p>
       </div>
       <div class="sel-pub">
         <p class="t">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
         <p class="a"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-        <p class="v"><em>Journal of Endodontics</em>, in press, 2026</p>
+        <p class="v"><em>Journal of Endodontics</em>, in press, 2026.</p>
       </div>
       <div class="sel-pub">
         <p class="t">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
         <p class="a">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-        <p class="v"><em>IISE Transactions on Healthcare Systems Engineering</em>, 2026 <span class="chip chip--gold">Monthly Spotlight · ISE Magazine feature</span></p>
+        <p class="v"><em>IISE Transactions on Healthcare Systems Engineering</em>, 2026.</p>
       </div>
       <div class="sel-pub">
         <p class="t">Foundation Model Cascades Enable Zero-Shot Microscopy Image Analysis for Cell Therapy Manufacturing</p>
         <p class="a">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
-        <p class="v"><em>Cytotherapy</em>, 2026</p>
+        <p class="v"><em>Cytotherapy</em>, 2026.</p>
       </div>
-      <div class="sel-pub">
-        <p class="t">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
-        <p class="a"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
-        <p class="v"><em>International Journal of Production Research</em>, 2024</p>
-      </div>
-      <a class="more-link" href="/publications/">All 13 papers &rarr;</a>
+      <p style="margin:.4rem 0 0;"><a class="more-link" href="/publications/">All publications &rarr;</a></p>
     </div>
 
     <div>
-      <h2 class="section-title">Highlights</h2>
+      <h2 class="section-title">News</h2>
       <ul class="news">
         <li><span class="yr">2026</span><span>Paper on knowledge-informed world models for irrigation control submitted to <em>IISE Transactions</em>.</span></li>
         <li><span class="yr">2026</span><span><em>BrainNormalizer</em> selected for the journal&rsquo;s Monthly Spotlight Series and featured in <em>ISE Magazine</em>.</span></li>
-        <li><span class="yr">2026</span><span>Four more journal articles published or in press in <em>J. Endodontics</em>, <em>Cytotherapy</em>, <em>ACS ES&amp;T Eng.</em>, and <em>Dental Clinics of N. America</em>.</span></li>
         <li><span class="yr">2025</span><span>George Fellowship and Stewart Fellowship, Georgia Tech ISyE.</span></li>
-        <li><span class="yr">2025</span><span>Invited talk, INFORMS Annual Meeting (Atlanta).</span></li>
-        <li><span class="yr">2024</span><span>Finalist, Best Track Paper Award, IISE Data Analytics &amp; Information Systems (DAIS).</span></li>
-        <li><span class="yr">2024</span><span>Two U.S. provisional patent applications filed on 3D CBCT segmentation and lesion detection.</span></li>
+        <li><span class="yr">2025</span><span>Invited talk, INFORMS Annual Meeting, Atlanta.</span></li>
+        <li><span class="yr">2024</span><span>Finalist, Best Track Paper Award, IISE DAIS.</span></li>
       </ul>
     </div>
   </div>

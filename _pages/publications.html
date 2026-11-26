@@ -14,18 +14,6 @@ classes: wide
 .pub-intro { margin: 0 0 1rem; color: var(--text-soft); font-size: .92rem; line-height: 1.55; }
 .pub-intro strong { color: var(--text); }
 
-.pub-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.6rem;
-  margin: 0 0 1.1rem;
-  padding: .8rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: #fbfbfa;
-}
-.pub-summary div { color: var(--text-soft); font-size: .84rem; }
-.pub-summary b { margin-right: .3rem; color: var(--gt-navy); font-size: 1.25rem; font-weight: 600; }
 
 .pub-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.2rem; }
 .pub-filter button {
@@ -64,17 +52,15 @@ classes: wide
 .pub-num { color: #727a82; font-size: .84rem; font-weight: 600; line-height: 1.3; text-align: right; }
 .pub-title { margin: 0 !important; color: var(--text); font-size: .98rem; font-weight: 600; line-height: 1.3 !important; }
 .pub-authors { margin: .12rem 0 0 !important; color: var(--text-soft); font-size: .88rem; line-height: 1.35 !important; }
-.pub-authors strong { color: #1f2327; font-weight: 600; text-decoration: underline; text-decoration-color: var(--gt-gold); text-underline-offset: 2px; }
+.pub-authors strong { color: #1f2327; font-weight: 600; }
 .pub-meta { margin: .1rem 0 0 !important; color: var(--muted); font-size: .86rem; line-height: 1.35 !important; }
 .pub-meta em { color: #294e6d; font-style: italic; }
-.pub-tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; }
+.pub-note { color: #7a6a2c; }
 
-.pub-legend { margin: 1.6rem 0 0; color: var(--muted); font-size: .8rem; }
 
 @media (max-width: 760px) {
   .pub-entry { grid-template-columns: 1.9rem minmax(0, 1fr); gap: .35rem; }
   .pub-title { font-size: .95rem; }
-  .pub-summary { gap: .8rem 1.2rem; }
 }
 </style>
 
@@ -84,15 +70,7 @@ classes: wide
   <p class="pub-intro">
     My papers span <strong>methodology</strong> (knowledge-informed, generative, and foundation-model-based learning; adaptive world models)
     and <strong>high-stakes applications</strong> in healthcare, agriculture, and manufacturing, with collaborators in dentistry, crop science, environmental engineering, and biomanufacturing.
-    Numbering follows my <a href="/files/Yeonju_Lee_CV.pdf">CV</a>. Full list also on <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>.
   </p>
-
-  <div class="pub-summary">
-    <div><b>8</b>published / accepted journal articles</div>
-    <div><b>3</b>under review</div>
-    <div><b>2</b>in preparation</div>
-    <div><b>2</b>U.S. provisional patents</div>
-  </div>
 
   <div class="pub-filter" role="group" aria-label="Filter by application area">
     <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -111,7 +89,6 @@ classes: wide
         <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
         <p class="pub-meta"><em>Journal of Endodontics</em>, in press, 2026.</p>
-        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Radiomics</span></div>
       </div>
     </article>
 
@@ -120,8 +97,7 @@ classes: wide
       <div>
         <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
         <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 16(4), 474&ndash;486, 2026.</p>
-        <div class="pub-tags"><span class="chip chip--gold">Monthly Spotlight Series</span><span class="chip chip--gold">Featured in ISE Magazine</span><span class="chip">Healthcare</span><span class="chip">Generative AI</span></div>
+        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 16(4), 474&ndash;486, 2026. <span class="pub-note">Selected for the Monthly Spotlight Series; featured in ISE Magazine.</span></p>
       </div>
     </article>
 
@@ -131,7 +107,6 @@ classes: wide
         <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
         <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, J. Li</p>
         <p class="pub-meta"><em>Dental Clinics of North America</em>, 70(2), 351&ndash;359, 2026.</p>
-        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Review</span></div>
       </div>
     </article>
 
@@ -141,7 +116,6 @@ classes: wide
         <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
         <p class="pub-authors">A. Cohen, Y. Sun, Z. Qin, H. Muriki, Z. Xiao, <strong>Y. Lee</strong>, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen</p>
         <p class="pub-meta"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089&ndash;1105, 2026.</p>
-        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Anomaly detection</span></div>
       </div>
     </article>
 
@@ -151,7 +125,6 @@ classes: wide
         <p class="pub-title">Foundation Model Cascades Enable Zero-Shot Microscopy Image Analysis for Cell Therapy Manufacturing</p>
         <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
         <p class="pub-meta"><em>Cytotherapy</em>, 28(5), 102078, 2026.</p>
-        <div class="pub-tags"><span class="chip">Biomanufacturing</span><span class="chip">Foundation models</span></div>
       </div>
     </article>
 
@@ -160,8 +133,7 @@ classes: wide
       <div>
         <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205&ndash;11218, 2025.</p>
-        <div class="pub-tags"><span class="chip chip--gold">IISE DAIS Best Paper Finalist</span><span class="chip chip--gold">U.S. provisional patent</span><span class="chip">Healthcare</span><span class="chip">Knowledge-informed ML</span></div>
+        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205&ndash;11218, 2025. <span class="pub-note">IISE DAIS Best Paper Finalist.</span></p>
       </div>
     </article>
 
@@ -171,7 +143,6 @@ classes: wide
         <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
         <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
         <p class="pub-meta"><em>Journal of Endodontics</em>, 50(10), 1505&ndash;1514, 2024.</p>
-        <div class="pub-tags"><span class="chip chip--gold">U.S. provisional patent</span><span class="chip">Healthcare</span><span class="chip">Transformers</span></div>
       </div>
     </article>
 
@@ -181,7 +152,6 @@ classes: wide
         <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
         <p class="pub-meta"><em>International Journal of Production Research</em>, 62(9), 3305&ndash;3319, 2024.</p>
-        <div class="pub-tags"><span class="chip">Manufacturing</span><span class="chip">Fault discovery</span></div>
       </div>
     </article>
   </section>
@@ -195,7 +165,6 @@ classes: wide
         <p class="pub-title">Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li</p>
         <p class="pub-meta"><em>IISE Transactions</em> (submitted).</p>
-        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">World models</span><span class="chip">Control</span></div>
       </div>
     </article>
 
@@ -205,7 +174,6 @@ classes: wide
         <p class="pub-title">ACREE: An Extensible and Reconfigurable Platform for Multi-Farm Agricultural Decision Support</p>
         <p class="pub-authors">J. Oboamaha, X. Qiao, W. Liang, G. Stone, J. Wang, <strong>Y. Lee</strong>, J. Li, P. Su</p>
         <p class="pub-meta"><em>Smart Agricultural Technology</em> (revised, second-round review).</p>
-        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Decision support</span></div>
       </div>
     </article>
 
@@ -215,7 +183,6 @@ classes: wide
         <p class="pub-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
         <p class="pub-meta"><em>Computers and Electronics in Agriculture</em> (revised, second-round review).</p>
-        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">LLMs</span></div>
       </div>
     </article>
   </section>
@@ -229,7 +196,6 @@ classes: wide
         <p class="pub-title">Spatiotemporal Learning of Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction in Precision Agriculture</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
         <p class="pub-meta">Manuscript in preparation.</p>
-        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Spatiotemporal learning</span></div>
       </div>
     </article>
 
@@ -239,7 +205,6 @@ classes: wide
         <p class="pub-title">A Global-Local AI Framework for Predicting Endodontic Treatment Outcomes from 3D CBCT Images</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
         <p class="pub-meta">Manuscript in preparation.</p>
-        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Prognosis</span></div>
       </div>
     </article>
   </section>
@@ -265,8 +230,6 @@ classes: wide
       </div>
     </article>
   </section>
-
-  <p class="pub-legend">Underlined name = Yeonju Lee.</p>
 </div>
 
 <script>
