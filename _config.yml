@@ -4,7 +4,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Yeonju Lee"
 title_separator          : "-"
 name                     : &name "Yeonju Lee"
-description              : &description "Yeonju Lee's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Yeonju Lee, Ph.D. in Machine Learning at Georgia Tech ISyE. Knowledge-informed AI for medical imaging, precision agriculture, and intelligent manufacturing."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://ylee845.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -18,7 +18,7 @@ author:
   avatar           : "prof_headshot7.jpg"
   name             : "Yeonju Lee"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. student in ISyE at Georgia Tech"
+  bio              : "Ph.D. student in Machine Learning, Georgia Tech ISyE"
   location         : "Atlanta, GA"
   employer         : #"Red Brick University"
   uri              : # URL

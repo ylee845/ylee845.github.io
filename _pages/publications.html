@@ -11,118 +11,177 @@ classes: wide
 <style>
 .page__title { display: none !important; }
 
-/* Publications keeps the shared (narrower) --l-max; layout comes
-   from .l-shell / .section-title in custom.scss. */
+.pub-intro { margin: 0 0 1rem; color: var(--text-soft); font-size: .92rem; line-height: 1.55; }
+.pub-intro strong { color: var(--text); }
 
-.pub-group {
-  margin-top: 1.15rem;
+.pub-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin: 0 0 1.1rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fbfbfa;
 }
+.pub-summary div { color: var(--text-soft); font-size: .84rem; }
+.pub-summary b { margin-right: .3rem; color: var(--gt-navy); font-size: 1.25rem; font-weight: 600; }
 
-.pub-group:first-of-type {
-  margin-top: 0;
+.pub-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.2rem; }
+.pub-filter button {
+  padding: .25rem .75rem;
+  border: 1px solid #cfd8e0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-soft);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
 }
+.pub-filter button[aria-pressed="true"] { background: var(--gt-navy); border-color: var(--gt-navy); color: #fff; }
 
+.pub-group { margin-top: 1.5rem; }
+.pub-group:first-of-type { margin-top: 0; }
 .pub-group-title {
   margin: 0;
-  padding: 0 0 .32rem;
+  padding: 0 0 .35rem;
   border-bottom: 1px solid var(--line);
   color: var(--gt-navy) !important;
-  font-size: 1.00rem !important;
+  font-size: 1.02rem !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
 }
 
 .pub-entry {
   display: grid;
-  grid-template-columns: 1.65rem minmax(0, 1fr);
-  gap: .42rem;
-  padding: .46rem 0 .50rem;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: .5rem;
+  padding: .6rem 0 .62rem;
 }
+.pub-entry + .pub-entry { border-top: 1px solid #eef0f2; }
+.pub-entry[hidden] { display: none; }
+.pub-num { color: #727a82; font-size: .84rem; font-weight: 600; line-height: 1.3; text-align: right; }
+.pub-title { margin: 0 !important; color: var(--text); font-size: .98rem; font-weight: 600; line-height: 1.3 !important; }
+.pub-authors { margin: .12rem 0 0 !important; color: var(--text-soft); font-size: .88rem; line-height: 1.35 !important; }
+.pub-authors strong { color: #1f2327; font-weight: 600; text-decoration: underline; text-decoration-color: var(--gt-gold); text-underline-offset: 2px; }
+.pub-meta { margin: .1rem 0 0 !important; color: var(--muted); font-size: .86rem; line-height: 1.35 !important; }
+.pub-meta em { color: #294e6d; font-style: italic; }
+.pub-tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .35rem; }
 
-.pub-entry + .pub-entry {
-  border-top: 1px solid #eef0f2;
-}
-
-.pub-num {
-  color: #727a82;
-  font-size: .87rem;
-  line-height: 1.24;
-  text-align: right;
-  padding-top: .02rem;
-}
-
-.pub-title {
-  margin: 0 !important;
-  color: var(--text);
-  font-size: .98rem;
-  font-weight: 600;
-  line-height: 1.24 !important;
-}
-
-.pub-authors {
-  margin: .08rem 0 0 !important;
-  color: var(--text-soft);
-  font-size: .88rem;
-  line-height: 1.24 !important;
-}
-
-.pub-authors strong {
-  color: #2b3136;
-  font-weight: 600;
-}
-
-.pub-meta {
-  margin: .06rem 0 0 !important;
-  color: var(--muted);
-  font-size: .85rem;
-  line-height: 1.24 !important;
-}
-
-.pub-meta em {
-  color: #294e6d;
-  font-style: italic;
-}
-
-.pub-note {
-  margin-left: .28rem;
-  color: #8f7f3f;
-  font-weight: 500;
-}
+.pub-legend { margin: 1.6rem 0 0; color: var(--muted); font-size: .8rem; }
 
 @media (max-width: 760px) {
-  .pub-entry {
-    grid-template-columns: 1.35rem minmax(0, 1fr);
-    gap: .32rem;
-    padding: .42rem 0 .46rem;
-  }
-
-  .pub-title {
-    font-size: .95rem;
-  }
+  .pub-entry { grid-template-columns: 1.9rem minmax(0, 1fr); gap: .35rem; }
+  .pub-title { font-size: .95rem; }
+  .pub-summary { gap: .8rem 1.2rem; }
 }
 </style>
 
 <div class="l-shell">
   <h1 class="section-title">Publications</h1>
 
-  <section class="pub-group">
-    <h2 class="pub-group-title">Working Papers</h2>
+  <p class="pub-intro">
+    My papers span <strong>methodology</strong> (knowledge-informed, generative, and foundation-model-based learning; adaptive world models)
+    and <strong>high-stakes applications</strong> in healthcare, agriculture, and manufacturing, with collaborators in dentistry, crop science, environmental engineering, and biomanufacturing.
+    Numbering follows my <a href="/files/Yeonju_Lee_CV.pdf">CV</a>. Full list also on <a href="https://scholar.google.com/citations?user=5iO-_XgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>.
+  </p>
 
-    <article class="pub-entry">
-      <div class="pub-num">1.</div>
+  <div class="pub-summary">
+    <div><b>8</b>published / accepted journal articles</div>
+    <div><b>3</b>under review</div>
+    <div><b>2</b>in preparation</div>
+    <div><b>2</b>U.S. provisional patents</div>
+  </div>
+
+  <div class="pub-filter" role="group" aria-label="Filter by application area">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="health" aria-pressed="false">Healthcare</button>
+    <button type="button" data-filter="ag" aria-pressed="false">Agriculture</button>
+    <button type="button" data-filter="mfg" aria-pressed="false">Manufacturing</button>
+    <button type="button" data-filter="first" aria-pressed="false">First-author</button>
+  </div>
+
+  <section class="pub-group">
+    <h2 class="pub-group-title">Journal Articles (Published &amp; Accepted)</h2>
+
+    <article class="pub-entry" data-tags="health first">
+      <div class="pub-num">P1</div>
       <div>
-        <p class="pub-title">3D CBCT-Based Prediction of Endodontic Treatment Outcomes with Radiomic Features. </p>
+        <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-        <p class="pub-meta">Manuscript in preparation.</p>
+        <p class="pub-meta"><em>Journal of Endodontics</em>, in press, 2026.</p>
+        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Radiomics</span></div>
       </div>
     </article>
 
-    <article class="pub-entry">
-      <div class="pub-num">2.</div>
+    <article class="pub-entry" data-tags="health">
+      <div class="pub-num">P2</div>
       <div>
-        <p class="pub-title">Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction</p>
-        <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
-        <p class="pub-meta">Manuscript in preparation.</p>
+        <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
+        <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
+        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 16(4), 474&ndash;486, 2026.</p>
+        <div class="pub-tags"><span class="chip chip--gold">Monthly Spotlight Series</span><span class="chip chip--gold">Featured in ISE Magazine</span><span class="chip">Healthcare</span><span class="chip">Generative AI</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="health">
+      <div class="pub-num">P3</div>
+      <div>
+        <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
+        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, J. Li</p>
+        <p class="pub-meta"><em>Dental Clinics of North America</em>, 70(2), 351&ndash;359, 2026.</p>
+        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Review</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="ag">
+      <div class="pub-num">P4</div>
+      <div>
+        <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
+        <p class="pub-authors">A. Cohen, Y. Sun, Z. Qin, H. Muriki, Z. Xiao, <strong>Y. Lee</strong>, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen</p>
+        <p class="pub-meta"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089&ndash;1105, 2026.</p>
+        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Anomaly detection</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="mfg health">
+      <div class="pub-num">P5</div>
+      <div>
+        <p class="pub-title">Foundation Model Cascades Enable Zero-Shot Microscopy Image Analysis for Cell Therapy Manufacturing</p>
+        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
+        <p class="pub-meta"><em>Cytotherapy</em>, 28(5), 102078, 2026.</p>
+        <div class="pub-tags"><span class="chip">Biomanufacturing</span><span class="chip">Foundation models</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="health first">
+      <div class="pub-num">P6</div>
+      <div>
+        <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
+        <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
+        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205&ndash;11218, 2025.</p>
+        <div class="pub-tags"><span class="chip chip--gold">IISE DAIS Best Paper Finalist</span><span class="chip chip--gold">U.S. provisional patent</span><span class="chip">Healthcare</span><span class="chip">Knowledge-informed ML</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="health">
+      <div class="pub-num">P7</div>
+      <div>
+        <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
+        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
+        <p class="pub-meta"><em>Journal of Endodontics</em>, 50(10), 1505&ndash;1514, 2024.</p>
+        <div class="pub-tags"><span class="chip chip--gold">U.S. provisional patent</span><span class="chip">Healthcare</span><span class="chip">Transformers</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="mfg first">
+      <div class="pub-num">P8</div>
+      <div>
+        <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
+        <p class="pub-authors"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
+        <p class="pub-meta"><em>International Journal of Production Research</em>, 62(9), 3305&ndash;3319, 2024.</p>
+        <div class="pub-tags"><span class="chip">Manufacturing</span><span class="chip">Fault discovery</span></div>
       </div>
     </article>
   </section>
@@ -130,89 +189,103 @@ classes: wide
   <section class="pub-group">
     <h2 class="pub-group-title">Under Review</h2>
 
-    <article class="pub-entry">
-      <div class="pub-num">3.</div>
+    <article class="pub-entry" data-tags="ag first">
+      <div class="pub-num">P9</div>
+      <div>
+        <p class="pub-title">Knowledge-Informed World Model Adaptation for Predictive Irrigation Control under Environmental Shifts</p>
+        <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Chen, J. Li</p>
+        <p class="pub-meta"><em>IISE Transactions</em> (submitted).</p>
+        <div class="pub-tags"><span class="chip chip--gold">Job-market paper</span><span class="chip">Agriculture</span><span class="chip">World models</span><span class="chip">Control</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="ag">
+      <div class="pub-num">P10</div>
+      <div>
+        <p class="pub-title">ACREE: An Extensible and Reconfigurable Platform for Multi-Farm Agricultural Decision Support</p>
+        <p class="pub-authors">J. Oboamaha, X. Qiao, W. Liang, G. Stone, J. Wang, <strong>Y. Lee</strong>, J. Li, P. Su</p>
+        <p class="pub-meta"><em>Smart Agricultural Technology</em> (revised, second-round review).</p>
+        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Decision support</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="ag first">
+      <div class="pub-num">P11</div>
       <div>
         <p class="pub-title">SPADE: A Large Language Model Framework for Soil Moisture Pattern Recognition and Anomaly Detection in Precision Agriculture</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
-        <p class="pub-meta">Revised manuscript under review in <em>Computers and Electronics in Agriculture</em>, 2026.</p>
+        <p class="pub-meta"><em>Computers and Electronics in Agriculture</em> (revised, second-round review).</p>
+        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">LLMs</span></div>
       </div>
     </article>
   </section>
 
   <section class="pub-group">
-    <h2 class="pub-group-title">Peer-Reviewed Publications</h2>
+    <h2 class="pub-group-title">In Preparation</h2>
 
-    <article class="pub-entry">
-      <div class="pub-num">4.</div>
+    <article class="pub-entry" data-tags="ag first">
+      <div class="pub-num">P12</div>
       <div>
-        <p class="pub-title">Dentin-Normalized CBCT Radiomics within a Periapical Lesion Differential Diagnosis System for Differentiating Granulomas and Radicular Cysts</p>
+        <p class="pub-title">Spatiotemporal Learning of Depth-Specific Soil Moisture Trajectories for Cross-Year Sugar Beet Yield Prediction in Precision Agriculture</p>
+        <p class="pub-authors"><strong>Y. Lee</strong>, X. Qiao, Y. Shi, W. Liang, Y. Chen, J. Li</p>
+        <p class="pub-meta">Manuscript in preparation.</p>
+        <div class="pub-tags"><span class="chip">Agriculture</span><span class="chip">Spatiotemporal learning</span></div>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="health first">
+      <div class="pub-num">P13</div>
+      <div>
+        <p class="pub-title">A Global-Local AI Framework for Predicting Endodontic Treatment Outcomes from 3D CBCT Images</p>
         <p class="pub-authors"><strong>Y. Lee</strong>, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-        <p class="pub-meta"><em>Journal of Endodontics</em>, 2026.</p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">5.</div>
-      <div>
-        <p class="pub-title">BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</p>
-        <p class="pub-authors">M.G. Kwak, <strong>Y. Lee</strong>, H. Wang, J. Li</p>
-        <p class="pub-meta"><em>IISE Transactions on Healthcare Systems Engineering</em>, 1–13, 2026.<span class="pub-note">Monthly Spotlight Series</span></p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">6.</div>
-      <div>
-        <p class="pub-title">The Science Behind Machine Learning, Deep Learning, and Active Learning</p>
-        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, J. Li</p>
-        <p class="pub-meta"><em>Dental Clinics of North America</em>, 70(2), 351–359, 2026.</p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">7.</div>
-      <div>
-        <p class="pub-title">Modular, On-Site Solutions with Lightweight Anomaly Detection for Sustainable Nutrient Management in Agriculture</p>
-        <p class="pub-authors">A. Cohen, Y. Sun, Z. Qin, H. Muriki, Z. Xiao, <strong>Y. Lee</strong>, M. Housley, A.F. Sharkey, R.S. Ferrarezi, J. Li, G. Lu, Y. Chen</p>
-        <p class="pub-meta"><em>ACS ES&amp;T Engineering</em>, 6(3), 1089–1105, 2026.</p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">8.</div>
-      <div>
-        <p class="pub-title">Foundation model cascades enable zero-shot microscopy image analysis for cell therapy manufacturing</p>
-        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, B. Joffe, P.C. Costa, C. Filan, B. Wang, S. Balakirsky, F. Robles, K. Roy, J. Li</p>
-        <p class="pub-meta"><em>Cytotherapy</em>, 28(5), 102078, 2026.</p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">9.</div>
-      <div>
-        <p class="pub-title">Oral-Anatomical Knowledge-Informed Semi-Supervised Learning for 3D Dental CBCT Segmentation and Lesion Detection</p>
-        <p class="pub-authors"><strong>Y. Lee</strong>, M.G. Kwak, R.Q. Chen, H. Yan, M. Mupparapu, F. Lure, F.C. Setzer, J. Li</p>
-        <p class="pub-meta"><em>IEEE Transactions on Automation Science and Engineering</em>, 22, 11205–11218, 2025.<span class="pub-note">IISE DAIS Best Paper Finalist</span></p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">10.</div>
-      <div>
-        <p class="pub-title">Leveraging Pretrained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam Computed Tomography Scans</p>
-        <p class="pub-authors">R.Q. Chen, <strong>Y. Lee</strong>, H. Yan, M. Mupparapu, F. Lure, J. Li, F.C. Setzer</p>
-        <p class="pub-meta"><em>Journal of Endodontics</em>, 50(10), 1505–1514, 2024.</p>
-      </div>
-    </article>
-
-    <article class="pub-entry">
-      <div class="pub-num">11.</div>
-      <div>
-        <p class="pub-title">Discovery of Fault-Introducing Tool Groups with a Numerical Association Rule Mining Method in a Printed Circuit Board Production Line</p>
-        <p class="pub-authors"><strong>Y. Lee</strong>, Y. Kim, B. Lee, C.O. Kim</p>
-        <p class="pub-meta"><em>International Journal of Production Research</em>, 62(9), 3305–3319, 2024.</p>
+        <p class="pub-meta">Manuscript in preparation.</p>
+        <div class="pub-tags"><span class="chip">Healthcare</span><span class="chip">Prognosis</span></div>
       </div>
     </article>
   </section>
+
+  <section class="pub-group">
+    <h2 class="pub-group-title">Patents</h2>
+
+    <article class="pub-entry" data-tags="health">
+      <div class="pub-num">&nbsp;</div>
+      <div>
+        <p class="pub-title">Leveraging Pre-Trained Transformers for Efficient Segmentation and Lesion Detection in Cone-Beam CT Images</p>
+        <p class="pub-authors">R.Q. Chen, J. Cheng, <strong>Y. Lee</strong>, J. Li, F. Lure, M. Mupparapu, F.C. Setzer, H. Yan</p>
+        <p class="pub-meta">U.S. Provisional Patent Application No. 63/654,892, filed May 31, 2024.</p>
+      </div>
+    </article>
+
+    <article class="pub-entry" data-tags="health first">
+      <div class="pub-num">&nbsp;</div>
+      <div>
+        <p class="pub-title">Oral-Anatomical Knowledge-Driven Semi-Supervised Segmentation for 3D Dental CBCT Images</p>
+        <p class="pub-authors"><strong>Y. Lee</strong>, J. Cheng, M.G. Kwak, R.Q. Chen, J. Li, F. Lure, M. Mupparapu, F.C. Setzer, H. Yan</p>
+        <p class="pub-meta">U.S. Provisional Patent Application No. 63/654,901, filed May 31, 2024.</p>
+      </div>
+    </article>
+  </section>
+
+  <p class="pub-legend">Underlined name = Yeonju Lee.</p>
 </div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.pub-filter button');
+  var entries = document.querySelectorAll('.pub-entry');
+  var groups = document.querySelectorAll('.pub-group');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      entries.forEach(function (e) {
+        var tags = (e.getAttribute('data-tags') || '').split(' ');
+        e.hidden = !(f === 'all' || tags.indexOf(f) !== -1);
+      });
+      groups.forEach(function (g) {
+        g.hidden = g.querySelectorAll('.pub-entry:not([hidden])').length === 0;
+      });
+    });
+  });
+})();
+</script>

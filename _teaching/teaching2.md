@@ -1,7 +1,7 @@
 ---
-#date: 2022-12-01
-role: "Lecturer"
-institution: "SK Hynix–sponsored Cognitive Data Scientist (CDS) Program"
+date: 2021-12-01
+role: "Guest Lecturer"
+institution: "SK Hynix–sponsored professional training program"
 course: "Deep Learning with Python"
-term: "Winter 2022"
+term: "Winter 2021"
 ---

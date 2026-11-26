@@ -13,6 +13,12 @@ classes: wide
 
 /* Layout comes from .l-shell / .section-title in custom.scss. */
 
+.teach-intro { max-width: 860px; margin: 0 0 1.4rem; }
+.teach-intro p { margin: 0 0 .7rem; color: #333b43; font-size: .96rem; line-height: 1.6; }
+.teach-areas { padding: .75rem 1rem; border-left: 3px solid var(--gt-gold); background: #fbfbfa; font-size: .9rem !important; }
+.teach-areas span { display: block; margin-bottom: .15rem; color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em !important; }
+.teach-subtitle { margin: 0 0 .4rem; padding-bottom: .35rem; border-bottom: 1px solid var(--line); color: var(--gt-navy) !important; font-size: 1.02rem !important; font-weight: 600 !important; }
+
 .teach-list {
   margin: 0;
   padding: 0;
@@ -73,6 +79,18 @@ classes: wide
 
 <div class="l-shell">
   <h1 class="section-title">Teaching</h1>
+
+  <div class="teach-intro">
+    <p>
+      I enjoy helping engineering students see how statistics and machine learning turn messy real-world data into sound decisions.
+      I bring examples from my own research in medical imaging, agriculture, and manufacturing into the classroom, and my guest lectures in Basic Statistics Methods received a <strong>4.8 / 5.0</strong> teaching evaluation.
+    </p>
+    <p class="teach-areas"><span>Prepared to teach</span>
+      Machine learning &amp; deep learning · Applied statistics · Regression &amp; forecasting · Design of experiments · Data analytics for engineering systems · AI for healthcare and agriculture
+    </p>
+  </div>
+
+  <h2 class="teach-subtitle">Teaching Experience</h2>
 
   {% assign items = site.teaching | sort: "date" | reverse %}
   <div class="teach-list">

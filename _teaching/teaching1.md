@@ -1,5 +1,5 @@
 ---
-#date: 2021-09-01
+date: 2021-09-01
 role: "Teaching Assistant"
 institution: "Yonsei University"
 course: "Production Process Control"

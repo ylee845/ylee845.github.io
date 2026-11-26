@@ -106,6 +106,8 @@ a:hover { color: #244c76; text-decoration: underline; }
 
 .section-title {
   margin: 0 0 var(--l-heading-gap);
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
   color: var(--text);
   font-size: 1.55rem;
   font-weight: 600;
@@ -164,4 +166,34 @@ html[data-theme="dark"] body {
 button[aria-label*="theme"], button[title*="theme"],
 button[aria-label*="Theme"], button[title*="Theme"] {
   display: none !important;
+}
+
+/* ===== Shared small components (chips, eyebrow labels) ===== */
+.eyebrow {
+  margin: 0 0 .6rem;
+  color: var(--muted);
+  font-size: .74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em !important;
+}
+
+.chip {
+  display: inline-block;
+  padding: .08rem .5rem;
+  border: 1px solid #d3dbe3;
+  border-radius: 999px;
+  background: #f4f7fa;
+  color: #34506a;
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.chip--gold {
+  border-color: #d9cfa6;
+  background: #faf7ec;
+  color: #6d5f2a;
 }
